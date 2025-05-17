@@ -10,14 +10,13 @@ export default function BookingPage() {
     const form = e.target;
     const data = Object.fromEntries(new FormData(form).entries());
 
-    const response = await fetch(
-      'https://accounting-backend-updated-production.up.railway.app/api/bookings/website-request',
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      }
-    );
+const response = await fetch('https://accounting-backend-updated-production.up.railway.app/api/bookings/website-request', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  mode: 'cors',
+  body: JSON.stringify(data)
+});
+
 
     if (response.ok) {
       setSubmitted(true);
