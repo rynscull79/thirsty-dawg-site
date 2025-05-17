@@ -1,0 +1,62 @@
+.section {
+  padding: 2rem;
+  margin-bottom: 3rem;
+  background-color: #f0f9ff;
+  border-radius: 1rem;
+  min-height: 650px; /* ✅ not 950px, but enough to stop CLS */
+}
+
+
+
+.hero {
+  background-color: #009fdb;
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+.hero h2 {
+  font-size: 2.1rem; /* bold and prominent headline */
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.4rem; /* clean, readable subtext */
+}
+
+.hero h2,
+.hero p {
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.accent {
+  background-color: #a3c9f9;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  color: #009fdb;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 1rem !important;
+    margin-top: 0 !important;
+  }
+}
