@@ -1,5 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
-Sitemap: https://www.thirstydawgrentals.com/sitemap.xml
+# Host
+Host: https://www.thirstydawgrentals.com
 
+# Sitemaps
+Sitemap: https://www.thirstydawgrentals.com/sitemap.xml

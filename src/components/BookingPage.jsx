@@ -51,8 +51,8 @@ export default function BookingPage() {
   return (
     <div style={{ backgroundColor: '#009fdb', padding: '3rem 1rem', minHeight: '100vh' }}>
       {/* Away Message */}
-      <div style={{ maxWidth: '720px', margin: '0 auto', marginBottom: '1rem', padding: '1rem', backgroundColor: '#fff3cd', color: '#856404', border: '2px solid #ffeeba', borderRadius: '1rem', fontSize: '1.1rem' }}>
-        ⚠️ We’re unavailable for bookings from <strong>May 20–June 1, 2025</strong>. Please choose a different date.
+      <div style={{ maxWidth: '720px', margin: '0 auto', marginBottom: '1rem', padding: '1rem', backgroundColor: '#fff8e1', color: '#8a6d3b', border: '2px solid #ffe0b2', borderRadius: '1rem', fontSize: '1.1rem' }}>
+        💛 Heads up! We’ll be out of town from <strong>May 20 to June 1</strong> and won’t be taking bookings during that time. We’d love to help with your event on a different date — thanks for understanding!
       </div>
 
       <form
