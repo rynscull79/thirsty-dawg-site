@@ -14,8 +14,12 @@ export const metadata = {
   title: 'Thirsty Dawg Rentals | Frozen Drink Machine Rentals in Pensacola',
   description:
     'Book a frozen margarita or slushie machine for your next party or event in Pensacola. Delivery, setup, and delicious drinks included.',
-  robots: 'index, follow'
+  robots: 'index, follow',
+  icons: {
+    icon: '/favicon.png'
+  }
 };
+
 
 export const viewport = {
   width: 'device-width',
