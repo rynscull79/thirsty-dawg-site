@@ -33,7 +33,7 @@ export default function BookingPage() {
   const handleDateChange = (e) => {
     const selectedDate = new Date(e.target.value);
     if (selectedDate >= blockedStart && selectedDate <= blockedEnd) {
-      alert('We\u2019re unavailable for bookings from May 20\u2013June 1. Please choose another date.');
+      alert("Hey there! We’re taking a short break from May 20 to June 1 and won’t be taking bookings during that time. Please pick a different date — we can’t wait to help with your event!");
       e.target.value = '';
     }
   };
@@ -50,11 +50,6 @@ export default function BookingPage() {
 
   return (
     <div style={{ backgroundColor: '#009fdb', padding: '3rem 1rem', minHeight: '100vh' }}>
-      {/* Away Message */}
-      <div style={{ maxWidth: '720px', margin: '0 auto', marginBottom: '1rem', padding: '1rem', backgroundColor: '#fff8e1', color: '#8a6d3b', border: '2px solid #ffe0b2', borderRadius: '1rem', fontSize: '1.1rem' }}>
-        💛 Heads up! We’ll be out of town from <strong>May 20 to June 1</strong> and won’t be taking bookings during that time. We’d love to help with your event on a different date — thanks for understanding!
-      </div>
-
       <form
         onSubmit={handleSubmit}
         className="font-chewy shadow-md"
