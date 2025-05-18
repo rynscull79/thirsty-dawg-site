@@ -26,6 +26,18 @@ export default function BookingPage() {
     }
   };
 
+  // Date blocking logic
+  const blockedStart = new Date('2025-05-20');
+  const blockedEnd = new Date('2025-06-01');
+
+  const handleDateChange = (e) => {
+    const selectedDate = new Date(e.target.value);
+    if (selectedDate >= blockedStart && selectedDate <= blockedEnd) {
+      alert('We\u2019re unavailable for bookings from May 20\u2013June 1. Please choose another date.');
+      e.target.value = '';
+    }
+  };
+
   if (submitted) {
     return (
       <div id="successMessage" className="max-w-xl mx-auto p-6 border-4 border-green-600 bg-green-100 rounded-2xl text-center text-green-900 font-chewy text-xl mt-10">
@@ -38,6 +50,11 @@ export default function BookingPage() {
 
   return (
     <div style={{ backgroundColor: '#009fdb', padding: '3rem 1rem', minHeight: '100vh' }}>
+      {/* Away Message */}
+      <div style={{ maxWidth: '720px', margin: '0 auto', marginBottom: '1rem', padding: '1rem', backgroundColor: '#fff3cd', color: '#856404', border: '2px solid #ffeeba', borderRadius: '1rem', fontSize: '1.1rem' }}>
+        ⚠️ We’re unavailable for bookings from <strong>May 20–June 1, 2025</strong>. Please choose a different date.
+      </div>
+
       <form
         onSubmit={handleSubmit}
         className="font-chewy shadow-md"
@@ -73,6 +90,7 @@ export default function BookingPage() {
               name={name}
               type={type}
               required
+              onChange={name === 'date_needed' ? handleDateChange : undefined}
             />
           </div>
         ))}
