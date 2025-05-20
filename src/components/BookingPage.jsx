@@ -31,11 +31,17 @@ export default function BookingPage() {
   const blockedEnd = new Date('2025-06-01');
 
   const handleDateChange = (e) => {
-    const selectedDate = new Date(e.target.value);
-    if (selectedDate >= blockedStart && selectedDate <= blockedEnd) {
-      alert("Hey there! We’re taking a short break from May 20 to June 1 and won’t be taking bookings during that time. Please pick a different date — we can’t wait to help with your event!");
-      e.target.value = '';
-    }
+    setTimeout(() => {
+      const value = e.target.value;
+      if (!value) return;
+
+      const selectedDate = new Date(value);
+
+      if (selectedDate >= blockedStart && selectedDate <= blockedEnd) {
+        alert("Hey there! We’re taking a short break from May 20 to June 1 and won’t be taking bookings during that time. Please pick a different date — we can’t wait to help with your event!");
+        e.target.value = '';
+      }
+    }, 200);
   };
 
   if (submitted) {
