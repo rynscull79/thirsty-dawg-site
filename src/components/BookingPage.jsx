@@ -30,19 +30,20 @@ export default function BookingPage() {
   const blockedStart = new Date('2025-05-20');
   const blockedEnd = new Date('2025-06-01');
 
-  const handleDateChange = (e) => {
-    setTimeout(() => {
-      const value = e.target.value;
-      if (!value) return;
+const handleDateChange = (e) => {
+  const value = e.target.value;
+  if (!value) return;
 
-      const selectedDate = new Date(value);
+  const selectedDate = new Date(value);
+  const blockedStart = new Date('2025-05-20');
+  const blockedEnd = new Date('2025-06-01');
 
-      if (selectedDate >= blockedStart && selectedDate <= blockedEnd) {
-        alert("Hey there! We’re taking a short break from May 20 to June 1 and won’t be taking bookings during that time. Please pick a different date — we can’t wait to help with your event!");
-        e.target.value = '';
-      }
-    }, 200);
-  };
+  if (selectedDate >= blockedStart && selectedDate <= blockedEnd) {
+    alert("Hey there! We’re taking a short break from May 20 to June 1 and won’t be taking bookings during that time. Please pick a different date — we can’t wait to help with your event!");
+    e.target.value = '';
+  }
+};
+
 
   if (submitted) {
     return (
@@ -91,7 +92,7 @@ export default function BookingPage() {
               name={name}
               type={type}
               required
-              onChange={name === 'date_needed' ? handleDateChange : undefined}
+              onBlur={name === 'date_needed' ? handleDateChange : undefined}
             />
           </div>
         ))}
