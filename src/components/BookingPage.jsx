@@ -11,7 +11,7 @@ const handleSubmit = async (e) => {
   const data = Object.fromEntries(new FormData(form).entries());
 
   try {
-    const response = await fetch('http://localhost:4000/api/bookings', {
+    const response = await fetch('https://booking-backend-production-5dba.up.railway.app/api/bookings', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
