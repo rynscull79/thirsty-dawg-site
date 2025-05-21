@@ -5,26 +5,31 @@ import React, { useState } from 'react';
 export default function BookingPage() {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const data = Object.fromEntries(new FormData(form).entries());
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const data = Object.fromEntries(new FormData(form).entries());
 
-    const response = await fetch('/api/send-booking', {
+  try {
+    const response = await fetch('http://localhost:4000/api/bookings', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     });
 
-    if (response.ok) {
+    const result = await response.json();
+    if (result.success) {
+      console.log('✅ Booking sent successfully:', result);
       setSubmitted(true);
-      setTimeout(() => {
-        document.getElementById('successMessage')?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
     } else {
-      alert('❌ Something went wrong. Please try again.');
+      alert('⚠️ Failed to send booking. Try again.');
     }
-  };
+  } catch (err) {
+    console.error('Error sending booking:', err);
+    alert('❌ Something went wrong. Please try again.');
+  }
+};
+
 
   // Date blocking logic
   const blockedStart = new Date('2025-05-20');
