@@ -128,28 +128,19 @@ const handleSave = async (id) => {
 };
 
 const filteredBookings = useMemo(() => {
-    console.log('📆 Filtered:', {
-  month: filterMonth,
-  year: filterYear,
-  total: bookings.length,
-  filtered: bookings.filter((b) => {
-    const localDate = new Date(b.dateNeeded);
-    return localDate.getMonth() + 1 === Number(filterMonth);
-  }).length,
-});
-
   return bookings.filter((b) => {
     const localDate = new Date(b.dateNeeded);
+    console.log('📅 Booking dateNeeded:', b.dateNeeded, '→ Parsed as:', localDate);
+
     const bookingMonth = localDate.getMonth() + 1;
     const bookingYear = localDate.getFullYear();
+
     const monthMatch = filterMonth ? bookingMonth === Number(filterMonth) : true;
     const yearMatch = filterYear ? bookingYear === Number(filterYear) : true;
+
     return monthMatch && yearMatch;
   });
 }, [bookings, filterMonth, filterYear]);
-
-
-
 
   const months = [...Array(12).keys()].map(i => ({
     label: new Date(0, i).toLocaleString('default', { month: 'long' }),
