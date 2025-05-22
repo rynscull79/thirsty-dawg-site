@@ -63,9 +63,11 @@ const fetchBookings = async () => {
 const handleEdit = (b) => {
   setEditingId(b.id);
   setFormData({
-    ...b,
-    dateNeeded: new Date(b.dateNeeded).toISOString().split('T')[0], // ensure correct format for input type="date"
-  });
+  ...b,
+  secondFlavor: b.secondFlavor || '',
+  dateNeeded: new Date(b.dateNeeded).toISOString().split('T')[0],
+});
+
 };
 
 
@@ -83,6 +85,7 @@ const handleSave = async (id) => {
       rentalLength: formData.rentalLength || '',
       machineType: formData.machineType || '',
       flavor: formData.flavor || '',
+      secondFlavor: formData.secondFlavor || '',
       flavorAdditions: formData.flavorAdditions || '',
       comments: formData.comments || '',
       adminComment: formData.adminComment || '',
@@ -219,6 +222,7 @@ onChange={(e) => setShowArchived(e.target.checked)}
                 <th>Rental</th>
                 <th>Machine</th>
                 <th>Flavor</th>
+                <th>2nd Flavor</th>
                 <th>Additions</th>
                 <th>Comments</th>
                 <th>Admin Notes</th>
@@ -275,6 +279,18 @@ onChange={(e) => setShowArchived(e.target.checked)}
                         ))}
                       </select>
                     ) : b.flavor}</td>
+                    <td>
+  {isEditing ? (
+    <select value={formData.secondFlavor || ''} onChange={(e) => handleChange('secondFlavor', e.target.value)}>
+      {['', 'Blue Hawaiian', 'Bushwacker +$5', 'Frosé', 'Grape', 'Lemonade', 'Lime Margarita', 'Louisianna Hurricane', 'Mango Daiquiri', 'Mango Margarita', 'Orange Dreamsicle', 'Peach Belini', 'Peach Daiquiri', 'Pina Colada', 'Pink Lemonade', 'Strawberry Daiquiri', 'Strawberry Margarita', 'Watermelon'].map(opt => (
+        <option key={opt} value={opt}>{opt || 'None'}</option>
+      ))}
+    </select>
+  ) : (
+    b.secondFlavor || ''
+  )}
+</td>
+
                     <td>{isEditing ? (
                       <select value={formData.flavorAdditions || ''} onChange={(e) => handleChange('flavorAdditions', e.target.value)}>
                         {['', 'Strawberry', 'Peach', 'Watermelon', 'Mango'].map(opt => (
