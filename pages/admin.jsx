@@ -129,11 +129,14 @@ const handleSave = async (id) => {
 const filteredBookings = useMemo(() => {
   return bookings.filter((b) => {
     const localDate = new Date(b.dateNeeded);
-    const monthMatch = filterMonth ? localDate.getMonth() + 1 === parseInt(filterMonth) : true;
-    const yearMatch = filterYear ? localDate.getFullYear() === parseInt(filterYear) : true;
+    const bookingMonth = localDate.getMonth() + 1;
+    const bookingYear = localDate.getFullYear();
+    const monthMatch = filterMonth ? bookingMonth === Number(filterMonth) : true;
+    const yearMatch = filterYear ? bookingYear === Number(filterYear) : true;
     return monthMatch && yearMatch;
   });
 }, [bookings, filterMonth, filterYear]);
+
 
 
 
