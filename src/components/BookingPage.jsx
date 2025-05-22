@@ -2,8 +2,12 @@
 
 import React, { useState } from 'react';
 
+
 export default function BookingPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [machineType, setMachineType] = useState('');
+const [secondFlavor, setSecondFlavor] = useState('');
+
 
 const handleSubmit = async (e) => {
   e.preventDefault();
@@ -24,7 +28,7 @@ const handleSubmit = async (e) => {
     machineType: raw.machine_type,
     flavor: raw.flavor,
     flavorAdditions: raw.flavor_additions || '',
-    comments: raw.comments || '',
+    secondFlavor: raw.second_flavor || '',
   };
 
   try {
@@ -131,11 +135,18 @@ const handleDateChange = (e) => {
 
         <div className="mb-6">
           <label className="block mb-1 text-lg" htmlFor="machine_type">Machine Requested</label>
-          <select name="machine_type" className="w-full p-3 rounded-xl border border-gray-300 shadow-inner text-base" required>
-            {['Stainless Single Flavor - $185', 'Stainless Dual Flavor - $240', 'Plastic Dual Flavor - $210'].map(option => (
-              <option key={option}>{option}</option>
-            ))}
-          </select>
+          <select
+  name="machine_type"
+  value={machineType}
+  onChange={(e) => setMachineType(e.target.value)}
+  className="w-full p-3 rounded-xl border border-gray-300 shadow-inner text-base"
+  required
+>
+  {['Stainless Single Flavor - $185', 'Stainless Dual Flavor - $240', 'Plastic Dual Flavor - $210'].map(option => (
+    <option key={option}>{option}</option>
+  ))}
+</select>
+
         </div>
 
         <div className="mb-6">
@@ -146,6 +157,22 @@ const handleDateChange = (e) => {
             ))}
           </select>
         </div>
+{machineType.includes('Dual') && (
+  <div className="mb-6">
+    <label className="block mb-1 text-lg" htmlFor="second_flavor">Second Flavor</label>
+    <select
+      name="second_flavor"
+      value={secondFlavor}
+      onChange={(e) => setSecondFlavor(e.target.value)}
+      className="w-full p-3 rounded-xl border border-gray-300 shadow-inner text-base"
+      required
+    >
+      {[ 'Blue Hawaiian', 'Bushwacker +$5', 'Frosé', 'Grape', 'Lemonade', 'Lime Margarita', 'Louisianna Hurricane', 'Mango Daiquiri', 'Mango Margarita', 'Orange Dreamsicle', 'Peach Belini', 'Peach Daiquiri', 'Pina Colada', 'Pink Lemonade', 'Strawberry Daiquiri', 'Strawberry Margarita', 'Watermelon' ].map(option => (
+        <option key={option}>{option}</option>
+      ))}
+    </select>
+  </div>
+)}
 
         <div className="mb-6">
           <label className="block mb-1 text-lg" htmlFor="flavor_additions">Flavor Additions (Pair with Margarita)</label>
