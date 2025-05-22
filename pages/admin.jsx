@@ -138,7 +138,7 @@ const filteredBookings = bookings.filter((b) => {
     label: new Date(0, i).toLocaleString('default', { month: 'long' }),
     value: i + 1,
   }));
-  const years = [...new Set(bookings.map(b => new Date(b.dateNeeded).getFullYear()))];
+  const years = [...new Set(bookings.map(b => new Date(b.dateNeeded).getFullYear()))].sort((a, b) => b - a);
 
   if (!authenticated) {
     return (
