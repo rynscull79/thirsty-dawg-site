@@ -51,19 +51,29 @@ export default function AdminPage() {
     setFormData({ ...b });
   };
 
-  const handleSave = async (id) => {
-    try {
-      await fetch(`https://booking-backend-production-5dba.up.railway.app/api/bookings/${id}`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-      setEditingId(null);
-      fetchBookings(); // refresh
-    } catch (err) {
-      alert('Failed to save booking.');
-    }
-  };
+const handleSave = async (id) => {
+  try {
+    // If dateNeeded exists and is just a date (no time), anchor to noon UTC
+    const updatedData = {
+      ...formData,
+      dateNeeded: formData.dateNeeded.includes('T')
+        ? formData.dateNeeded
+        : new Date(`${formData.dateNeeded}T12:00:00Z`).toISOString()
+    };
+
+    await fetch(`https://booking-backend-production-5dba.up.railway.app/api/bookings/${id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(updatedData),
+    });
+
+    setEditingId(null);
+    fetchBookings(); // refresh updated list
+  } catch (err) {
+    alert('Failed to save booking.');
+  }
+};
+
 
   const deleteBooking = async (id) => {
     if (!window.confirm('Are you sure you want to delete this booking?')) return;
@@ -174,7 +184,8 @@ export default function AdminPage() {
                           onChange={(e) => handleChange('dateNeeded', new Date(e.target.value).toISOString())}
                         />
                       ) : (
-                        new Date(b.dateNeeded).toLocaleDateString()
+                        new Date(b.dateNeeded).toLocaleDateString('en-US', { timeZone: 'UTC' })
+
                       )}
                     </td>
                     <td>{isEditing ? <input value={formData.name} onChange={(e) => handleChange('name', e.target.value)} /> : b.name}</td>
