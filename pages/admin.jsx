@@ -43,6 +43,36 @@ export default function AdminPage() {
     }
   };
 
+  const handleCommentChange = (id, value) => {
+    setBookings((prev) =>
+      prev.map((b) => (b.id === id ? { ...b, adminComment: value } : b))
+    );
+  };
+
+  const saveComment = async (id, comment) => {
+    try {
+      await fetch(`https://booking-backend-production-5dba.up.railway.app/api/bookings/${id}/comment`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ adminComment: comment }),
+      });
+    } catch (err) {
+      alert('Failed to save comment.');
+    }
+  };
+
+  const deleteBooking = async (id) => {
+    if (!window.confirm('Are you sure you want to delete this booking?')) return;
+    try {
+      await fetch(`https://booking-backend-production-5dba.up.railway.app/api/bookings/${id}`, {
+        method: 'DELETE',
+      });
+      setBookings((prev) => prev.filter((b) => b.id !== id));
+    } catch (err) {
+      alert('Failed to delete booking.');
+    }
+  };
+
   if (!authenticated) {
     return (
       <div className={styles.loginContainer}>
@@ -74,21 +104,44 @@ export default function AdminPage() {
               <tr>
                 <th>Date</th>
                 <th>Name</th>
-                <th>City</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>City/State/ZIP</th>
+                <th>Guests</th>
                 <th>Machine</th>
                 <th>Flavor</th>
-                <th>Guests</th>
+                <th>Additions</th>
+                <th>Customer Comments</th>
+                <th>Admin Notes</th>
+                <th>Delete</th>
               </tr>
             </thead>
             <tbody>
               {bookings.map((b) => (
                 <tr key={b.id}>
-                  <td>{new Date(b.dateNeeded).toLocaleDateString()}</td>
+                  <td>{new Date(b.dateNeeded).toLocaleDateString('en-US', { timeZone: 'UTC' })}</td>
                   <td>{b.name}</td>
-                  <td>{b.city}</td>
+                  <td>{b.phone}</td>
+                  <td>{b.email}</td>
+                  <td>{b.street}</td>
+                  <td>{b.city}, {b.state} {b.zip}</td>
+                  <td>{b.guestCount}</td>
                   <td>{b.machineType}</td>
                   <td>{b.flavor}</td>
-                  <td>{b.guestCount}</td>
+                  <td>{b.flavorAdditions}</td>
+                  <td>{b.comments}</td>
+                  <td>
+                    <textarea
+                      rows="2"
+                      value={b.adminComment || ''}
+                      onChange={(e) => handleCommentChange(b.id, e.target.value)}
+                    />
+                    <button onClick={() => saveComment(b.id, b.adminComment)}>💾</button>
+                  </td>
+                  <td>
+                    <button onClick={() => deleteBooking(b.id)}>🗑️</button>
+                  </td>
                 </tr>
               ))}
             </tbody>
