@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import styles from '../styles/Admin.module.css';
 
 export default function AdminPage() {
@@ -126,12 +126,15 @@ const handleSave = async (id) => {
   }));
 };
 
-const filteredBookings = bookings.filter((b) => {
-  const localDate = new Date(b.dateNeeded); // ensures local time is used
-  const monthMatch = filterMonth ? localDate.getMonth() + 1 === parseInt(filterMonth) : true;
-  const yearMatch = filterYear ? localDate.getFullYear() === parseInt(filterYear) : true;
-  return monthMatch && yearMatch;
-});
+const filteredBookings = useMemo(() => {
+  return bookings.filter((b) => {
+    const localDate = new Date(b.dateNeeded);
+    const monthMatch = filterMonth ? localDate.getMonth() + 1 === parseInt(filterMonth) : true;
+    const yearMatch = filterYear ? localDate.getFullYear() === parseInt(filterYear) : true;
+    return monthMatch && yearMatch;
+  });
+}, [bookings, filterMonth, filterYear]);
+
 
 
   const months = [...Array(12).keys()].map(i => ({
