@@ -43,11 +43,12 @@ const fetchBookings = async () => {
 };
 
 
-  useEffect(() => {
-    if (authenticated) {
-      fetchBookings();
-    }
-  }, [authenticated]);
+ useEffect(() => {
+  if (authenticated) {
+    fetchBookings();
+  }
+}, [authenticated, showArchived]);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -165,11 +166,8 @@ const handleSave = async (id) => {
   <input
     type="checkbox"
     checked={showArchived}
-onChange={(e) => {
-  const checked = e.target.checked;
-  setShowArchived(checked);
-  setTimeout(() => fetchBookings(), 100); // slight delay ensures state is set
-}}
+onChange={(e) => setShowArchived(e.target.checked)}
+
 
   />
   {' '}Show Archived Bookings
