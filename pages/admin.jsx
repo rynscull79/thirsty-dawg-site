@@ -11,25 +11,33 @@ export default function AdminPage() {
   const [error, setError] = useState('');
   const [filterMonth, setFilterMonth] = useState('');
   const [filterYear, setFilterYear] = useState('');
+const [showArchived, setShowArchived] = useState(false);
 
   const correctPassword = 'Bamafan79@';
 
-  const fetchBookings = async () => {
-    setLoading(true);
-    setError('');
-    try {
-      const res = await fetch('https://booking-backend-production-5dba.up.railway.app/api/bookings/all');
-      const data = await res.json();
-      if (data.success) {
-        setBookings(data.bookings);
-      } else {
-        setError('Failed to fetch bookings.');
-      }
-    } catch (err) {
-      setError('Error fetching data.');
+const fetchBookings = async () => {
+  setLoading(true);
+  setError('');
+
+  const endpoint = showArchived
+    ? 'https://booking-backend-production-5dba.up.railway.app/api/bookings/archive'
+    : 'https://booking-backend-production-5dba.up.railway.app/api/bookings/all';
+
+  try {
+    const res = await fetch(endpoint);
+    const data = await res.json();
+    if (data.success) {
+      setBookings(data.bookings);
+    } else {
+      setError('Failed to fetch bookings.');
     }
-    setLoading(false);
-  };
+  } catch (err) {
+    setError('Error fetching data.');
+  }
+
+  setLoading(false);
+};
+
 
   useEffect(() => {
     if (authenticated) {
@@ -149,6 +157,18 @@ const handleSave = async (id) => {
       <h1>Booking Dashboard</h1>
 
       <div style={{ marginBottom: '1rem' }}>
+        <label style={{ marginRight: '1rem' }}>
+  <input
+    type="checkbox"
+    checked={showArchived}
+    onChange={(e) => {
+      setShowArchived(e.target.checked);
+      fetchBookings(); // Re-fetch when toggled
+    }}
+  />
+  {' '}Show Archived Bookings
+</label>
+
         <label>
           Filter by Month:{' '}
           <select onChange={(e) => setFilterMonth(e.target.value)} value={filterMonth}>
