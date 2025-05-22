@@ -87,9 +87,12 @@ const handleSave = async (id) => {
     }
   };
 
-  const handleChange = (field, value) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
-  };
+ const handleChange = (field, value) => {
+  setFormData((prev) => ({
+    ...prev,
+    [field]: typeof value === 'string' ? value : value || '',
+  }));
+};
 
   const filteredBookings = bookings.filter((b) => {
     const date = new Date(b.dateNeeded);
