@@ -29,6 +29,7 @@ const handleSubmit = async (e) => {
     flavor: raw.flavor,
     flavorAdditions: raw.flavor_additions || '',
     secondFlavor: raw.second_flavor || '',
+    comments: raw.comments || '',
   };
 
   try {
