@@ -126,12 +126,13 @@ const handleSave = async (id) => {
   }));
 };
 
-  const filteredBookings = bookings.filter((b) => {
-    const date = new Date(b.dateNeeded);
-    const monthMatch = filterMonth ? date.getMonth() + 1 === parseInt(filterMonth) : true;
-    const yearMatch = filterYear ? date.getFullYear() === parseInt(filterYear) : true;
-    return monthMatch && yearMatch;
-  });
+const filteredBookings = bookings.filter((b) => {
+  const localDate = new Date(b.dateNeeded); // ensures local time is used
+  const monthMatch = filterMonth ? localDate.getMonth() + 1 === parseInt(filterMonth) : true;
+  const yearMatch = filterYear ? localDate.getFullYear() === parseInt(filterYear) : true;
+  return monthMatch && yearMatch;
+});
+
 
   const months = [...Array(12).keys()].map(i => ({
     label: new Date(0, i).toLocaleString('default', { month: 'long' }),
