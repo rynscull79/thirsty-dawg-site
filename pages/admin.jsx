@@ -23,6 +23,10 @@ const fetchBookings = async () => {
     ? 'https://booking-backend-production-5dba.up.railway.app/api/bookings/archive'
     : 'https://booking-backend-production-5dba.up.railway.app/api/bookings/all';
 
+  // Force small delay to allow backend to finish archiving updates
+  await new Promise((res) => setTimeout(res, 300));
+
+
   try {
     const res = await fetch(endpoint);
     const data = await res.json();
@@ -161,10 +165,12 @@ const handleSave = async (id) => {
   <input
     type="checkbox"
     checked={showArchived}
-    onChange={(e) => {
-      setShowArchived(e.target.checked);
-      fetchBookings(); // Re-fetch when toggled
-    }}
+onChange={(e) => {
+  const checked = e.target.checked;
+  setShowArchived(checked);
+  setTimeout(() => fetchBookings(), 100); // slight delay ensures state is set
+}}
+
   />
   {' '}Show Archived Bookings
 </label>
