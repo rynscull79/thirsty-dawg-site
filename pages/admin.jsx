@@ -62,11 +62,13 @@ const fetchBookings = async () => {
 
 const handleEdit = (b) => {
   setEditingId(b.id);
-  setFormData({
+setFormData({
   ...b,
   secondFlavor: b.secondFlavor || '',
+  comments: b.comments || '',
   dateNeeded: new Date(b.dateNeeded).toISOString().split('T')[0],
 });
+
 
 };
 
