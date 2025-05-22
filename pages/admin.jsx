@@ -46,25 +46,27 @@ export default function AdminPage() {
     }
   };
 
-  const handleEdit = (b) => {
-    setEditingId(b.id);
-    setFormData({ ...b });
-  };
+const handleEdit = (b) => {
+  setEditingId(b.id);
+  setFormData({
+    ...b,
+    dateNeeded: new Date(b.dateNeeded).toISOString().split('T')[0], // ensure correct format for input type="date"
+  });
+};
+
 
 const handleSave = async (id) => {
   try {
-    // If dateNeeded exists and is just a date (no time), anchor to noon UTC
-    const updatedData = {
+    const payload = {
       ...formData,
-      dateNeeded: formData.dateNeeded.includes('T')
-        ? formData.dateNeeded
-        : new Date(`${formData.dateNeeded}T12:00:00Z`).toISOString()
+      guestCount: parseInt(formData.guestCount),
+      dateNeeded: new Date(`${formData.dateNeeded}T12:00:00Z`).toISOString(), // fix timezone offset
     };
 
     await fetch(`https://booking-backend-production-5dba.up.railway.app/api/bookings/${id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(updatedData),
+      body: JSON.stringify(payload),
     });
 
     setEditingId(null);
@@ -73,6 +75,7 @@ const handleSave = async (id) => {
     alert('Failed to save booking.');
   }
 };
+
 
 
   const deleteBooking = async (id) => {
