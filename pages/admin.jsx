@@ -43,21 +43,18 @@ export default function AdminPage() {
     }
   };
 
-  const handleCommentChange = (id, value) => {
-    setBookings((prev) =>
-      prev.map((b) => (b.id === id ? { ...b, adminComment: value } : b))
-    );
-  };
-
-  const saveComment = async (id, comment) => {
+  const updateBooking = async (id, field, value) => {
     try {
-      await fetch(`https://booking-backend-production-5dba.up.railway.app/api/bookings/${id}/comment`, {
+      await fetch(`https://booking-backend-production-5dba.up.railway.app/api/bookings/${id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ adminComment: comment }),
+        body: JSON.stringify({ [field]: value }),
       });
+      setBookings((prev) =>
+        prev.map((b) => (b.id === id ? { ...b, [field]: value } : b))
+      );
     } catch (err) {
-      alert('Failed to save comment.');
+      alert('Failed to save update.');
     }
   };
 
@@ -72,6 +69,28 @@ export default function AdminPage() {
       alert('Failed to delete booking.');
     }
   };
+
+  const renderInput = (b, field, type = 'text') => (
+    <input
+      type={type}
+      value={b[field] || ''}
+      onChange={(e) => updateBooking(b.id, field, type === 'number' ? parseInt(e.target.value) : e.target.value)}
+      onBlur={(e) => updateBooking(b.id, field, e.target.value)}
+      className={styles.editInput}
+    />
+  );
+
+  const renderSelect = (b, field, options) => (
+    <select
+      value={b[field] || ''}
+      onChange={(e) => updateBooking(b.id, field, e.target.value)}
+      className={styles.editInput}
+    >
+      {options.map((o) => (
+        <option key={o} value={o}>{o}</option>
+      ))}
+    </select>
+  );
 
   if (!authenticated) {
     return (
@@ -106,9 +125,12 @@ export default function AdminPage() {
                 <th>Name</th>
                 <th>Phone</th>
                 <th>Email</th>
-                <th>Address</th>
-                <th>City/State/ZIP</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>State</th>
+                <th>ZIP</th>
                 <th>Guests</th>
+                <th>Rental</th>
                 <th>Machine</th>
                 <th>Flavor</th>
                 <th>Additions</th>
@@ -120,25 +142,28 @@ export default function AdminPage() {
             <tbody>
               {bookings.map((b) => (
                 <tr key={b.id}>
-                  <td>{new Date(b.dateNeeded).toLocaleDateString('en-US', { timeZone: 'UTC' })}</td>
-                  <td>{b.name}</td>
-                  <td>{b.phone}</td>
-                  <td>{b.email}</td>
-                  <td>{b.street}</td>
-                  <td>{b.city}, {b.state} {b.zip}</td>
-                  <td>{b.guestCount}</td>
-                  <td>{b.machineType}</td>
-                  <td>{b.flavor}</td>
-                  <td>{b.flavorAdditions}</td>
-                  <td>{b.comments}</td>
                   <td>
-                    <textarea
-                      rows="2"
-                      value={b.adminComment || ''}
-                      onChange={(e) => handleCommentChange(b.id, e.target.value)}
+                    <input
+                      type="date"
+                      value={new Date(b.dateNeeded).toISOString().split('T')[0]}
+                      onChange={(e) => updateBooking(b.id, 'dateNeeded', new Date(e.target.value).toISOString())}
+                      className={styles.editInput}
                     />
-                    <button onClick={() => saveComment(b.id, b.adminComment)}>💾</button>
                   </td>
+                  <td>{renderInput(b, 'name')}</td>
+                  <td>{renderInput(b, 'phone')}</td>
+                  <td>{renderInput(b, 'email')}</td>
+                  <td>{renderInput(b, 'street')}</td>
+                  <td>{renderInput(b, 'city')}</td>
+                  <td>{renderInput(b, 'state')}</td>
+                  <td>{renderInput(b, 'zip')}</td>
+                  <td>{renderInput(b, 'guestCount', 'number')}</td>
+                  <td>{renderSelect(b, 'rentalLength', ['Single Day Rental', '2 Day Rental', '3 Day Rental', '4 Day Rental', '5 Day Rental'])}</td>
+                  <td>{renderSelect(b, 'machineType', ['Stainless Single Flavor - $185', 'Stainless Dual Flavor - $240', 'Plastic Dual Flavor - $210'])}</td>
+                  <td>{renderSelect(b, 'flavor', ['Blue Hawaiian', 'Bushwacker +$5', 'Frosé', 'Grape', 'Lemonade', 'Lime Margarita', 'Louisianna Hurricane', 'Mango Daiquiri', 'Mango Margarita', 'Orange Dreamsicle', 'Peach Belini', 'Peach Daiquiri', 'Pina Colada', 'Pink Lemonade', 'Strawberry Daiquiri', 'Strawberry Margarita', 'Watermelon'])}</td>
+                  <td>{renderSelect(b, 'flavorAdditions', ['', 'Strawberry', 'Peach', 'Watermelon', 'Mango'])}</td>
+                  <td>{renderInput(b, 'comments')}</td>
+                  <td>{renderInput(b, 'adminComment')}</td>
                   <td>
                     <button onClick={() => deleteBooking(b.id)}>🗑️</button>
                   </td>
