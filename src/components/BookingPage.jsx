@@ -8,7 +8,24 @@ export default function BookingPage() {
 const handleSubmit = async (e) => {
   e.preventDefault();
   const form = e.target;
-  const data = Object.fromEntries(new FormData(form).entries());
+  const raw = Object.fromEntries(new FormData(form).entries());
+
+  const data = {
+    name: raw.name,
+    email: raw.email,
+    phone: raw.phone,
+    street: raw.street,
+    city: raw.city,
+    state: raw.state,
+    zip: raw.zip,
+    dateNeeded: new Date(raw.date_needed).toISOString(),
+    guestCount: parseInt(raw.guest_count),
+    rentalLength: raw.rental_length,
+    machineType: raw.machine_type,
+    flavor: raw.flavor,
+    flavorAdditions: raw.flavor_additions || '',
+    comments: raw.comments || '',
+  };
 
   try {
     const response = await fetch('https://booking-backend-production-5dba.up.railway.app/api/bookings', {
@@ -29,6 +46,7 @@ const handleSubmit = async (e) => {
     alert('❌ Something went wrong. Please try again.');
   }
 };
+
 
 
   // Date blocking logic
