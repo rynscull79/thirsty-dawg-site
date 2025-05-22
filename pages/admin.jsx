@@ -32,6 +32,7 @@ const fetchBookings = async () => {
     const data = await res.json();
     if (data.success) {
       setBookings(data.bookings);
+      console.log('📦 Raw bookings:', data.bookings);
     } else {
       setError('Failed to fetch bookings.');
     }
