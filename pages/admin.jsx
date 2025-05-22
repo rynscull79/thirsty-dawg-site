@@ -58,26 +58,42 @@ const handleEdit = (b) => {
 const handleSave = async (id) => {
   try {
     const payload = {
-      ...formData,
-      guestCount: parseInt(formData.guestCount),
-      dateNeeded: new Date(`${formData.dateNeeded}T12:00:00Z`).toISOString(), // fix timezone offset
+      name: formData.name || '',
+      email: formData.email || '',
+      phone: formData.phone || '',
+      street: formData.street || '',
+      city: formData.city || '',
+      state: formData.state || '',
+      zip: formData.zip || '',
+      guestCount: parseInt(formData.guestCount) || 0,
+      rentalLength: formData.rentalLength || '',
+      machineType: formData.machineType || '',
+      flavor: formData.flavor || '',
+      flavorAdditions: formData.flavorAdditions || '',
+      comments: formData.comments || '',
+      adminComment: formData.adminComment || '',
+      dateNeeded: new Date(`${formData.dateNeeded}T12:00:00Z`).toISOString(), // fixes time shift
     };
 
-    await fetch(`https://booking-backend-production-5dba.up.railway.app/api/bookings/${id}`, {
+    const response = await fetch(`https://booking-backend-production-5dba.up.railway.app/api/bookings/${id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
     });
 
+    const result = await response.json();
+    if (!result.success) {
+      console.error(result.error);
+      alert('Failed to save changes. See console for details.');
+    }
+
     setEditingId(null);
-    fetchBookings(); // refresh updated list
+    fetchBookings(); // refresh view
   } catch (err) {
-    alert('Failed to save booking.');
+    console.error(err);
+    alert('Error saving booking.');
   }
 };
-
-
-
   const deleteBooking = async (id) => {
     if (!window.confirm('Are you sure you want to delete this booking?')) return;
     try {
