@@ -127,6 +127,16 @@ const handleSave = async (id) => {
 };
 
 const filteredBookings = useMemo(() => {
+    console.log('📆 Filtered:', {
+  month: filterMonth,
+  year: filterYear,
+  total: bookings.length,
+  filtered: bookings.filter((b) => {
+    const localDate = new Date(b.dateNeeded);
+    return localDate.getMonth() + 1 === Number(filterMonth);
+  }).length,
+});
+
   return bookings.filter((b) => {
     const localDate = new Date(b.dateNeeded);
     const bookingMonth = localDate.getMonth() + 1;
@@ -185,7 +195,7 @@ onChange={(e) => setShowArchived(e.target.checked)}
           <select onChange={(e) => setFilterMonth(e.target.value)} value={filterMonth}>
             <option value="">All</option>
             {months.map((m) => (
-              <option key={m.value} value={m.value}>{m.label}</option>
+              <option key={m.value} value={String(m.value)}>{m.label}</option>
             ))}
           </select>
         </label>{' '}
@@ -194,7 +204,7 @@ onChange={(e) => setShowArchived(e.target.checked)}
           <select onChange={(e) => setFilterYear(e.target.value)} value={filterYear}>
             <option value="">All</option>
             {years.map((y) => (
-              <option key={y} value={y}>{y}</option>
+              <option key={y} value={String(y)}>{y}</option>
             ))}
           </select>
         </label>
