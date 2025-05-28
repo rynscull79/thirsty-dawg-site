@@ -33,7 +33,7 @@ const handleSubmit = async (e) => {
   };
 
   try {
-    const response = await fetch('/api/bookings', {
+    const response = await fetch('/admin', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify(data),
