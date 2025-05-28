@@ -33,7 +33,7 @@ const handleSubmit = async (e) => {
   };
 
   try {
-    const response = await fetch('/admin', {
+    const response = await fetch('https://booking-backend-production-5dba.up.railway.app/api/bookings', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify(data),
