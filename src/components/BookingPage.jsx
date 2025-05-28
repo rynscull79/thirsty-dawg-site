@@ -33,8 +33,7 @@ const handleSubmit = async (e) => {
   };
 
   try {
-    const response = await fetch('https://booking-backend-production-5dba.up.railway.app/api/bookings', {
-      method: 'POST',
+    const response = await fetch('https://thirsty-dawg-backend-clean.up.railway.app/api/bookings/external-sync', {      method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     });
