@@ -33,7 +33,7 @@ const handleSubmit = async (e) => {
   };
 
   try {
-    const response = await fetch('https://thirsty-dawg-website-backend.up.railway.app/api/bookings', {
+    const response = await fetch('/api/bookings', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify(data),
