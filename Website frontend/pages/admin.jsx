@@ -20,9 +20,8 @@ const fetchBookings = async () => {
   setError('');
 
   const endpoint = showArchived
-  ? 'https://thirsty-dawg-backend-clean.up.railway.app/api/bookings/archive'
-  : 'https://thirsty-dawg-backend-clean.up.railway.app/api/bookings/all';
-
+    ? 'https://booking-backend-production-5dba.up.railway.app/api/bookings/archive'
+    : 'https://booking-backend-production-5dba.up.railway.app/api/bookings/all';
 
   // Force small delay to allow backend to finish archiving updates
   await new Promise((res) => setTimeout(res, 300));
@@ -95,7 +94,7 @@ const handleSave = async (id) => {
       dateNeeded: new Date(`${formData.dateNeeded}T12:00:00Z`).toISOString(), // fixes time shift
     };
 
-    const response = await fetch(`https://thirsty-dawg-backend-clean.up.railway.app/api/bookings/${id}`, {
+    const response = await fetch(`https://booking-backend-production-5dba.up.railway.app/api/bookings/${id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
@@ -117,7 +116,7 @@ const handleSave = async (id) => {
   const deleteBooking = async (id) => {
     if (!window.confirm('Are you sure you want to delete this booking?')) return;
     try {
-      await fetch(`https://thirsty-dawg-backend-clean.up.railway.app/api/bookings/${id}`, {
+      await fetch(`https://booking-backend-production-5dba.up.railway.app/api/bookings/${id}`, {
         method: 'DELETE',
       });
       setBookings((prev) => prev.filter((b) => b.id !== id));
