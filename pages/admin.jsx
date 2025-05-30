@@ -137,6 +137,19 @@ const handleSave = async (id) => {
 
 const filteredBookings = useMemo(() => {
   return bookings.filter((b) => {
+  const utcDate = new Date(b.dateNeeded);
+  const bookingMonth = utcDate.getUTCMonth() + 1;
+  const bookingYear = utcDate.getUTCFullYear();
+  const now = new Date();
+
+  const monthMatch = filterMonth ? bookingMonth === Number(filterMonth) : true;
+  const yearMatch = filterYear ? bookingYear === Number(filterYear) : true;
+
+  const isFuture = utcDate > now;
+  const showFuture = !showArchived;
+
+  return monthMatch && yearMatch && (!showFuture || isFuture);
+});
     const utcDate = new Date(b.dateNeeded);
 const bookingMonth = utcDate.getUTCMonth() + 1;
 const bookingYear = utcDate.getUTCFullYear();
@@ -243,7 +256,7 @@ onChange={(e) => setShowArchived(e.target.checked)}
               {filteredBookings.map((b) => {
                 const isEditing = editingId === b.id;
                 return (
-                  <tr key={b.id}>
+                  <tr key={b.id} className={new Date(b.dateNeeded) > new Date() ? styles.newBookingRow : ''}>
                     <td>
                       {isEditing ? (
                         <input
