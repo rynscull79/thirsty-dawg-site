@@ -193,7 +193,7 @@ const statusMatch = b.status === statusFilter;
     return monthMatch && yearMatch && statusMatch && (!showFuture || isFuture);
 
   });
-}, [bookings, filterMonth, filterYear, showArchived]);
+}, [bookings, filterMonth, filterYear, showArchived, statusFilter]);
   if (!authenticated) {
     return (
       <div className={styles.loginContainer}>
