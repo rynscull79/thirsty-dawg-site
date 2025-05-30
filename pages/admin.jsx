@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import styles from '../styles/Admin.module.css';
 
@@ -171,6 +172,11 @@ const bookingYear = utcDate.getUTCFullYear();
       </div>
     );
   }
+
+  <Head>
+  <title>Admin | Thirsty Dawg</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+</Head>
 
   return (
     <div className={styles.dashboard}>
