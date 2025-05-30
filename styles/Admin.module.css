@@ -71,3 +71,16 @@
 .table tr:hover {
   background-color: #f0f0f0;
 }
+.newBookingRow {
+  animation: flashRow 1s infinite alternate;
+  background-color: #fff3cd !important; /* Light yellow */
+}
+
+@keyframes flashRow {
+  from {
+    background-color: #fff3cd;
+  }
+  to {
+    background-color: #ffeeba;
+  }
+}

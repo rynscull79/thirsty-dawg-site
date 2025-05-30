@@ -257,9 +257,11 @@ onChange={(e) => setShowArchived(e.target.checked)}
             </thead>
             <tbody>
               {filteredBookings.map((b) => {
+                console.log(b.name, b.status);
+
                 const isEditing = editingId === b.id;
                 return (
-                  <tr key={b.id} className={new Date(b.dateNeeded) > new Date() ? styles.newBookingRow : ''}>
+                  <tr key={b.id} className={b.status === 'new' ? styles.newBookingRow : ''}>
                     <td>
                       {isEditing ? (
                         <input
