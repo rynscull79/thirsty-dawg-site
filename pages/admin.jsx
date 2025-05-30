@@ -13,6 +13,8 @@ export default function AdminPage() {
   const [filterMonth, setFilterMonth] = useState('');
   const [filterYear, setFilterYear] = useState('');
 const [showArchived, setShowArchived] = useState(false);
+const [statusFilter, setStatusFilter] = useState('new'); // Default to showing "new" bookings
+
 const months = [
   { value: 1, label: 'January' },
   { value: 2, label: 'February' },
@@ -134,6 +136,27 @@ const handleSave = async (id) => {
     alert('Error saving booking.');
   }
 };
+const markAsInvoiced = async (id) => {
+  try {
+    const response = await fetch(`https://booking-backend-production-b048.up.railway.app/api/bookings/${id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ status: 'invoiced' }),
+    });
+
+    const result = await response.json();
+    if (!result.success) {
+      console.error(result.error);
+      alert('Failed to update status.');
+    }
+
+    fetchBookings(); // Refresh view
+  } catch (err) {
+    console.error(err);
+    alert('Error marking as invoiced.');
+  }
+};
+
   const deleteBooking = async (id) => {
     if (!window.confirm('Are you sure you want to delete this booking?')) return;
     try {
@@ -162,11 +185,13 @@ const filteredBookings = useMemo(() => {
 
     const monthMatch = filterMonth ? bookingMonth === Number(filterMonth) : true;
     const yearMatch = filterYear ? bookingYear === Number(filterYear) : true;
+const statusMatch = b.status === statusFilter;
 
     const isFuture = utcDate > now;
     const showFuture = !showArchived;
 
-    return monthMatch && yearMatch && (!showFuture || isFuture);
+    return monthMatch && yearMatch && statusMatch && (!showFuture || isFuture);
+
   });
 }, [bookings, filterMonth, filterYear, showArchived]);
   if (!authenticated) {
@@ -199,6 +224,15 @@ const filteredBookings = useMemo(() => {
       <h1>Booking Dashboard</h1>
 
       <div style={{ marginBottom: '1rem' }}>
+        <div style={{ marginBottom: '1rem' }}>
+  <button onClick={() => setStatusFilter('new')} style={{ marginRight: '1rem' }}>
+    View New Bookings
+  </button>
+  <button onClick={() => setStatusFilter('invoiced')}>
+    View Invoiced Bookings
+  </button>
+</div>
+
         <label style={{ marginRight: '1rem' }}>
   <input
     type="checkbox"
@@ -328,14 +362,22 @@ onChange={(e) => setShowArchived(e.target.checked)}
                     ) : b.flavorAdditions}</td>
                     <td>{isEditing ? <textarea value={formData.comments || ''} onChange={(e) => handleChange('comments', e.target.value)} /> : b.comments}</td>
                     <td>{isEditing ? <textarea value={formData.adminComment || ''} onChange={(e) => handleChange('adminComment', e.target.value)} /> : b.adminComment}</td>
-                    <td>
-                      {isEditing ? (
-                        <button onClick={() => handleSave(b.id)}>💾 Save</button>
-                      ) : (
-                        <button onClick={() => handleEdit(b)}>✏️ Edit</button>
-                      )}
-                      <button onClick={() => deleteBooking(b.id)}>🗑️</button>
-                    </td>
+                   <td>
+  {isEditing ? (
+    <button onClick={() => handleSave(b.id)}>💾 Save</button>
+  ) : (
+    <>
+      <button onClick={() => handleEdit(b)}>✏️ Edit</button>
+      {b.status === 'new' && (
+        <button onClick={() => markAsInvoiced(b.id)} style={{ marginLeft: '0.5rem' }}>
+          ✅ Mark Invoiced
+        </button>
+      )}
+    </>
+  )}
+  <button onClick={() => deleteBooking(b.id)}>🗑️</button>
+</td>
+
                   </tr>
                 );
               })}
