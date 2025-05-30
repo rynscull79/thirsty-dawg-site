@@ -137,37 +137,20 @@ const handleSave = async (id) => {
 
 const filteredBookings = useMemo(() => {
   return bookings.filter((b) => {
-  const utcDate = new Date(b.dateNeeded);
-  const bookingMonth = utcDate.getUTCMonth() + 1;
-  const bookingYear = utcDate.getUTCFullYear();
-  const now = new Date();
-
-  const monthMatch = filterMonth ? bookingMonth === Number(filterMonth) : true;
-  const yearMatch = filterYear ? bookingYear === Number(filterYear) : true;
-
-  const isFuture = utcDate > now;
-  const showFuture = !showArchived;
-
-  return monthMatch && yearMatch && (!showFuture || isFuture);
-});
     const utcDate = new Date(b.dateNeeded);
-const bookingMonth = utcDate.getUTCMonth() + 1;
-const bookingYear = utcDate.getUTCFullYear();
-   
+    const bookingMonth = utcDate.getUTCMonth() + 1;
+    const bookingYear = utcDate.getUTCFullYear();
+    const now = new Date();
 
     const monthMatch = filterMonth ? bookingMonth === Number(filterMonth) : true;
     const yearMatch = filterYear ? bookingYear === Number(filterYear) : true;
 
-    return monthMatch && yearMatch;
+    const isFuture = utcDate > now;
+    const showFuture = !showArchived;
+
+    return monthMatch && yearMatch && (!showFuture || isFuture);
   });
-}, [bookings, filterMonth, filterYear]);
-
-  const months = [...Array(12).keys()].map(i => ({
-    label: new Date(0, i).toLocaleString('default', { month: 'long' }),
-    value: i + 1,
-  }));
-  const years = [...new Set(bookings.map(b => new Date(b.dateNeeded).getFullYear()))].sort((a, b) => b - a);
-
+}, [bookings, filterMonth, filterYear, showArchived]);
   if (!authenticated) {
     return (
       <div className={styles.loginContainer}>
@@ -186,12 +169,14 @@ const bookingYear = utcDate.getUTCFullYear();
     );
   }
 
-  <Head>
-  <title>Admin | Thirsty Dawg</title>
-  <link rel="icon" type="image/png" href="/favicon.png" />
-</Head>
 
   return (
+    <>
+  <Head>
+    <title>Admin | Thirsty Dawg</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+  </Head>
+
     <div className={styles.dashboard}>
       <h1>Booking Dashboard</h1>
 
@@ -338,6 +323,7 @@ onChange={(e) => setShowArchived(e.target.checked)}
           </table>
         </div>
       )}
-    </div>
-  );
-}
+       </div>
+     </>
+   );
+ }
