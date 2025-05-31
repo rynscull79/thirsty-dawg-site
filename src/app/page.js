@@ -15,42 +15,46 @@ const DeliveryArea = dynamic(() => import('@/components/DeliveryArea'), {
   loading: () => <div>Loading delivery area...</div>,
 });
 
-const machineRates = {
-  'Stainless Single': { weekend: 185, extra: 40, second: 100, secondExtra: 40 },
-  'Plastic Dual': { weekend: 210, extra: 45, second: 115, secondExtra: 45 },
-  'Stainless Dual': { weekend: 240, extra: 50, second: 130, secondExtra: 50 },
-};
-
-function calculateEstimate(machineType, start, end, includeSecond) {
-  if (!machineType || !start || !end) return null;
-
-  const rates = machineRates[machineType];
-  const startDate = new Date(start);
-  const endDate = new Date(end);
-  const days = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)) + 1;
-
-  let weekdays = 0;
-  for (let i = 0; i < days; i++) {
-    const d = new Date(startDate);
-    d.setDate(startDate.getDate() + i);
-    const day = d.getDay();
-    if (day >= 1 && day <= 4) weekdays++;
-  }
-
-  const base = rates.weekend + (rates.extra * weekdays);
-  const second = includeSecond ? (rates.second + (rates.secondExtra * weekdays)) : 0;
-  const subtotal = base + second;
-  const total = subtotal + subtotal * 0.075;
-
-  return total.toFixed(2);
-}
-
 export default function HomePage() {
-  const [machineType, setMachineType] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
-  const [includeSecond, setIncludeSecond] = useState(false);
-  const [estimate, setEstimate] = useState(null);
+  const [machineType, setMachineType] = useState('single');
+  const [estimatedTotal, setEstimatedTotal] = useState(null);
+
+  const handleEstimate = () => {
+    if (!startDate || !endDate) return;
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    const timeDiff = end - start;
+    const numNights = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+    if (numNights < 1) return setEstimatedTotal('Rental must be at least 1 night.');
+
+    let baseRate = 0;
+    let extraRate = 0;
+
+    switch (machineType) {
+      case 'single':
+        baseRate = 185;
+        extraRate = 40;
+        break;
+      case 'plastic':
+        baseRate = 210;
+        extraRate = 45;
+        break;
+      case 'stainless':
+        baseRate = 240;
+        extraRate = 50;
+        break;
+    }
+
+    const extraNights = Math.max(0, numNights - 2);
+    const subtotal = baseRate + extraNights * extraRate;
+    const tax = subtotal * 0.075;
+    const total = subtotal + tax;
+
+    setEstimatedTotal(`$${total.toFixed(2)} (including 7.5% tax)`);
+  };
 
   return (
     <>
@@ -65,9 +69,7 @@ export default function HomePage() {
       <div>
         <section className={styles.hero}>
           <h2>🥶 Frozen Drink Machines That Bring the Party to Life</h2>
-          <p>
-            We deliver, set up, and clean up — you enjoy the frozen fun across Pensacola and the Gulf Coast.
-          </p>
+          <p>We deliver, set up, and clean up — you enjoy the frozen fun across Pensacola and the Gulf Coast.</p>
           <p style={{ marginTop: '1rem', fontWeight: 'bold', fontSize: '1.2rem' }}>
             📞 Call or text us: <a href="tel:8505723796" style={{ color: 'white', textDecoration: 'underline' }}>(850) 572-3796</a>
           </p>
@@ -81,7 +83,7 @@ export default function HomePage() {
         <FloatingBookNow />
 
         <section className={styles.section} style={{ backgroundColor: '#ffffff', padding: '2rem', borderRadius: '1rem' }}>
-          <h3 style={{ textAlign: 'center', fontSize: '1.8rem', fontWeight: 'bold', color: '#009fdb', marginBottom: '1.5rem', textShadow: '1px 1px 2px rgba(0,0,0,0.1)' }}>
+          <h3 style={{ textAlign: 'center', fontSize: '1.8rem', fontWeight: 'bold', color: '#009fdb', marginBottom: '1.5rem' }}>
             🍹 Why Choose Thirsty Dawg?
           </h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
@@ -112,11 +114,9 @@ export default function HomePage() {
             Need a machine for the whole week? Add extra weekdays to your rental!
           </p>
 
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1rem' }}>
-            {/* Pricing Cards - Skipped to focus on updated code block */}
-          </div>
+          {/* Pricing Cards Here — same as before */}
 
-          <div style={{ marginTop: '2rem', backgroundColor: '#e6f4fd', padding: '1.5rem', borderRadius: '1rem', boxShadow: '0 2px 6px rgba(0,0,0,0.05)', display: 'flex', flexWrap: 'wrap', gap: '2rem', justifyContent: 'space-between' }}>
+          <div style={{ marginTop: '2rem', backgroundColor: '#e6f4fd', padding: '1.5rem', borderRadius: '1rem', boxShadow: '0 2px 6px rgba(0,0,0,0.05)', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '2rem' }}>
             <div style={{ flex: '1 1 300px' }}>
               <h4 style={{ textAlign: 'center', fontWeight: 'bold', color: '#009fdb', fontSize: '1.4rem' }}>💡 Want more than one machine?</h4>
               <ul style={{ fontSize: '1rem', paddingLeft: '1.5rem', marginTop: '0.75rem', color: '#1f2937', listStyleType: 'disc' }}>
@@ -127,31 +127,29 @@ export default function HomePage() {
             </div>
 
             <div style={{ flex: '1 1 300px' }}>
-              <h4 style={{ textAlign: 'center', fontWeight: 'bold', color: '#009fdb' }}>📊 Estimate Your Price</h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', paddingTop: '0.5rem' }}>
-                <select value={machineType} onChange={(e) => setMachineType(e.target.value)}>
-                  <option value="">Select machine type</option>
-                  <option value="Stainless Single">Stainless Single Flavor</option>
-                  <option value="Plastic Dual">Plastic Dual Flavor</option>
-                  <option value="Stainless Dual">Stainless Dual Flavor</option>
-                </select>
-                <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
-                <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
-                <label>
-                  <input type="checkbox" checked={includeSecond} onChange={(e) => setIncludeSecond(e.target.checked)} /> Add second machine
-                </label>
-                <button onClick={() => setEstimate(calculateEstimate(machineType, startDate, endDate, includeSecond))}>
-                  Calculate Estimate
-                </button>
-                {estimate && (
-                  <div style={{ marginTop: '0.5rem', fontWeight: 'bold' }}>
-                    Estimated Total: ${estimate} (with 7.5% tax)
-                  </div>
-                )}
-                <p style={{ fontSize: '0.85rem', fontStyle: 'italic', color: '#444' }}>
-                  Final price may vary based on number of mixes and delivery distance.
-                </p>
-              </div>
+              <h4 style={{ textAlign: 'center', fontWeight: 'bold', color: '#009fdb', fontSize: '1.4rem' }}>🧮 Estimate Your Rental Cost</h4>
+              <p style={{ fontSize: '0.9rem', marginBottom: '0.5rem' }}>
+                Select your rental period below to estimate your total cost. Rentals include the first two nights; additional nights are charged based on machine type.
+              </p>
+              <label>Start Date:</label>
+              <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} style={{ width: '100%', padding: '0.5rem', marginBottom: '0.5rem' }} />
+              <label>End Date:</label>
+              <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} style={{ width: '100%', padding: '0.5rem', marginBottom: '0.5rem' }} />
+              <label>Machine Type:</label>
+              <select value={machineType} onChange={(e) => setMachineType(e.target.value)} style={{ width: '100%', padding: '0.5rem', marginBottom: '1rem' }}>
+                <option value="single">Stainless Single</option>
+                <option value="plastic">Plastic Dual</option>
+                <option value="stainless">Stainless Dual</option>
+              </select>
+              <button onClick={handleEstimate} style={{ width: '100%', padding: '0.75rem', backgroundColor: '#009fdb', color: 'white', border: 'none', borderRadius: '0.5rem', fontWeight: 'bold' }}>
+                Estimate Price
+              </button>
+              {estimatedTotal && (
+                <p style={{ marginTop: '1rem', fontWeight: 'bold', color: '#1f2937' }}>Estimated Total: {estimatedTotal}</p>
+              )}
+              <p style={{ fontSize: '0.8rem', marginTop: '0.5rem', color: '#555' }}>
+                Final total may vary based on delivery distance and number of drink mixes needed.
+              </p>
             </div>
           </div>
 
