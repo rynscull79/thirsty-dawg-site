@@ -78,9 +78,9 @@ export default function RentalsPage() {
             </a>
           </p>
         </section>
-
+<RentalsGallery />
         <OurRentals />
-        <RentalsGallery />
+        
       </div>
     </>
   );
