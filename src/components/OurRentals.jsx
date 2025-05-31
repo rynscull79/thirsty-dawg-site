@@ -52,7 +52,11 @@ export default function OurRentals() {
     <div style={{ backgroundColor: '#ffffff', padding: '3rem 1rem' }}>
       <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: '2rem', justifyContent: 'center', fontFamily: '"Chewy", cursive' }}>
         <div style={{ flex: '1 1 100%' }}>
-          <h2 style={{ fontSize: '2rem', textAlign: 'center', color: '#009fdb' }}>💵 Rental Prices</h2>
+          <h2 style={{ fontSize: '2rem', textAlign: 'center', color: '#009fdb' }}>🎬 Our Machines in Action</h2>
+          <p style={{ textAlign: 'center', fontStyle: 'italic', color: '#333' }}>Watch our machines bring the party to life!</p>
+          {/* Add media or video display component here if needed */}
+
+          <h2 style={{ fontSize: '2rem', textAlign: 'center', color: '#009fdb', marginTop: '3rem' }}>💵 Rental Prices</h2>
           <p style={{ textAlign: 'center', marginBottom: '1rem', fontStyle: 'italic', color: '#333' }}>Need a machine for the whole week? Add extra weekdays to your rental!</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1rem' }}>
             <div style={cardStyle}><h3>🍹 Stainless Single Flavor – $185</h3><ul><li>Weekend: $185</li><li>Extra Days: $40</li></ul></div>
