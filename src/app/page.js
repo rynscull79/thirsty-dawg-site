@@ -146,16 +146,38 @@ export default function HomePage() {
               <p style={{ fontSize: '0.9rem', marginBottom: '0.5rem' }}>
                 Select your rental period below to estimate your total cost. Rentals include the first two nights; additional nights are charged based on machine type.
               </p>
-              <label>Start Date:</label>
-              <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} style={{ width: '100%', padding: '0.5rem', marginBottom: '0.5rem' }} />
-              <label>End Date:</label>
-              <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} style={{ width: '100%', padding: '0.5rem', marginBottom: '0.5rem' }} />
-              <label>Machine Type:</label>
-              <select value={machineType} onChange={(e) => setMachineType(e.target.value)} style={{ width: '100%', padding: '0.5rem', marginBottom: '1rem' }}>
-                <option value="single">Stainless Single</option>
-                <option value="plastic">Plastic Dual</option>
-                <option value="stainless">Stainless Dual</option>
-              </select>
+<div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+  <label htmlFor="startDate" style={{ fontWeight: 'bold' }}>Start Date:</label>
+  <input
+    id="startDate"
+    type="date"
+    value={startDate}
+    onChange={(e) => setStartDate(e.target.value)}
+    style={{ width: '100%', padding: '0.5rem', borderRadius: '5px', border: '1px solid #ccc' }}
+  />
+
+  <label htmlFor="endDate" style={{ fontWeight: 'bold' }}>End Date:</label>
+  <input
+    id="endDate"
+    type="date"
+    value={endDate}
+    onChange={(e) => setEndDate(e.target.value)}
+    style={{ width: '100%', padding: '0.5rem', borderRadius: '5px', border: '1px solid #ccc' }}
+  />
+
+  <label htmlFor="machineType" style={{ fontWeight: 'bold' }}>Machine Type:</label>
+  <select
+    id="machineType"
+    value={machineType}
+    onChange={(e) => setMachineType(e.target.value)}
+    style={{ width: '100%', padding: '0.5rem', borderRadius: '5px', border: '1px solid #ccc' }}
+  >
+    <option value="single">Stainless Single</option>
+    <option value="plastic">Plastic Dual</option>
+    <option value="stainless">Stainless Dual</option>
+  </select>
+</div>
+
               <button onClick={handleEstimate} style={{ width: '100%', padding: '0.75rem', backgroundColor: '#009fdb', color: 'white', border: 'none', borderRadius: '0.5rem', fontWeight: 'bold' }}>
                 Estimate Price
               </button>
