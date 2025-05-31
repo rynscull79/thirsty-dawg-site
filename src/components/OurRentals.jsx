@@ -38,18 +38,7 @@ export default function OurRentals() {
 
   return (
     <div style={{ backgroundColor: '#ffffff', padding: '3rem 1rem' }}>
-      <div
-        style={{
-          maxWidth: '900px',
-          margin: '0 auto',
-          display: 'flex',
-          flexWrap: 'wrap',
-          gap: '2rem',
-          justifyContent: 'center',
-          fontFamily: '"Chewy", cursive',
-        }}>
-
-        {/* Rental Descriptions */}
+              {/* Rental Descriptions */}
         <div style={{ backgroundColor: '#f0f9ff', padding: '1.5rem', borderRadius: '1rem', boxShadow: '0 2px 6px rgba(0,0,0,0.1)', flex: '1 1 300px' }}>
           <h3>🧊 Single-Flavor Machine</h3>
           <p>Great for frozen margaritas, daiquiris, or slushies. Easy to use — just plug in and pour. Includes one mix and full setup. No ice required.</p>
@@ -69,6 +58,16 @@ export default function OurRentals() {
           <h3>🏖️ Vacation-Ready</h3>
           <p>Perfect for beach houses and vacation rentals in Pensacola, Pensacola Beach, Navarre, or Gulf Breeze. Book for up to 7 days — we’ll handle setup and pickup.</p>
         </div>
+      <div
+        style={{
+          maxWidth: '900px',
+          margin: '0 auto',
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '2rem',
+          justifyContent: 'center',
+          fontFamily: '"Chewy", cursive',
+        }}>
 
         {/* Pricing and Calculator */}
         <section style={{ width: '100%' }}>
