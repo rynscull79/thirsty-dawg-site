@@ -137,14 +137,24 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div style={{ marginTop: '2rem', backgroundColor: '#fef9c3', padding: '1rem', borderRadius: '1rem', boxShadow: '0 2px 6px rgba(0,0,0,0.05)' }}>
-            <h4 style={{ textAlign: 'center', fontWeight: 'bold', color: '#b45309' }}>Want more than one machine?</h4>
-            <ul style={{ fontSize: '0.95rem', paddingLeft: '1.2rem', marginTop: '0.5rem', color: '#333' }}>
-              <li>➕ Second Stainless Single Machine: <strong>$100</strong> + <strong>$40</strong>/extra weekday</li>
-              <li>➕ Second Plastic Dual Machine: <strong>$115</strong> + <strong>$45</strong>/extra weekday</li>
-              <li>➕ Second Stainless Dual Machine: <strong>$130</strong> + <strong>$50</strong>/extra weekday</li>
-            </ul>
-          </div>
+<div
+  style={{
+    marginTop: '2rem',
+    backgroundColor: '#e6f4fd',
+    padding: '1.5rem',
+    borderRadius: '1rem',
+    boxShadow: '0 2px 6px rgba(0,0,0,0.05)',
+  }}
+>
+  <h4 style={{ textAlign: 'center', fontWeight: 'bold', color: '#009fdb', fontSize: '1.4rem' }}>
+    💡 Want more than one machine?
+  </h4>
+  <ul style={{ fontSize: '1rem', paddingLeft: '1.5rem', marginTop: '0.75rem', color: '#1f2937', listStyleType: 'disc' }}>
+    <li><strong>Second Stainless Single Machine:</strong> $100 + $40/extra weekday</li>
+    <li><strong>Second Plastic Dual Machine:</strong> $115 + $45/extra weekday</li>
+    <li><strong>Second Stainless Dual Machine:</strong> $130 + $50/extra weekday</li>
+  </ul>
+</div>
 
           <p style={{ textAlign: 'center', marginTop: '2rem', fontSize: '1rem', color: '#1f2937' }}>
             Questions? Call or text us at <strong>(850) 572-3796</strong>
