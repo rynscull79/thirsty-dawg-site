@@ -76,15 +76,15 @@ export default function OurRentals() {
           <div style={{ margin: '2rem 0', display: 'flex', flexWrap: 'wrap', gap: '2rem', justifyContent: 'center' }}>
             <div>
               <h3>🍹 Stainless Single – $185</h3>
-              <p>Weekend rental covers 2 nights. Extra weekdays: $40/night</p>
+              <p>Rental covers 2 nights. Extra days: $40/night</p>
             </div>
             <div>
               <h3>🥤 Plastic Dual – $210</h3>
-              <p>Weekend rental covers 2 nights. Extra weekdays: $45/night</p>
+              <p>Rental covers 2 nights. Extra days: $45/night</p>
             </div>
             <div>
               <h3>🍧 Stainless Dual – $240</h3>
-              <p>Weekend rental covers 2 nights. Extra weekdays: $50/night</p>
+              <p>Rental covers 2 nights. Extra days: $50/night</p>
             </div>
           </div>
 
