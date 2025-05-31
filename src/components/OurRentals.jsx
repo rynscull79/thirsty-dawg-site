@@ -103,6 +103,10 @@ export default function OurRentals() {
           <p style={{ textAlign: 'center', marginTop: '2rem', fontSize: '1rem', color: '#1f2937' }}>
             Questions? Call or text us at <strong>(850) 572-3796</strong>
           </p>
+
+          <p style={{ textAlign: 'center', marginTop: '1rem', fontSize: '0.95rem', color: '#1f2937' }}>
+            Need a longer term lease? Call or text to inquire about custom pricing options.
+          </p>
         </div>
       </div>
     </div>
