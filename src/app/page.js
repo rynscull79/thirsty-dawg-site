@@ -19,40 +19,55 @@ export default function HomePage() {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [machineType, setMachineType] = useState('single');
+  const [secondMachineType, setSecondMachineType] = useState('');
   const [estimatedTotal, setEstimatedTotal] = useState(null);
 
-  const handleEstimate = () => {
-    if (!startDate || !endDate) return;
-    const start = new Date(startDate);
-    const end = new Date(endDate);
-    const timeDiff = end - start;
-    const numNights = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-    if (numNights < 1) return setEstimatedTotal('Rental must be at least 1 night.');
+const handleEstimate = () => {
+  if (!startDate || !endDate) return;
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+  const timeDiff = end - start;
+  const numNights = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+  if (numNights < 1) return setEstimatedTotal('Rental must be at least 1 night.');
 
-    let baseRate = 0;
-    let extraRate = 0;
-
-    switch (machineType) {
-      case 'single':
-        baseRate = 185;
-        extraRate = 40;
-        break;
-      case 'plastic':
-        baseRate = 210;
-        extraRate = 45;
-        break;
-      case 'stainless':
-        baseRate = 240;
-        extraRate = 50;
-        break;
+  const getRates = (type) => {
+    switch (type) {
+      case 'single': return { base: 185, extra: 40 };
+      case 'plastic': return { base: 210, extra: 45 };
+      case 'stainless': return { base: 240, extra: 50 };
+      default: return { base: 0, extra: 0 };
     }
-
-    const extraNights = Math.max(0, numNights - 2);
-    const subtotal = baseRate + extraNights * extraRate;
-    const tax = subtotal * 0.075;
-    const total = subtotal + tax;
-    setEstimatedTotal(`$${total.toFixed(2)} (including 7.5% tax)`);
   };
+
+  const rates1 = getRates(machineType);
+  const rates2 = getRates(secondMachineType);
+  const extraNights = Math.max(0, numNights - 2);
+
+  let fullRate = { base: 0, extra: 0 };
+  let secondRate = { base: 0, extra: 0 };
+
+  if (!secondMachineType) {
+    fullRate = rates1;
+  } else {
+    const allRates = [rates1, rates2].sort((a, b) => b.base - a.base);
+    fullRate = allRates[0];
+    secondRate = allRates[1];
+
+    // Override base for second machine with secondary machine rates
+    if (secondRate.base === 185) secondRate.base = 100;
+    if (secondRate.base === 210) secondRate.base = 115;
+    if (secondRate.base === 240) secondRate.base = 130;
+  }
+
+  const subtotal =
+    fullRate.base + fullRate.extra * extraNights +
+    (secondMachineType ? secondRate.base + secondRate.extra * extraNights : 0);
+
+  const tax = subtotal * 0.075;
+  const total = subtotal + tax;
+  setEstimatedTotal(`$${total.toFixed(2)} (including 7.5% tax)`);
+};
+
 
   return (
     <>
@@ -176,6 +191,19 @@ export default function HomePage() {
     <option value="plastic">Plastic Dual</option>
     <option value="stainless">Stainless Dual</option>
   </select>
+  <label htmlFor="secondMachineType" style={{ fontWeight: 'bold' }}>Second Machine (Optional):</label>
+<select
+  id="secondMachineType"
+  value={secondMachineType}
+  onChange={(e) => setSecondMachineType(e.target.value)}
+  style={{ width: '100%', padding: '0.5rem', borderRadius: '5px', border: '1px solid #ccc' }}
+>
+  <option value="">None</option>
+  <option value="single">Stainless Single</option>
+  <option value="plastic">Plastic Dual</option>
+  <option value="stainless">Stainless Dual</option>
+</select>
+
 </div>
 
               <button onClick={handleEstimate} style={{ width: '100%', padding: '0.75rem', backgroundColor: '#009fdb', color: 'white', border: 'none', borderRadius: '0.5rem', fontWeight: 'bold' }}>
