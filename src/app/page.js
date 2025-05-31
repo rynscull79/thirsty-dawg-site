@@ -107,7 +107,6 @@ export default function HomePage() {
               <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#1f2937' }}>🍹 Stainless Single Flavor – $185</h3>
               <ul style={{ paddingLeft: '1.2rem', color: '#333', fontSize: '0.95rem' }}>
                 <li>Weekend Rental: Friday evening through Sunday evening – <strong>$185</strong></li>
-                <li>Weekday Rental: <strong>$185</strong> for any single weekday (Mon–Thurs)</li>
                 <li>Add Extra Days: <strong>$40</strong> per additional weekday</li>
               </ul>
               <p style={{ fontStyle: 'italic', marginTop: '0.5rem' }}>🧊 Example: Friday to Wednesday = $185 + 3 extra days = $305</p>
@@ -117,7 +116,6 @@ export default function HomePage() {
               <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#1f2937' }}>🥤 Plastic Dual Flavor – $210</h3>
               <ul style={{ paddingLeft: '1.2rem', color: '#333', fontSize: '0.95rem' }}>
                 <li>Weekend Rental: Friday evening through Sunday evening – <strong>$210</strong></li>
-                <li>Weekday Rental: <strong>$210</strong> for any single weekday (Mon–Thurs)</li>
                 <li>Add Extra Days: <strong>$45</strong> per additional weekday</li>
               </ul>
               <p style={{ fontStyle: 'italic', marginTop: '0.5rem' }}>🧊 Example: Friday to Wednesday = $210 + 3 extra days = $345</p>
@@ -127,7 +125,6 @@ export default function HomePage() {
               <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#1f2937' }}>🍧 Stainless Dual Flavor – $240</h3>
               <ul style={{ paddingLeft: '1.2rem', color: '#333', fontSize: '0.95rem' }}>
                 <li>Weekend Rental: Friday evening through Sunday evening – <strong>$240</strong></li>
-                <li>Weekday Rental: <strong>$240</strong> for any single weekday (Mon–Thurs)</li>
                 <li>Add Extra Days: <strong>$50</strong> per additional weekday</li>
               </ul>
               <p style={{ fontStyle: 'italic', marginTop: '0.5rem' }}>🧊 Example: Friday to Wednesday = $240 + 3 extra days = $390</p>
