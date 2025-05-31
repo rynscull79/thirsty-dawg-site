@@ -27,7 +27,6 @@ export default function HomePage() {
     const end = new Date(endDate);
     const timeDiff = end - start;
     const numNights = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-
     if (numNights < 1) return setEstimatedTotal('Rental must be at least 1 night.');
 
     let baseRate = 0;
@@ -52,7 +51,6 @@ export default function HomePage() {
     const subtotal = baseRate + extraNights * extraRate;
     const tax = subtotal * 0.075;
     const total = subtotal + tax;
-
     setEstimatedTotal(`$${total.toFixed(2)} (including 7.5% tax)`);
   };
 
@@ -60,10 +58,7 @@ export default function HomePage() {
     <>
       <Head>
         <title>Frozen Drink Machine Rentals in Pensacola | Thirsty Dawg Rentals</title>
-        <meta
-          name="description"
-          content="Rent a frozen margarita or slushie machine in Pensacola. Thirsty Dawg delivers, sets up, and picks up — perfect for parties, weddings, and events!"
-        />
+        <meta name="description" content="Rent a frozen margarita or slushie machine in Pensacola. Thirsty Dawg delivers, sets up, and picks up — perfect for parties, weddings, and events!" />
       </Head>
 
       <div>
@@ -75,17 +70,12 @@ export default function HomePage() {
           </p>
         </section>
 
-        <section className={styles.section}>
-          <GallerySection />
-        </section>
-
+        <section className={styles.section}><GallerySection /></section>
         <ReviewSlider />
         <FloatingBookNow />
 
         <section className={styles.section} style={{ backgroundColor: '#ffffff', padding: '2rem', borderRadius: '1rem' }}>
-          <h3 style={{ textAlign: 'center', fontSize: '1.8rem', fontWeight: 'bold', color: '#009fdb', marginBottom: '1.5rem' }}>
-            🍹 Why Choose Thirsty Dawg?
-          </h3>
+          <h3 style={{ textAlign: 'center', fontSize: '1.8rem', fontWeight: 'bold', color: '#009fdb', marginBottom: '1.5rem' }}>🍹 Why Choose Thirsty Dawg?</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
             {[ 
               '❄️ No Ice Needed – Our machines freeze the mix without ice',
@@ -99,9 +89,7 @@ export default function HomePage() {
               '🧼 We Handle the Cleaning – Post-party cleanup is on us',
               '🌟 5-Star Rated – Backed by glowing reviews from happy customers',
             ].map((reason, index) => (
-              <div key={index} style={{ backgroundColor: '#e6f4fd', padding: '1rem', borderRadius: '0.75rem', fontWeight: 'bold', color: '#1f2937', boxShadow: '0 2px 6px rgba(0,0,0,0.05)', textAlign: 'center' }}>
-                {reason}
-              </div>
+              <div key={index} style={{ backgroundColor: '#e6f4fd', padding: '1rem', borderRadius: '0.75rem', fontWeight: 'bold', color: '#1f2937', boxShadow: '0 2px 6px rgba(0,0,0,0.05)', textAlign: 'center' }}>{reason}</div>
             ))}
           </div>
         </section>
@@ -114,7 +102,37 @@ export default function HomePage() {
             Need a machine for the whole week? Add extra weekdays to your rental!
           </p>
 
-          {/* Pricing Cards Here — same as before */}
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1rem' }}>
+            <div style={{ flex: '1 1 300px', backgroundColor: '#e6f4fd', padding: '1.5rem', borderRadius: '1rem', boxShadow: '0 2px 6px rgba(0,0,0,0.05)' }}>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#1f2937' }}>🍹 Stainless Single Flavor – $185</h3>
+              <ul style={{ paddingLeft: '1.2rem', color: '#333', fontSize: '0.95rem' }}>
+                <li>Weekend Rental: Friday evening through Sunday evening – <strong>$185</strong></li>
+                <li>Weekday Rental: <strong>$185</strong> for any single weekday (Mon–Thurs)</li>
+                <li>Add Extra Days: <strong>$40</strong> per additional weekday</li>
+              </ul>
+              <p style={{ fontStyle: 'italic', marginTop: '0.5rem' }}>🧊 Example: Friday to Wednesday = $185 + 3 extra days = $305</p>
+            </div>
+
+            <div style={{ flex: '1 1 300px', backgroundColor: '#e6f4fd', padding: '1.5rem', borderRadius: '1rem', boxShadow: '0 2px 6px rgba(0,0,0,0.05)' }}>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#1f2937' }}>🥤 Plastic Dual Flavor – $210</h3>
+              <ul style={{ paddingLeft: '1.2rem', color: '#333', fontSize: '0.95rem' }}>
+                <li>Weekend Rental: Friday evening through Sunday evening – <strong>$210</strong></li>
+                <li>Weekday Rental: <strong>$210</strong> for any single weekday (Mon–Thurs)</li>
+                <li>Add Extra Days: <strong>$45</strong> per additional weekday</li>
+              </ul>
+              <p style={{ fontStyle: 'italic', marginTop: '0.5rem' }}>🧊 Example: Friday to Wednesday = $210 + 3 extra days = $345</p>
+            </div>
+
+            <div style={{ flex: '1 1 300px', backgroundColor: '#e6f4fd', padding: '1.5rem', borderRadius: '1rem', boxShadow: '0 2px 6px rgba(0,0,0,0.05)' }}>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#1f2937' }}>🍧 Stainless Dual Flavor – $240</h3>
+              <ul style={{ paddingLeft: '1.2rem', color: '#333', fontSize: '0.95rem' }}>
+                <li>Weekend Rental: Friday evening through Sunday evening – <strong>$240</strong></li>
+                <li>Weekday Rental: <strong>$240</strong> for any single weekday (Mon–Thurs)</li>
+                <li>Add Extra Days: <strong>$50</strong> per additional weekday</li>
+              </ul>
+              <p style={{ fontStyle: 'italic', marginTop: '0.5rem' }}>🧊 Example: Friday to Wednesday = $240 + 3 extra days = $390</p>
+            </div>
+          </div>
 
           <div style={{ marginTop: '2rem', backgroundColor: '#e6f4fd', padding: '1.5rem', borderRadius: '1rem', boxShadow: '0 2px 6px rgba(0,0,0,0.05)', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '2rem' }}>
             <div style={{ flex: '1 1 300px' }}>
@@ -127,7 +145,7 @@ export default function HomePage() {
             </div>
 
             <div style={{ flex: '1 1 300px' }}>
-              <h4 style={{ textAlign: 'center', fontWeight: 'bold', color: '#009fdb', fontSize: '1.4rem' }}>🧮 Estimate Your Rental Cost</h4>
+              <h4 style={{ textAlign: 'center', fontWeight: 'bold', color: '#009fdb', fontSize: '1.4rem' }}>📊 Estimate Your Rental Cost</h4>
               <p style={{ fontSize: '0.9rem', marginBottom: '0.5rem' }}>
                 Select your rental period below to estimate your total cost. Rentals include the first two nights; additional nights are charged based on machine type.
               </p>
