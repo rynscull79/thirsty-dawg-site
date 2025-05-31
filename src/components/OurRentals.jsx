@@ -165,7 +165,7 @@ export default function OurRentals() {
 
 </div>
 
-              <button onClick={handleEstimate} style={{ width: '100%', padding: '0.75rem', backgroundColor: '#009fdb', color: 'white', border: 'none', borderRadius: '0.5rem', fontWeight: 'bold' }}>
+              <button onClick={calculateTotal} style={{ width: '100%', padding: '0.75rem', backgroundColor: '#009fdb', color: 'white', border: 'none', borderRadius: '0.5rem', fontWeight: 'bold' }}>
                 Estimate Price
               </button>
               {estimatedTotal && (
