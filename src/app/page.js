@@ -7,6 +7,9 @@ import FloatingBookNow from '@/components/FloatingBookNow';
 import Head from 'next/head';
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { DateRange } from 'react-date-range';
+import 'react-date-range/dist/styles.css';
+import 'react-date-range/dist/theme/default.css';
 
 
 const GallerySection = dynamic(() => import('@/components/GallerySection'), { ssr: false });
