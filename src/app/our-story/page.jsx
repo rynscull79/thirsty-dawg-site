@@ -14,7 +14,9 @@ export default function OurStoryPage() {
       </Head>
 
       <div style={{ backgroundColor: '#d6e4ec', padding: '2rem', maxWidth: '100%', fontFamily: 'var(--font-chewy)' }}>
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+<div style={{ display: 'flex', flexDirection: 'row', gap: '2rem', alignItems: 'flex-start', maxWidth: '1100px', margin: '0 auto', flexWrap: 'wrap' }}>
+  <div style={{ flex: '1 1 600px' }}>
+
           <h1 style={{
             textAlign: 'center',
             fontSize: '2.5rem',
@@ -50,6 +52,15 @@ export default function OurStoryPage() {
             Ryan & Monica <br />
             — The Thirsty Dawgs 🐶🍹
           </p>
+  </div> {/* end of text column */}
+
+  <div style={{ flex: '1 1 350px', maxWidth: '400px' }}>
+    <img
+      src="/gallery/thirsty-dawg-family.webp"
+      alt="Thirsty Dawg family photo"
+      style={{ width: '100%', borderRadius: '1rem', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
+    />
+  </div>
 
           <div style={{ marginTop: '3rem' }}>
             <h2 style={{ textAlign: 'center', color: '#ff7c02', fontSize: '2rem', marginBottom: '1.5rem', textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>
