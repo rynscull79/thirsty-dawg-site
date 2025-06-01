@@ -11,7 +11,6 @@ import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 
-
 const GallerySection = dynamic(() => import('@/components/GallerySection'), { ssr: false });
 const ReviewSlider = dynamic(() => import('@/components/ReviewSlider'), { ssr: false });
 const DeliveryArea = dynamic(() => import('@/components/DeliveryArea'), {
@@ -20,7 +19,6 @@ const DeliveryArea = dynamic(() => import('@/components/DeliveryArea'), {
 });
 
 export default function HomePage() {
-  
   const [machineType, setMachineType] = useState('single');
   const [secondMachineType, setSecondMachineType] = useState('');
   const [estimatedTotal, setEstimatedTotal] = useState(null);
@@ -32,52 +30,49 @@ export default function HomePage() {
     },
   ]);
 
-const handleEstimate = () => {
-   const start = new Date(range[0].startDate);
-  const end = new Date(range[0].endDate);
+  const handleEstimate = () => {
+    const start = new Date(range[0].startDate);
+    const end = new Date(range[0].endDate);
+    const timeDiff = end - start;
+    const numNights = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    if (numNights < 1) return setEstimatedTotal('Rental must be at least 1 night.');
 
-  const timeDiff = end - start;
-  const numNights = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-  if (numNights < 1) return setEstimatedTotal('Rental must be at least 1 night.');
+    const getRates = (type) => {
+      switch (type) {
+        case 'single': return { base: 185, extra: 40 };
+        case 'plastic': return { base: 210, extra: 45 };
+        case 'stainless': return { base: 240, extra: 50 };
+        default: return { base: 0, extra: 0 };
+      }
+    };
 
-  const getRates = (type) => {
-    switch (type) {
-      case 'single': return { base: 185, extra: 40 };
-      case 'plastic': return { base: 210, extra: 45 };
-      case 'stainless': return { base: 240, extra: 50 };
-      default: return { base: 0, extra: 0 };
+    const rates1 = getRates(machineType);
+    const rates2 = getRates(secondMachineType);
+    const extraNights = Math.max(0, numNights - 2);
+
+    let fullRate = { base: 0, extra: 0 };
+    let secondRate = { base: 0, extra: 0 };
+
+    if (!secondMachineType) {
+      fullRate = rates1;
+    } else {
+      const allRates = [rates1, rates2].sort((a, b) => b.base - a.base);
+      fullRate = allRates[0];
+      secondRate = allRates[1];
+
+      if (secondRate.base === 185) secondRate.base = 100;
+      if (secondRate.base === 210) secondRate.base = 115;
+      if (secondRate.base === 240) secondRate.base = 130;
     }
+
+    const subtotal =
+      fullRate.base + fullRate.extra * extraNights +
+      (secondMachineType ? secondRate.base + secondRate.extra * extraNights : 0);
+
+    const tax = subtotal * 0.075;
+    const total = subtotal + tax;
+    setEstimatedTotal(`$${total.toFixed(2)} (including 7.5% tax)`);
   };
-
-  const rates1 = getRates(machineType);
-  const rates2 = getRates(secondMachineType);
-  const extraNights = Math.max(0, numNights - 2);
-
-  let fullRate = { base: 0, extra: 0 };
-  let secondRate = { base: 0, extra: 0 };
-
-  if (!secondMachineType) {
-    fullRate = rates1;
-  } else {
-    const allRates = [rates1, rates2].sort((a, b) => b.base - a.base);
-    fullRate = allRates[0];
-    secondRate = allRates[1];
-
-    // Override base for second machine with secondary machine rates
-    if (secondRate.base === 185) secondRate.base = 100;
-    if (secondRate.base === 210) secondRate.base = 115;
-    if (secondRate.base === 240) secondRate.base = 130;
-  }
-
-  const subtotal =
-    fullRate.base + fullRate.extra * extraNights +
-    (secondMachineType ? secondRate.base + secondRate.extra * extraNights : 0);
-
-  const tax = subtotal * 0.075;
-  const total = subtotal + tax;
-  setEstimatedTotal(`$${total.toFixed(2)} (including 7.5% tax)`);
-};
-
 
   return (
     <>
@@ -171,50 +166,44 @@ const handleEstimate = () => {
               <p style={{ fontSize: '0.9rem', marginBottom: '0.5rem' }}>
                 Select your rental period below to estimate your total cost. Rentals include the first two nights; additional nights are charged based on machine type.
               </p>
-<div style={{ width: '100%' }}>
-  <label style={{ fontWeight: 'bold' }}>Select Rental Dates:</label>
-  <div style={{ maxWidth: '100%', overflowX: 'auto' }}>
-    <div style={{ minWidth: '280px' }}>
-      <DateRange
-        editableDateInputs={true}
-        onChange={item => setRange([item.selection])}
-        moveRangeOnFirstSelection={false}
-        ranges={range}
-        minDate={new Date()}
-      />
-    </div>
-  </div>
-</div>
+              <div style={{ width: '100%' }}>
+                <label style={{ fontWeight: 'bold' }}>Select Rental Dates:</label>
+                <div style={{ maxWidth: '100%', overflowX: 'auto' }}>
+                  <div style={{ minWidth: '280px' }}>
+                    <DateRange
+                      editableDateInputs={true}
+                      onChange={item => setRange([item.selection])}
+                      moveRangeOnFirstSelection={false}
+                      ranges={range}
+                      minDate={new Date()}
+                    />
+                  </div>
+                </div>
+              </div>
 
-</div>
-
-
-
-  <label htmlFor="machineType" style={{ fontWeight: 'bold' }}>Machine Type:</label>
-  <select
-    id="machineType"
-    value={machineType}
-    onChange={(e) => setMachineType(e.target.value)}
-    style={{ width: '100%', padding: '0.5rem', borderRadius: '5px', border: '1px solid #ccc' }}
-  >
-    <option value="single">Stainless Single</option>
-    <option value="plastic">Plastic Dual</option>
-    <option value="stainless">Stainless Dual</option>
-  </select>
-  <label htmlFor="secondMachineType" style={{ fontWeight: 'bold' }}>Second Machine (Optional):</label>
-<select
-  id="secondMachineType"
-  value={secondMachineType}
-  onChange={(e) => setSecondMachineType(e.target.value)}
-  style={{ width: '100%', padding: '0.5rem', borderRadius: '5px', border: '1px solid #ccc' }}
->
-  <option value="">None</option>
-  <option value="single">Stainless Single</option>
-  <option value="plastic">Plastic Dual</option>
-  <option value="stainless">Stainless Dual</option>
-</select>
-
-</div>
+              <label htmlFor="machineType" style={{ fontWeight: 'bold' }}>Machine Type:</label>
+              <select
+                id="machineType"
+                value={machineType}
+                onChange={(e) => setMachineType(e.target.value)}
+                style={{ width: '100%', padding: '0.5rem', borderRadius: '5px', border: '1px solid #ccc' }}
+              >
+                <option value="single">Stainless Single</option>
+                <option value="plastic">Plastic Dual</option>
+                <option value="stainless">Stainless Dual</option>
+              </select>
+              <label htmlFor="secondMachineType" style={{ fontWeight: 'bold' }}>Second Machine (Optional):</label>
+              <select
+                id="secondMachineType"
+                value={secondMachineType}
+                onChange={(e) => setSecondMachineType(e.target.value)}
+                style={{ width: '100%', padding: '0.5rem', borderRadius: '5px', border: '1px solid #ccc' }}
+              >
+                <option value="">None</option>
+                <option value="single">Stainless Single</option>
+                <option value="plastic">Plastic Dual</option>
+                <option value="stainless">Stainless Dual</option>
+              </select>
 
               <button onClick={handleEstimate} style={{ width: '100%', padding: '0.75rem', backgroundColor: '#009fdb', color: 'white', border: 'none', borderRadius: '0.5rem', fontWeight: 'bold' }}>
                 Estimate Price
