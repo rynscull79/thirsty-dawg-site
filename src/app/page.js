@@ -7,6 +7,10 @@ import FloatingBookNow from '@/components/FloatingBookNow';
 import Head from 'next/head';
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { DateRange } from 'react-date-range';
+import 'react-date-range/dist/styles.css';
+import 'react-date-range/dist/theme/default.css';
+
 
 const GallerySection = dynamic(() => import('@/components/GallerySection'), { ssr: false });
 const ReviewSlider = dynamic(() => import('@/components/ReviewSlider'), { ssr: false });
@@ -16,16 +20,22 @@ const DeliveryArea = dynamic(() => import('@/components/DeliveryArea'), {
 });
 
 export default function HomePage() {
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
+  
   const [machineType, setMachineType] = useState('single');
   const [secondMachineType, setSecondMachineType] = useState('');
   const [estimatedTotal, setEstimatedTotal] = useState(null);
+  const [range, setRange] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: 'selection',
+    },
+  ]);
 
 const handleEstimate = () => {
-  if (!startDate || !endDate) return;
-  const start = new Date(startDate);
-  const end = new Date(endDate);
+   const start = new Date(range[0].startDate);
+  const end = new Date(range[0].endDate);
+
   const timeDiff = end - start;
   const numNights = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
   if (numNights < 1) return setEstimatedTotal('Rental must be at least 1 night.');
@@ -162,23 +172,15 @@ const handleEstimate = () => {
                 Select your rental period below to estimate your total cost. Rentals include the first two nights; additional nights are charged based on machine type.
               </p>
 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-  <label htmlFor="startDate" style={{ fontWeight: 'bold' }}>Start Date:</label>
-  <input
-    id="startDate"
-    type="date"
-    value={startDate}
-    onChange={(e) => setStartDate(e.target.value)}
-    style={{ width: '100%', padding: '0.5rem', borderRadius: '5px', border: '1px solid #ccc' }}
+  <label style={{ fontWeight: 'bold' }}>Select Rental Dates:</label>
+  <DateRange
+    editableDateInputs={true}
+    onChange={item => setRange([item.selection])}
+    moveRangeOnFirstSelection={false}
+    ranges={range}
+    minDate={new Date()}
   />
 
-  <label htmlFor="endDate" style={{ fontWeight: 'bold' }}>End Date:</label>
-  <input
-    id="endDate"
-    type="date"
-    value={endDate}
-    onChange={(e) => setEndDate(e.target.value)}
-    style={{ width: '100%', padding: '0.5rem', borderRadius: '5px', border: '1px solid #ccc' }}
-  />
 
   <label htmlFor="machineType" style={{ fontWeight: 'bold' }}>Machine Type:</label>
   <select
