@@ -7,9 +7,6 @@ import FloatingBookNow from '@/components/FloatingBookNow';
 import Head from 'next/head';
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { DateRange } from 'react-date-range';
-import 'react-date-range/dist/styles.css';
-import 'react-date-range/dist/theme/default.css';
 
 
 const GallerySection = dynamic(() => import('@/components/GallerySection'), { ssr: false });
@@ -172,14 +169,19 @@ const handleEstimate = () => {
                 Select your rental period below to estimate your total cost. Rentals include the first two nights; additional nights are charged based on machine type.
               </p>
 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+  <div style={{ overflowX: 'auto' }}>
   <label style={{ fontWeight: 'bold' }}>Select Rental Dates:</label>
-  <DateRange
-    editableDateInputs={true}
-    onChange={item => setRange([item.selection])}
-    moveRangeOnFirstSelection={false}
-    ranges={range}
-    minDate={new Date()}
-  />
+  <div style={{ maxWidth: '100%' }}>
+    <DateRange
+      editableDateInputs={true}
+      onChange={item => setRange([item.selection])}
+      moveRangeOnFirstSelection={false}
+      ranges={range}
+      minDate={new Date()}
+    />
+  </div>
+</div>
+
 
 
   <label htmlFor="machineType" style={{ fontWeight: 'bold' }}>Machine Type:</label>
