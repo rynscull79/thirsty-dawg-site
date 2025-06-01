@@ -171,18 +171,21 @@ const handleEstimate = () => {
               <p style={{ fontSize: '0.9rem', marginBottom: '0.5rem' }}>
                 Select your rental period below to estimate your total cost. Rentals include the first two nights; additional nights are charged based on machine type.
               </p>
-<div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-  <div style={{ overflowX: 'auto' }}>
+<div style={{ width: '100%' }}>
   <label style={{ fontWeight: 'bold' }}>Select Rental Dates:</label>
-  <div style={{ maxWidth: '100%' }}>
-    <DateRange
-      editableDateInputs={true}
-      onChange={item => setRange([item.selection])}
-      moveRangeOnFirstSelection={false}
-      ranges={range}
-      minDate={new Date()}
-    />
+  <div style={{ maxWidth: '100%', overflowX: 'auto' }}>
+    <div style={{ minWidth: '280px' }}>
+      <DateRange
+        editableDateInputs={true}
+        onChange={item => setRange([item.selection])}
+        moveRangeOnFirstSelection={false}
+        ranges={range}
+        minDate={new Date()}
+      />
+    </div>
   </div>
+</div>
+
 </div>
 
 
