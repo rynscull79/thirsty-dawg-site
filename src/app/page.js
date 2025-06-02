@@ -89,6 +89,39 @@ export default function HomePage() {
             📞 Call or text us: <a href="tel:8505723796" style={{ color: 'white', textDecoration: 'underline' }}>(850) 572-3796</a>
           </p>
         </section>
+<section style={{
+  backgroundColor: '#fff8f0',
+  padding: '40px 20px',
+  margin: '40px 0',
+  borderRadius: '12px',
+  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+  textAlign: 'center',
+}}>
+  <h2 style={{
+    fontSize: '2rem',
+    marginBottom: '20px',
+    color: '#d2691e',
+    fontFamily: '"Chewy", cursive',
+  }}>
+    🍦 Now Offering Soft Serve Ice Cream!
+  </h2>
+  <p style={{ fontSize: '1.2rem', marginBottom: '20px' }}>
+    Add a cool twist to your event with our soft serve ice cream rentals. Same great price as our frozen drink machines — just as easy, just as fun!
+  </p>
+  <Link href="/booking">
+    <button style={{
+      padding: '12px 24px',
+      fontSize: '1rem',
+      backgroundColor: '#ff7f50',
+      color: 'white',
+      border: 'none',
+      borderRadius: '8px',
+      cursor: 'pointer',
+    }}>
+      Book Soft Serve Now
+    </button>
+  </Link>
+</section>
 
         <section className={styles.section}><GallerySection /></section>
         <ReviewSlider />
