@@ -114,6 +114,26 @@ const handleDateChange = (e) => {
         >
           Book a Frozen Drink Machine!
         </h2>
+{/* Basic Contact Info */}
+{[
+  ['Name', 'name', 'text'],
+  ['Email', 'email', 'email'],
+  ['Phone', 'phone', 'text'],
+  ['Street Address', 'street', 'text'],
+  ['City', 'city', 'text'],
+  ['State', 'state', 'text'],
+  ['ZIP', 'zip', 'text'],
+].map(([label, name, type]) => (
+  <div key={name} className="mb-6">
+    <label className="block mb-1 text-lg" htmlFor={name}>{label}</label>
+    <input
+      className="w-full p-3 rounded-xl text-base border border-gray-300 shadow-inner"
+      name={name}
+      type={type}
+      required
+    />
+  </div>
+))}
 
 <div className="mb-6">
   <label className="block mb-1 text-lg" htmlFor="date_needed">Rental Start Date</label>
