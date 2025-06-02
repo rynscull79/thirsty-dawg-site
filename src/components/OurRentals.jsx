@@ -183,9 +183,10 @@ const end = new Date(range[0].endDate);
             </div>
           </div>
 
- <p style={{ textAlign: 'center', marginTop: '2rem', fontSize: '1rem', color: '#1f2937' }}>
-  Taylor 430 – High-capacity, commercial-grade unit ideal for large events and extended lease use. Versatile machine that produces both frozen drinks and soft serve ice cream with smooth, consistent pours.
+<p style={{ textAlign: 'center', marginTop: '2rem', fontSize: '1rem', color: '#1f2937' }}>
+  <strong>Taylor 430 –</strong> High-capacity, commercial-grade unit ideal for large events and extended lease use. Produces both frozen drinks and soft serve ice cream with smooth, consistent pours.
 </p>
+
 
 <p style={{ textAlign: 'center', marginTop: '1rem', fontSize: '1rem', color: '#1f2937' }}>
   Questions? Call or text us at <strong>(850) 572-3796</strong>
