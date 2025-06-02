@@ -58,6 +58,10 @@ const end = new Date(range[0].endDate);
           <h3>🍹 Dual-Flavor Machine</h3>
           <p>Serve two flavors at once — a hit for weddings, festivals, and big parties. Comes with two mixes, dual tanks, and delivery/setup.</p>
         </div>
+<div style={{ backgroundColor: '#f0f9ff', padding: '1.5rem', borderRadius: '1rem', boxShadow: '0 2px 6px rgba(0,0,0,0.1)', flex: '1 1 300px' }}>
+  <h3>🍦 Soft Serve Ice Cream</h3>
+  <p>Serve up swirls of creamy soft serve! Our Taylor 430 machine is also capable of frozen drinks, making it perfect for birthdays, schools, festivals, and more. Just plug in and go!</p>
+</div>
 
         <div style={{ backgroundColor: '#f0f9ff', padding: '1.5rem', borderRadius: '1rem', boxShadow: '0 2px 6px rgba(0,0,0,0.1)', flex: '1 1 300px' }}>
           <h3>🔌 No Ice Required</h3>
@@ -179,9 +183,14 @@ const end = new Date(range[0].endDate);
             </div>
           </div>
 
-          <p style={{ textAlign: 'center', marginTop: '2rem', fontSize: '1rem', color: '#1f2937' }}>
-            Questions? Call or text us at <strong>(850) 572-3796</strong>
-          </p>
+ <p style={{ textAlign: 'center', marginTop: '2rem', fontSize: '1rem', color: '#1f2937' }}>
+  Taylor 430 – High-capacity, commercial-grade unit ideal for large events and extended lease use. Versatile machine that produces both frozen drinks and soft serve ice cream with smooth, consistent pours.
+</p>
+
+<p style={{ textAlign: 'center', marginTop: '1rem', fontSize: '1rem', color: '#1f2937' }}>
+  Questions? Call or text us at <strong>(850) 572-3796</strong>
+</p>
+
         </section>
       </div>
       </div>
