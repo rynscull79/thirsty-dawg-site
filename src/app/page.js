@@ -90,17 +90,18 @@ export default function HomePage() {
           </p>
         </section>
 <section style={{
-  backgroundColor: '#e3f2fd',
+  backgroundColor: '#f0f9ff',
   padding: '40px 20px',
   margin: '40px 0',
-  borderRadius: '12px',
-  boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
+  borderRadius: '16px',
+  boxShadow: '0 4px 10px rgba(0, 0, 0, 0.05)',
   textAlign: 'center',
+  border: '2px solid #00a7e1',
 }}>
   <h2 style={{
-    fontSize: '2rem',
+    fontSize: '2.2rem',
     marginBottom: '20px',
-    color: '#ff6f00',
+    color: '#002c47',
     fontFamily: '"Chewy", cursive',
   }}>
     🍦 Now Offering Soft Serve Ice Cream!
@@ -108,26 +109,26 @@ export default function HomePage() {
   <p style={{
     fontSize: '1.2rem',
     marginBottom: '20px',
-    color: '#0d1a26',
+    color: '#002c47',
+    fontWeight: 'bold',
   }}>
-    Add a cool twist to your event with our soft serve ice cream rentals. Same great price as our frozen drink machines — just as easy, just as fun!
+    Cool off with our newest addition — same price, same fun, extra delicious.
   </p>
   <Link href="/booking">
     <button style={{
-      padding: '12px 24px',
+      padding: '14px 30px',
       fontSize: '1rem',
       backgroundColor: '#ff6f00',
-      color: 'white',
+      color: '#ffffff',
       border: 'none',
-      borderRadius: '8px',
+      borderRadius: '10px',
       cursor: 'pointer',
+      fontWeight: 'bold',
     }}>
       Book Soft Serve Now
     </button>
   </Link>
 </section>
-
-
 
         <section className={styles.section}><GallerySection /></section>
         <ReviewSlider />
