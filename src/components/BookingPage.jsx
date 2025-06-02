@@ -24,7 +24,9 @@ const handleSubmit = async (e) => {
     zip: raw.zip,
     dateNeeded: new Date(raw.date_needed).toISOString(),
     guestCount: parseInt(raw.guest_count),
-    rentalLength: raw.rental_length,
+    rentalStart: new Date(raw.date_needed).toISOString(),
+rentalEnd: new Date(raw.rental_end).toISOString(),
+
     machineType: raw.machine_type,
     flavor: raw.flavor,
     flavorAdditions: raw.flavor_additions || '',
@@ -113,18 +115,37 @@ const handleDateChange = (e) => {
           Book a Frozen Drink Machine!
         </h2>
 
-        {[ ['Name', 'name', 'text'], ['Email', 'email', 'email'], ['Phone', 'phone', 'text'], ['Street Address', 'street', 'text'], ['City', 'city', 'text'], ['State', 'state', 'text'], ['ZIP', 'zip', 'text'], ['Date First Needed', 'date_needed', 'date'], ['Estimated Number of Guests', 'guest_count', 'number'] ].map(([label, name, type]) => (
-          <div key={name} className="mb-6">
-            <label className="block mb-1 text-lg" htmlFor={name}>{label}</label>
-            <input
-              className="w-full p-3 rounded-xl text-base border border-gray-300 shadow-inner"
-              name={name}
-              type={type}
-              required
-              onBlur={name === 'date_needed' ? handleDateChange : undefined}
-            />
-          </div>
-        ))}
+<div className="mb-6">
+  <label className="block mb-1 text-lg" htmlFor="date_needed">Rental Start Date</label>
+  <input
+    className="w-full p-3 rounded-xl text-base border border-gray-300 shadow-inner"
+    name="date_needed"
+    type="date"
+    required
+    onBlur={handleDateChange}
+  />
+</div>
+
+<div className="mb-6">
+  <label className="block mb-1 text-lg" htmlFor="rental_end">Rental End Date</label>
+  <input
+    className="w-full p-3 rounded-xl text-base border border-gray-300 shadow-inner"
+    name="rental_end"
+    type="date"
+    required
+  />
+</div>
+
+<div className="mb-6">
+  <label className="block mb-1 text-lg" htmlFor="guest_count">Estimated Number of Guests</label>
+  <input
+    className="w-full p-3 rounded-xl text-base border border-gray-300 shadow-inner"
+    name="guest_count"
+    type="number"
+    required
+  />
+</div>
+
 
         <div className="mb-6">
           <label className="block mb-1 text-lg" htmlFor="rental_length">Number of Days</label>
