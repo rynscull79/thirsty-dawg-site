@@ -90,29 +90,33 @@ export default function HomePage() {
           </p>
         </section>
 <section style={{
-  backgroundColor: '#fff8f0',
+  backgroundColor: '#e3f2fd',
   padding: '40px 20px',
   margin: '40px 0',
   borderRadius: '12px',
-  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+  boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
   textAlign: 'center',
 }}>
   <h2 style={{
     fontSize: '2rem',
     marginBottom: '20px',
-    color: '#d2691e',
+    color: '#ff6f00',
     fontFamily: '"Chewy", cursive',
   }}>
     🍦 Now Offering Soft Serve Ice Cream!
   </h2>
-  <p style={{ fontSize: '1.2rem', marginBottom: '20px' }}>
+  <p style={{
+    fontSize: '1.2rem',
+    marginBottom: '20px',
+    color: '#0d1a26',
+  }}>
     Add a cool twist to your event with our soft serve ice cream rentals. Same great price as our frozen drink machines — just as easy, just as fun!
   </p>
   <Link href="/booking">
     <button style={{
       padding: '12px 24px',
       fontSize: '1rem',
-      backgroundColor: '#ff7f50',
+      backgroundColor: '#ff6f00',
       color: 'white',
       border: 'none',
       borderRadius: '8px',
@@ -122,6 +126,8 @@ export default function HomePage() {
     </button>
   </Link>
 </section>
+
+
 
         <section className={styles.section}><GallerySection /></section>
         <ReviewSlider />
