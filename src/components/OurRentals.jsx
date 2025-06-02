@@ -92,7 +92,7 @@ const end = new Date(range[0].endDate);
 
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1rem' }}>
             <div style={{ flex: '1 1 300px', backgroundColor: '#e6f4fd', padding: '1.5rem', borderRadius: '1rem', boxShadow: '0 2px 6px rgba(0,0,0,0.05)' }}>
-              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#1f2937' }}>🍹 Stainless Single Flavor – $185</h3>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#1f2937' }}>🍹 Stainless Single Flavor and Soft Serve – $185</h3>
               <ul style={{ paddingLeft: '1.2rem', color: '#333', fontSize: '0.95rem' }}>
                 <li>Weekend Rental: Friday evening through Sunday evening – <strong>$185</strong></li>
                 <li>Add Extra Days: <strong>$40</strong> per additional weekday</li>
@@ -197,3 +197,4 @@ const end = new Date(range[0].endDate);
       </div>
   );
 }
+// Force redeploy test
