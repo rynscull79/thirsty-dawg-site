@@ -101,7 +101,7 @@ export default function HomePage() {
   <h2 style={{
     fontSize: '2.2rem',
     marginBottom: '20px',
-    color: '#002c47',
+    color: '#00a7e1',
     fontFamily: '"Chewy", cursive',
   }}>
     🍦 Now Offering Soft Serve Ice Cream!
@@ -109,7 +109,7 @@ export default function HomePage() {
   <p style={{
     fontSize: '1.2rem',
     marginBottom: '20px',
-    color: '#002c47',
+    color: '#00a7e1',
     fontWeight: 'bold',
   }}>
     Cool off with our newest addition — same price, same fun, extra delicious.
