@@ -13,6 +13,11 @@ export default function RentalsPage() {
   name="description"
   content="Rent frozen drink and soft serve ice cream machines in Pensacola and nearby areas. Choose from single or dual flavor options — stainless or plastic. Thirsty Dawg handles delivery, setup, and pickup!"
 />
+<meta property="og:title" content="Frozen Drink & Soft Serve Machine Rentals | Thirsty Dawg" />
+<meta property="og:description" content="Rent frozen drink and soft serve machines for events across Pensacola. Thirsty Dawg handles delivery, setup, and cleanup!" />
+<meta property="og:image" content="https://www.thirstydawgrentals.com/thirsty-dawg-logo.webp" />
+<meta property="og:url" content="https://www.thirstydawgrentals.com/rentals" />
+<meta property="og:type" content="website" />
 
       </Head>
 
