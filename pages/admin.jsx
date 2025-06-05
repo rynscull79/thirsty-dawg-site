@@ -32,6 +32,17 @@ const months = [
 
 const currentYear = new Date().getFullYear();
 const years = Array.from({ length: 5 }, (_, i) => currentYear - 2 + i); // 2 years back, 2 years forward
+// Calculate how many rental days based on dateNeeded and rentalEnd
+const calculateRentalDays = (start, end) => {
+  const dateStart = new Date(start);
+  const dateEnd = new Date(end);
+  const diffInTime = dateEnd.getTime() - dateStart.getTime();
+  const diffInDays = Math.floor(diffInTime / (1000 * 3600 * 24));
+
+  // Subtract 2 nights (3-day base period), then add 1 for each extra night
+  return diffInDays > 2 ? diffInDays - 2 : 0;
+};
+
 
 
   const correctPassword = 'Bamafan79@';
@@ -280,6 +291,7 @@ onChange={(e) => setShowArchived(e.target.checked)}
                 <th>City/State/ZIP</th>
                 <th>Guests</th>
                 <th>Rental</th>
+                <th>Rental Days</th>
                 <th>Machine</th>
                 <th>Flavor</th>
                 <th>2nd Flavor</th>
@@ -294,6 +306,8 @@ onChange={(e) => setShowArchived(e.target.checked)}
                 console.log(b.name, b.status);
 
                 const isEditing = editingId === b.id;
+                const extraDays = b.dateStart && b.dateEnd ? calculateExtraDays(b.dateStart, b.dateEnd) : 0;
+
                 return (
                   <tr key={b.id} className={b.status === 'new' ? styles.newBookingRow : ''}>
                     <td>
@@ -327,19 +341,25 @@ onChange={(e) => setShowArchived(e.target.checked)}
                         ))}
                       </select>
                     ) : b.rentalLength}</td>
-                    <td>{isEditing ? (
-                      <select value={formData.machineType} onChange={(e) => handleChange('machineType', e.target.value)}>
-                        {[
-  'Stainless Single Flavor - $185',
-  'Stainless Dual Flavor - $240',
-  'Plastic Dual Flavor - $210',
-  'Soft Serve Machine - $200'
-].map(opt => (
-  <option key={opt}>{opt}</option>
-))}
 
-                      </select>
-                    ) : b.machineType}</td>
+<td>{isEditing ? (
+  <select value={formData.machineType} onChange={(e) => handleChange('machineType', e.target.value)}>
+    {[
+      'Stainless Single Flavor - $185',
+      'Stainless Dual Flavor - $240',
+      'Plastic Dual Flavor - $210',
+      'Soft Serve Machine - $200'
+    ].map(opt => (
+      <option key={opt}>{opt}</option>
+    ))}
+  </select>
+) : b.machineType}</td>
+
+<td>
+  {b.dateStart && b.dateEnd ? calculateRentalDays(b.dateStart, b.dateEnd) : '-'}
+</td>
+
+
                     <td>{isEditing ? (
                       <select value={formData.flavor} onChange={(e) => handleChange('flavor', e.target.value)}>
                         {[
