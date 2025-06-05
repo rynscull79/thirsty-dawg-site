@@ -112,7 +112,7 @@ const handleDateChange = (e) => {
             textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000'
           }}
         >
-          Book a Frozen Drink Machine!
+          Book a Frozen Drink or Soft Serve Machine!
         </h2>
 {/* Basic Contact Info */}
 {[
@@ -166,16 +166,6 @@ const handleDateChange = (e) => {
   />
 </div>
 
-
-        <div className="mb-6">
-          <label className="block mb-1 text-lg" htmlFor="rental_length">Number of Days</label>
-          <select name="rental_length" className="w-full p-3 rounded-xl border border-gray-300 shadow-inner text-base" required>
-            {['Single Day Rental', '2 Day Rental', '3 Day Rental', '4 Day Rental', '5 Day Rental'].map(option => (
-              <option key={option}>{option}</option>
-            ))}
-          </select>
-        </div>
-
         <div className="mb-6">
           <label className="block mb-1 text-lg" htmlFor="machine_type">Machine Requested</label>
           <select
@@ -185,20 +175,38 @@ const handleDateChange = (e) => {
   className="w-full p-3 rounded-xl border border-gray-300 shadow-inner text-base"
   required
 >
-  {['Stainless Single Flavor - $185', 'Stainless Dual Flavor - $240', 'Plastic Dual Flavor - $210'].map(option => (
-    <option key={option}>{option}</option>
-  ))}
+  {[
+  'Stainless Single Flavor - $185',
+  'Stainless Dual Flavor - $240',
+  'Plastic Dual Flavor - $210',
+  'Soft Serve Machine - $200'
+].map(option => (
+  <option key={option}>{option}</option>
+))}
+
 </select>
 
         </div>
 
         <div className="mb-6">
           <label className="block mb-1 text-lg" htmlFor="flavor">Flavor</label>
-          <select name="flavor" className="w-full p-3 rounded-xl border border-gray-300 shadow-inner text-base" required>
-            {[ 'Blue Hawaiian', 'Bushwacker +$5', 'Frosé', 'Grape', 'Lemonade', 'Lime Margarita', 'Louisianna Hurricane', 'Mango Daiquiri', 'Mango Margarita', 'Orange Dreamsicle', 'Peach Belini', 'Peach Daiquiri', 'Pina Colada', 'Pink Lemonade', 'Strawberry Daiquiri', 'Strawberry Margarita', 'Watermelon' ].map(option => (
-              <option key={option}>{option}</option>
-            ))}
-          </select>
+        <select name="flavor" className="w-full p-3 rounded-xl border border-gray-300 shadow-inner text-base" required>
+  {[
+    // Frozen drink flavors
+    'Blue Hawaiian', 'Bushwacker +$5', 'Frosé', 'Grape', 'Lemonade',
+    'Lime Margarita', 'Louisianna Hurricane', 'Mango Daiquiri', 'Mango Margarita',
+    'Orange Dreamsicle', 'Peach Belini', 'Peach Daiquiri', 'Pina Colada',
+    'Pink Lemonade', 'Strawberry Daiquiri', 'Strawberry Margarita', 'Watermelon',
+    // Soft serve flavors
+    'Soft Serve Vanilla', 'Soft Serve Chocolate',
+    'Soft Serve Birthday Cake (Additional Charge)',
+    'Soft Serve Cotton Candy (Additional Charge)',
+    'Soft Serve Salted Caramel (Additional Charge)'
+  ].map(option => (
+    <option key={option}>{option}</option>
+  ))}
+</select>
+
         </div>
 {machineType.includes('Dual') && (
   <div className="mb-6">
