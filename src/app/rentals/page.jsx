@@ -19,6 +19,34 @@ export default function RentalsPage() {
 <meta property="og:url" content="https://www.thirstydawgrentals.com/rentals" />
 <meta property="og:type" content="website" />
 
+    <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Thirsty Dawg Rentals",
+      "url": "https://www.thirstydawgrentals.com/rentals",
+      "telephone": "850-572-3796",
+      "image": "https://www.thirstydawgrentals.com/thirsty-dawg-logo.webp",
+      "description": "Rent frozen drink machines and soft serve ice cream machines for events, parties, and weddings in Pensacola, FL and surrounding counties. Delivery, setup, cleanup included.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pensacola",
+        "addressRegion": "FL",
+        "postalCode": "32577",
+        "addressCountry": "US"
+      },
+      "areaServed": ["Pensacola", "Escambia County", "Santa Rosa County", "Baldwin County"],
+      "priceRange": "$$",
+      "openingHours": "Mo-Su 08:00-20:00",
+      "sameAs": [
+        "https://www.facebook.com/thirstydawgrentals"
+      ]
+    })
+  }}
+/>
+
       </Head>
 
       <div>
