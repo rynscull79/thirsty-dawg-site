@@ -8,11 +8,12 @@ export default function RentalsPage() {
   return (
     <>
       <Head>
-        <title>Frozen Drink Machine Rentals | Stainless & Dual Flavor Options</title>
-        <meta
-          name="description"
-          content="Choose from single or dual flavor frozen drink machines. Stainless steel and plastic options available. Thirsty Dawg delivers and sets up for any event!"
-        />
+   <title>Frozen Drink & Soft Serve Machine Rentals | Thirsty Dawg</title>
+<meta
+  name="description"
+  content="Rent frozen drink and soft serve ice cream machines in Pensacola and nearby areas. Choose from single or dual flavor options — stainless or plastic. Thirsty Dawg handles delivery, setup, and pickup!"
+/>
+
       </Head>
 
       <div>
