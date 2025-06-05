@@ -333,11 +333,12 @@ onChange={(e) => setShowArchived(e.target.checked)}
                       </>
                     ) : `${b.city}, ${b.state} ${b.zip}`}</td>
                     <td>{isEditing ? <input type="number" value={formData.guestCount} onChange={(e) => handleChange('guestCount', parseInt(e.target.value))} /> : b.guestCount}</td>
-                    <td>
+  <td>
   {b.dateNeeded && b.rentalEnd
     ? `${calculateRentalDays(b.dateNeeded, b.rentalEnd)} day(s)`
     : '-'}
 </td>
+
 
 
 <td>{isEditing ? (
@@ -377,17 +378,27 @@ onChange={(e) => setShowArchived(e.target.checked)}
 
                       </select>
                     ) : b.flavor}</td>
-                    <td>
-  {isEditing ? (
-    <select value={formData.secondFlavor || ''} onChange={(e) => handleChange('secondFlavor', e.target.value)}>
-      {['', 'Blue Hawaiian', 'Bushwacker +$5', 'Frosé', 'Grape', 'Lemonade', 'Lime Margarita', 'Louisianna Hurricane', 'Mango Daiquiri', 'Mango Margarita', 'Orange Dreamsicle', 'Peach Belini', 'Peach Daiquiri', 'Pina Colada', 'Pink Lemonade', 'Strawberry Daiquiri', 'Strawberry Margarita', 'Watermelon'].map(opt => (
-        <option key={opt} value={opt}>{opt || 'None'}</option>
-      ))}
-    </select>
+<td>
+  {b.machineType?.includes('Dual') ? (
+    isEditing ? (
+      <select value={formData.secondFlavor || ''} onChange={(e) => handleChange('secondFlavor', e.target.value)}>
+        {[
+          '', 'Blue Hawaiian', 'Bushwacker +$5', 'Frosé', 'Grape', 'Lemonade', 'Lime Margarita',
+          'Louisianna Hurricane', 'Mango Daiquiri', 'Mango Margarita', 'Orange Dreamsicle',
+          'Peach Belini', 'Peach Daiquiri', 'Pina Colada', 'Pink Lemonade',
+          'Strawberry Daiquiri', 'Strawberry Margarita', 'Watermelon'
+        ].map(opt => (
+          <option key={opt} value={opt}>{opt || 'None'}</option>
+        ))}
+      </select>
+    ) : (
+      b.secondFlavor
+    )
   ) : (
-    b.secondFlavor || ''
+    ''
   )}
 </td>
+
 
                     <td>{isEditing ? (
                       <select value={formData.flavorAdditions || ''} onChange={(e) => handleChange('flavorAdditions', e.target.value)}>
