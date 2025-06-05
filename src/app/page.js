@@ -119,7 +119,7 @@ export default function HomePage() {
       <div>
         <section className={styles.hero}>
 <h2>🥶 Frozen Drink & Soft Serve Rentals That Bring the Party to Life</h2>
-          <p>We deliver, set up, and clean up — you enjoy the frozen fun across Pensacola and the Gulf Coast.</p>
+<p>Rent frozen drink and soft serve ice cream machines — we deliver, set up, and clean up across Pensacola and the Gulf Coast.</p>
           <p style={{ marginTop: '1rem', fontWeight: 'bold', fontSize: '1.2rem' }}>
             📞 Call or text us: <a href="tel:8505723796" style={{ color: 'white', textDecoration: 'underline' }}>(850) 572-3796</a>
           </p>
