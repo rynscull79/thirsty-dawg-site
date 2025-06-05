@@ -81,6 +81,12 @@ export default function HomePage() {
   <meta name="description"
   content="Rent frozen drink, slushie, and soft serve ice cream machines for parties, weddings, schools, and events in Pensacola. Thirsty Dawg delivers, sets up, and picks up — hassle-free fun for all ages!"
  />
+         <meta property="og:title" content="Frozen Drink & Soft Serve Rentals | Thirsty Dawg - Pensacola" />
+        <meta property="og:description" content="Rent soft serve ice cream and frozen drink machines for weddings, parties, and events. Serving Pensacola and the Gulf Coast with delivery and setup." />
+        <meta property="og:image" content="https://www.thirstydawgrentals.com/thirsty-dawg-logo.webp" />
+        <meta property="og:url" content="https://www.thirstydawgrentals.com/" />
+        <meta property="og:type" content="website" />
+
       </Head>
 <script
   type="application/ld+json"
