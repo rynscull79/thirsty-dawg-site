@@ -27,41 +27,42 @@ export default function RentalsPage() {
             fontFamily: 'var(--font-chewy)',
           }}
         >
-          <h2
-            style={{
-              fontSize: '2rem',
-              fontWeight: 'bold',
-              color: 'white',
-              textShadow:
-                '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
-            }}
-          >
-            🧊 Our Frozen Drink Machine Rentals
-          </h2>
+<h2
+  style={{
+    fontSize: '2rem',
+    fontWeight: 'bold',
+    color: 'white',
+    textShadow:
+      '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+  }}
+>
+  🍹 Frozen Drink & Soft Serve Machine Rentals
+</h2>
 
-          <p
-            style={{
-              fontSize: '1.2rem',
-              marginTop: '1rem',
-              color: 'white',
-              textShadow:
-                '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
-            }}
-          >
-            Choose from stainless or plastic, single or dual flavor machines. Commercial-grade equipment for the perfect pour.
-          </p>
+<p
+  style={{
+    fontSize: '1.2rem',
+    marginTop: '1rem',
+    color: 'white',
+    textShadow:
+      '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+  }}
+>
+  Choose from stainless or plastic, single or dual flavor frozen drink machines — or cool things down with our new soft serve ice cream rentals!
+</p>
 
-          <p
-            style={{
-              fontSize: '1.2rem',
-              marginTop: '1.5rem',
-              color: 'white',
-              textShadow:
-                '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
-            }}
-          >
-            Whether you're hosting a backyard party, planning a wedding, or managing a vacation rental, Thirsty Dawg brings the frozen fun right to your door — no ice, no hassle.
-          </p>
+<p
+  style={{
+    fontSize: '1.2rem',
+    marginTop: '1.5rem',
+    color: 'white',
+    textShadow:
+      '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+  }}
+>
+  Perfect for birthday parties, beach days, weddings, schools, and vacation rentals — Thirsty Dawg brings the frozen fun to you. No ice needed, no cleanup hassle.
+</p>
+
 
           <p
             style={{
