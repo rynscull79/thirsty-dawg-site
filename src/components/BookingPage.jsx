@@ -179,7 +179,7 @@ const handleDateChange = (e) => {
   'Stainless Single Flavor - $185',
   'Stainless Dual Flavor - $240',
   'Plastic Dual Flavor - $210',
-  'Soft Serve Machine - $200'
+  'Soft Serve Machine - $185'
 ].map(option => (
   <option key={option}>{option}</option>
 ))}
