@@ -77,8 +77,10 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>Frozen Drink Machine Rentals in Pensacola | Thirsty Dawg Rentals</title>
-        <meta name="description" content="Rent a frozen margarita or slushie machine in Pensacola. Thirsty Dawg delivers, sets up, and picks up — perfect for parties, weddings, and events!" />
+  <title>Frozen Drink & Soft Serve Machine Rentals in Pensacola | Thirsty Dawg Rentals</title>
+  <meta name="description"
+  content="Rent frozen drink, slushie, and soft serve ice cream machines for parties, weddings, schools, and events in Pensacola. Thirsty Dawg delivers, sets up, and picks up — hassle-free fun for all ages!"
+ />
       </Head>
 
       <div>
