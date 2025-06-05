@@ -329,16 +329,34 @@ onChange={(e) => setShowArchived(e.target.checked)}
                     ) : b.rentalLength}</td>
                     <td>{isEditing ? (
                       <select value={formData.machineType} onChange={(e) => handleChange('machineType', e.target.value)}>
-                        {['Stainless Single Flavor - $185', 'Stainless Dual Flavor - $240', 'Plastic Dual Flavor - $210'].map(opt => (
-                          <option key={opt}>{opt}</option>
-                        ))}
+                        {[
+  'Stainless Single Flavor - $185',
+  'Stainless Dual Flavor - $240',
+  'Plastic Dual Flavor - $210',
+  'Soft Serve Machine - $200'
+].map(opt => (
+  <option key={opt}>{opt}</option>
+))}
+
                       </select>
                     ) : b.machineType}</td>
                     <td>{isEditing ? (
                       <select value={formData.flavor} onChange={(e) => handleChange('flavor', e.target.value)}>
-                        {['Blue Hawaiian', 'Bushwacker +$5', 'Frosé', 'Grape', 'Lemonade', 'Lime Margarita', 'Louisianna Hurricane', 'Mango Daiquiri', 'Mango Margarita', 'Orange Dreamsicle', 'Peach Belini', 'Peach Daiquiri', 'Pina Colada', 'Pink Lemonade', 'Strawberry Daiquiri', 'Strawberry Margarita', 'Watermelon'].map(opt => (
-                          <option key={opt}>{opt}</option>
-                        ))}
+                        {[
+  // Frozen drink flavors
+  'Blue Hawaiian', 'Bushwacker +$5', 'Frosé', 'Grape', 'Lemonade', 'Lime Margarita',
+  'Louisianna Hurricane', 'Mango Daiquiri', 'Mango Margarita', 'Orange Dreamsicle',
+  'Peach Belini', 'Peach Daiquiri', 'Pina Colada', 'Pink Lemonade', 'Strawberry Daiquiri',
+  'Strawberry Margarita', 'Watermelon',
+  // Soft serve flavors
+  'Soft Serve Vanilla', 'Soft Serve Chocolate',
+  'Soft Serve Birthday Cake (Additional Charge)',
+  'Soft Serve Cotton Candy (Additional Charge)',
+  'Soft Serve Salted Caramel (Additional Charge)'
+].map(opt => (
+  <option key={opt}>{opt}</option>
+))}
+
                       </select>
                     ) : b.flavor}</td>
                     <td>
