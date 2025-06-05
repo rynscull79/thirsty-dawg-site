@@ -290,7 +290,6 @@ onChange={(e) => setShowArchived(e.target.checked)}
                 <th>Address</th>
                 <th>City/State/ZIP</th>
                 <th>Guests</th>
-                <th>Rental</th>
                 <th>Rental Days</th>
                 <th>Machine</th>
                 <th>Flavor</th>
@@ -334,13 +333,12 @@ onChange={(e) => setShowArchived(e.target.checked)}
                       </>
                     ) : `${b.city}, ${b.state} ${b.zip}`}</td>
                     <td>{isEditing ? <input type="number" value={formData.guestCount} onChange={(e) => handleChange('guestCount', parseInt(e.target.value))} /> : b.guestCount}</td>
-                    <td>{isEditing ? (
-                      <select value={formData.rentalLength} onChange={(e) => handleChange('rentalLength', e.target.value)}>
-                        {['Single Day Rental', '2 Day Rental', '3 Day Rental', '4 Day Rental', '5 Day Rental'].map(opt => (
-                          <option key={opt}>{opt}</option>
-                        ))}
-                      </select>
-                    ) : b.rentalLength}</td>
+                    <td>
+  {b.dateNeeded && b.rentalEnd
+    ? `${calculateRentalDays(b.dateNeeded, b.rentalEnd)} day(s)`
+    : '-'}
+</td>
+
 
 <td>{isEditing ? (
   <select value={formData.machineType} onChange={(e) => handleChange('machineType', e.target.value)}>
