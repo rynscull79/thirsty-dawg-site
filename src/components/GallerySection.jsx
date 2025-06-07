@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-
 import Image from 'next/image';
 
 const images = [
@@ -18,18 +17,17 @@ const images = [
 
 export default function GallerySection() {
   const [currentIndex, setCurrentIndex] = useState(0);
-const [itemsPerPage, setItemsPerPage] = useState(3);
+  const [itemsPerPage, setItemsPerPage] = useState(3);
 
-useEffect(() => {
-  const updateItemsPerPage = () => {
-    setItemsPerPage(window.innerWidth < 768 ? 1 : 3);
-  };
+  useEffect(() => {
+    const updateItemsPerPage = () => {
+      setItemsPerPage(window.innerWidth < 768 ? 1 : 3);
+    };
 
-  updateItemsPerPage(); // set on load
-  window.addEventListener('resize', updateItemsPerPage);
-  return () => window.removeEventListener('resize', updateItemsPerPage);
-}, []);
-
+    updateItemsPerPage(); // set on load
+    window.addEventListener('resize', updateItemsPerPage);
+    return () => window.removeEventListener('resize', updateItemsPerPage);
+  }, []);
 
   const maxIndex = Math.ceil(images.length / itemsPerPage) - 1;
   const goToPrevious = () => setCurrentIndex(prev => (prev === 0 ? maxIndex : prev - 1));
@@ -57,35 +55,28 @@ useEffect(() => {
 
       <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '1rem' }}>
         {visibleImages.map((image, index) => (
-          <div key={index} style={{ maxWidth: '300px', textAlign: 'center' }}>
-<div style={{
-  width: '100%',
-  maxWidth: '300px',
-  margin: '0 auto'
-}}>
-
-
-  <Image
-    src={image.src}
-    alt={image.caption}
-    width={300}
-    height={200}
-    loading={index === 0 && currentIndex === 0 ? 'eager' : 'lazy'}
-  priority={index === 0 && currentIndex === 0}
-style={{
-  width: '100%',
-  height: 'auto',
-  maxWidth: '100vw',
-  objectFit: 'cover',
-  borderRadius: '8px',
-  boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
-}}
-
-
-
-  />
-</div>
-
+          <div key={index} style={{ maxWidth: itemsPerPage === 1 ? '100%' : '300px', textAlign: 'center' }}>
+            <div style={{
+              width: '100%',
+              maxWidth: itemsPerPage === 1 ? '95%' : '300px',
+              margin: '0 auto'
+            }}>
+              <Image
+                src={image.src}
+                alt={image.caption}
+                width={itemsPerPage === 1 ? 360 : 300}
+                height={itemsPerPage === 1 ? 260 : 200}
+                loading={index === 0 && currentIndex === 0 ? 'eager' : 'lazy'}
+                priority={index === 0 && currentIndex === 0}
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  objectFit: 'cover',
+                  borderRadius: '8px',
+                  boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                }}
+              />
+            </div>
             <p style={{ marginTop: '0.5rem', fontWeight: 'bold', color: '#333' }}>{image.caption}</p>
           </div>
         ))}
