@@ -75,10 +75,12 @@ useEffect(() => {
 style={{
   width: '100%',
   height: 'auto',
-  objectFit: 'contain',
+  maxWidth: '100vw',
+  objectFit: 'cover',
   borderRadius: '8px',
-  boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+  boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
 }}
+
 
 
   />
