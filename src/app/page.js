@@ -124,6 +124,11 @@ export default function HomePage() {
             📞 Call or text us: <a href="tel:8505723796" style={{ color: 'white', textDecoration: 'underline' }}>(850) 572-3796</a>
           </p>
         </section>
+        <section style={{ display: 'flex', justifyContent: 'center', gap: '20px', padding: '20px 0' }}>
+  <img src="/gallery/frozen-margarita.webp" alt="Frozen Margarita" style={{ width: '280px', borderRadius: '12px', boxShadow: '0 4px 10px rgba(0,0,0,0.2)' }} />
+  <img src="/gallery/strawberry-daiquiri.webp" alt="Strawberry Daiquiri" style={{ width: '280px', borderRadius: '12px', boxShadow: '0 4px 10px rgba(0,0,0,0.2)' }} />
+</section>
+
 <section style={{
   backgroundColor: '#f0f9ff',
   padding: '40px 20px',
