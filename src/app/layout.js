@@ -80,6 +80,8 @@ export default function RootLayout({ children }) {
               maxHeight: '300px',
               objectFit: 'contain',
               objectPosition: 'top',
+              display: 'block',
+              minHeight: '120px',
             }}
           />
         </header>
