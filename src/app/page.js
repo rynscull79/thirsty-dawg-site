@@ -167,7 +167,7 @@ export default function HomePage() {
   gap: '2rem',
 }}>
   <img
-    src="/kid-soft-serve.webp"
+    src="/gallery/kid-soft-serve.webp"
     alt="Kid enjoying soft serve ice cream"
     style={{
       width: '100%',
