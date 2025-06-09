@@ -154,47 +154,63 @@ export default function HomePage() {
   />
 </section>
 
-
 <section style={{
   backgroundColor: '#f0f9ff',
   padding: '40px 20px',
   margin: '40px 0',
   borderRadius: '16px',
   boxShadow: '0 4px 10px rgba(0, 0, 0, 0.05)',
-  textAlign: 'center',
-  border: '2px solid #00a7e1',
+  display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'center',
+  alignItems: 'center',
+  gap: '2rem',
 }}>
-  <h2 style={{
-    fontSize: '2.2rem',
-    marginBottom: '20px',
-    color: '#00a7e1',
-    fontFamily: '"Chewy", cursive',
-  }}>
-    🍦 Now Offering Soft Serve Ice Cream!
-  </h2>
-  <p style={{
-    fontSize: '1.2rem',
-    marginBottom: '20px',
-    color: '#00a7e1',
-    fontWeight: 'bold',
-  }}>
-    Cool off with our newest addition — same price, same fun, extra delicious.
-  </p>
-  <Link href="/booking">
-    <button style={{
-      padding: '14px 30px',
-      fontSize: '1rem',
-      backgroundColor: '#ff6f00',
-      color: '#ffffff',
-      border: 'none',
-      borderRadius: '10px',
-      cursor: 'pointer',
+  <img
+    src="/kid-soft-serve.webp"
+    alt="Kid enjoying soft serve ice cream"
+    style={{
+      width: '100%',
+      maxWidth: '300px',
+      borderRadius: '1rem',
+      boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+    }}
+  />
+
+  <div style={{ textAlign: 'center', maxWidth: '500px' }}>
+    <h2 style={{
+      fontSize: '2.2rem',
+      marginBottom: '20px',
+      color: '#00a7e1',
+      fontFamily: '"Chewy", cursive',
+    }}>
+      🍦 Now Offering Soft Serve Ice Cream!
+    </h2>
+    <p style={{
+      fontSize: '1.2rem',
+      marginBottom: '20px',
+      color: '#00a7e1',
       fontWeight: 'bold',
     }}>
-      Book Soft Serve Now
-    </button>
-  </Link>
+      Cool off with our newest addition — same price, same fun, extra delicious.
+    </p>
+    <Link href="/booking">
+      <button style={{
+        padding: '14px 30px',
+        fontSize: '1rem',
+        backgroundColor: '#ff6f00',
+        color: '#ffffff',
+        border: 'none',
+        borderRadius: '10px',
+        cursor: 'pointer',
+        fontWeight: 'bold',
+      }}>
+        Book Soft Serve Now
+      </button>
+    </Link>
+  </div>
 </section>
+
 
         <section className={styles.section}><GallerySection /></section>
         <ReviewSlider />
