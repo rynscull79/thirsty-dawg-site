@@ -62,7 +62,7 @@ export default function RootLayout({ children }) {
         <header
           style={{
             width: '100%',
-            height: '440px',
+            height: '280px',
             overflow: 'visible',
             position: 'relative',
             paddingBottom: 0,
