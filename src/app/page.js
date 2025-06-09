@@ -124,6 +124,12 @@ export default function HomePage() {
             📞 Call or text us: <a href="tel:8505723796" style={{ color: 'white', textDecoration: 'underline' }}>(850) 572-3796</a>
           </p>
         </section>
+        <DateRange
+  ranges={range}
+  onChange={(item) => setRange([item.selection])}
+  aria-label="Select rental date range"
+/>
+
         <section style={{
   display: 'flex',
   flexWrap: 'wrap',
