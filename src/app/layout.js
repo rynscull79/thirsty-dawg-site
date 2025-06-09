@@ -62,11 +62,9 @@ export default function RootLayout({ children }) {
         <header
           style={{
             width: '100%',
-            height: '280px',
-            overflow: 'visible',
+            overflow: 'hidden',
             position: 'relative',
-            paddingBottom: 0,
-            marginBottom: '-80px'
+            backgroundColor: '#000',
           }}
         >
           <Image
@@ -79,11 +77,9 @@ export default function RootLayout({ children }) {
             style={{
               width: '100%',
               height: 'auto',
-              objectFit: 'cover',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              zIndex: 0
+              maxHeight: '300px',
+              objectFit: 'contain',
+              objectPosition: 'top',
             }}
           />
         </header>
