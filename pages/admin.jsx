@@ -293,6 +293,38 @@ onChange={(e) => setShowArchived(e.target.checked)}
             ))}
           </select>
         </label>
+<button
+  onClick={async () => {
+    try {
+      const status = statusFilter || 'all';
+      const month = filterMonth || 'all';
+      const year = filterYear || 'all';
+
+      const response = await fetch(
+        `https://booking-backend-production-b048.up.railway.app/api/bookings/export/${status}?month=${month}&year=${year}`
+      );
+
+      if (!response.ok) throw new Error('Download failed');
+
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', `bookings-${status}-${month}-${year}.xlsx`);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    } catch (err) {
+      alert('Failed to export bookings');
+      console.error(err);
+    }
+  }}
+  style={{ marginLeft: '1rem' }}
+>
+  ⬇️ Export Filtered
+</button>
+
+ 
       </div>
 
       {loading && <p>Loading bookings...</p>}
