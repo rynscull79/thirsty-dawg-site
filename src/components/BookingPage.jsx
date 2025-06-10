@@ -7,6 +7,15 @@ export default function BookingPage() {
   const [submitted, setSubmitted] = useState(false);
   const [machineType, setMachineType] = useState('');
 const [secondFlavor, setSecondFlavor] = useState('');
+function calculateRentalLength(startDate, endDate) {
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+  const nights = Math.floor((end - start) / (1000 * 60 * 60 * 24));
+
+  if (nights <= 1) return 'Single Day Rental';
+  const extraDays = nights - 2;
+  return `${1 + extraDays} Day Rental`;
+}
 
 
 const handleSubmit = async (e) => {
@@ -32,6 +41,7 @@ rentalEnd: new Date(raw.rental_end).toISOString(),
     flavorAdditions: raw.flavor_additions || '',
     secondFlavor: raw.second_flavor || '',
     comments: raw.comments || '',
+    rentalLength: calculateRentalLength(raw.date_needed, raw.rental_end),
   };
 
   try {
