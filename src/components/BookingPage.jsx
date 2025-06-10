@@ -10,6 +10,29 @@ const [secondFlavor, setSecondFlavor] = useState('');
 const [deliveryFee, setDeliveryFee] = useState(null);
 const [calculatingFee, setCalculatingFee] = useState(false);
 const [formData, setFormData] = useState({ street: '', city: '', state: '', zip: '' });
+  async function calculateDeliveryFee(address) {
+    try {
+      setCalculatingFee(true);
+      const response = await fetch('https://booking-backend-production-b048.up.railway.app/api/calculate-delivery-fee', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ destination: address }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setDeliveryFee(result.fee);
+      } else {
+        console.error('❌ Failed to calculate delivery fee:', result.error);
+        setDeliveryFee(null);
+      }
+    } catch (err) {
+      console.error('❌ Error calculating delivery fee:', err);
+      setDeliveryFee(null);
+    } finally {
+      setCalculatingFee(false);
+    }
+  }
 
 function calculateRentalLength(startDate, endDate) {
   const start = new Date(startDate);
@@ -148,12 +171,17 @@ const handleDateChange = (e) => {
 ].map(([label, name, type]) => (
   <div key={name} className="mb-6">
     <label className="block mb-1 text-lg" htmlFor={name}>{label}</label>
-    <input
-      className="w-full p-3 rounded-xl text-base border border-gray-300 shadow-inner"
-      name={name}
-      type={type}
-      required
-    />
+  <input
+  className="w-full p-3 rounded-xl text-base border border-gray-300 shadow-inner"
+  name={name}
+  type={type}
+  required
+  value={formData[name] || ''}
+  onChange={(e) => setFormData((prev) => ({ ...prev, [name]: e.target.value }))}
+  onBlur={(e) => setFormData((prev) => ({ ...prev, [name]: e.target.value }))}
+  autoComplete="off"
+/>
+
   </div>
 ))}
 
