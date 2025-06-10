@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { LoadScript, Autocomplete } from '@react-google-maps/api';
 import { useRef } from 'react';
+const GOOGLE_LIBRARIES = ['places'];
 
 
 export default function BookingPage() {
@@ -21,7 +22,14 @@ const [formData, setFormData] = useState({ street: '', city: '', state: '', zip:
       const response = await fetch('https://booking-backend-production-b048.up.railway.app/api/calculate-delivery-fee', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ destination: address }),
+        body: JSON.stringify({
+  destination: {
+    street: formData.street,
+    city: formData.city,
+    state: formData.state,
+    zip: formData.zip
+  }
+}),
       });
 
       const result = await response.json();
@@ -55,13 +63,17 @@ const handleSubmit = async (e) => {
   e.preventDefault();
   const form = e.target;
   const raw = Object.fromEntries(new FormData(form).entries());
+  if (!raw.state || !raw.city) {
+    alert('❌ We couldn’t read your full address. Please select the suggestion from the address dropdown again.');
+    return;
+  }
 
   const data = {
     name: raw.name,
     email: raw.email,
     phone: raw.phone,
     street: raw.street,
-    city: raw.city,
+    city: raw.city || 'Unknown',
     state: raw.state,
     zip: raw.zip,
     dateNeeded: new Date(raw.date_needed).toISOString(),
@@ -140,7 +152,7 @@ const handleDateChange = (e) => {
   return (
   <LoadScript
     googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
-    libraries={['places']}
+    libraries={GOOGLE_LIBRARIES}
   >
     <div style={{ backgroundColor: '#009fdb', padding: '3rem 1rem', minHeight: '100vh' }}>
       <form
@@ -212,11 +224,12 @@ onPlaceChanged={() => {
   addressComponents.find((c) => c.types.includes(type))?.long_name || '';
 
 const street = place.formatted_address || '';
-const city =
-  getPart('locality') ||
-  getPart('sublocality') ||
-  getPart('administrative_area_level_2') ||
-  'Unknown';
+let city = getPart('locality') || getPart('sublocality') || getPart('administrative_area_level_2');
+if (!city) {
+  console.warn('⚠️ City not found, falling back to unknown');
+  city = 'Unknown';
+}
+
 const state = getPart('administrative_area_level_1') || 'FL';
 const zip = getPart('postal_code') || '';
 
@@ -261,6 +274,8 @@ const zip = getPart('postal_code') || '';
     autoComplete="off"
   />
 </div>
+<input type="hidden" name="city" value={formData.city || ''} />
+<input type="hidden" name="state" value={formData.state || ''} />
 
 <div className="mb-6">
   <label className="block mb-1 text-lg" htmlFor="date_needed">Rental Start Date</label>
