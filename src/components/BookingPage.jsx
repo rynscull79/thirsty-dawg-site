@@ -2,6 +2,9 @@
 
 import React, { useState } from 'react';
 import { useEffect } from 'react';
+import { LoadScript, Autocomplete } from '@react-google-maps/api';
+import { useRef } from 'react';
+
 
 export default function BookingPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -9,6 +12,7 @@ export default function BookingPage() {
 const [secondFlavor, setSecondFlavor] = useState('');
 const [deliveryFee, setDeliveryFee] = useState(null);
 const [calculatingFee, setCalculatingFee] = useState(false);
+const autocompleteRef = useRef(null);
 const [formData, setFormData] = useState({ street: '', city: '', state: '', zip: '' });
   async function calculateDeliveryFee(address) {
     try {
@@ -133,6 +137,10 @@ const handleDateChange = (e) => {
   }
 
   return (
+  <LoadScript
+    googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
+    libraries={['places']}
+  >
     <div style={{ backgroundColor: '#009fdb', padding: '3rem 1rem', minHeight: '100vh' }}>
       <form
         onSubmit={handleSubmit}
@@ -165,9 +173,34 @@ const handleDateChange = (e) => {
   ['Name', 'name', 'text'],
   ['Email', 'email', 'email'],
   ['Phone', 'phone', 'text'],
-  ['Street Address (Event Location)', 'street', 'text'],
-  ['City', 'city', 'text'],
-  ['State', 'state', 'text'],
+  <div className="mb-6">
+  <label className="block mb-1 text-lg" htmlFor="street">Street Address (Event Location)</label>
+  <Autocomplete
+    onLoad={(autocomplete) => (autocompleteRef.current = autocomplete)}
+    onPlaceChanged={() => {
+      if (autocompleteRef.current) {
+        const place = autocompleteRef.current.getPlace();
+        const formatted = place?.formatted_address || '';
+        setFormData((prev) => ({
+          ...prev,
+          street: formatted
+        }));
+      }
+    }}
+  >
+    <input
+      className="w-full p-3 rounded-xl text-base border border-gray-300 shadow-inner"
+      name="street"
+      type="text"
+      placeholder="Enter delivery address"
+      required
+      value={formData.street || ''}
+      onChange={(e) => setFormData((prev) => ({ ...prev, street: e.target.value }))}
+      autoComplete="off"
+    />
+  </Autocomplete>
+</div>
+
   ['ZIP', 'zip', 'text'],
 ].map(([label, name, type]) => (
   <div key={name} className="mb-6">
@@ -306,5 +339,6 @@ const handleDateChange = (e) => {
 
       </form>
     </div>
+    </LoadScript>
   );
 }
