@@ -196,28 +196,36 @@ const handleDateChange = (e) => {
   <label className="block mb-1 text-lg" htmlFor="street">Street Address (Event Location)</label>
   <Autocomplete
     onLoad={(autocomplete) => (autocompleteRef.current = autocomplete)}
-    onPlaceChanged={() => {
-  if (autocompleteRef.current) {
-    const place = autocompleteRef.current.getPlace();
-    const addressComponents = place.address_components || [];
+onPlaceChanged={() => {
+  if (!autocompleteRef.current) return;
 
-    const getPart = (type) =>
-      addressComponents.find((c) => c.types.includes(type))?.long_name || '';
-
-    const street = place.formatted_address || '';
-    const city = getPart('locality');
-    const state = getPart('administrative_area_level_1');
-    const zip = getPart('postal_code');
-
-    setFormData((prev) => ({
-      ...prev,
-      street,
-      city,
-      state,
-      zip,
-    }));
+  const place = autocompleteRef.current.getPlace();
+  if (!place || !place.address_components) {
+    console.error('❌ Google Maps: Place or address_components missing');
+    return;
   }
+
+  const addressComponents = place.address_components;
+
+  const getPart = (type) =>
+    addressComponents.find((c) => c.types.includes(type))?.long_name || '';
+
+  const street = place.formatted_address || '';
+  const city = getPart('locality') || getPart('sublocality') || getPart('administrative_area_level_2');
+  const state = getPart('administrative_area_level_1');
+  const zip = getPart('postal_code');
+
+  if (!city) console.warn('⚠️ City not found in address_components');
+
+  setFormData((prev) => ({
+    ...prev,
+    street,
+    city,
+    state,
+    zip,
+  }));
 }}
+
 
   >
     <input
