@@ -295,13 +295,18 @@ const handleDateChange = (e) => {
         >
           ✉️ Submit Booking
         </button>
-        {calculatingFee ? (
+     {calculatingFee ? (
   <p className="text-center mt-4 text-lg text-gray-700">Calculating delivery fee...</p>
-) : deliveryFee !== null ? (
+) : typeof deliveryFee === 'number' ? (
   <p className="text-center mt-4 text-lg font-bold text-green-700">
     Estimated Delivery Fee: ${deliveryFee.toFixed(2)}
   </p>
+) : deliveryFee === 0 ? (
+  <p className="text-center mt-4 text-lg font-bold text-green-700">
+    Estimated Delivery Fee: $0.00 (within free zone)
+  </p>
 ) : null}
+
 
       </form>
     </div>
