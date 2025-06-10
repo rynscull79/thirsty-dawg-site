@@ -1,5 +1,25 @@
-import Head from 'next/head';
 import IceCreamClientPage from './IceCreamClientPage';
+
+export const metadata = {
+  title: 'Ice Cream Party Packs | Thirsty Dawg Rentals',
+  description:
+    'Choose from pre-packed novelty ice cream bundles or build your own. Delivered in a pre-chilled freezer for stress-free events in Pensacola and surrounding areas.',
+  robots: 'noindex, nofollow',
+  keywords:
+    'ice cream party pack, novelty ice cream pensacola, frozen treat rental, freezer rental, thirsty dawg rentals',
+  authors: [{ name: 'Thirsty Dawg Rentals' }],
+  openGraph: {
+    title: 'Ice Cream Party Packs | Thirsty Dawg Rentals',
+    description:
+      'Choose from pre-packed novelty ice cream bundles or build your own. Delivered in a pre-chilled freezer for events in Pensacola and surrounding areas.',
+    type: 'product.group',
+    url: 'https://www.thirstydawgrentals.com/icecream',
+    images: [
+      'https://www.thirstydawgrentals.com/gallery/thirsty-dawg-cart.webp',
+    ],
+  },
+  metadataBase: new URL('https://www.thirstydawgrentals.com'),
+};
 
 const schemaData = {
   "@context": "https://schema.org",
@@ -64,23 +84,10 @@ const schemaData = {
 export default function IceCreamPage() {
   return (
     <>
-      <Head>
-        <title>Ice Cream Party Packs | Thirsty Dawg Rentals</title>
-        <meta
-          name="description"
-          content="Choose from pre-packed novelty ice cream bundles or build your own. Delivered in a pre-chilled freezer for stress-free events in Pensacola and surrounding areas."
-        
-        />
-        <meta name="robots" content="noindex, nofollow" />
-        <meta name="keywords" content="ice cream party pack, novelty ice cream pensacola, frozen treat rental, freezer rental, thirsty dawg rentals" />
-        <meta name="author" content="Thirsty Dawg Rentals" />
-        <meta property="og:title" content="Ice Cream Party Packs | Thirsty Dawg Rentals" />
-        <meta property="og:description" content="Choose from pre-packed novelty ice cream bundles or build your own. Delivered in a pre-chilled freezer for events in Pensacola and surrounding areas." />
-        <meta property="og:type" content="product.group" />
-        <meta property="og:url" content="https://www.thirstydawgrentals.com/icecream" />
-        <meta property="og:image" content="https://www.thirstydawgrentals.com/gallery/thirsty-dawg-cart.webp" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
-      </Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <IceCreamClientPage />
     </>
   );

@@ -1,3 +1,6 @@
+'use client';
+
+
 // 📁 src/components/OurRentals.jsx
 import { useState } from 'react';
 import { DateRange } from 'react-date-range';

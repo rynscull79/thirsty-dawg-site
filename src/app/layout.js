@@ -7,7 +7,6 @@ import { Chewy } from 'next/font/google';
 import HeaderNav from '@/components/HeaderNav';
 import FloatingBookNow from '@/components/FloatingBookNow';
 import Footer from '@/components/Footer';
-import { LoadScript } from '@react-google-maps/api';
 
 
 const chewy = Chewy({ subsets: ['latin'], weight: '400', variable: '--font-chewy' });
@@ -39,46 +38,45 @@ export default function RootLayout({ children }) {
             height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe>
         </noscript>
 
-        <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY} libraries={['places']}>
-          <HeaderNav />
-          <FloatingBookNow />
-          <header style={{ width: '100%', height: '440px', overflow: 'visible', position: 'relative', paddingBottom: 0, marginBottom: '-80px' }}>
-            <Image
-              src="/Pensacola-Beach.webp"
-              alt="Thirsty Dawg Header"
-              width={1920}
-              height={600}
-              priority
-              className="header-image"
-              style={{
-                width: '100%',
-                height: 'auto',
-                objectFit: 'cover',
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                zIndex: 0
-              }}
-            />
-          </header>
+<HeaderNav />
+<FloatingBookNow />
+<header style={{ width: '100%', height: '440px', overflow: 'visible', position: 'relative', paddingBottom: 0, marginBottom: '-80px' }}>
+  <Image
+    src="/Pensacola-Beach.webp"
+    alt="Thirsty Dawg Header"
+    width={1920}
+    height={600}
+    priority
+    className="header-image"
+    style={{
+      width: '100%',
+      height: 'auto',
+      objectFit: 'cover',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      zIndex: 0
+    }}
+  />
+</header>
 
-          <main
-            className="main"
-            style={{
-              maxWidth: '1140px',
-              margin: '0 auto',
-              backgroundColor: '#e6f0fa',
-              padding: '2rem',
-              borderRadius: '1rem',
-              zIndex: 2,
-              position: 'relative'
-            }}
-          >
-            {children}
-          </main>
+<main
+  className="main"
+  style={{
+    maxWidth: '1140px',
+    margin: '0 auto',
+    backgroundColor: '#e6f0fa',
+    padding: '2rem',
+    borderRadius: '1rem',
+    zIndex: 2,
+    position: 'relative'
+  }}
+>
+  {children}
+</main>
 
-          <Footer />
-        </LoadScript>
+<Footer />
+
       </body>
     </html>
   );
