@@ -69,7 +69,9 @@ export default function IceCreamPage() {
         <meta
           name="description"
           content="Choose from pre-packed novelty ice cream bundles or build your own. Delivered in a pre-chilled freezer for stress-free events in Pensacola and surrounding areas."
+        
         />
+        <meta name="robots" content="noindex, nofollow" />
         <meta name="keywords" content="ice cream party pack, novelty ice cream pensacola, frozen treat rental, freezer rental, thirsty dawg rentals" />
         <meta name="author" content="Thirsty Dawg Rentals" />
         <meta property="og:title" content="Ice Cream Party Packs | Thirsty Dawg Rentals" />
