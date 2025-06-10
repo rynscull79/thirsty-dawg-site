@@ -209,12 +209,17 @@ onPlaceChanged={() => {
   const addressComponents = place.address_components;
 
   const getPart = (type) =>
-    addressComponents.find((c) => c.types.includes(type))?.long_name || '';
+  addressComponents.find((c) => c.types.includes(type))?.long_name || '';
 
-  const street = place.formatted_address || '';
-  const city = getPart('locality') || getPart('sublocality') || getPart('administrative_area_level_2');
-  const state = getPart('administrative_area_level_1');
-  const zip = getPart('postal_code');
+const street = place.formatted_address || '';
+const city =
+  getPart('locality') ||
+  getPart('sublocality') ||
+  getPart('administrative_area_level_2') ||
+  'Unknown';
+const state = getPart('administrative_area_level_1') || 'FL';
+const zip = getPart('postal_code') || '';
+
 
   if (!city) console.warn('⚠️ City not found in address_components');
 
