@@ -20,6 +20,7 @@ const [formData, setFormData] = useState({ street: '', city: '', state: '', zip:
       });
 
       const result = await response.json();
+      console.log('🚚 Delivery Fee API response:', result);
       if (result.success) {
         setDeliveryFee(result.fee);
       } else {
