@@ -200,6 +200,7 @@ onPlaceChanged={() => {
   if (!autocompleteRef.current) return;
 
   const place = autocompleteRef.current.getPlace();
+  console.log('📦 Full Place Object:', place);
   if (!place || !place.address_components) {
     console.error('❌ Google Maps: Place or address_components missing');
     return;
