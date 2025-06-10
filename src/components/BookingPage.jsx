@@ -119,7 +119,7 @@ const handleDateChange = (e) => {
   ['Name', 'name', 'text'],
   ['Email', 'email', 'email'],
   ['Phone', 'phone', 'text'],
-  ['Street Address of Event', 'street', 'text'],
+  ['Street Address (Event Location)', 'street', 'text'],
   ['City', 'city', 'text'],
   ['State', 'state', 'text'],
   ['ZIP', 'zip', 'text'],
