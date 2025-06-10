@@ -169,11 +169,29 @@ const handleDateChange = (e) => {
           Book a Frozen Drink or Soft Serve Machine!
         </h2>
 {/* Basic Contact Info */}
+{/* Name, Email, Phone */}
 {[
   ['Name', 'name', 'text'],
   ['Email', 'email', 'email'],
   ['Phone', 'phone', 'text'],
-  <div className="mb-6">
+].map(([label, name, type]) => (
+  <div key={name} className="mb-6">
+    <label className="block mb-1 text-lg" htmlFor={name}>{label}</label>
+    <input
+      className="w-full p-3 rounded-xl text-base border border-gray-300 shadow-inner"
+      name={name}
+      type={type}
+      required
+      value={formData[name] || ''}
+      onChange={(e) => setFormData((prev) => ({ ...prev, [name]: e.target.value }))}
+      onBlur={(e) => setFormData((prev) => ({ ...prev, [name]: e.target.value }))}
+      autoComplete="off"
+    />
+  </div>
+))}
+
+{/* Street Address with Autocomplete */}
+<div className="mb-6">
   <label className="block mb-1 text-lg" htmlFor="street">Street Address (Event Location)</label>
   <Autocomplete
     onLoad={(autocomplete) => (autocompleteRef.current = autocomplete)}
@@ -201,23 +219,20 @@ const handleDateChange = (e) => {
   </Autocomplete>
 </div>
 
-  ['ZIP', 'zip', 'text'],
-].map(([label, name, type]) => (
-  <div key={name} className="mb-6">
-    <label className="block mb-1 text-lg" htmlFor={name}>{label}</label>
+{/* ZIP */}
+<div className="mb-6">
+  <label className="block mb-1 text-lg" htmlFor="zip">ZIP</label>
   <input
-  className="w-full p-3 rounded-xl text-base border border-gray-300 shadow-inner"
-  name={name}
-  type={type}
-  required
-  value={formData[name] || ''}
-  onChange={(e) => setFormData((prev) => ({ ...prev, [name]: e.target.value }))}
-  onBlur={(e) => setFormData((prev) => ({ ...prev, [name]: e.target.value }))}
-  autoComplete="off"
-/>
-
-  </div>
-))}
+    className="w-full p-3 rounded-xl text-base border border-gray-300 shadow-inner"
+    name="zip"
+    type="text"
+    required
+    value={formData.zip || ''}
+    onChange={(e) => setFormData((prev) => ({ ...prev, zip: e.target.value }))}
+    onBlur={(e) => setFormData((prev) => ({ ...prev, zip: e.target.value }))}
+    autoComplete="off"
+  />
+</div>
 
 <div className="mb-6">
   <label className="block mb-1 text-lg" htmlFor="date_needed">Rental Start Date</label>
