@@ -1,12 +1,16 @@
 'use client';
 
 import React, { useState } from 'react';
-
+import { useEffect } from 'react';
 
 export default function BookingPage() {
   const [submitted, setSubmitted] = useState(false);
   const [machineType, setMachineType] = useState('');
 const [secondFlavor, setSecondFlavor] = useState('');
+const [deliveryFee, setDeliveryFee] = useState(null);
+const [calculatingFee, setCalculatingFee] = useState(false);
+const [formData, setFormData] = useState({ street: '', city: '', state: '', zip: '' });
+
 function calculateRentalLength(startDate, endDate) {
   const start = new Date(startDate);
   const end = new Date(endDate);
@@ -42,8 +46,9 @@ rentalEnd: new Date(raw.rental_end).toISOString(),
     secondFlavor: raw.second_flavor || '',
     comments: raw.comments || '',
     rentalLength: calculateRentalLength(raw.date_needed, raw.rental_end),
-  };
-
+  
+deliveryFee: deliveryFee !== null ? deliveryFee : 0,
+};
   try {
     const response = await fetch('https://booking-backend-production-b048.up.railway.app/api/bookings', {
   method: 'POST',
@@ -64,6 +69,13 @@ rentalEnd: new Date(raw.rental_end).toISOString(),
     alert('❌ Something went wrong. Please try again.');
   }
 };
+
+useEffect(() => {
+  const fullAddress = `${formData.street || ''}, ${formData.city || ''}, ${formData.state || ''} ${formData.zip || ''}`;
+  if (formData.street && formData.city && formData.state && formData.zip) {
+    calculateDeliveryFee(fullAddress);
+  }
+}, [formData.street, formData.city, formData.state, formData.zip]);
 
 
 
@@ -255,6 +267,14 @@ const handleDateChange = (e) => {
         >
           ✉️ Submit Booking
         </button>
+        {calculatingFee ? (
+  <p className="text-center mt-4 text-lg text-gray-700">Calculating delivery fee...</p>
+) : deliveryFee !== null ? (
+  <p className="text-center mt-4 text-lg font-bold text-green-700">
+    Estimated Delivery Fee: ${deliveryFee.toFixed(2)}
+  </p>
+) : null}
+
       </form>
     </div>
   );
