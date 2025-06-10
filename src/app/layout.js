@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
             height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe>
         </noscript>
 
-        <LoadScript googleMapsApiKey="AIzaSyC19rsRStZNvegSuvp2czHNsUxHEj4ZeGg" libraries={['places']}>
+        <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY} libraries={['places']}>
           <HeaderNav />
           <FloatingBookNow />
           <header style={{ width: '100%', height: '440px', overflow: 'visible', position: 'relative', paddingBottom: 0, marginBottom: '-80px' }}>
