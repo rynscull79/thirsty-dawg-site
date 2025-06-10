@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState } from 'react';
@@ -196,15 +197,28 @@ const handleDateChange = (e) => {
   <Autocomplete
     onLoad={(autocomplete) => (autocompleteRef.current = autocomplete)}
     onPlaceChanged={() => {
-      if (autocompleteRef.current) {
-        const place = autocompleteRef.current.getPlace();
-        const formatted = place?.formatted_address || '';
-        setFormData((prev) => ({
-          ...prev,
-          street: formatted
-        }));
-      }
-    }}
+  if (autocompleteRef.current) {
+    const place = autocompleteRef.current.getPlace();
+    const addressComponents = place.address_components || [];
+
+    const getPart = (type) =>
+      addressComponents.find((c) => c.types.includes(type))?.long_name || '';
+
+    const street = place.formatted_address || '';
+    const city = getPart('locality');
+    const state = getPart('administrative_area_level_1');
+    const zip = getPart('postal_code');
+
+    setFormData((prev) => ({
+      ...prev,
+      street,
+      city,
+      state,
+      zip,
+    }));
+  }
+}}
+
   >
     <input
       className="w-full p-3 rounded-xl text-base border border-gray-300 shadow-inner"
