@@ -167,6 +167,26 @@ const markAsInvoiced = async (id) => {
     alert('Error marking as invoiced.');
   }
 };
+const archiveBooking = async (id) => {
+  try {
+    const response = await fetch(`https://booking-backend-production-b048.up.railway.app/api/bookings/${id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ status: 'archived' }),
+    });
+
+    const result = await response.json();
+    if (!result.success) {
+      console.error(result.error);
+      alert('Failed to archive booking.');
+    }
+
+    fetchBookings(); // Refresh view
+  } catch (err) {
+    console.error(err);
+    alert('Error archiving booking.');
+  }
+};
 
   const deleteBooking = async (id) => {
     if (!window.confirm('Are you sure you want to delete this booking?')) return;
@@ -420,7 +440,13 @@ onChange={(e) => setShowArchived(e.target.checked)}
           ✅ Mark Invoiced
         </button>
       )}
-    </>
+    {b.status === 'invoiced' && (
+  <button onClick={() => archiveBooking(b.id)} style={{ marginLeft: '0.5rem' }}>
+    🗃️ Archive
+  </button>
+)}
+</>
+
   )}
   <button onClick={() => deleteBooking(b.id)}>🗑️</button>
 </td>
