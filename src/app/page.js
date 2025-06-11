@@ -133,17 +133,18 @@ export default function HomePage() {
   padding: '20px 0',
 }}>
   <img
-  src="/gallery/kid-soft-serve.webp"
-  alt="Kid enjoying soft serve ice cream"
-  width="300"
-  height="400"
+  src="/gallery/frozen-margarita.webp"
+  alt="Frozen Margarita on Machine"
+  width="320"
+  height="427"
   style={{
+    maxWidth: '320px',
     width: '100%',
-    maxWidth: '300px',
     borderRadius: '1rem',
-    boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+    boxShadow: '0 4px 10px rgba(0,0,0,0.15)'
   }}
 />
+
   <img
   src="/gallery/strawberry-daiquiri.webp"
   alt="Strawberry Daiquiri by Pool"
@@ -172,15 +173,18 @@ export default function HomePage() {
   gap: '2rem',
 }}>
   <img
-    src="/gallery/kid-soft-serve.webp"
-    alt="Kid enjoying soft serve ice cream"
-    style={{
-      width: '100%',
-      maxWidth: '300px',
-      borderRadius: '1rem',
-      boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-    }}
-  />
+  src="/gallery/kid-soft-serve.webp"
+  alt="Kid enjoying soft serve ice cream"
+  width="300"
+  height="400"
+  style={{
+    width: '100%',
+    maxWidth: '300px',
+    borderRadius: '1rem',
+    boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+  }}
+/>
+
 
   <div style={{ textAlign: 'center', maxWidth: '500px' }}>
     <h2 style={{
