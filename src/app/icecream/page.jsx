@@ -64,7 +64,7 @@ export default function IceCreamPage() {
 
       <h2 style={{ fontSize: '1.5rem', color: '#3a1a0a', marginBottom: '1rem' }}>Pricing & Details</h2>
       <ul style={{ fontSize: '1rem', color: '#333', paddingLeft: '1.25rem', marginBottom: '2rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}>Freezer or Cart Rental: <strong>$95</strong></li>
+        <li style={{ marginBottom: '0.5rem' }}>Freezer or Cart Rental : <strong>$95</strong></li>
         <li style={{ marginBottom: '0.5rem' }}>Package sizes: 150–300 treats or ala-carte</li>
         <li style={{ marginBottom: '0.5rem' }}>Free delivery & pickup included</li>
         <li><em>$150 minimum order</em></li>
@@ -130,10 +130,11 @@ whiteSpace: 'nowrap',
     <li>Magnum Double Caramel Bars – 27</li>
     <li>Klondike Original – 24</li>
     <li>Reese's Peanut Butter Frozen Bars – 24</li>
-    <li>Wellsley Farms Strawberry Shortcake Bar – 18</li>
+    <li>Wellsley Farms Strawberry Shortcake Bars – 18</li>
     <li>Haagen-Dazs Chocolate Dark Chocolate Ice Cream Bars – 15</li>
     <li>FatBoy Hot Fudge Brownie Ice Cream Sandwich – 18</li>
-    <li>Snickers Ice Cream Chocolate Caramel Peanut Butter Bars – 24</li>
+    <li>Snickers Ice Cream Chocolate Caramel Peanut Butter Bars
+         – 24</li>
   </ul>
 </section>
 
@@ -143,7 +144,7 @@ whiteSpace: 'nowrap',
     <li>Oreo Bars – 30</li>
     <li>Snickers Ice Cream Chocolate Caramel Peanut Butter Bars – 24</li>
     <li>Reese's Peanut Butter Frozen Bars – 24</li>
-    <li>Butterfinger Ice Cream Candy Bar – 24</li>
+    <li>Butterfinger Ice Cream Candy Bars – 24</li>
     <li>Twix Caramel Vanilla Milk Chocolate Ice Cream Bars – 24</li>
     <li>Kit Kat Ice Cream Cones – 32</li>
   </ul>
@@ -152,10 +153,10 @@ whiteSpace: 'nowrap',
 <section style={{ marginBottom: '2rem' }}>
   <h3 style={{ fontSize: '1.25rem', color: '#5b2b1b' }}>🍭 Coolest Deal in Town – 216 Pieces ($225)</h3>
   <ul>
-    <li>Chocolate Crunch Cake Bar – 24</li>
-    <li>Cool Watermelon Bar – 24</li>
-    <li>Orange Cream Bar – 24</li>
-    <li>Straw Shortcake Bar – 24</li>
+    <li>Chocolate Crunch Cake Bars – 24</li>
+    <li>Cool Watermelon Bars – 24</li>
+    <li>Orange Cream Bars – 24</li>
+    <li>Straw Shortcake Bars – 24</li>
     <li>Sour Cyclone – 24</li>
     <li>Fudge Frenzy Bars – 24</li>
     <li>Bomb Pop Ice Pops – 36</li>
@@ -166,8 +167,8 @@ whiteSpace: 'nowrap',
 <section style={{ marginBottom: '2rem' }}>
   <h3 style={{ fontSize: '1.25rem', color: '#5b2b1b' }}>🎉 Cool Kid Combo – 156 Pieces ($215)</h3>
   <ul>
-    <li>Chocolate Crunch Cake Bar – 24</li>
-    <li>Strawberry Shortcake Bar – 24</li>
+    <li>Chocolate Crunch Cake Bars – 24</li>
+    <li>Strawberry Shortcake Bars – 24</li>
     <li>Mickey Mouse Ice Cream Bars – 24</li>
     <li>Wellsley Farms Vanilla Ice Cream Sandwiches – 24</li>
     <li>Bomb Pop Ice Pops – 36</li>
@@ -195,7 +196,67 @@ whiteSpace: 'nowrap',
     boxShadow: '0 2px 10px rgba(0,0,0,0.05)',
     textAlign: 'center',
   }}
->
+><section style={{ margin: '3rem 0' }}>
+  <h2 style={{ fontSize: '1.5rem', color: '#3a1a0a', marginBottom: '1rem', textAlign: 'center' }}>
+    Build Your Own – A La Carte Options
+  </h2>
+  <p style={{ fontSize: '1rem', color: '#444', marginBottom: '1.5rem', textAlign: 'center' }}>
+    Want to build your own mix? Order individual boxes of your favorite frozen novelties:
+  </p>
+  <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.95rem' }}>
+    <thead>
+      <tr style={{ backgroundColor: '#fef6e4' }}>
+        <th style={{ textAlign: 'left', padding: '0.5rem', borderBottom: '2px solid #ddd' }}>Product</th>
+        <th style={{ textAlign: 'right', padding: '0.5rem', borderBottom: '2px solid #ddd' }}>Box Size</th>
+        <th style={{ textAlign: 'right', padding: '0.5rem', borderBottom: '2px solid #ddd' }}>Box Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {[
+        ['Magnum Double Caramel Bars', 12, '$36.00'],
+        ['Klondike Original', 24, '$42.00'],
+        ['Reese\'s Peanut Butter Frozen Bars', 24, '$54.00'],
+        ['Wellsley Farms Strawberry Shortcake Bar', 18, '$31.50'],
+        ['Haagen-Dazs Chocolate Dark Chocolate Ice Cream Bars', 15, '$37.50'],
+        ['FatBoy Hot Fudge Brownie Ice Cream Sandwich', 9, '$18.00'],
+        ['FatBoy Birthday Cake Ice Cream Sandwich Pop', 12, '$24.00'],
+        ['Snickers Ice Cream Chocolate Caramel Peanut Butter Bars', 24, '$54.00'],
+        ['Oreo Bars', 15, '$26.25'],
+        ['Butterfinger Ice Cream Candy Bar', 24, '$54.00'],
+        ['Twix Caramel Vanilla Milk Chocolate Ice Cream Bars', 24, '$54.00'],
+        ['Kit Kat Ice Cream Cones', 15, '$33.75'],
+        ['Chocolate Crunch Cake', 24, '$42.00'],
+        ['Cool Watermelon Bar', 24, '$42.00'],
+        ['Orange Cream Bar', 24, '$42.00'],
+        ['Straw Shortcake Bar', 24, '$42.00'],
+        ['Sour Cyclone', 24, '$42.00'],
+        ['Wellsley Farms Vanilla Ice Cream Sandwiches', 24, '$42.00'],
+        ['Bomb Pop Ice Pops', 36, '$54.00'],
+        ['FatBoy Vanilla Sandwich', 18, '$36.00'],
+        ['Mickey Mouse Ice Cream Bars', 12, '$24.00'],
+        ['Popsicle Spongebob', 6, '$12.00'],
+        ['Rich\'s Vanilla Sandwiches', 24, '$42.00'],
+        ['Rich\'s Crumbled Cookie Cone', 24, '$42.00'],
+        ['Rich\'s Birthday Cake Cone', 24, '$42.00'],
+        ['Rich\'s Fudge Frenzy', 24, '$42.00'],
+        ['Blue Bunny Soft Vanilla Cups', 24, '$42.00'],
+        ['Spiderman Popsicle', 6, '$12.00'],
+        ['MM Van Cook Sand', 24, '$60.00'],
+        ['Good Humor Cookies & Cream Bar', 24, '$60.00'],
+        ['Good Humor Giant King Cone', 12, '$30.00'],
+        ['Magnum Double Raspberry Bar', 12, '$36.00'],
+        ['Magnum Almond Bar', 12, '$36.00'],
+      ].map(([product, count, price], i) => (
+        <tr key={i} style={{ borderBottom: '1px solid #eee' }}>
+          <td style={{ padding: '0.5rem 0' }}>{product}</td>
+          <td style={{ textAlign: 'right' }}>{count}</td>
+          <td style={{ textAlign: 'right' }}>{price}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</section>
+
   <h2 style={{ fontSize: '1.75rem', color: '#5b2b1b', marginBottom: '1rem' }}>
     Ready to Book Your Ice Cream Freezer?
   </h2>
