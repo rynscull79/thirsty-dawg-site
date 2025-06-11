@@ -32,12 +32,66 @@ export default function IceCreamPage() {
         <li><em>$150 minimum order</em></li>
       </ul>
 
-      <h2 style={{ fontSize: '1.5rem', color: '#3a1a0a', marginBottom: '1rem' }}>Available Packages</h2>
-      <p style={{ fontSize: '1rem', color: '#333', marginBottom: '0.75rem' }}>🍦 The VIP — 147 treats — $275</p>
-      <p style={{ fontSize: '1rem', color: '#333', marginBottom: '0.75rem' }}>🍨 Frosted Favorites — 158 treats — $225</p>
-      <p style={{ fontSize: '1rem', color: '#333', marginBottom: '0.75rem' }}>🍭 Coolest Deal — 216 treats — $225</p>
-      <p style={{ fontSize: '1rem', color: '#333', marginBottom: '0.75rem' }}>🎉 Cool Kid Combo — 156 treats — $215</p>
-      <p style={{ fontSize: '1rem', color: '#333', marginBottom: '2rem' }}>👨‍👩‍👧‍👦 Crowd Pleaser — 288 treats — $250</p>
+      <h2 style={{ fontSize: '1.5rem', color: '#3a1a0a', marginBottom: '1rem' }}>What's in Each Package</h2>
+
+<section style={{ marginBottom: '2rem' }}>
+  <h3 style={{ fontSize: '1.25rem', color: '#5b2b1b' }}>🍦 The VIP – 147 Pieces ($275)</h3>
+  <ul>
+    <li>Magnum Double Caramel Bars – 27</li>
+    <li>Klondike Original – 24</li>
+    <li>Reese's Peanut Butter Frozen Bars – 24</li>
+    <li>Wellsley Farms Strawberry Shortcake Bar – 18</li>
+    <li>Haagen-Dazs Chocolate Dark Chocolate Ice Cream Bars – 15</li>
+    <li>FatBoy Hot Fudge Brownie Ice Cream Sandwich – 18</li>
+    <li>Snickers Ice Cream Chocolate Caramel Peanut Butter Bars – 24</li>
+  </ul>
+</section>
+
+<section style={{ marginBottom: '2rem' }}>
+  <h3 style={{ fontSize: '1.25rem', color: '#5b2b1b' }}>🍨 Frosted Favorites – 158 Pieces ($225)</h3>
+  <ul>
+    <li>Oreo Bars – 30</li>
+    <li>Snickers Ice Cream Chocolate Caramel Peanut Butter Bars – 24</li>
+    <li>Reese's Peanut Butter Frozen Bars – 24</li>
+    <li>Butterfinger Ice Cream Candy Bar – 24</li>
+    <li>Twix Caramel Vanilla Milk Chocolate Ice Cream Bars – 24</li>
+    <li>Kit Kat Ice Cream Cones – 32</li>
+  </ul>
+</section>
+
+<section style={{ marginBottom: '2rem' }}>
+  <h3 style={{ fontSize: '1.25rem', color: '#5b2b1b' }}>🍭 Coolest Deal in Town – 216 Pieces ($225)</h3>
+  <ul>
+    <li>Chocolate Crunch Cake – 24</li>
+    <li>Cool Watermelon Bar – 24</li>
+    <li>Orange Cream Bar – 24</li>
+    <li>Straw Shortcake Bar – 24</li>
+    <li>Sour Cyclone – 24</li>
+    <li>Wellsley Farms Vanilla Ice Cream Sandwiches – 24</li>
+    <li>Bomb Pop Ice Pops – 36</li>
+    <li>FatBoy Vanilla Sandwich – 36</li>
+  </ul>
+</section>
+
+<section style={{ marginBottom: '2rem' }}>
+  <h3 style={{ fontSize: '1.25rem', color: '#5b2b1b' }}>🎉 Cool Kid Combo – 156 Pieces ($215)</h3>
+  <ul>
+    <li>Chocolate Crunch Cake – 24</li>
+    <li>Strawberry Shortcake – 24</li>
+    <li>Mickey Mouse Ice Cream Bars – 24</li>
+    <li>Wellsley Farms Vanilla Ice Cream Sandwiches – 24</li>
+    <li>Bomb Pop Ice Pops – 36</li>
+    <li>Popsicle Spongebob – 24</li>
+  </ul>
+</section>
+
+<section style={{ marginBottom: '2rem' }}>
+  <h3 style={{ fontSize: '1.25rem', color: '#5b2b1b' }}>👨‍👩‍👧‍👦 The Crowd Pleaser – 288 Pieces ($250)</h3>
+  <ul>
+    <li>Vanilla Sandwiches – 144</li>
+    <li>Bomb Pop Ice Pops – 144</li>
+  </ul>
+</section>
 
       <a
         href="#book"
