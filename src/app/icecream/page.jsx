@@ -12,7 +12,7 @@ export default function IceCreamPage() {
         Novelty Ice Cream Rentals Delivered
       </h1>
       <p style={{ fontSize: '1.1rem', color: '#444', marginBottom: '2rem' }}>
-        Enjoy hassle-free ice cream service with our fully stocked, self-serve freezers or carts—perfect for any gathering.
+        Enjoy hassle-free ice cream service with our fully stocked, self-serve freezers—perfect for any gathering.
       </p>
 
 <section style={{ marginBottom: '2rem', textAlign: 'center' }}>
