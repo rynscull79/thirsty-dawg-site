@@ -248,7 +248,8 @@ const zip = getPart('postal_code') || '';
 
   >
     <input
-      className="w-full p-4 rounded-xl text-lg border border-gray-300 shadow-inner"
+      className="p-4 rounded-xl text-lg border border-gray-300 shadow-inner"
+style={{ width: '100%', maxWidth: '100%', minWidth: '500px' }}
       name="street"
       type="text"
       placeholder="Enter delivery address"
