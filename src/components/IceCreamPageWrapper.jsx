@@ -2,7 +2,8 @@
 
 import dynamic from 'next/dynamic';
 
-const IceCreamClientPage = dynamic(() => import('./IceCreamClientPage'));
+// Adjust the import to point to the actual location of IceCreamClientPage
+const IceCreamClientPage = dynamic(() => import('../app/icecream/IceCreamClientPage'));
 
 export default function IceCreamPageWrapper() {
   return <IceCreamClientPage />;
