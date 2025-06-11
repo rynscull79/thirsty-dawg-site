@@ -1,4 +1,4 @@
-import dynamic from 'next/dynamic';
+import IceCreamPageWrapper from '@/components/IceCreamPageWrapper';
 
 export const metadata = {
   title: 'Ice Cream Party Packs | Thirsty Dawg Rentals',
@@ -81,11 +81,6 @@ const schemaData = {
   ]
 };
 
-// Dynamically load the client-only IceCreamClientPage component
-const IceCreamClientPage = dynamic(() => import('../../components/IceCreamClientPage'), {
-  ssr: false
-});
-
 export default function IceCreamPage() {
   return (
     <>
@@ -93,7 +88,7 @@ export default function IceCreamPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
-      <IceCreamClientPage />
+      <IceCreamPageWrapper />
     </>
   );
 }
