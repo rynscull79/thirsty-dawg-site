@@ -69,6 +69,10 @@ export default function IceCreamPage() {
         <li style={{ marginBottom: '0.5rem' }}>Free delivery & pickup included</li>
         <li><em>$150 minimum order</em></li>
       </ul>
+      <p style={{ fontSize: '0.95rem', color: '#666', marginBottom: '2rem', textAlign: 'center' }}>
+  <em>Package and a la carte prices do not include the <strong>$95 freezer rental fee</strong>, which is required with every order.</em>
+</p>
+
 <section style={{ margin: '3rem 0' }}>
   <h2 style={{ textAlign: 'center', fontSize: '1.5rem', color: '#3a1a0a', marginBottom: '1rem' }}>
     A Few of Our Frozen Favorites
