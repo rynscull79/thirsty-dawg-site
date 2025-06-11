@@ -69,6 +69,52 @@ export default function IceCreamPage() {
         <li style={{ marginBottom: '0.5rem' }}>Free delivery & pickup included</li>
         <li><em>$150 minimum order</em></li>
       </ul>
+<section style={{ margin: '3rem 0' }}>
+  <h2 style={{ textAlign: 'center', fontSize: '1.5rem', color: '#3a1a0a', marginBottom: '1rem' }}>
+    A Few of Our Frozen Favorites
+  </h2>
+  <div
+    style={{
+      overflow: 'hidden',
+      width: '100%',
+      position: 'relative',
+    }}
+  >
+    <div
+      style={{
+        display: 'flex',
+        width: 'fit-content',
+        animation: 'scrollGallery 40s linear infinite',
+        gap: '1rem',
+      }}
+    >
+      {[
+        'oreo-bars.webp',
+        'klondike-original.webp',
+        'reeses-peanut-butter-bar-.jpg',
+        'butterfinger-ice-cream-bar.webp',
+        'snickers-ice-cream-bar.webp',
+        'twix-ice-cream-bar.webp',
+        'strawberry-shortcake-bar.webp',
+        'fat-boy-hot-fudge.webp',
+        'bomb-pop.webp',
+        'spongebob-popsicle.webp',
+      ].map((file, i) => (
+        <img
+          key={i}
+          src={`/gallery/${file}`}
+          alt={file.replace(/[-.]/g, ' ')}
+          style={{
+            height: '120px',
+            borderRadius: '8px',
+            objectFit: 'cover',
+            boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
+          }}
+        />
+      ))}
+    </div>
+  </div>
+</section>
 
       <h2 style={{ fontSize: '1.5rem', color: '#3a1a0a', marginBottom: '1rem' }}>What's in Each Package</h2>
 
