@@ -76,18 +76,20 @@ export default function IceCreamPage() {
           }}
         >
           <Image
-            src="/gallery/thirsty-dawg-cart.webp"
-            alt="Thirsty Dawg freezer rental cart"
-            width={300}
-            height={300}
-            style={{
-              width: '100%',
-              maxWidth: '280px',
-              height: 'auto',
-              borderRadius: '12px',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-            }}
-          />
+  src="/gallery/thirsty-dawg-cart.webp"
+  alt="Thirsty Dawg freezer rental cart"
+  width={300}
+  height={300}
+  unoptimized
+  style={{
+    width: '100%',
+    maxWidth: '280px',
+    height: 'auto',
+    borderRadius: '12px',
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+  }}
+/>
+
           <ul
             style={{
               listStyle: 'none',
@@ -113,10 +115,7 @@ export default function IceCreamPage() {
           </ul>
         </div>
       </section>
-    </main>
-  );
-}
-{[
+      {[
   {
     name: 'The VIP',
     pieces: 147,
@@ -228,18 +227,20 @@ export default function IceCreamPage() {
           }}
         >
           <Image
-            src={`/gallery/${item.image}`}
-            alt={item.name}
-            width={100}
-            height={100}
-            style={{
-              width: '100%',
-              height: 'auto',
-              objectFit: 'contain',
-              borderRadius: '8px',
-              marginBottom: '6px',
-            }}
-          />
+  src={`/gallery/${item.image}`}
+  alt={item.name}
+  width={100}
+  height={100}
+  unoptimized
+  style={{
+    width: '100%',
+    height: 'auto',
+    objectFit: 'contain',
+    borderRadius: '8px',
+    marginBottom: '6px',
+  }}
+/>
+
           <div
             style={{
               fontSize: '0.75rem',
@@ -289,3 +290,7 @@ export default function IceCreamPage() {
     </ul>
   </section>
 ))}
+    </main>
+  );
+}
+
