@@ -95,7 +95,7 @@ export default function IceCreamPage() {
 
 <section style={{ marginBottom: '2rem', textAlign: 'center' }}>
   <h3 style={{ fontSize: '1.25rem', color: '#5b2b1b', marginBottom: '1rem' }}>
-    Real Setup: Backyard Party-Ready!
+    Backyard Party-Ready!
   </h3>
   <img
     src="/gallery/freezer-at-party.webp"
