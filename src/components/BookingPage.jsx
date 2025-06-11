@@ -205,7 +205,7 @@ const handleDateChange = (e) => {
 
 {/* Street Address with Autocomplete */}
 <div className="mb-6">
-  <label className="block mb-1 text-lg" htmlFor="street">Street Address (Event Location)</label>
+  <label className="block mb-1 text-lg" htmlFor="street">Event Location</label>
   <Autocomplete
     onLoad={(autocomplete) => (autocompleteRef.current = autocomplete)}
 onPlaceChanged={() => {
