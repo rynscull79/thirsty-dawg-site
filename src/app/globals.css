@@ -131,3 +131,16 @@ a {
     transform: translateX(-50%);
   }
 }
+
+/* Default (mobile speed) */
+.carousel-track {
+  animation: scrollCarousel 40s linear infinite;
+}
+
+/* Speed up for desktop */
+@media (min-width: 768px) {
+  .carousel-track {
+    animation: scrollCarousel 20s linear infinite;
+  }
+}
+

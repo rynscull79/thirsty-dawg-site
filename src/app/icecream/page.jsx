@@ -89,7 +89,7 @@ whiteSpace: 'nowrap',
         gap: '1rem',
       }}
     >
-{[
+{[...Array(4)].flatMap(() => [
   'oreo-bars.webp',
   'magnumdoublecaramel.webp',
   'klondike-original.webp',
@@ -98,26 +98,12 @@ whiteSpace: 'nowrap',
   'snickers-ice-cream-bar.webp',
   'Twix-Caramel-Milk-Chocolate-Ice-Cream-Bars.webp',
   'dark-chocolate-ice-cream-bars.webp',
-  'strawberry-shortcake-bar.webp',
+  'Strawberry-Shortcake-Bar-Rich-Ice-Cream.webp',
   'mickey-mouse-bar.webp',
   'fat-boy-hot-fudge.webp',
   'bomb-pop.webp',
   'spongebob-popsicle.webp',
-  // Duplicate for seamless looping
-  'oreo-bars.webp',
-  'magnumdoublecaramel.webp',
-  'klondike-original.webp',
-  'reeses-peanut-butter-bar-.jpg',
-  'butterfinger-ice-cream-bar.webp',
-  'snickers-ice-cream-bar.webp',
-  'Twix-Caramel-Milk-Chocolate-Ice-Cream-Bars.webp',
-  'dark-chocolate-ice-cream-bars.webp',
-  'strawberry-shortcake-bar.webp',
-  'mickey-mouse-bar.webp',
-  'fat-boy-hot-fudge.webp',
-  'bomb-pop.webp',
-  'spongebob-popsicle.webp',
-].map((file, i) => (
+]).map((file, i) => (
   <img
     key={i}
     src={`/gallery/${file}`}
@@ -130,6 +116,7 @@ whiteSpace: 'nowrap',
     }}
   />
 ))}
+
 
 </div>
   </div>
