@@ -248,7 +248,7 @@ const zip = getPart('postal_code') || '';
 
   >
     <input
-      className="w-full p-3 rounded-xl text-base border border-gray-300 shadow-inner"
+      className="w-full p-4 rounded-xl text-lg border border-gray-300 shadow-inner"
       name="street"
       type="text"
       placeholder="Enter delivery address"
