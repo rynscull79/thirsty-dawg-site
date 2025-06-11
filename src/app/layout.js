@@ -34,6 +34,43 @@ export default function RootLayout({ children }) {
       <head>
         {/* Existing head content stays the same */}
       </head>
+      <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Thirsty Dawg Rentals",
+      "image": "https://www.thirstydawgrentals.com/gallery/TransparentBG-ThirstyDawg.png",
+      "url": "https://www.thirstydawgrentals.com",
+      "telephone": "8505723796",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pensacola",
+        "addressRegion": "FL",
+        "postalCode": "32501",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 30.4213,
+        "longitude": -87.2169
+      },
+      "areaServed": [
+        { "@type": "Place", "name": "Pensacola" },
+        { "@type": "Place", "name": "Gulf Breeze" },
+        { "@type": "Place", "name": "Navarre" },
+        { "@type": "Place", "name": "Orange Beach" },
+        { "@type": "Place", "name": "Foley" },
+        { "@type": "Place", "name": "Fairhope" }
+      ],
+      "priceRange": "$$",
+      "description": "Rent fully stocked novelty ice cream freezers for parties and events. Serving Pensacola, the Florida Panhandle, and South Alabama.",
+      "openingHours": "Mo-Su 08:00-20:00"
+    })
+  }}
+/>
+
       <body style={{ fontFamily: 'var(--font-chewy)', backgroundColor: '#f7f9f8', color: '#1f2937', margin: 0, position: 'relative' }}>
         <noscript>
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXWPV7L"
