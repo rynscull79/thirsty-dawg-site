@@ -264,6 +264,7 @@ style={{ width: '100%', maxWidth: '100%', minWidth: '500px' }}
 
 <input type="hidden" name="city" value={formData.city || ''} />
 <input type="hidden" name="state" value={formData.state || ''} />
+<input type="hidden" name="zip" value={formData.zip || ''} />
 
 <div className="mb-6">
   <label className="block mb-1 text-lg" htmlFor="date_needed">Rental Start Date</label>
