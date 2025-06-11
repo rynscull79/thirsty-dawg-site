@@ -201,8 +201,11 @@ whiteSpace: 'nowrap',
     Build Your Own – A La Carte Options
   </h2>
   <p style={{ fontSize: '1rem', color: '#444', marginBottom: '1.5rem', textAlign: 'center' }}>
-    Want to build your own mix? Order individual boxes of your favorite frozen novelties:
-  </p>
+  Want to build your own mix? Order individual boxes of your favorite frozen novelties.
+  <br />
+  <strong style={{ color: '#5b2b1b' }}>$150 minimum order required.</strong>
+</p>
+
   <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.95rem' }}>
     <thead>
       <tr style={{ backgroundColor: '#fef6e4' }}>
