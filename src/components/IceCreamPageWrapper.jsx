@@ -1,11 +1,6 @@
 'use client';
 
-import dynamic from 'next/dynamic';
-
-// Dynamically import the actual client-only component
-const IceCreamClientPage = dynamic(() => import('./IceCreamClientPage'), {
-  ssr: false,
-});
+import IceCreamClientPage from '../app/icecream/IceCreamClientPage';
 
 export default function IceCreamPageWrapper() {
   return <IceCreamClientPage />;
