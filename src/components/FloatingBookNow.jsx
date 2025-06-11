@@ -28,7 +28,7 @@ function FloatingBookNow() {
           boxShadow: '0 8px 20px rgba(0,0,0,0.2)',
           cursor: 'pointer',
           transition: 'background-color 0.2s ease',
-          animation: 'pulse 2.5s infinite'
+          animation: 'buttonPulse 2.5s infinite ease-in-out'
         }}
         onMouseOver={(e) => e.target.style.backgroundColor = '#cc6600'}
         onMouseOut={(e) => e.target.style.backgroundColor = '#ff8000'}
@@ -41,3 +41,19 @@ function FloatingBookNow() {
 }
 
 export default FloatingBookNow;
+<style jsx global>{`
+  @keyframes buttonPulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.08);
+      opacity: 0.9;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+`}</style>
