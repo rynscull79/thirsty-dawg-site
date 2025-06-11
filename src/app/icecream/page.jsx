@@ -2,7 +2,8 @@
 
 export const metadata = {
   title: 'Novelty Ice Cream Freezer Rentals | Thirsty Dawg',
-  description: 'Pre-stocked novelty ice cream and freezer rentals for any event—self-serve convenience delivered to your door.',
+  description: 'Frozen novelty ice cream rentals for events in Pensacola and the Gulf Coast. Choose pre-built packages or build your own — all delivered in a self-serve freezer.'
+,
 };
 
 export default function IceCreamPage() {
@@ -14,6 +15,10 @@ export default function IceCreamPage() {
       <p style={{ fontSize: '1.1rem', color: '#444', marginBottom: '2rem' }}>
         Enjoy hassle-free novelty ice cream service with our fully stocked, self-serve freezers—perfect for any gathering.
       </p>
+<p style={{ fontSize: '1rem', color: '#444', marginBottom: '1.5rem' }}>
+  We proudly serve Pensacola, Gulf Breeze, Navarre, and surrounding areas across Florida’s panhandle — including south Alabama communities like Orange Beach, Foley, and Fairhope.
+</p>
+
 
 <section
   style={{
@@ -126,7 +131,7 @@ whiteSpace: 'nowrap',
   </div>
 </section>
 
-      <h2 style={{ fontSize: '1.5rem', color: '#3a1a0a', marginBottom: '1rem' }}>What's in Each Package</h2>
+      <h2 style={{ fontSize: '1.5rem', color: '#3a1a0a', marginBottom: '1rem' }}>Pre-Built Ice Cream Packages – Delivered</h2>
 
 <section style={{ marginBottom: '2rem' }}>
   <h3 style={{ fontSize: '1.25rem', color: '#5b2b1b' }}>🍦 The VIP – 147 Pieces ($275)</h3>
@@ -202,12 +207,15 @@ whiteSpace: 'nowrap',
   }}
 ><section style={{ margin: '3rem 0' }}>
   <h2 style={{ fontSize: '1.5rem', color: '#3a1a0a', marginBottom: '1rem', textAlign: 'center' }}>
-    Build Your Own – A La Carte Options
+    Custom Ice Cream Novelty Orders – A La Carte Pricing
   </h2>
   <p style={{ fontSize: '1rem', color: '#444', marginBottom: '1.5rem', textAlign: 'center' }}>
   Want to build your own mix? Order individual boxes of your favorite frozen novelties.
   <br />
   <strong style={{ color: '#5b2b1b' }}>$150 minimum order required.</strong>
+</p>
+<p style={{ fontSize: '0.9rem', color: '#888', marginTop: '-0.5rem', marginBottom: '1rem' }}>
+  *Freezer rental not included. Add $95 per event.
 </p>
 
   <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.95rem' }}>
