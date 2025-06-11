@@ -15,6 +15,17 @@ export default function IceCreamPage() {
         Enjoy hassle-free ice cream service with our fully stocked, self-serve freezers or carts—perfect for any gathering.
       </p>
 
+<section style={{ marginBottom: '2rem', textAlign: 'center' }}>
+  <h3 style={{ fontSize: '1.25rem', color: '#5b2b1b', marginBottom: '1rem' }}>
+    Backyard Party-Ready!
+  </h3>
+  <img
+    src="/gallery/freezer-at-party.webp"
+    alt="Thirsty Dawg freezer setup at an event"
+    style={{ maxWidth: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
+  />
+</section>
+
       <h2 style={{ fontSize: '1.5rem', color: '#3a1a0a', marginBottom: '1rem' }}>Why You'll Love It</h2>
       <ul style={{ fontSize: '1rem', color: '#333', paddingLeft: '1.25rem', marginBottom: '2rem' }}>
         <li style={{ marginBottom: '0.75rem' }}>✅ Self-serve convenience — guests grab treats while you enjoy the event</li>
@@ -93,16 +104,7 @@ export default function IceCreamPage() {
   </ul>
 </section>
 
-<section style={{ marginBottom: '2rem', textAlign: 'center' }}>
-  <h3 style={{ fontSize: '1.25rem', color: '#5b2b1b', marginBottom: '1rem' }}>
-    Backyard Party-Ready!
-  </h3>
-  <img
-    src="/gallery/freezer-at-party.webp"
-    alt="Thirsty Dawg freezer setup at an event"
-    style={{ maxWidth: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
-  />
-</section>
+
 
 <section
   style={{
