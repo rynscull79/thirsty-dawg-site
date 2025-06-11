@@ -85,7 +85,7 @@ export default function IceCreamPage() {
         display: 'flex',
 whiteSpace: 'nowrap',
         width: 'fit-content',
-        animation: 'scrollGallery 40s linear infinite',
+        animation: 'scrollCarousel 40s linear infinite',
         gap: '1rem',
       }}
     >
