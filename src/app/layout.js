@@ -5,8 +5,10 @@ import Link from 'next/link';
 import './globals.css';
 import { Chewy } from 'next/font/google';
 import HeaderNav from '@/components/HeaderNav';
-import FloatingBookNow from '@/components/FloatingBookNow';
+const FloatingBookNow = dynamic(() => import('@/components/FloatingBookNow'));
 import Footer from '@/components/Footer';
+import dynamic from 'next/dynamic';
+
 
 
 const chewy = Chewy({ subsets: ['latin'], weight: '400', variable: '--font-chewy' });
