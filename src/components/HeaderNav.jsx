@@ -13,12 +13,13 @@ export default function HeaderNav() {
     <nav className="nav-wrapper">
       {/* Desktop menu */}
       <div className="nav-desktop">
-        <Link href="/">Home</Link>
-        <Link href="/rentals">Our Rentals</Link>
-        <Link href="/our-story">Our Story</Link>
-        <Link href="/faq">FAQ</Link>
-        <Link href="/booking">Booking</Link>
-      </div>
+  <Link href="/" style={{ padding: '12px 16px', display: 'inline-block' }}>Home</Link>
+  <Link href="/rentals" style={{ padding: '12px 16px', display: 'inline-block' }}>Our Rentals</Link>
+  <Link href="/our-story" style={{ padding: '12px 16px', display: 'inline-block' }}>Our Story</Link>
+  <Link href="/faq" style={{ padding: '12px 16px', display: 'inline-block' }}>FAQ</Link>
+  <Link href="/booking" style={{ padding: '12px 16px', display: 'inline-block' }}>Booking</Link>
+</div>
+
 
       {/* Hamburger / Close icon */}
       <div
@@ -32,12 +33,13 @@ export default function HeaderNav() {
       {/* Mobile dropdown */}
       {menuOpen && (
         <div className="nav-mobile-dropdown">
-          <Link href="/" onClick={closeMenu}>Home</Link>
-          <Link href="/rentals" onClick={closeMenu}>Our Rentals</Link>
-          <Link href="/our-story" onClick={closeMenu}>Our Story</Link>
-          <Link href="/faq" onClick={closeMenu}>FAQ</Link>
-          <Link href="/booking" onClick={closeMenu}>Booking</Link>
-        </div>
+  <Link href="/" onClick={closeMenu} style={{ padding: '12px 16px', display: 'inline-block' }}>Home</Link>
+  <Link href="/rentals" onClick={closeMenu} style={{ padding: '12px 16px', display: 'inline-block' }}>Our Rentals</Link>
+  <Link href="/our-story" onClick={closeMenu} style={{ padding: '12px 16px', display: 'inline-block' }}>Our Story</Link>
+  <Link href="/faq" onClick={closeMenu} style={{ padding: '12px 16px', display: 'inline-block' }}>FAQ</Link>
+  <Link href="/booking" onClick={closeMenu} style={{ padding: '12px 16px', display: 'inline-block' }}>Booking</Link>
+</div>
+
       )}
     </nav>
   );
