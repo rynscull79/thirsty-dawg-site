@@ -15,6 +15,7 @@ export const metadata = {
   metadataBase: new URL('https://www.thirstydawgrentals.com'),
 };
 
+
 export default function RentalsPage() {
   const schema = {
     "@context": "https://schema.org",
