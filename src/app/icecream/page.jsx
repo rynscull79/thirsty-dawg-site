@@ -23,7 +23,15 @@ export default function IceCreamPage() {
     src="/gallery/freezer-at-party.webp"
     alt="Thirsty Dawg freezer setup at an event"
     style={{ maxWidth: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
-  />
+   />
+  
+  <div style={{ flex: '1 1 300px', textAlign: 'center' }}>
+    <img
+      src="/gallery/kids-enjoying-frozen-treats.webp"
+      alt="Kids enjoying novelty ice cream at party"
+      style={{ maxWidth: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
+    />
+  </div>
 </section>
 
       <h2 style={{ fontSize: '1.5rem', color: '#3a1a0a', marginBottom: '1rem' }}>Why You'll Love It</h2>
