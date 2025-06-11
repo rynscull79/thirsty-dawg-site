@@ -92,6 +92,18 @@ export default function IceCreamPage() {
     <li>Bomb Pop Ice Pops – 144</li>
   </ul>
 </section>
+
+<section style={{ marginBottom: '2rem', textAlign: 'center' }}>
+  <h3 style={{ fontSize: '1.25rem', color: '#5b2b1b', marginBottom: '1rem' }}>
+    Real Setup: Backyard Party-Ready!
+  </h3>
+  <img
+    src="/gallery/freezer-at-party.webp"
+    alt="Thirsty Dawg freezer setup at an event"
+    style={{ maxWidth: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
+  />
+</section>
+
 <section
   style={{
     marginTop: '3rem',
