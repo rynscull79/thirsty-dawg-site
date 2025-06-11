@@ -9,10 +9,10 @@ export default function IceCreamPage() {
   return (
     <main style={{ padding: '2rem', maxWidth: '720px', margin: '0 auto', fontFamily: "'Chewy', sans-serif" }}>
       <h1 style={{ fontSize: '2.25rem', color: '#5b2b1b', marginBottom: '1rem' }}>
-        Novelty Ice Cream Rentals Delivered
+        Novelty Ice Cream Parties Delivered
       </h1>
       <p style={{ fontSize: '1.1rem', color: '#444', marginBottom: '2rem' }}>
-        Enjoy hassle-free ice cream service with our fully stocked, self-serve freezers—perfect for any gathering.
+        Enjoy hassle-free novelty ice cream service with our fully stocked, self-serve freezers—perfect for any gathering.
       </p>
 
 <section
