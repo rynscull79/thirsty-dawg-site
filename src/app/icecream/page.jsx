@@ -83,36 +83,37 @@ export default function IceCreamPage() {
     <div
       style={{
         display: 'flex',
+whiteSpace: 'nowrap',
         width: 'fit-content',
         animation: 'scrollGallery 40s linear infinite',
         gap: '1rem',
       }}
     >
-      {[
-        'oreo-bars.webp',
-        'klondike-original.webp',
-        'reeses-peanut-butter-bar-.jpg',
-        'butterfinger-ice-cream-bar.webp',
-        'snickers-ice-cream-bar.webp',
-        'twix-ice-cream-bar.webp',
-        'strawberry-shortcake-bar.webp',
-        'fat-boy-hot-fudge.webp',
-        'bomb-pop.webp',
-        'spongebob-popsicle.webp',
-      ].map((file, i) => (
-        <img
-          key={i}
-          src={`/gallery/${file}`}
-          alt={file.replace(/[-.]/g, ' ')}
-          style={{
-            height: '120px',
-            borderRadius: '8px',
-            objectFit: 'cover',
-            boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
-          }}
-        />
-      ))}
-    </div>
+{[...Array(2)].flatMap(() => [
+  'oreo-bars.webp',
+  'klondike-original.webp',
+  'reeses-peanut-butter-bar-.jpg',
+  'butterfinger-ice-cream-bar.webp',
+  'snickers-ice-cream-bar.webp',
+  'twix-ice-cream-bar.webp',
+  'strawberry-shortcake-bar.webp',
+  'fat-boy-hot-fudge.webp',
+  'bomb-pop.webp',
+  'spongebob-popsicle.webp',
+]).map((file, i) => (
+  <img
+    key={i}
+    src={`/gallery/${file}`}
+    alt={file.replace(/[-.]/g, ' ')}
+    style={{
+      height: '120px',
+      borderRadius: '8px',
+      objectFit: 'cover',
+      boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
+    }}
+  />
+))}
+</div>
   </div>
 </section>
 
