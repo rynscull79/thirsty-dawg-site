@@ -261,20 +261,7 @@ style={{ width: '100%', maxWidth: '100%', minWidth: '500px' }}
   </Autocomplete>
 </div>
 
-{/* ZIP */}
-<div className="mb-6">
-  <label className="block mb-1 text-lg" htmlFor="zip">ZIP</label>
-  <input
-    className="w-full p-3 rounded-xl text-base border border-gray-300 shadow-inner"
-    name="zip"
-    type="text"
-    required
-    value={formData.zip || ''}
-    onChange={(e) => setFormData((prev) => ({ ...prev, zip: e.target.value }))}
-    onBlur={(e) => setFormData((prev) => ({ ...prev, zip: e.target.value }))}
-    autoComplete="off"
-  />
-</div>
+
 <input type="hidden" name="city" value={formData.city || ''} />
 <input type="hidden" name="state" value={formData.state || ''} />
 
