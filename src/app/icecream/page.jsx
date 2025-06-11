@@ -152,12 +152,12 @@ whiteSpace: 'nowrap',
 <section style={{ marginBottom: '2rem' }}>
   <h3 style={{ fontSize: '1.25rem', color: '#5b2b1b' }}>🍭 Coolest Deal in Town – 216 Pieces ($225)</h3>
   <ul>
-    <li>Chocolate Crunch Cake – 24</li>
+    <li>Chocolate Crunch Cake Bar – 24</li>
     <li>Cool Watermelon Bar – 24</li>
     <li>Orange Cream Bar – 24</li>
     <li>Straw Shortcake Bar – 24</li>
     <li>Sour Cyclone – 24</li>
-    <li>Wellsley Farms Vanilla Ice Cream Sandwiches – 24</li>
+    <li>Fudge Frenzy Bars – 24</li>
     <li>Bomb Pop Ice Pops – 36</li>
     <li>FatBoy Vanilla Sandwich – 36</li>
   </ul>
@@ -166,8 +166,8 @@ whiteSpace: 'nowrap',
 <section style={{ marginBottom: '2rem' }}>
   <h3 style={{ fontSize: '1.25rem', color: '#5b2b1b' }}>🎉 Cool Kid Combo – 156 Pieces ($215)</h3>
   <ul>
-    <li>Chocolate Crunch Cake – 24</li>
-    <li>Strawberry Shortcake – 24</li>
+    <li>Chocolate Crunch Cake Bar – 24</li>
+    <li>Strawberry Shortcake Bar – 24</li>
     <li>Mickey Mouse Ice Cream Bars – 24</li>
     <li>Wellsley Farms Vanilla Ice Cream Sandwiches – 24</li>
     <li>Bomb Pop Ice Pops – 36</li>
