@@ -92,6 +92,24 @@ export default function IceCreamPage() {
     <li>Bomb Pop Ice Pops – 144</li>
   </ul>
 </section>
+<section
+  style={{
+    marginTop: '3rem',
+    marginBottom: '2rem',
+    padding: '1.5rem',
+    background: '#fef6e4',
+    borderRadius: '12px',
+    boxShadow: '0 2px 10px rgba(0,0,0,0.05)',
+    textAlign: 'center',
+  }}
+>
+  <h2 style={{ fontSize: '1.75rem', color: '#5b2b1b', marginBottom: '1rem' }}>
+    Ready to Book Your Ice Cream Freezer?
+  </h2>
+  <p style={{ fontSize: '1rem', color: '#444', marginBottom: '1.5rem' }}>
+    We'll deliver it pre-chilled and fully stocked with the treats you choose. You serve, we pick up — it’s that simple.
+  </p>
+</section>
 
       <a
         href="#book"
