@@ -110,8 +110,10 @@ a {
 .carousel-track {
   display: flex;
   width: max-content;
-  animation: scrollCarousel 40s linear infinite;
+  white-space: nowrap;         /* 👈 NEW: prevents wrapping */
+  animation: scrollCarousel 20s linear infinite; /* 👈 SPEED increased */
 }
+
 
 .carousel-track img {
   height: 120px;
