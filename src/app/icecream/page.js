@@ -1,53 +1,134 @@
-import styles from '@/components/IceCreamPage.module.css';
+// 📄 src/app/icecream/page.jsx
 
 export const metadata = {
   title: 'Ice Cream Party Packs | Thirsty Dawg Rentals',
   description:
-    'Choose from pre-packed novelty ice cream bundles or build your own. Delivered in a pre-chilled freezer for events in Pensacola and surrounding areas.',
+    'Choose from pre-packed novelty ice cream bundles or build your own. Delivered in a pre-chilled freezer for stress-free events in Pensacola and surrounding areas.',
   openGraph: {
     title: 'Ice Cream Party Packs | Thirsty Dawg Rentals',
     description:
-      'Choose from pre-packed novelty ice cream bundles or build your own. Delivered in a pre-chilled freezer for events in Pensacola and surrounding areas.',
+      'Frozen novelty ice cream bundles delivered in a pre-chilled freezer. Book a stocked freezer for your next party or event.',
     images: ['https://www.thirstydawgrentals.com/gallery/thirsty-dawg-cart.webp'],
     url: 'https://www.thirstydawgrentals.com/icecream',
-    type: 'product.group'
+    type: 'product.group',
   },
   metadataBase: new URL('https://www.thirstydawgrentals.com'),
 };
 
+
 export default function IceCreamPage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ProductGroup",
+    name: "Ice Cream Party Packs",
+    description: "Frozen novelty ice cream bundles delivered in a pre-chilled freezer.",
+    brand: {
+      "@type": "Brand",
+      name: "Thirsty Dawg Rentals"
+    },
+    url: "https://www.thirstydawgrentals.com/icecream",
+    image: "https://www.thirstydawgrentals.com/gallery/thirsty-dawg-cart.webp",
+    hasProduct: [
+      {
+        "@type": "Product",
+        name: "The VIP",
+        offers: {
+          "@type": "Offer",
+          price: "275",
+          priceCurrency: "USD"
+        }
+      },
+      {
+        "@type": "Product",
+        name: "Frosted Favorites",
+        offers: {
+          "@type": "Offer",
+          price: "225",
+          priceCurrency: "USD"
+        }
+      },
+      {
+        "@type": "Product",
+        name: "Coolest Deal in Town",
+        offers: {
+          "@type": "Offer",
+          price: "225",
+          priceCurrency: "USD"
+        }
+      },
+      {
+        "@type": "Product",
+        name: "Cool Kid Combo",
+        offers: {
+          "@type": "Offer",
+          price: "215",
+          priceCurrency: "USD"
+        }
+      },
+      {
+        "@type": "Product",
+        name: "The Crowd Pleaser",
+        offers: {
+          "@type": "Offer",
+          price: "250",
+          priceCurrency: "USD"
+        }
+      }
+    ]
+  };
+
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>🍦 Ice Cream Party Packs</h1>
-      <p className={styles.description}>
-        Choose a pre-packed bundle or build your own selection of novelty frozen treats!
-      </p>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <section
+        style={{
+          backgroundColor: '#ff66b2',
+          color: 'white',
+          padding: '3rem 2rem',
+          borderRadius: '1rem',
+          textAlign: 'center',
+          fontFamily: 'var(--font-chewy)',
+        }}
+      >
+        <h2
+          style={{
+            fontSize: '2rem',
+            fontWeight: 'bold',
+            color: 'white',
+            textShadow:
+              '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+          }}
+        >
+          🍦 Ice Cream Party Packs & Freezer Rentals
+        </h2>
 
-      <p className={styles.description}>
-        All bundles are delivered in a pre-chilled, fully stocked freezer — no setup needed.
-      </p>
+        <p
+          style={{
+            fontSize: '1.2rem',
+            marginTop: '1rem',
+            color: 'white',
+            textShadow:
+              '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+          }}
+        >
+          Rent a fully-stocked novelty ice cream freezer delivered cold and ready for your event.
+        </p>
 
-      <ul className={styles.packageList}>
-        <li>
-          <strong>The VIP</strong> – $275 – High-end crowd pleaser with max variety
-        </li>
-        <li>
-          <strong>Frosted Favorites</strong> – $225 – Best-selling classics
-        </li>
-        <li>
-          <strong>Coolest Deal in Town</strong> – $225 – Most value per dollar
-        </li>
-        <li>
-          <strong>Cool Kid Combo</strong> – $215 – Tailored for children’s parties
-        </li>
-        <li>
-          <strong>The Crowd Pleaser</strong> – $250 – Balanced mix of all-time favorites
-        </li>
-      </ul>
-
-      <p className={styles.note}>
-        Don’t see what you need? We also offer à la carte ice cream options with a $150 minimum, plus the freezer rental fee.
-      </p>
-    </div>
+        <p
+          style={{
+            fontSize: '1.2rem',
+            marginTop: '1.5rem',
+            color: 'white',
+            textShadow:
+              '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+          }}
+        >
+          Choose from pre-built bundles or build your own. Great for parties, schools, camps, and fundraisers.
+        </p>
+      </section>
+    </>
   );
 }
