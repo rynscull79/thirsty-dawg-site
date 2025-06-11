@@ -190,7 +190,8 @@ export default function HomePage() {
     <h2 style={{
       fontSize: '2.2rem',
       marginBottom: '20px',
-      color: '#00a7e1',
+      color: '#007bb5'
+,
       fontFamily: '"Chewy", cursive',
     }}>
       🍦 Now Offering Soft Serve Ice Cream!
