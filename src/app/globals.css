@@ -128,7 +128,7 @@ a {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
@@ -140,7 +140,7 @@ a {
 /* Speed up for desktop */
 @media (min-width: 768px) {
   .carousel-track {
-    animation: scrollCarousel 20s linear infinite;
+    animation: scrollCarousel 40s linear infinite;
   }
 }
 
