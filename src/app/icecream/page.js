@@ -1,10 +1,4 @@
-// File: /src/app/icecream/page.js
-import dynamic from 'next/dynamic';
-
-// Correct dynamic import of client-only component
-const IceCreamPageWrapper = dynamic(() => import('@/components/IceCreamPageWrapper'), {
-  ssr: false,
-});
+import IceCreamPageWrapper from '@/components/IceCreamPageWrapper';
 
 export const metadata = {
   title: 'Ice Cream Party Packs | Thirsty Dawg Rentals',
@@ -20,7 +14,9 @@ export const metadata = {
       'Choose from pre-packed novelty ice cream bundles or build your own. Delivered in a pre-chilled freezer for events in Pensacola and surrounding areas.',
     type: 'product.group',
     url: 'https://www.thirstydawgrentals.com/icecream',
-    images: ['https://www.thirstydawgrentals.com/gallery/thirsty-dawg-cart.webp'],
+    images: [
+      'https://www.thirstydawgrentals.com/gallery/thirsty-dawg-cart.webp',
+    ],
   },
   metadataBase: new URL('https://www.thirstydawgrentals.com'),
 };
