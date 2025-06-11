@@ -199,7 +199,7 @@ export default function HomePage() {
     <p style={{
       fontSize: '1.2rem',
       marginBottom: '20px',
-      color: '#00a7e1',
+      color: '#007bb5',
       fontWeight: 'bold',
     }}>
       Cool off with our newest addition — same price, same fun, extra delicious.

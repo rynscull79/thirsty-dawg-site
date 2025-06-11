@@ -39,25 +39,26 @@ export default function RootLayout({ children }) {
         </noscript>
 
 <HeaderNav />
-<FloatingBookNow />
+<Image
+  src="/Pensacola-Beach.webp"
+  alt="Thirsty Dawg Header"
+  width={1920}
+  height={600}
+  sizes="100vw"
+  priority
+  className="header-image"
+  style={{
+    width: '100%',
+    height: 'auto',
+    objectFit: 'cover',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    zIndex: 0
+  }}
+/>
 <header style={{ width: '100%', height: '440px', overflow: 'visible', position: 'relative', paddingBottom: 0, marginBottom: '-80px' }}>
-  <Image
-    src="/Pensacola-Beach.webp"
-    alt="Thirsty Dawg Header"
-    width={1920}
-    height={600}
-    priority
-    className="header-image"
-    style={{
-      width: '100%',
-      height: 'auto',
-      objectFit: 'cover',
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      zIndex: 0
-    }}
-  />
+
 </header>
 
 <main
