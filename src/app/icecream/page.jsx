@@ -10,7 +10,7 @@ import FloatingBookNow from '@/components/FloatingBookNow';
 
 export default function IceCreamPage() {
   return (
-    <main style={{ padding: '2rem', maxWidth: '720px', margin: '0 auto', fontFamily: "'Chewy', sans-serif" }}>
+    <main style={{ padding: '2rem', maxWidth: '1140px', margin: '0 auto', fontFamily: "'Chewy', sans-serif" }}>
       <h1 style={{ fontSize: '2.25rem', color: '#00b3e6', marginBottom: '1rem', textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>
         Novelty Ice Cream Parties Delivered
       </h1>
@@ -146,7 +146,16 @@ whiteSpace: 'nowrap',
   </div>
 </section>
 
-      <h2 style={{ fontSize: '1.5rem', color: '#00b3e6', marginBottom: '1rem', textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>Pre-Built Ice Cream Packages – Delivered</h2>
+      <h2 style={{
+  fontSize: '1.5rem',
+  color: '#00b3e6',
+  marginBottom: '1rem',
+  textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000'
+}}>
+  Pre-Built Ice Cream Packages – Delivered
+</h2>
+<div className="package-grid">
+
 
 <section style={{ marginBottom: '2rem' }}>
   <h3 style={{ fontSize: '1.25rem', color: '#3a1a0a' }}>
@@ -212,6 +221,8 @@ whiteSpace: 'nowrap',
     <li>Bomb Pop Ice Pops – 144</li>
   </ul>
 </section>
+</div> {/* CLOSE .package-grid */}
+
 
 <section
   style={{
