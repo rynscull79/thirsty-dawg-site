@@ -318,20 +318,6 @@ whiteSpace: 'nowrap',
   </p>
 </section>
 
-      <a
-        href="#book"
-        style={{
-          display: 'inline-block',
-          padding: '1rem 2rem',
-          background: '#5b2b1b',
-          color: '#fff',
-          borderRadius: '8px',
-          textDecoration: 'none',
-          fontSize: '1.1rem',
-        }}
-      >
-    
-      </a>
       <FloatingBookNow />
 
     </main>
