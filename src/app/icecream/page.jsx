@@ -26,67 +26,52 @@ export default function IceCreamPage() {
 </p>
 
 
-<section
-  style={{
+<section style={{ marginBottom: '2rem' }}>
+  <h2 style={{
+    fontSize: '1.5rem',
+    color: '#00b3e6',
+    marginBottom: '1.5rem',
+    textAlign: 'center',
+    textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000'
+  }}>
+    Freezer Rentals That Impress
+  </h2>
+  <div style={{
     display: 'flex',
     flexWrap: 'wrap',
-    gap: '1.5rem',
-    marginBottom: '2rem',
+    gap: '1rem',
     justifyContent: 'center',
-    alignItems: 'flex-start',
-  }}
->
-  <div style={{ flex: '1 1 300px', textAlign: 'center' }}>
-    <h3 style={{
-  fontSize: '1.25rem',
-  color: '#00b3e6',
-  marginBottom: '1rem',
-  textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000'
-}}>
-Backyard Party-Ready!</h3>
+    alignItems: 'flex-start'
+  }}>
     <img
       src="/gallery/freezer-at-party.webp"
       alt="Thirsty Dawg freezer setup at an event"
       style={{
-        maxWidth: '100%',
+        maxWidth: '300px',
         borderRadius: '12px',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
       }}
     />
-  </div>
-
-  <div style={{ flex: '1 1 300px', textAlign: 'center' }}>
-    <h3 style={{
-  fontSize: '1.25rem',
-  color: '#00b3e6',
-  marginBottom: '1rem',
-  textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000'
-}}>
-
-Happy Customers in Action</h3>
     <img
       src="/gallery/kids-enjoying-frozen-treats.webp"
       alt="Kids enjoying novelty ice cream at party"
       style={{
-        maxWidth: '100%',
+        maxWidth: '300px',
         borderRadius: '12px',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+      }}
+    />
+    <img
+      src="/gallery/icecream-outside.webp"
+      alt="Customer enjoying ice cream outdoors"
+      style={{
+        maxWidth: '300px',
+        borderRadius: '12px',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
       }}
     />
   </div>
-  <img
-  src="/gallery/icecream-outside.webp"
-  alt="Smiling customer holding ice cream sandwich"
-  style={{
-    marginTop: '1.5rem',
-    maxWidth: '100%',
-    borderRadius: '12px',
-    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-  }}
-/>
-
 </section>
-
 
       <h2 style={{ fontSize: '1.5rem', color: '#00b3e6', marginBottom: '1rem', textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>Why You'll Love It</h2>
       <ul style={{ fontSize: '1rem', color: '#333', paddingLeft: '1.25rem', marginBottom: '2rem' }}>
