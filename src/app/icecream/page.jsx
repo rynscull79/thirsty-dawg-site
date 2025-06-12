@@ -11,7 +11,7 @@ import FloatingBookNow from '@/components/FloatingBookNow';
 export default function IceCreamPage() {
   return (
     <main style={{ padding: '2rem', maxWidth: '720px', margin: '0 auto', fontFamily: "'Chewy', sans-serif" }}>
-      <h1 style={{ fontSize: '2.25rem', color: '#f7941e', marginBottom: '1rem' }}>
+      <h1 style={{ fontSize: '2.25rem', color: '#00b3e6', marginBottom: '1rem' }}>
         Novelty Ice Cream Parties Delivered
       </h1>
       <p style={{ fontSize: '1.1rem', color: '#444', marginBottom: '2rem' }}>
@@ -62,7 +62,7 @@ Happy Customers in Action</h3>
 </section>
 
 
-      <h2 style={{ fontSize: '1.5rem', color: '#f7941e', marginBottom: '1rem' }}>Why You'll Love It</h2>
+      <h2 style={{ fontSize: '1.5rem', color: '#00b3e6', marginBottom: '1rem' }}>Why You'll Love It</h2>
       <ul style={{ fontSize: '1rem', color: '#333', paddingLeft: '1.25rem', marginBottom: '2rem' }}>
         <li style={{ marginBottom: '0.75rem' }}>✅ Self-serve convenience — guests grab treats while you enjoy the event</li>
         <li style={{ marginBottom: '0.75rem' }}>🍦 Tons of variety — novelty bars, sandwiches, and sundaes</li>
@@ -71,7 +71,7 @@ Happy Customers in Action</h3>
         <li>🔄 Customize your order — choose a package or build your own</li>
       </ul>
 
-      <h2 style={{ fontSize: '1.5rem', color: '#f7941e', marginBottom: '1rem' }}>Pricing & Details</h2>
+      <h2 style={{ fontSize: '1.5rem', color: '#00b3e6', marginBottom: '1rem' }}>Pricing & Details</h2>
       <ul style={{ fontSize: '1rem', color: '#333', paddingLeft: '1.25rem', marginBottom: '2rem' }}>
         <li style={{ marginBottom: '0.5rem' }}>Freezer or Cart Rental : <strong>$95</strong></li>
         <li style={{ marginBottom: '0.5rem' }}>Package sizes: 150–300 treats or ala-carte</li>
@@ -83,7 +83,7 @@ Happy Customers in Action</h3>
 </p>
 
 <section style={{ margin: '3rem 0' }}>
-  <h2 style={{ textAlign: 'center', fontSize: '1.5rem', color: '#f7941e', marginBottom: '1rem' }}>
+  <h2 style={{ textAlign: 'center', fontSize: '1.5rem', color: '#00b3e6', marginBottom: '1rem' }}>
     A Few of Our Frozen Favorites
   </h2>
   <div
@@ -135,7 +135,7 @@ whiteSpace: 'nowrap',
   </div>
 </section>
 
-      <h2 style={{ fontSize: '1.5rem', color: '#f7941e', marginBottom: '1rem' }}>Pre-Built Ice Cream Packages – Delivered</h2>
+      <h2 style={{ fontSize: '1.5rem', color: '#00b3e6', marginBottom: '1rem' }}>Pre-Built Ice Cream Packages – Delivered</h2>
 
 <section style={{ marginBottom: '2rem' }}>
   <h3 style={{ fontSize: '1.25rem', color: '#3a1a0a' }}>
@@ -213,7 +213,7 @@ whiteSpace: 'nowrap',
     textAlign: 'center',
   }}
 ><section style={{ margin: '3rem 0' }}>
-  <h2 style={{ fontSize: '1.5rem', color: '#f7941e', marginBottom: '1rem', textAlign: 'center' }}>
+  <h2 style={{ fontSize: '1.5rem', color: '#00b3e6', marginBottom: '1rem', textAlign: 'center' }}>
     Custom Ice Cream Novelty Orders – A La Carte Pricing
   </h2>
   <p style={{ fontSize: '1rem', color: '#444', marginBottom: '1.5rem', textAlign: 'center' }}>
@@ -317,7 +317,7 @@ whiteSpace: 'nowrap',
 
 </section>
 
-<h2 style={{ fontSize: '1.75rem', color: '#f7941e', marginBottom: '1rem' }}>
+<h2 style={{ fontSize: '1.75rem', color: '#00b3e6', marginBottom: '1rem' }}>
     Ready to Book Your Ice Cream Freezer?
   </h2>
   <p style={{ fontSize: '1rem', color: '#444', marginBottom: '1.5rem' }}>
