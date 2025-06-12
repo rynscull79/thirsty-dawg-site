@@ -1,3 +1,5 @@
+
+'use client';
 // 📄 src/app/icecream/page.jsx
 
 
