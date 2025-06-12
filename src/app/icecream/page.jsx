@@ -1,5 +1,4 @@
 
-'use client';
 // 📄 src/app/icecream/page.jsx
 
 
@@ -8,21 +7,11 @@ export const metadata = {
   description: 'Frozen novelty ice cream rentals for events in Pensacola and the Gulf Coast. Choose pre-built packages or build your own — all delivered in a self-serve freezer.'
 ,
 };
-import { useEffect, useRef } from 'react';
 
 import FloatingBookNow from '@/components/FloatingBookNow';
 
 export default function IceCreamPage() {
-  const carouselRef = useRef();
 
-useEffect(() => {
-  const node = carouselRef.current;
-  if (node) {
-    node.style.display = 'none';
-    void node.offsetHeight; // Force reflow
-    node.style.display = 'flex';
-  }
-}, []);
 
   return (
     <main style={{ padding: '2rem', maxWidth: '1140px', margin: '0 auto', fontFamily: "'Chewy', sans-serif" }}>
@@ -121,7 +110,7 @@ Happy Customers in Action</h3>
 }}
 
   >
-    <div ref={carouselRef} className="carousel-track">
+    <div className="carousel-track">
 
 {[...Array(4)].flatMap(() => [
   'oreo-bars.webp',
