@@ -19,14 +19,15 @@ export default function Footer() {
         <div style={{ flex: '1 1 200px' }}>
           <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Menu</h3>
           <ul style={{ listStyle: 'none', padding: 0, lineHeight: '2rem' }}>
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/rentals">Our Rentals</Link></li>
-            <li><Link href="/our-story">Our Story</Link></li>
-            <li><Link href="/faq">FAQ</Link></li>
-            <li><Link href="/booking">Booking</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
+  <li><Link href="/">Home</Link></li>
+  <li><Link href="/rentals">Our Rentals</Link></li>
+  <li><Link href="/icecream">Frozen Novelties</Link></li> {/* ✅ New link */}
+  <li><Link href="/our-story">Our Story</Link></li>
+  <li><Link href="/faq">FAQ</Link></li>
+  <li><Link href="/booking">Booking</Link></li>
+  <li><Link href="/contact">Contact</Link></li>
+</ul>
 
-          </ul>
         </div>
 
         {/* Contact Info */}
