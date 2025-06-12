@@ -193,8 +193,6 @@ whiteSpace: 'nowrap',
   </ul>
 </section>
 
-
-
 <section
   style={{
     marginTop: '3rem',
@@ -218,58 +216,84 @@ whiteSpace: 'nowrap',
   *Freezer rental not included. Add $95 per event.
 </p>
 
-  <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.95rem' }}>
-    <thead>
-      <tr style={{ backgroundColor: '#fef6e4' }}>
-        <th style={{ textAlign: 'left', padding: '0.5rem', borderBottom: '2px solid #ddd' }}>Product</th>
-        <th style={{ textAlign: 'right', padding: '0.5rem', borderBottom: '2px solid #ddd' }}>Box Size</th>
-        <th style={{ textAlign: 'right', padding: '0.5rem', borderBottom: '2px solid #ddd' }}>Box Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      {[
-        ['Magnum Double Caramel Bars', 12, '$36.00'],
-        ['Klondike Original', 24, '$42.00'],
-        ['Reese\'s Peanut Butter Frozen Bars', 24, '$54.00'],
-        ['Wellsley Farms Strawberry Shortcake Bar', 18, '$31.50'],
-        ['Haagen-Dazs Chocolate Dark Chocolate Ice Cream Bars', 15, '$37.50'],
-        ['FatBoy Hot Fudge Brownie Ice Cream Sandwich', 9, '$18.00'],
-        ['FatBoy Birthday Cake Ice Cream Sandwich Pop', 12, '$24.00'],
-        ['Snickers Ice Cream Chocolate Caramel Peanut Butter Bars', 24, '$54.00'],
-        ['Oreo Bars', 15, '$26.25'],
-        ['Butterfinger Ice Cream Candy Bar', 24, '$54.00'],
-        ['Twix Caramel Vanilla Milk Chocolate Ice Cream Bars', 24, '$54.00'],
-        ['Kit Kat Ice Cream Cones', 15, '$33.75'],
-        ['Chocolate Crunch Cake', 24, '$42.00'],
-        ['Cool Watermelon Bar', 24, '$42.00'],
-        ['Orange Cream Bar', 24, '$42.00'],
-        ['Straw Shortcake Bar', 24, '$42.00'],
-        ['Sour Cyclone', 24, '$42.00'],
-        ['Wellsley Farms Vanilla Ice Cream Sandwiches', 24, '$42.00'],
-        ['Bomb Pop Ice Pops', 36, '$54.00'],
-        ['FatBoy Vanilla Sandwich', 18, '$36.00'],
-        ['Mickey Mouse Ice Cream Bars', 12, '$24.00'],
-        ['Popsicle Spongebob', 6, '$12.00'],
-        ['Rich\'s Vanilla Sandwiches', 24, '$42.00'],
-        ['Rich\'s Crumbled Cookie Cone', 24, '$42.00'],
-        ['Rich\'s Birthday Cake Cone', 24, '$42.00'],
-        ['Rich\'s Fudge Frenzy', 24, '$42.00'],
-        ['Blue Bunny Soft Vanilla Cups', 24, '$42.00'],
-        ['Spiderman Popsicle', 6, '$12.00'],
-        ['MM Van Cook Sand', 24, '$60.00'],
-        ['Good Humor Cookies & Cream Bar', 24, '$60.00'],
-        ['Good Humor Giant King Cone', 12, '$30.00'],
-        ['Magnum Double Raspberry Bar', 12, '$36.00'],
-        ['Magnum Almond Bar', 12, '$36.00'],
-      ].map(([product, count, price], i) => (
-        <tr key={i} style={{ borderBottom: '1px solid #eee' }}>
-          <td style={{ padding: '0.5rem 0' }}>{product}</td>
-          <td style={{ textAlign: 'right' }}>{count}</td>
-          <td style={{ textAlign: 'right' }}>{price}</td>
+{[
+  {
+    title: '🍫 Ice Cream Bars',
+    items: [
+      ['Magnum Double Caramel Bars', 12, '$36.00'],
+      ['Magnum Double Raspberry Bar', 12, '$36.00'],
+      ['Magnum Almond Bar', 12, '$36.00'],
+      ['Klondike Original', 24, '$42.00'],
+      ['Reese\'s Peanut Butter Frozen Bars', 24, '$54.00'],
+      ['Snickers Ice Cream Chocolate Caramel Peanut Butter Bars', 24, '$54.00'],
+      ['Butterfinger Ice Cream Candy Bar', 24, '$54.00'],
+      ['Twix Caramel Vanilla Milk Chocolate Ice Cream Bars', 24, '$54.00'],
+      ['Oreo Bars', 15, '$26.25'],
+      ['Good Humor Cookies & Cream Bar', 24, '$60.00'],
+    ],
+  },
+  {
+    title: '🍪 Ice Cream Sandwiches',
+    items: [
+      ['FatBoy Hot Fudge Brownie Ice Cream Sandwich', 9, '$18.00'],
+      ['FatBoy Birthday Cake Ice Cream Sandwich Pop', 12, '$24.00'],
+      ['FatBoy Vanilla Sandwich', 18, '$36.00'],
+      ['Wellsley Farms Vanilla Ice Cream Sandwiches', 24, '$42.00'],
+      ['Rich\'s Vanilla Sandwiches', 24, '$42.00'],
+      ['MM Van Cook Sand', 24, '$60.00'],
+    ],
+  },
+  {
+    title: '🍦 Cones & Sundaes',
+    items: [
+      ['Kit Kat Ice Cream Cones', 15, '$33.75'],
+      ['Rich\'s Crumbled Cookie Cone', 24, '$42.00'],
+      ['Rich\'s Birthday Cake Cone', 24, '$42.00'],
+      ['Good Humor Giant King Cone', 12, '$30.00'],
+    ],
+  },
+  {
+    title: '🍭 Popsicles & Novelties',
+    items: [
+      ['Chocolate Crunch Cake', 24, '$42.00'],
+      ['Cool Watermelon Bar', 24, '$42.00'],
+      ['Orange Cream Bar', 24, '$42.00'],
+      ['Straw Shortcake Bar', 24, '$42.00'],
+      ['Sour Cyclone', 24, '$42.00'],
+      ['Bomb Pop Ice Pops', 36, '$54.00'],
+      ['Mickey Mouse Ice Cream Bars', 12, '$24.00'],
+      ['Popsicle Spongebob', 6, '$12.00'],
+      ['Spiderman Popsicle', 6, '$12.00'],
+      ['Blue Bunny Soft Vanilla Cups', 24, '$42.00'],
+      ['Rich\'s Fudge Frenzy', 24, '$42.00'],
+    ],
+  },
+].map(({ title, items }, i) => (
+  <details key={i} style={{ marginBottom: '1rem', background: '#fff', borderRadius: '8px', boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
+    <summary style={{ padding: '0.75rem 1rem', cursor: 'pointer', fontWeight: 'bold', color: '#5b2b1b', fontSize: '1.1rem' }}>
+      {title}
+    </summary>
+    <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.95rem' }}>
+      <thead>
+        <tr style={{ backgroundColor: '#fef6e4' }}>
+          <th style={{ textAlign: 'left', padding: '0.5rem', borderBottom: '2px solid #ddd' }}>Product</th>
+          <th style={{ textAlign: 'right', padding: '0.5rem', borderBottom: '2px solid #ddd' }}>Box Size</th>
+          <th style={{ textAlign: 'right', padding: '0.5rem', borderBottom: '2px solid #ddd' }}>Price</th>
         </tr>
-      ))}
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        {items.map(([product, size, price], j) => (
+          <tr key={j} style={{ borderBottom: '1px solid #eee' }}>
+            <td style={{ padding: '0.5rem 1rem' }}>{product}</td>
+            <td style={{ textAlign: 'right', paddingRight: '1rem' }}>{size}</td>
+            <td style={{ textAlign: 'right', paddingRight: '1rem' }}>{price}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </details>
+))}
+
 </section>
 
   
@@ -294,9 +318,11 @@ whiteSpace: 'nowrap',
       'dark-chocolate-ice-cream-bars.webp',
       'Strawberry-Shortcake-Bar-Rich-Ice-Cream.webp',
       'mickey-mouse-bar.webp',
+      'Kit-Kat-Ice-Cream-Cone.webp',
       'fat-boy-hot-fudge.webp',
       'bomb-pop.webp',
       'spongebob-popsicle.webp',
+      'chocolate-crunch-cake.webp',
     ].map((file, i) => (
       <div key={i} style={{ textAlign: 'center' }}>
         <img
