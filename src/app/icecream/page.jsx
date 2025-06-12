@@ -11,7 +11,7 @@ import FloatingBookNow from '@/components/FloatingBookNow';
 export default function IceCreamPage() {
   return (
     <main style={{ padding: '2rem', maxWidth: '720px', margin: '0 auto', fontFamily: "'Chewy', sans-serif" }}>
-      <h1 style={{ fontSize: '2.25rem', color: '#5b2b1b', marginBottom: '1rem' }}>
+      <h1 style={{ fontSize: '2.25rem', color: '#bb3e03', marginBottom: '1rem' }}>
         Novelty Ice Cream Parties Delivered
       </h1>
       <p style={{ fontSize: '1.1rem', color: '#444', marginBottom: '2rem' }}>
