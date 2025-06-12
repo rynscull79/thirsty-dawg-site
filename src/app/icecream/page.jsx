@@ -6,7 +6,6 @@ export const metadata = {
   description: 'Frozen novelty ice cream rentals for events in Pensacola and the Gulf Coast. Choose pre-built packages or build your own — all delivered in a self-serve freezer.'
 ,
 };
-import FloatingTreatStack from '@/components/FloatingTreatStack';
 
 export default function IceCreamPage() {
   return (
@@ -295,11 +294,20 @@ whiteSpace: 'nowrap',
     </table>
   </details>
 ))}
-
+<section style={{ margin: '3rem 0', textAlign: 'center' }}>
+  <img
+    src="/gallery/boston-terrier-at-freezer.webp"
+    alt="Boston terrier standing on a stool peeking into a freezer full of frozen treats"
+    style={{
+      maxWidth: '100%',
+      height: 'auto',
+      borderRadius: '12px',
+      boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+    }}
+  />
 </section>
 
-  
-<FloatingTreatStack />
+</section>
 
 <h2 style={{ fontSize: '1.75rem', color: '#5b2b1b', marginBottom: '1rem' }}>
     Ready to Book Your Ice Cream Freezer?
