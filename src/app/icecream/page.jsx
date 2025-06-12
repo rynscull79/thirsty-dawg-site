@@ -106,15 +106,8 @@ Happy Customers in Action</h3>
 }}
 
   >
-    <div
-      style={{
-        display: 'flex',
-whiteSpace: 'nowrap',
-        width: 'max-content',
-        animation: 'scrollCarousel 40s linear infinite',
-        gap: '1rem',
-      }}
-    >
+    <div className="carousel-track">
+
 {[...Array(4)].flatMap(() => [
   'oreo-bars.webp',
   'magnumdoublecaramel.webp',
