@@ -74,6 +74,17 @@ Happy Customers in Action</h3>
       }}
     />
   </div>
+  <img
+  src="/gallery/icecream-outside.webp"
+  alt="Smiling customer holding ice cream sandwich"
+  style={{
+    marginTop: '1.5rem',
+    maxWidth: '100%',
+    borderRadius: '12px',
+    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+  }}
+/>
+
 </section>
 
 

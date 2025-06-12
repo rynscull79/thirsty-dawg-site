@@ -1,3 +1,4 @@
+
 // 📄 src/app/icecream/page.jsx
 
 
@@ -6,12 +7,15 @@ export const metadata = {
   description: 'Frozen novelty ice cream rentals for events in Pensacola and the Gulf Coast. Choose pre-built packages or build your own — all delivered in a self-serve freezer.'
 ,
 };
+
 import FloatingBookNow from '@/components/FloatingBookNow';
 
 export default function IceCreamPage() {
+
+
   return (
-    <main style={{ padding: '2rem', maxWidth: '720px', margin: '0 auto', fontFamily: "'Chewy', sans-serif" }}>
-      <h1 style={{ fontSize: '2.25rem', color: '#5b2b1b', marginBottom: '1rem' }}>
+    <main style={{ padding: '2rem', maxWidth: '1140px', margin: '0 auto', fontFamily: "'Chewy', sans-serif" }}>
+      <h1 style={{ fontSize: '2.25rem', color: '#00b3e6', marginBottom: '1rem', textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>
         Novelty Ice Cream Parties Delivered
       </h1>
       <p style={{ fontSize: '1.1rem', color: '#444', marginBottom: '2rem' }}>
@@ -33,7 +37,13 @@ export default function IceCreamPage() {
   }}
 >
   <div style={{ flex: '1 1 300px', textAlign: 'center' }}>
-    <h3 style={{ fontSize: '1.25rem', color: '#5b2b1b', marginBottom: '1rem' }}>Backyard Party-Ready!</h3>
+    <h3 style={{
+  fontSize: '1.25rem',
+  color: '#00b3e6',
+  marginBottom: '1rem',
+  textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000'
+}}>
+Backyard Party-Ready!</h3>
     <img
       src="/gallery/freezer-at-party.webp"
       alt="Thirsty Dawg freezer setup at an event"
@@ -46,7 +56,14 @@ export default function IceCreamPage() {
   </div>
 
   <div style={{ flex: '1 1 300px', textAlign: 'center' }}>
-    <h3 style={{ fontSize: '1.25rem', color: '#5b2b1b', marginBottom: '1rem' }}>Happy Customers in Action</h3>
+    <h3 style={{
+  fontSize: '1.25rem',
+  color: '#00b3e6',
+  marginBottom: '1rem',
+  textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000'
+}}>
+
+Happy Customers in Action</h3>
     <img
       src="/gallery/kids-enjoying-frozen-treats.webp"
       alt="Kids enjoying novelty ice cream at party"
@@ -60,7 +77,7 @@ export default function IceCreamPage() {
 </section>
 
 
-      <h2 style={{ fontSize: '1.5rem', color: '#3a1a0a', marginBottom: '1rem' }}>Why You'll Love It</h2>
+      <h2 style={{ fontSize: '1.5rem', color: '#00b3e6', marginBottom: '1rem', textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>Why You'll Love It</h2>
       <ul style={{ fontSize: '1rem', color: '#333', paddingLeft: '1.25rem', marginBottom: '2rem' }}>
         <li style={{ marginBottom: '0.75rem' }}>✅ Self-serve convenience — guests grab treats while you enjoy the event</li>
         <li style={{ marginBottom: '0.75rem' }}>🍦 Tons of variety — novelty bars, sandwiches, and sundaes</li>
@@ -69,7 +86,7 @@ export default function IceCreamPage() {
         <li>🔄 Customize your order — choose a package or build your own</li>
       </ul>
 
-      <h2 style={{ fontSize: '1.5rem', color: '#3a1a0a', marginBottom: '1rem' }}>Pricing & Details</h2>
+      <h2 style={{ fontSize: '1.5rem', color: '#00b3e6', marginBottom: '1rem', textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>Pricing & Details</h2>
       <ul style={{ fontSize: '1rem', color: '#333', paddingLeft: '1.25rem', marginBottom: '2rem' }}>
         <li style={{ marginBottom: '0.5rem' }}>Freezer or Cart Rental : <strong>$95</strong></li>
         <li style={{ marginBottom: '0.5rem' }}>Package sizes: 150–300 treats or ala-carte</li>
@@ -81,25 +98,20 @@ export default function IceCreamPage() {
 </p>
 
 <section style={{ margin: '3rem 0' }}>
-  <h2 style={{ textAlign: 'center', fontSize: '1.5rem', color: '#3a1a0a', marginBottom: '1rem' }}>
+  <h2 style={{ textAlign: 'center', fontSize: '1.5rem', color: '#00b3e6', marginBottom: '1rem', textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>
     A Few of Our Frozen Favorites
   </h2>
   <div
     style={{
-      overflow: 'hidden',
-      width: '100%',
-      position: 'relative',
-    }}
+  overflow: 'hidden',
+  width: '100%',
+  minHeight: '140px', // ⬅️ This prevents layout collapse
+  position: 'relative',
+}}
+
   >
-    <div
-      style={{
-        display: 'flex',
-whiteSpace: 'nowrap',
-        width: 'fit-content',
-        animation: 'scrollCarousel 40s linear infinite',
-        gap: '1rem',
-      }}
-    >
+    <div className="carousel-track">
+
 {[...Array(4)].flatMap(() => [
   'oreo-bars.webp',
   'magnumdoublecaramel.webp',
@@ -133,10 +145,20 @@ whiteSpace: 'nowrap',
   </div>
 </section>
 
-      <h2 style={{ fontSize: '1.5rem', color: '#3a1a0a', marginBottom: '1rem' }}>Pre-Built Ice Cream Packages – Delivered</h2>
+      <h2 style={{
+  fontSize: '1.5rem',
+  color: '#00b3e6',
+  marginBottom: '1rem',
+  textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000'
+}}>
+  Pre-Built Ice Cream Packages – Delivered
+</h2>
+<div className="package-grid">
+
 
 <section style={{ marginBottom: '2rem' }}>
-  <h3 style={{ fontSize: '1.25rem', color: '#5b2b1b' }}>🍦 The VIP – 147 Pieces ($275)</h3>
+  <h3 style={{ fontSize: '1.25rem', color: '#3a1a0a' }}>
+🍦 The VIP – 147 Pieces ($275)</h3>
   <ul>
     <li>Magnum Double Caramel Bars – 27</li>
     <li>Klondike Original – 24</li>
@@ -150,7 +172,8 @@ whiteSpace: 'nowrap',
 </section>
 
 <section style={{ marginBottom: '2rem' }}>
-  <h3 style={{ fontSize: '1.25rem', color: '#5b2b1b' }}>🍨 Frosted Favorites – 158 Pieces ($225)</h3>
+  <h3 style={{ fontSize: '1.25rem', color: '#3a1a0a' }}>
+🍨 Frosted Favorites – 158 Pieces ($225)</h3>
   <ul>
     <li>Oreo Bars – 30</li>
     <li>Snickers Ice Cream Chocolate Caramel Peanut Butter Bars – 24</li>
@@ -162,7 +185,8 @@ whiteSpace: 'nowrap',
 </section>
 
 <section style={{ marginBottom: '2rem' }}>
-  <h3 style={{ fontSize: '1.25rem', color: '#5b2b1b' }}>🍭 Coolest Deal in Town – 216 Pieces ($225)</h3>
+  <h3 style={{ fontSize: '1.25rem', color: '#3a1a0a' }}>
+🍭 Coolest Deal in Town – 216 Pieces ($225)</h3>
   <ul>
     <li>Chocolate Crunch Cake Bars – 24</li>
     <li>Cool Watermelon Bars – 24</li>
@@ -176,7 +200,8 @@ whiteSpace: 'nowrap',
 </section>
 
 <section style={{ marginBottom: '2rem' }}>
-  <h3 style={{ fontSize: '1.25rem', color: '#5b2b1b' }}>🎉 Cool Kid Combo – 156 Pieces ($215)</h3>
+  <h3 style={{ fontSize: '1.25rem', color: '#3a1a0a' }}>
+🎉 Cool Kid Combo – 156 Pieces ($215)</h3>
   <ul>
     <li>Chocolate Crunch Cake Bars – 24</li>
     <li>Strawberry Shortcake Bars – 24</li>
@@ -188,12 +213,15 @@ whiteSpace: 'nowrap',
 </section>
 
 <section style={{ marginBottom: '2rem' }}>
-  <h3 style={{ fontSize: '1.25rem', color: '#5b2b1b' }}>👨‍👩‍👧‍👦 The Crowd Pleaser – 288 Pieces ($250)</h3>
+  <h3 style={{ fontSize: '1.25rem', color: '#3a1a0a' }}>
+👨‍👩‍👧‍👦 The Crowd Pleaser – 288 Pieces ($250)</h3>
   <ul>
     <li>Vanilla Sandwiches – 144</li>
     <li>Bomb Pop Ice Pops – 144</li>
   </ul>
 </section>
+</div> {/* CLOSE .package-grid */}
+
 
 <section
   style={{
@@ -206,7 +234,7 @@ whiteSpace: 'nowrap',
     textAlign: 'center',
   }}
 ><section style={{ margin: '3rem 0' }}>
-  <h2 style={{ fontSize: '1.5rem', color: '#3a1a0a', marginBottom: '1rem', textAlign: 'center' }}>
+  <h2 style={{ fontSize: '1.5rem', color: '#00b3e6', marginBottom: '1rem', textAlign: 'center' }}>
     Custom Ice Cream Novelty Orders – A La Carte Pricing
   </h2>
   <p style={{ fontSize: '1rem', color: '#444', marginBottom: '1.5rem', textAlign: 'center' }}>
@@ -272,7 +300,7 @@ whiteSpace: 'nowrap',
   },
 ].map(({ title, items }, i) => (
   <details key={i} style={{ marginBottom: '1rem', background: '#fff', borderRadius: '8px', boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
-    <summary style={{ padding: '0.75rem 1rem', cursor: 'pointer', fontWeight: 'bold', color: '#5b2b1b', fontSize: '1.1rem' }}>
+    <summary style={{ padding: '0.75rem 1rem', cursor: 'pointer', fontWeight: 'bold', color: '#3a1a0a', fontSize: '1.1rem' }}>
       {title}
     </summary>
     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.95rem' }}>
@@ -310,7 +338,7 @@ whiteSpace: 'nowrap',
 
 </section>
 
-<h2 style={{ fontSize: '1.75rem', color: '#5b2b1b', marginBottom: '1rem' }}>
+<h2 style={{ fontSize: '1.75rem', color: '#00b3e6', marginBottom: '1rem', textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>
     Ready to Book Your Ice Cream Freezer?
   </h2>
   <p style={{ fontSize: '1rem', color: '#444', marginBottom: '1.5rem' }}>
