@@ -1,10 +1,12 @@
 // 📄 src/app/icecream/page.jsx
 
+
 export const metadata = {
   title: 'Novelty Ice Cream Freezer Rentals | Thirsty Dawg',
   description: 'Frozen novelty ice cream rentals for events in Pensacola and the Gulf Coast. Choose pre-built packages or build your own — all delivered in a self-serve freezer.'
 ,
 };
+import FloatingTreatStack from '@/components/FloatingTreatStack';
 
 export default function IceCreamPage() {
   return (
@@ -297,53 +299,8 @@ whiteSpace: 'nowrap',
 </section>
 
   
-  <section style={{ marginTop: '2rem', marginBottom: '3rem' }}>
-  <h2 style={{ fontSize: '1.5rem', color: '#3a1a0a', textAlign: 'center', marginBottom: '1.5rem' }}>
-    Our Most Popular Novelties
-  </h2>
-  <div style={{
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-    gap: '1rem',
-    justifyItems: 'center'
-  }}>
-    {[
-      'oreo-bars.webp',
-      'magnumdoublecaramel.webp',
-      'klondike-original.webp',
-      'reeses-peanut-butter-bar-.jpg',
-      'butterfinger-ice-cream-bar.webp',
-      'snickers-ice-cream-bar.webp',
-      'Twix-Caramel-Milk-Chocolate-Ice-Cream-Bars.webp',
-      'dark-chocolate-ice-cream-bars.webp',
-      'Strawberry-Shortcake-Bar-Rich-Ice-Cream.webp',
-      'mickey-mouse-bar.webp',
-      'Kit-Kat-Ice-Cream-Cone.webp',
-      'fat-boy-hot-fudge.webp',
-      'bomb-pop.webp',
-      'spongebob-popsicle.webp',
-      'chocolate-crunch-cake.webp',
-    ].map((file, i) => (
-      <div key={i} style={{ textAlign: 'center' }}>
-        <img
-          src={`/gallery/${file}`}
-          alt={file.replace(/[-.]/g, ' ').replace(/webp|jpg|jpeg/gi, '').trim()}
-          style={{
-            width: '100%',
-            maxWidth: '140px',
-            borderRadius: '8px',
-            objectFit: 'cover',
-            boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
-            marginBottom: '0.5rem'
-          }}
-        />
-        <div style={{ fontSize: '0.9rem', color: '#444' }}>
-          {file.replace(/[-.]/g, ' ').replace(/webp|jpg|jpeg/gi, '').trim()}
-        </div>
-      </div>
-    ))}
-  </div>
-</section>
+<FloatingTreatStack />
+
 <h2 style={{ fontSize: '1.75rem', color: '#5b2b1b', marginBottom: '1rem' }}>
     Ready to Book Your Ice Cream Freezer?
   </h2>
