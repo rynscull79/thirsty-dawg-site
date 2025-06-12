@@ -278,6 +278,52 @@ whiteSpace: 'nowrap',
   <p style={{ fontSize: '1rem', color: '#444', marginBottom: '1.5rem' }}>
     We'll deliver it pre-chilled and fully stocked with the treats you choose. You serve, we pick up — it’s that simple.
   </p>
+  <section style={{ marginTop: '2rem', marginBottom: '3rem' }}>
+  <h2 style={{ fontSize: '1.5rem', color: '#3a1a0a', textAlign: 'center', marginBottom: '1.5rem' }}>
+    Our Most Popular Novelties
+  </h2>
+  <div style={{
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+    gap: '1rem',
+    justifyItems: 'center'
+  }}>
+    {[
+      'oreo-bars.webp',
+      'magnumdoublecaramel.webp',
+      'klondike-original.webp',
+      'reeses-peanut-butter-bar-.jpg',
+      'butterfinger-ice-cream-bar.webp',
+      'snickers-ice-cream-bar.webp',
+      'Twix-Caramel-Milk-Chocolate-Ice-Cream-Bars.webp',
+      'dark-chocolate-ice-cream-bars.webp',
+      'Strawberry-Shortcake-Bar-Rich-Ice-Cream.webp',
+      'mickey-mouse-bar.webp',
+      'fat-boy-hot-fudge.webp',
+      'bomb-pop.webp',
+      'spongebob-popsicle.webp',
+    ].map((file, i) => (
+      <div key={i} style={{ textAlign: 'center' }}>
+        <img
+          src={`/gallery/${file}`}
+          alt={file.replace(/[-.]/g, ' ').replace(/webp|jpg|jpeg/gi, '').trim()}
+          style={{
+            width: '100%',
+            maxWidth: '140px',
+            borderRadius: '8px',
+            objectFit: 'cover',
+            boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
+            marginBottom: '0.5rem'
+          }}
+        />
+        <div style={{ fontSize: '0.9rem', color: '#444' }}>
+          {file.replace(/[-.]/g, ' ').replace(/webp|jpg|jpeg/gi, '').trim()}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
 </section>
 
       <a
