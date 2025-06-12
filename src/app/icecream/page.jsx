@@ -272,12 +272,7 @@ whiteSpace: 'nowrap',
   </table>
 </section>
 
-  <h2 style={{ fontSize: '1.75rem', color: '#5b2b1b', marginBottom: '1rem' }}>
-    Ready to Book Your Ice Cream Freezer?
-  </h2>
-  <p style={{ fontSize: '1rem', color: '#444', marginBottom: '1.5rem' }}>
-    We'll deliver it pre-chilled and fully stocked with the treats you choose. You serve, we pick up — it’s that simple.
-  </p>
+  
   <section style={{ marginTop: '2rem', marginBottom: '3rem' }}>
   <h2 style={{ fontSize: '1.5rem', color: '#3a1a0a', textAlign: 'center', marginBottom: '1.5rem' }}>
     Our Most Popular Novelties
@@ -323,7 +318,12 @@ whiteSpace: 'nowrap',
     ))}
   </div>
 </section>
-
+<h2 style={{ fontSize: '1.75rem', color: '#5b2b1b', marginBottom: '1rem' }}>
+    Ready to Book Your Ice Cream Freezer?
+  </h2>
+  <p style={{ fontSize: '1rem', color: '#444', marginBottom: '1.5rem' }}>
+    We'll deliver it pre-chilled and fully stocked with the treats you choose. You serve, we pick up — it’s that simple.
+  </p>
 </section>
 
       <a
