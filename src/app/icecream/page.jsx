@@ -33,7 +33,12 @@ export default function IceCreamPage() {
   }}
 >
   <div style={{ flex: '1 1 300px', textAlign: 'center' }}>
-    <h3 style={{ fontSize: '1.25rem', color: '#3a1a0a', marginBottom: '1rem' }}>
+    <h3 style={{
+  fontSize: '1.25rem',
+  color: '#00b3e6',
+  marginBottom: '1rem',
+  textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000'
+}}>
 Backyard Party-Ready!</h3>
     <img
       src="/gallery/freezer-at-party.webp"
@@ -47,7 +52,13 @@ Backyard Party-Ready!</h3>
   </div>
 
   <div style={{ flex: '1 1 300px', textAlign: 'center' }}>
-    <h3 style={{ fontSize: '1.25rem', color: '#3a1a0a', marginBottom: '1rem' }}>
+    <h3 style={{
+  fontSize: '1.25rem',
+  color: '#00b3e6',
+  marginBottom: '1rem',
+  textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000'
+}}>
+
 Happy Customers in Action</h3>
     <img
       src="/gallery/kids-enjoying-frozen-treats.webp"
