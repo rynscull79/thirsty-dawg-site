@@ -6,6 +6,7 @@ export const metadata = {
   description: 'Frozen novelty ice cream rentals for events in Pensacola and the Gulf Coast. Choose pre-built packages or build your own — all delivered in a self-serve freezer.'
 ,
 };
+import FloatingBookNow from '@/components/FloatingBookNow';
 
 export default function IceCreamPage() {
   return (
@@ -329,8 +330,10 @@ whiteSpace: 'nowrap',
           fontSize: '1.1rem',
         }}
       >
-        Book Now
+    
       </a>
+      <FloatingBookNow />
+
     </main>
   );
 }
