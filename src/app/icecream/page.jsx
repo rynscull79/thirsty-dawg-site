@@ -99,16 +99,18 @@ Happy Customers in Action</h3>
   </h2>
   <div
     style={{
-      overflow: 'hidden',
-      width: '100%',
-      position: 'relative',
-    }}
+  overflow: 'hidden',
+  width: '100%',
+  minHeight: '140px', // ⬅️ This prevents layout collapse
+  position: 'relative',
+}}
+
   >
     <div
       style={{
         display: 'flex',
 whiteSpace: 'nowrap',
-        width: 'fit-content',
+        width: 'max-content',
         animation: 'scrollCarousel 40s linear infinite',
         gap: '1rem',
       }}
