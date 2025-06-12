@@ -3,9 +3,9 @@
 
 
 export const metadata = {
-  title: 'Novelty Ice Cream Freezer Rentals | Thirsty Dawg',
-  description: 'Frozen novelty ice cream rentals for events in Pensacola and the Gulf Coast. Choose pre-built packages or build your own — all delivered in a self-serve freezer.'
-,
+  title: 'Ice Cream Cart Rentals | Thirsty Dawg',
+description: 'Rent a fully stocked ice cream cart for your next event in Pensacola or the Gulf Coast. Choose from fun pre-built packages or build your own!',
+
 };
 
 import FloatingBookNow from '@/components/FloatingBookNow';
@@ -16,13 +16,14 @@ export default function IceCreamPage() {
   return (
     <main style={{ padding: '2rem', maxWidth: '1140px', margin: '0 auto', fontFamily: "'Chewy', sans-serif" }}>
       <h1 style={{ fontSize: '2.25rem', color: '#00b3e6', marginBottom: '1rem', textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>
-        Novelty Ice Cream Parties Delivered
-      </h1>
+  Ice Cream Cart Rentals for Any Event
+</h1>
+
       <p style={{ fontSize: '1.1rem', color: '#444', marginBottom: '2rem' }}>
-        Enjoy hassle-free novelty ice cream service with our fully stocked, self-serve freezers—perfect for any gathering.
+        Enjoy hassle-free novelty ice cream service with our fully stocked, self-serve carts — perfect for parties, schools, and corporate events.
       </p>
 <p style={{ fontSize: '1rem', color: '#444', marginBottom: '1.5rem' }}>
-  We proudly serve Pensacola, Gulf Breeze, Navarre, and surrounding areas across Florida’s panhandle — including south Alabama communities like Orange Beach, Foley, and Fairhope.
+  We deliver ice cream carts across Pensacola, Gulf Breeze, Navarre, and nearby Florida panhandle areas — including south Alabama communities like Orange Beach, Foley, and Fairhope.
 </p>
 
 
@@ -34,7 +35,7 @@ export default function IceCreamPage() {
     textAlign: 'center',
     textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000'
   }}>
-    Freezer Rentals That Impress
+    Ice Cream Cart Rentals That Impress
   </h2>
   <div style={{
     display: 'flex',
@@ -90,7 +91,7 @@ export default function IceCreamPage() {
         <li><em>$150 minimum order</em></li>
       </ul>
       <p style={{ fontSize: '0.95rem', color: '#666', marginBottom: '2rem', textAlign: 'center' }}>
-  <em>Package and a la carte prices do not include the <strong>$95 freezer rental fee</strong>, which is required with every order.</em>
+  <em>Package and a la carte prices do not include the <strong>$95 cart rental fee</strong>, which is required with every order.</em>
 </p>
 
 <section style={{ margin: '3rem 0' }}>
@@ -231,15 +232,16 @@ export default function IceCreamPage() {
   }}
 ><section style={{ margin: '3rem 0' }}>
   <h2 style={{ fontSize: '1.5rem', color: '#00b3e6', marginBottom: '1rem', textAlign: 'center' }}>
-    Custom Ice Cream Novelty Orders – A La Carte Pricing
-  </h2>
+  Custom Ice Cream Cart Orders – A La Carte Pricing
+</h2>
+
   <p style={{ fontSize: '1rem', color: '#444', marginBottom: '1.5rem', textAlign: 'center' }}>
   Want to build your own mix? Order individual boxes of your favorite frozen novelties.
   <br />
   <strong style={{ color: '#5b2b1b' }}>$150 minimum order required.</strong>
 </p>
 <p style={{ fontSize: '0.9rem', color: '#888', marginTop: '-0.5rem', marginBottom: '1rem' }}>
-  *Freezer rental not included. Add $95 per event.
+  *Cart rental not included. Add $95 per event.
 </p>
 
 {[
@@ -322,7 +324,7 @@ export default function IceCreamPage() {
 <section style={{ margin: '3rem 0', textAlign: 'center' }}>
   <img
     src="/gallery/boston-terrier-at-freezer.webp"
-    alt="Boston terrier standing on a stool peeking into a freezer full of frozen treats"
+    alt="Boston terrier standing on a stool peeking into an ice cream cart full of frozen treats"
     style={{
       maxWidth: '100%',
       height: 'auto',
@@ -335,11 +337,13 @@ export default function IceCreamPage() {
 </section>
 
 <h2 style={{ fontSize: '1.75rem', color: '#00b3e6', marginBottom: '1rem', textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>
-    Ready to Book Your Ice Cream Freezer?
-  </h2>
+  Ready to Book Your Ice Cream Cart?
+</h2>
+
   <p style={{ fontSize: '1rem', color: '#444', marginBottom: '1.5rem' }}>
-    We'll deliver it pre-chilled and fully stocked with the treats you choose. You serve, we pick up — it’s that simple.
-  </p>
+  We’ll deliver your ice cream cart pre-chilled and fully stocked with the treats you choose. You serve, we pick up — it’s that simple.
+</p>
+
 </section>
 
       <FloatingBookNow />
