@@ -119,16 +119,16 @@ export default function HomePage() {
       <div>
        <section className={styles.hero}>
   <h1 style={{ fontFamily: '"Chewy", cursive', fontSize: '2.5rem', lineHeight: '1.2', textAlign: 'center' }}>
-    🧊 Frozen Drink, Soft Serve & Ice Cream Cart Rentals in Pensacola, FL
+    🧊 Frozen Drink Machines, Soft Serve Machines & Ice Cream Carts – Pensacola Rentals
   </h1>
   <p style={{ fontSize: '1.2rem', marginTop: '1rem', maxWidth: '700px', marginInline: 'auto', textAlign: 'center' }}>
-    Thirsty Dawg brings the party to you with commercial-grade frozen drink machines, soft serve ice cream rentals,
-    and fully-stocked novelty ice cream carts. Serving Pensacola, Gulf Breeze, Milton, and beyond!
+    Rent commercial-grade frozen drink machines, soft serve ice cream machines, and fully-stocked novelty ice cream carts for parties, schools, weddings, and events across Pensacola, Gulf Breeze, Milton, and surrounding areas.
   </p>
   <p style={{ marginTop: '1rem', fontWeight: 'bold', fontSize: '1.2rem', textAlign: 'center' }}>
     📞 Call or text us: <a href="tel:8505723796" style={{ color: 'white', textDecoration: 'underline' }}>(850) 572-3796</a>
   </p>
 </section>
+
 
  
         <section style={{
