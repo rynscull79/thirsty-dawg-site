@@ -234,24 +234,41 @@ export default function HomePage() {
         <FloatingBookNow />
 
         <section className={styles.section} style={{ backgroundColor: '#ffffff', padding: '2rem', borderRadius: '1rem' }}>
-          <h3 style={{ textAlign: 'center', fontSize: '1.8rem', fontWeight: 'bold', color: '#009fdb', marginBottom: '1.5rem' }}>🍹 Why Choose Thirsty Dawg?</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
-            {[ 
-              '❄️ No Ice Needed – Our machines freeze the mix without ice',
-              '🥇 Commercial-Grade Machines – Same quality found in bars',
-              '🙌 Full-Service Delivery – We deliver, set up, and clean up',
-              '🍓 Natural Fruit Juices – Made with real fruit flavorings',
-              '👨‍👧‍👦 Family-Friendly Flavors – Serve with or without alcohol',
-              '🌀 Variety of Machine Options – Choose the perfect unit for your event',
-              '🥃 Dual Machines Include Two Mixes – Serve two flavors at once',
-              '⚡ Quick Freeze Time – Chills mix in under 90 minutes',
-              '🧼 We Handle the Cleaning – Post-party cleanup is on us',
-              '🌟 5-Star Rated – Backed by glowing reviews from happy customers',
-            ].map((reason, index) => (
-              <div key={index} style={{ backgroundColor: '#e6f4fd', padding: '1rem', borderRadius: '0.75rem', fontWeight: 'bold', color: '#1f2937', boxShadow: '0 2px 6px rgba(0,0,0,0.05)', textAlign: 'center' }}>{reason}</div>
-            ))}
-          </div>
-        </section>
+  <h3 style={{ textAlign: 'center', fontSize: '1.8rem', fontWeight: 'bold', color: '#009fdb', marginBottom: '1.5rem' }}>
+    🍹 Why Choose Thirsty Dawg Rentals?
+  </h3>
+  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
+    {[
+      '❄️ No Ice Needed – Our machines freeze the mix automatically',
+      '🥇 Commercial-Grade Equipment – Bar-quality drink and dessert machines',
+      '🍦 Soft Serve Machines – Delicious vanilla and chocolate in minutes',
+      '🍧 Stocked Ice Cream Carts – Delivered with frozen novelties ready to serve',
+      '🙌 Full-Service Delivery – We deliver, set up, and pick up for you',
+      '🧃 Natural Fruit Juices – Made with real fruit flavorings',
+      '👨‍👧‍👦 Kid- and Family-Friendly Options – Alcohol-free or adult-style drinks',
+      '🌀 Multiple Machine Types – Choose the best fit for your event',
+      '⚡ Quick Freeze Time – Be party-ready in under 90 minutes',
+      '🧼 Post-Party Cleanup – We handle everything',
+      '🌟 5-Star Rated – Loved by families, schools, and event planners',
+    ].map((reason, index) => (
+      <div
+        key={index}
+        style={{
+          backgroundColor: '#e6f4fd',
+          padding: '1rem',
+          borderRadius: '0.75rem',
+          fontWeight: 'bold',
+          color: '#1f2937',
+          boxShadow: '0 2px 6px rgba(0,0,0,0.05)',
+          textAlign: 'center',
+        }}
+      >
+        {reason}
+      </div>
+    ))}
+  </div>
+</section>
+
 
         <DeliveryArea />
 
