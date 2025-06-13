@@ -45,14 +45,15 @@ export default function IceCreamPage() {
     alignItems: 'flex-start'
   }}>
     <img
-      src="/gallery/freezer-at-party.webp"
-      alt="Thirsty Dawg freezer setup at an event"
-      style={{
-        maxWidth: '300px',
-        borderRadius: '12px',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-      }}
-    />
+  src="/gallery/freezer-at-party.webp"
+  alt="Thirsty Dawg freezer setup at an event"
+  style={{
+    maxWidth: '300px',
+    borderRadius: '12px',
+    boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+  }}
+/>
+
     <img
       src="/gallery/kids-enjoying-frozen-treats.webp"
       alt="Kids enjoying novelty ice cream at party"
