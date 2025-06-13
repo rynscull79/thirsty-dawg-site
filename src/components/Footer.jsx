@@ -21,13 +21,13 @@ export default function Footer() {
           <ul style={{ listStyle: 'none', padding: 0, lineHeight: '2rem' }}>
   <li><Link href="/">Home</Link></li>
   <li><Link href="/rentals">Frozen Drink/Softserve</Link></li>
-  <li><Link href="/icecream">Novelty Cart</Link></li> {/* ✅ New link */}
+  <li><Link href="/icecream">Ice Cream Cart</Link></li> {/* ✅ New link */}
   <li><Link href="/our-story">Our Story</Link></li>
   <li><Link href="/faq">FAQ</Link></li>
   <li><Link href="/booking">Booking</Link></li>
   <li><Link href="/contact">Contact</Link></li>
 </ul>
-
+/* ✅ New link */
         </div>
 
         {/* Contact Info */}
