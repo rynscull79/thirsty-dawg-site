@@ -44,15 +44,16 @@ export default function IceCreamPage() {
     justifyContent: 'center',
     alignItems: 'flex-start'
   }}>
-    <img
-  src="/gallery/freezer-at-party.webp"
-  alt="Thirsty Dawg freezer setup at an event"
+   <img
+  src="/gallery/Thirsty-Dawg-Nelson-Cart.webp"
+  alt="Thirsty Dawg ice cream cart with umbrella at an outdoor party"
   style={{
     maxWidth: '300px',
     borderRadius: '12px',
     boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
   }}
 />
+
 
     <img
       src="/gallery/kids-enjoying-frozen-treats.webp"
