@@ -20,8 +20,8 @@ export default function Footer() {
           <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Menu</h3>
           <ul style={{ listStyle: 'none', padding: 0, lineHeight: '2rem' }}>
   <li><Link href="/">Home</Link></li>
-  <li><Link href="/rentals">Our Rentals</Link></li>
-  <li><Link href="/icecream">Frozen Novelties</Link></li> {/* ✅ New link */}
+  <li><Link href="/rentals">Frozen Drink/Softserve</Link></li>
+  <li><Link href="/icecream">Novelty Cart</Link></li> {/* ✅ New link */}
   <li><Link href="/our-story">Our Story</Link></li>
   <li><Link href="/faq">FAQ</Link></li>
   <li><Link href="/booking">Booking</Link></li>
@@ -46,7 +46,6 @@ export default function Footer() {
 </p>
         </div>
       </div>
-
       <div style={{ marginTop: '2rem', fontSize: '0.9rem' }}>
         © {new Date().getFullYear()} Thirsty Dawg Rentals. All rights reserved.
       </div>
