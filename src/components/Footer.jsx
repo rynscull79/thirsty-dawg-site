@@ -27,7 +27,7 @@ export default function Footer() {
   <li><Link href="/booking">Booking</Link></li>
   <li><Link href="/contact">Contact</Link></li>
 </ul>
-/* ✅ New link */
+
         </div>
 
         {/* Contact Info */}
