@@ -169,106 +169,106 @@ export default function HomePage() {
     boxShadow: '0 4px 10px rgba(0, 0, 0, 0.05)',
   }}
 >
+  {/* Header and buttons centered across full width */}
+  <div style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto', marginBottom: '2rem' }}>
+    <h2
+      style={{
+        fontSize: '2.4rem',
+        marginBottom: '20px',
+        color: '#f57c00',
+        fontFamily: '"Chewy", cursive',
+      }}
+    >
+      🎉 New Frozen Treat Rentals for 2025!
+    </h2>
+    <p
+      style={{
+        fontSize: '1.3rem',
+        marginBottom: '25px',
+        color: '#f57c00',
+        fontWeight: 'bold',
+        fontFamily: '"Chewy", cursive',
+      }}
+    >
+      We're now serving up Soft Serve AND fully-stocked Ice Cream Carts — perfect for parties, schools, weddings, and more!
+    </p>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        gap: '1rem',
+        flexWrap: 'wrap',
+        marginBottom: '2rem',
+      }}
+    >
+      <Link href="/booking">
+        <button
+          style={{
+            padding: '12px 24px',
+            fontSize: '1.1rem',
+            backgroundColor: '#ff6f00',
+            color: '#ffffff',
+            border: 'none',
+            borderRadius: '10px',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+            fontFamily: '"Chewy", cursive',
+          }}
+        >
+          🍦 Book Soft Serve
+        </button>
+      </Link>
+      <Link href="/icecream">
+        <button
+          style={{
+            padding: '12px 24px',
+            fontSize: '1.1rem',
+            backgroundColor: '#007bb5',
+            color: '#ffffff',
+            border: 'none',
+            borderRadius: '10px',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+            fontFamily: '"Chewy", cursive',
+          }}
+        >
+          🍧 View Ice Cream Packages
+        </button>
+      </Link>
+    </div>
+  </div>
+
+  {/* Images side by side */}
   <div
     style={{
       display: 'flex',
-      flexDirection: 'row',
       flexWrap: 'wrap',
       justifyContent: 'center',
-      alignItems: 'center',
       gap: '2rem',
     }}
   >
     <img
       src="/gallery/kid-soft-serve.webp"
       alt="Kid enjoying soft serve ice cream"
-      width="240"
-      height="320"
+      width="260"
+      height="340"
       style={{
         width: '100%',
-        maxWidth: '240px',
+        maxWidth: '260px',
         borderRadius: '1rem',
         boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
         objectFit: 'cover',
         flexShrink: 0,
       }}
     />
-
-    <div style={{ textAlign: 'center', maxWidth: '500px', flexShrink: 1 }}>
-      <h2
-        style={{
-          fontSize: '2.2rem',
-          marginBottom: '20px',
-          color: '#f57c00',
-          fontFamily: '"Chewy", cursive',
-        }}
-      >
-        🎉 New Frozen Treat Rentals for 2025!
-      </h2>
-      <p
-        style={{
-          fontSize: '1.2rem',
-          marginBottom: '20px',
-          color: '#f57c00',
-          fontWeight: 'bold',
-          fontFamily: '"Chewy", cursive',
-        }}
-      >
-        We're now serving up Soft Serve AND fully-stocked Ice Cream Carts — perfect for parties, schools, weddings, and more!
-      </p>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '1rem',
-          flexWrap: 'wrap',
-        }}
-      >
-        <Link href="/booking">
-          <button
-            style={{
-              padding: '12px 24px',
-              fontSize: '1.1rem',
-              backgroundColor: '#ff6f00',
-              color: '#ffffff',
-              border: 'none',
-              borderRadius: '10px',
-              cursor: 'pointer',
-              fontWeight: 'bold',
-              fontFamily: '"Chewy", cursive',
-            }}
-          >
-            🍦 Book Soft Serve
-          </button>
-        </Link>
-        <Link href="/icecream">
-          <button
-            style={{
-              padding: '12px 24px',
-              fontSize: '1.1rem',
-              backgroundColor: '#007bb5',
-              color: '#ffffff',
-              border: 'none',
-              borderRadius: '10px',
-              cursor: 'pointer',
-              fontWeight: 'bold',
-              fontFamily: '"Chewy", cursive',
-            }}
-          >
-            🍧 View Ice Cream Packages
-          </button>
-        </Link>
-      </div>
-    </div>
-
     <img
       src="/gallery/Thirsty-Dawg-Nelson-Cart.webp"
       alt="Stocked novelty ice cream cart"
-      width="240"
-      height="320"
+      width="260"
+      height="340"
       style={{
         width: '100%',
-        maxWidth: '240px',
+        maxWidth: '260px',
         borderRadius: '1rem',
         boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
         objectFit: 'cover',
@@ -277,10 +277,6 @@ export default function HomePage() {
     />
   </div>
 </section>
-
-
-
-
 
         <section className={styles.section}><GallerySection /></section>
         <ReviewSlider />
