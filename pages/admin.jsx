@@ -100,6 +100,7 @@ setFormData({
   ...b,
   secondFlavor: b.secondFlavor || '',
   comments: b.comments || '',
+  iceCreamPackage: b.iceCreamPackage || '',
   dateNeeded: new Date(b.dateNeeded).toISOString().split('T')[0],
 });
 
@@ -120,6 +121,7 @@ const handleSave = async (id) => {
       guestCount: parseInt(formData.guestCount) || 0,
       rentalLength: formData.rentalLength || '',
       machineType: formData.machineType || '',
+      iceCreamPackage: formData.iceCreamPackage || '',
       flavor: formData.flavor || '',
       secondFlavor: formData.secondFlavor || '',
       flavorAdditions: formData.flavorAdditions || '',
@@ -349,6 +351,7 @@ onChange={(e) => setShowArchived(e.target.checked)}
                 <th>Additions</th>
                 <th>Comments</th>
                 <th>Admin Notes</th>
+                <th>Ice Cream Package</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -361,6 +364,8 @@ onChange={(e) => setShowArchived(e.target.checked)}
 
                 return (
                   <tr key={b.id} className={b.status === 'new' ? styles.newBookingRow : ''}>
+
+
                     <td>
                       {isEditing ? (
                         <input
@@ -477,6 +482,23 @@ onChange={(e) => setShowArchived(e.target.checked)}
     🗃️ Archive
   </button>
 )}
+                    <td>
+  {isEditing ? (
+    <select value={formData.iceCreamPackage || ''} onChange={(e) => handleChange('iceCreamPackage', e.target.value)}>
+      {[
+        '',
+        'The VIP - $275',
+        'Frosted Favorites - $240',
+        'Coolest Deal in Town - $230',
+        'Cool Kid Combo - $215',
+        'The Crowd Pleaser - $260',
+        'A la carte (custom)'
+      ].map(opt => (
+        <option key={opt} value={opt}>{opt || 'None'}</option>
+      ))}
+    </select>
+  ) : b.iceCreamPackage}
+</td>
 </>
 
   )}

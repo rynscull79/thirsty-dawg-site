@@ -12,7 +12,9 @@ export default function BookingPage() {
   const [submitted, setSubmitted] = useState(false);
   const [machineType, setMachineType] = useState('');
 const [secondFlavor, setSecondFlavor] = useState('');
+const [serviceRequested, setServiceRequested] = useState('');
 const [deliveryFee, setDeliveryFee] = useState(null);
+const [serviceType, setServiceType] = useState('');
 const [calculatingFee, setCalculatingFee] = useState(false);
 const autocompleteRef = useRef(null);
 const [formData, setFormData] = useState({ street: '', city: '', state: '', zip: '' });
@@ -86,6 +88,7 @@ rentalEnd: new Date(raw.rental_end).toISOString(),
     flavorAdditions: raw.flavor_additions || '',
     secondFlavor: raw.second_flavor || '',
     comments: raw.comments || '',
+    iceCreamPackage: raw.ice_cream_package || '',
     rentalLength: calculateRentalLength(raw.date_needed, raw.rental_end),
   
 deliveryFee: deliveryFee !== null ? deliveryFee : 0,
@@ -296,50 +299,95 @@ style={{ width: '100%', maxWidth: '100%', minWidth: '500px' }}
     required
   />
 </div>
+<div className="mb-6">
+  <label className="block mb-1 text-lg" htmlFor="service_type">Service Requested</label>
+  <select
+    name="service_type"
+    value={serviceType}
+    onChange={(e) => setServiceType(e.target.value)}
+    className="w-full p-3 rounded-xl border border-gray-300 shadow-inner text-base"
+    required
+  >
+    <option value="">-- Select a Service --</option>
+    <option value="frozen_drink">Frozen Drink Machine</option>
+    <option value="soft_serve">Soft Serve Machine</option>
+    <option value="ice_cream_cart">Ice Cream Cart</option>
+  </select>
+  {serviceType === 'ice_cream_cart' && (
+  <div className="mb-6">
+    <label className="block mb-1 text-lg" htmlFor="ice_cream_package">Select Ice Cream Package</label>
+    <select
+      name="ice_cream_package"
+      className="w-full p-3 rounded-xl border border-gray-300 shadow-inner text-base"
+      required
+    >
+      <option value="">-- Choose a Package --</option>
+      <option value="The VIP - $275">The VIP - $275</option>
+      <option value="Frosted Favorites - $245">Frosted Favorites - $245</option>
+      <option value="Coolest Deal in Town - $215">Coolest Deal in Town - $215</option>
+      <option value="Cool Kid Combo - $230">Cool Kid Combo - $230</option>
+      <option value="The Crowd Pleaser - $260">The Crowd Pleaser - $260</option>
+      <option value="A la Carte">Build My Own (A la Carte)</option>
+    </select>
+  </div>
+)}
 
-        <div className="mb-6">
-          <label className="block mb-1 text-lg" htmlFor="machine_type">Machine Requested</label>
-          <select
-  name="machine_type"
-  value={machineType}
-  onChange={(e) => setMachineType(e.target.value)}
-  className="w-full p-3 rounded-xl border border-gray-300 shadow-inner text-base"
-  required
->
-  {[
-  'Stainless Single Flavor - $185',
-  'Stainless Dual Flavor - $240',
-  'Plastic Dual Flavor - $210',
-  'Soft Serve Machine - $185'
-].map(option => (
-  <option key={option}>{option}</option>
-))}
+</div>
 
-</select>
+{serviceType === 'frozen_drink' && (
+  <div className="mb-6">
+    <label className="block mb-1 text-lg" htmlFor="machine_type">Machine Requested</label>
+    <select
+      name="machine_type"
+      value={machineType}
+      onChange={(e) => setMachineType(e.target.value)}
+      className="w-full p-3 rounded-xl border border-gray-300 shadow-inner text-base"
+      required
+    >
+      {[
+        'Stainless Single Flavor - $185',
+        'Stainless Dual Flavor - $240',
+        'Plastic Dual Flavor - $210'
+      ].map(option => (
+        <option key={option}>{option}</option>
+      ))}
+    </select>
+  </div>
+)}
+{serviceType === 'soft_serve' && (
+  <input type="hidden" name="machine_type" value="Soft Serve Machine - $185" />
+)}
 
-        </div>
 
-        <div className="mb-6">
-          <label className="block mb-1 text-lg" htmlFor="flavor">Flavor</label>
-        <select name="flavor" className="w-full p-3 rounded-xl border border-gray-300 shadow-inner text-base" required>
-  {[
-    // Frozen drink flavors
-    'Blue Hawaiian', 'Bushwacker +$5', 'Frosé', 'Grape', 'Lemonade',
-    'Lime Margarita', 'Louisianna Hurricane', 'Mango Daiquiri', 'Mango Margarita',
-    'Orange Dreamsicle', 'Peach Belini', 'Peach Daiquiri', 'Pina Colada',
-    'Pink Lemonade', 'Strawberry Daiquiri', 'Strawberry Margarita', 'Watermelon',
-    // Soft serve flavors
-    'Soft Serve Vanilla', 'Soft Serve Chocolate',
-    'Soft Serve Birthday Cake (Additional Charge)',
-    'Soft Serve Cotton Candy (Additional Charge)',
-    'Soft Serve Salted Caramel (Additional Charge)'
-  ].map(option => (
-    <option key={option}>{option}</option>
-  ))}
-</select>
+ {(serviceType === 'frozen_drink' || serviceType === 'soft_serve') && (
+  <div className="mb-6">
+    <label className="block mb-1 text-lg" htmlFor="flavor">Flavor</label>
+    <select
+      name="flavor"
+      className="w-full p-3 rounded-xl border border-gray-300 shadow-inner text-base"
+      required
+    >
+      {(serviceType === 'frozen_drink'
+        ? [
+            'Blue Hawaiian', 'Bushwacker +$5', 'Frosé', 'Grape', 'Lemonade',
+            'Lime Margarita', 'Louisianna Hurricane', 'Mango Daiquiri', 'Mango Margarita',
+            'Orange Dreamsicle', 'Peach Belini', 'Peach Daiquiri', 'Pina Colada',
+            'Pink Lemonade', 'Strawberry Daiquiri', 'Strawberry Margarita', 'Watermelon'
+          ]
+        : [
+            'Soft Serve Vanilla', 'Soft Serve Chocolate',
+            'Soft Serve Birthday Cake (Additional Charge)',
+            'Soft Serve Cotton Candy (Additional Charge)',
+            'Soft Serve Salted Caramel (Additional Charge)'
+          ]
+      ).map(option => (
+        <option key={option}>{option}</option>
+      ))}
+    </select>
+  </div>
+)}
 
-        </div>
-{machineType.includes('Dual') && (
+{serviceType === 'frozen_drink' && machineType.includes('Dual') && (
   <div className="mb-6">
     <label className="block mb-1 text-lg" htmlFor="second_flavor">Second Flavor</label>
     <select
@@ -356,14 +404,17 @@ style={{ width: '100%', maxWidth: '100%', minWidth: '500px' }}
   </div>
 )}
 
-        <div className="mb-6">
-          <label className="block mb-1 text-lg" htmlFor="flavor_additions">Flavor Additions (Pair with Margarita)</label>
-          <select name="flavor_additions" className="w-full p-3 rounded-xl border border-gray-300 shadow-inner text-base">
-            {['', 'Strawberry', 'Peach', 'Watermelon', 'Mango'].map(option => (
-              <option key={option} value={option}>{option || 'None'}</option>
-            ))}
-          </select>
-        </div>
+        {serviceType === 'frozen_drink' && (machineType.includes('Margarita') || machineType.includes('Dual')) && (
+  <div className="mb-6">
+    <label className="block mb-1 text-lg" htmlFor="flavor_additions">Flavor Additions (Pair with Margarita)</label>
+    <select name="flavor_additions" className="w-full p-3 rounded-xl border border-gray-300 shadow-inner text-base">
+      {['', 'Strawberry', 'Peach', 'Watermelon', 'Mango'].map(option => (
+        <option key={option} value={option}>{option || 'None'}</option>
+      ))}
+    </select>
+  </div>
+)}
+
 
         <div className="mb-8">
           <label className="block mb-1 text-lg" htmlFor="comments">Comments</label>
