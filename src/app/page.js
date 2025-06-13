@@ -2,7 +2,6 @@
 
 import dynamic from 'next/dynamic';
 import styles from './page.module.css';
-import OurRentals from '@/components/OurRentals';
 import FloatingBookNow from '@/components/FloatingBookNow';
 import Head from 'next/head';
 import React, { useState } from 'react';
@@ -255,8 +254,6 @@ export default function HomePage() {
         </section>
 
         <DeliveryArea />
-<OurRentals />
-
 
       </div>
     </>
