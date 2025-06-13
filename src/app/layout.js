@@ -33,20 +33,26 @@ export default function RootLayout({ children }) {
     <html lang="en" className={chewy.variable}>
       <head>
         {/* Existing head content stays the same */}
-        <script dangerouslySetInnerHTML={{
-  __html: `
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1385023635883645'); 
-    fbq('track', 'PageView');
-  `
-}} />
+        <script
+  id="facebook-pixel"
+  type="text/plain"
+  data-cookieconsent="marketing"
+  dangerouslySetInnerHTML={{
+    __html: `
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1385023635883645'); 
+      fbq('track', 'PageView');
+    `
+  }}
+/>
+
 <noscript
   dangerouslySetInnerHTML={{
     __html: `<img height="1" width="1" style="display:none"
@@ -56,6 +62,56 @@ export default function RootLayout({ children }) {
 
 
       </head>
+      <script
+  id="cookieconsent"
+  src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"
+  defer
+></script>
+<script
+  defer
+  dangerouslySetInnerHTML={{
+    __html: `
+      window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+          palette: {
+            popup: { background: "#252e39" },
+            button: { background: "#f1d600" }
+          },
+          theme: "classic",
+          type: "opt-in",
+          content: {
+            message: "We use cookies to track ads and improve your experience.",
+            dismiss: "OK",
+            allow: "Allow cookies",
+            deny: "Decline",
+            link: "Learn more",
+            href: "/privacy-policy"
+          },
+          onInitialise: function (status) {
+            if (status == 'allow') fireFacebookPixel();
+          },
+          onStatusChange: function(status) {
+            if (status == 'allow') fireFacebookPixel();
+          }
+        });
+
+        function fireFacebookPixel() {
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '1385023635883645');
+          fbq('track', 'PageView');
+        }
+      });
+    `
+  }}
+/>
+
       <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{
