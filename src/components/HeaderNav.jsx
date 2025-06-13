@@ -16,7 +16,7 @@ export default function HeaderNav() {
   <Link href="/" style={{ padding: '12px 16px', display: 'inline-block' }}>Home</Link>
   <Link href="/rentals" style={{ padding: '12px 16px', display: 'inline-block' }}>Frozen Drink/Softserve</Link>
   <Link href="/icecream" onClick={closeMenu} style={{ padding: '12px 16px', display: 'inline-block' }}>
-  Novelty Cart
+  Ice Cream Cart
 </Link>
 
   <Link href="/our-story" style={{ padding: '12px 16px', display: 'inline-block' }}>Our Story</Link>
