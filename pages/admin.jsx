@@ -474,9 +474,9 @@ onChange={(e) => setShowArchived(e.target.checked)}
                         ))}
                       </select>
                     ) : b.flavorAdditions}</td>
-                    <td>{isEditing ? <textarea value={formData.comments || ''} onChange={(e) => handleChange('comments', e.target.value)} /> : b.comments}</td>
-                    <td>{isEditing ? <textarea value={formData.adminComment || ''} onChange={(e) => handleChange('adminComment', e.target.value)} /> : b.adminComment}</td>
-                   <td>
+                   
+                   <td>{isEditing ? <textarea value={formData.comments || ''} onChange={(e) => handleChange('comments', e.target.value)} /> : b.comments}</td>
+                    <td>
   {isEditing ? (
     <select value={formData.iceCreamPackage || ''} onChange={(e) => handleChange('iceCreamPackage', e.target.value)}>
       {[
@@ -493,6 +493,8 @@ onChange={(e) => setShowArchived(e.target.checked)}
     </select>
   ) : b.iceCreamPackage}
 </td>
+                    <td>{isEditing ? <textarea value={formData.adminComment || ''} onChange={(e) => handleChange('adminComment', e.target.value)} /> : b.adminComment}</td>
+                   
                    <td>
   {isEditing ? (
     <button onClick={() => handleSave(b.id)}>💾 Save</button>
