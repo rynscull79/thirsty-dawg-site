@@ -233,7 +233,7 @@ export default function HomePage() {
     </div>
   </div>
   <img
-    src="/gallery/icecream-cart-stocked.webp"
+    src="/gallery/Thirsty-Dawg-Nelson-Cart.webp"
     alt="Stocked novelty ice cream cart"
     width="300"
     height="400"
