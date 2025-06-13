@@ -126,7 +126,7 @@ export default function HomePage() {
       style={{
         fontSize: '2.4rem',
         marginBottom: '20px',
-        color: '#f57c00',
+        color: '#009fdb',
         fontFamily: '"Chewy", cursive',
       }}
     >
@@ -136,7 +136,7 @@ export default function HomePage() {
       style={{
         fontSize: '1.3rem',
         marginBottom: '25px',
-        color: '#f57c00',
+        color: '#009fdb',
         fontWeight: 'bold',
         fontFamily: '"Chewy", cursive',
       }}
