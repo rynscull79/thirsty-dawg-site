@@ -19,60 +19,6 @@ const DeliveryArea = dynamic(() => import('@/components/DeliveryArea'), {
 });
 
 export default function HomePage() {
-  const [machineType, setMachineType] = useState('single');
-  const [secondMachineType, setSecondMachineType] = useState('');
-  const [estimatedTotal, setEstimatedTotal] = useState(null);
-  const [range, setRange] = useState([
-    {
-      startDate: new Date(),
-      endDate: new Date(),
-      key: 'selection',
-    },
-  ]);
-
-  const handleEstimate = () => {
-    const start = new Date(range[0].startDate);
-    const end = new Date(range[0].endDate);
-    const timeDiff = end - start;
-    const numNights = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-    if (numNights < 1) return setEstimatedTotal('Rental must be at least 1 night.');
-
-    const getRates = (type) => {
-      switch (type) {
-        case 'single': return { base: 185, extra: 40 };
-        case 'plastic': return { base: 210, extra: 45 };
-        case 'stainless': return { base: 240, extra: 50 };
-        default: return { base: 0, extra: 0 };
-      }
-    };
-
-    const rates1 = getRates(machineType);
-    const rates2 = getRates(secondMachineType);
-    const extraNights = Math.max(0, numNights - 2);
-
-    let fullRate = { base: 0, extra: 0 };
-    let secondRate = { base: 0, extra: 0 };
-
-    if (!secondMachineType) {
-      fullRate = rates1;
-    } else {
-      const allRates = [rates1, rates2].sort((a, b) => b.base - a.base);
-      fullRate = allRates[0];
-      secondRate = allRates[1];
-
-      if (secondRate.base === 185) secondRate.base = 100;
-      if (secondRate.base === 210) secondRate.base = 115;
-      if (secondRate.base === 240) secondRate.base = 130;
-    }
-
-    const subtotal =
-      fullRate.base + fullRate.extra * extraNights +
-      (secondMachineType ? secondRate.base + secondRate.extra * extraNights : 0);
-
-    const tax = subtotal * 0.075;
-    const total = subtotal + tax;
-    setEstimatedTotal(`$${total.toFixed(2)} (including 7.5% tax)`);
-  };
 
   return (
     <>
