@@ -172,6 +172,7 @@ export default function HomePage() {
   <div
     style={{
       display: 'flex',
+      flexDirection: 'row',
       flexWrap: 'wrap',
       justifyContent: 'center',
       alignItems: 'center',
@@ -181,18 +182,19 @@ export default function HomePage() {
     <img
       src="/gallery/kid-soft-serve.webp"
       alt="Kid enjoying soft serve ice cream"
-      width="260"
-      height="340"
+      width="240"
+      height="320"
       style={{
         width: '100%',
-        maxWidth: '260px',
+        maxWidth: '240px',
         borderRadius: '1rem',
         boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
         objectFit: 'cover',
+        flexShrink: 0,
       }}
     />
 
-    <div style={{ textAlign: 'center', maxWidth: '500px' }}>
+    <div style={{ textAlign: 'center', maxWidth: '500px', flexShrink: 1 }}>
       <h2
         style={{
           fontSize: '2.2rem',
@@ -209,6 +211,7 @@ export default function HomePage() {
           marginBottom: '20px',
           color: '#f57c00',
           fontWeight: 'bold',
+          fontFamily: '"Chewy", cursive',
         }}
       >
         We're now serving up Soft Serve AND fully-stocked Ice Cream Carts — perfect for parties, schools, weddings, and more!
@@ -225,13 +228,14 @@ export default function HomePage() {
           <button
             style={{
               padding: '12px 24px',
-              fontSize: '1rem',
+              fontSize: '1.1rem',
               backgroundColor: '#ff6f00',
               color: '#ffffff',
               border: 'none',
               borderRadius: '10px',
               cursor: 'pointer',
               fontWeight: 'bold',
+              fontFamily: '"Chewy", cursive',
             }}
           >
             🍦 Book Soft Serve
@@ -241,13 +245,14 @@ export default function HomePage() {
           <button
             style={{
               padding: '12px 24px',
-              fontSize: '1rem',
+              fontSize: '1.1rem',
               backgroundColor: '#007bb5',
               color: '#ffffff',
               border: 'none',
               borderRadius: '10px',
               cursor: 'pointer',
               fontWeight: 'bold',
+              fontFamily: '"Chewy", cursive',
             }}
           >
             🍧 View Ice Cream Packages
@@ -259,18 +264,20 @@ export default function HomePage() {
     <img
       src="/gallery/Thirsty-Dawg-Nelson-Cart.webp"
       alt="Stocked novelty ice cream cart"
-      width="260"
-      height="340"
+      width="240"
+      height="320"
       style={{
         width: '100%',
-        maxWidth: '260px',
+        maxWidth: '240px',
         borderRadius: '1rem',
         boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
         objectFit: 'cover',
+        flexShrink: 0,
       }}
     />
   </div>
 </section>
+
 
 
 
