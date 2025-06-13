@@ -345,6 +345,7 @@ onChange={(e) => setShowArchived(e.target.checked)}
                 <th>City/State/ZIP</th>
                 <th>Guests</th>
                 <th>Rental Days</th>
+                <th>Service</th>
                 <th>Machine</th>
                 <th>Flavor</th>
                 <th>2nd Flavor</th>
@@ -394,6 +395,15 @@ onChange={(e) => setShowArchived(e.target.checked)}
   {b.dateNeeded && b.rentalEnd
     ? `${calculateRentalDays(b.dateNeeded, b.rentalEnd)} day(s)`
     : '-'}
+</td>
+<td>
+  {b.iceCreamPackage
+    ? 'Ice Cream Cart'
+    : b.machineType?.includes('Soft Serve')
+    ? 'Soft Serve'
+    : b.machineType?.includes('Flavor')
+    ? 'Frozen Drink'
+    : 'Unknown'}
 </td>
 
 
