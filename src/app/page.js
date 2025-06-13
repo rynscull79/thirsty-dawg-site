@@ -161,7 +161,7 @@ export default function HomePage() {
 </section>
 
 <section style={{
-  backgroundColor: '#f0f9ff',
+  backgroundColor: '#fff0f5',
   padding: '40px 20px',
   margin: '40px 0',
   borderRadius: '16px',
@@ -173,53 +173,79 @@ export default function HomePage() {
   gap: '2rem',
 }}>
   <img
-  src="/gallery/kid-soft-serve.webp"
-  alt="Kid enjoying soft serve ice cream"
-  width="300"
-  height="400"
-  style={{
-    width: '100%',
-    maxWidth: '300px',
-    borderRadius: '1rem',
-    boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-  }}
-/>
-
-
+    src="/gallery/kid-soft-serve.webp"
+    alt="Kid enjoying soft serve ice cream"
+    width="300"
+    height="400"
+    style={{
+      width: '100%',
+      maxWidth: '300px',
+      borderRadius: '1rem',
+      boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+    }}
+  />
   <div style={{ textAlign: 'center', maxWidth: '500px' }}>
     <h2 style={{
       fontSize: '2.2rem',
       marginBottom: '20px',
-      color: '#007bb5'
-,
+      color: '#d63384',
       fontFamily: '"Chewy", cursive',
     }}>
-      🍦 Now Offering Soft Serve Ice Cream!
+      🍦 New Frozen Treat Rentals for 2025!
     </h2>
     <p style={{
       fontSize: '1.2rem',
       marginBottom: '20px',
-      color: '#007bb5',
+      color: '#d63384',
       fontWeight: 'bold',
     }}>
-      Cool off with our newest addition — same price, same fun, extra delicious.
+      We're now serving up Soft Serve AND fully-stocked Ice Cream Carts — perfect for parties, schools, weddings, and more!
     </p>
-    <Link href="/booking">
-      <button style={{
-        padding: '14px 30px',
-        fontSize: '1rem',
-        backgroundColor: '#ff6f00',
-        color: '#ffffff',
-        border: 'none',
-        borderRadius: '10px',
-        cursor: 'pointer',
-        fontWeight: 'bold',
-      }}>
-        Book Soft Serve Now
-      </button>
-    </Link>
+    <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+      <Link href="/booking">
+        <button style={{
+          padding: '12px 24px',
+          fontSize: '1rem',
+          backgroundColor: '#ff6f00',
+          color: '#ffffff',
+          border: 'none',
+          borderRadius: '10px',
+          cursor: 'pointer',
+          fontWeight: 'bold',
+        }}>
+          🍦 Book Soft Serve
+        </button>
+      </Link>
+      <Link href="/icecream">
+        <button style={{
+          padding: '12px 24px',
+          fontSize: '1rem',
+          backgroundColor: '#007bb5',
+          color: '#ffffff',
+          border: 'none',
+          borderRadius: '10px',
+          cursor: 'pointer',
+          fontWeight: 'bold',
+        }}>
+          🍧 View Ice Cream Packages
+        </button>
+      </Link>
+    </div>
   </div>
+  <img
+    src="/gallery/icecream-cart-stocked.webp"
+    alt="Stocked novelty ice cream cart"
+    width="300"
+    height="400"
+    style={{
+      width: '100%',
+      maxWidth: '300px',
+      borderRadius: '1rem',
+      boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+    }}
+  />
 </section>
+
 
 
         <section className={styles.section}><GallerySection /></section>
