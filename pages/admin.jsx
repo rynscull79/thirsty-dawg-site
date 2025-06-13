@@ -478,22 +478,6 @@ onChange={(e) => setShowArchived(e.target.checked)}
                     <td>{isEditing ? <textarea value={formData.adminComment || ''} onChange={(e) => handleChange('adminComment', e.target.value)} /> : b.adminComment}</td>
                    <td>
   {isEditing ? (
-    <button onClick={() => handleSave(b.id)}>💾 Save</button>
-  ) : (
-    <>
-      <button onClick={() => handleEdit(b)}>✏️ Edit</button>
-      {b.status === 'new' && (
-        <button onClick={() => markAsInvoiced(b.id)} style={{ marginLeft: '0.5rem' }}>
-          ✅ Mark Invoiced
-        </button>
-      )}
-    {b.status === 'invoiced' && (
-  <button onClick={() => archiveBooking(b.id)} style={{ marginLeft: '0.5rem' }}>
-    🗃️ Archive
-  </button>
-)}
-                    <td>
-  {isEditing ? (
     <select value={formData.iceCreamPackage || ''} onChange={(e) => handleChange('iceCreamPackage', e.target.value)}>
       {[
         '',
@@ -509,6 +493,23 @@ onChange={(e) => setShowArchived(e.target.checked)}
     </select>
   ) : b.iceCreamPackage}
 </td>
+                   <td>
+  {isEditing ? (
+    <button onClick={() => handleSave(b.id)}>💾 Save</button>
+  ) : (
+    <>
+      <button onClick={() => handleEdit(b)}>✏️ Edit</button>
+      {b.status === 'new' && (
+        <button onClick={() => markAsInvoiced(b.id)} style={{ marginLeft: '0.5rem' }}>
+          ✅ Mark Invoiced
+        </button>
+      )}
+    {b.status === 'invoiced' && (
+  <button onClick={() => archiveBooking(b.id)} style={{ marginLeft: '0.5rem' }}>
+    🗃️ Archive
+  </button>
+)}
+                    
 </>
 
   )}
