@@ -1,6 +1,6 @@
-'use client';
+// 📄 src/app/our-story/page.jsx
 
-import FloatingBookWrapper from '@/components/FloatingBookWrapper';
+import FloatingBookNow from '@/components/FloatingBookNow';
 
 export const metadata = {
   title: 'Our Story | How Thirsty Dawg Rentals Got Started',
@@ -82,7 +82,7 @@ export default function OurStoryPage() {
           </div>
         </div>
       </div>
-      <FloatingBookNow />
+      {typeof window !== 'undefined' && <FloatingBookNow />}
     </div>
   );
 }
