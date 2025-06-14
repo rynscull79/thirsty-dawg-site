@@ -1,3 +1,5 @@
+const FloatingBookNow = dynamic(() => import('@/components/FloatingBookNow'));
+
 export const metadata = {
   title: 'Frequently Asked Questions | Thirsty Dawg Rentals',
   description:
@@ -112,7 +114,10 @@ export default function FAQPage() {
             {faq.answer}
           </p>
         </div>
+        
       ))}
+      <FloatingBookNow />
+
     </div>
   );
 }
