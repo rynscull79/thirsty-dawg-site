@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 const FloatingBookNow = dynamic(() => import('@/components/FloatingBookNow'));
 
 export const metadata = {
