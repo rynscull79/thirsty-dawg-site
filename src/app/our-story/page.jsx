@@ -1,3 +1,5 @@
+'use client';
+
 import FloatingBookWrapper from '@/components/FloatingBookWrapper';
 
 export const metadata = {
