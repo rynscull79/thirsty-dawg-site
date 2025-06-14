@@ -1,5 +1,6 @@
 // 📄 src/app/our-story/page.jsx
 
+import { Metadata } from 'next';
 import FloatingBookWrapper from '@/components/FloatingBookWrapper';
 
 export const metadata = {
@@ -11,15 +12,29 @@ export const metadata = {
 export default function OurStoryPage() {
   return (
     <>
-      <div style={{ backgroundColor: '#d6e4ec', padding: '2rem', maxWidth: '100%', fontFamily: 'var(--font-chewy)' }}>
+      <head>
+        <link rel="canonical" href="https://www.thirstydawgrentals.com/our-story" />
+      </head>
+
+      <div
+        style={{
+          backgroundColor: '#d6e4ec',
+          padding: '2rem',
+          maxWidth: '100%',
+          fontFamily: 'var(--font-chewy)',
+        }}
+      >
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <h1 style={{
-            textAlign: 'center',
-            fontSize: '2.5rem',
-            color: '#009fdb',
-            marginBottom: '1rem',
-            textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000'
-          }}>
+          <h1
+            style={{
+              textAlign: 'center',
+              fontSize: '2.5rem',
+              color: '#009fdb',
+              marginBottom: '1rem',
+              textShadow:
+                '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+            }}
+          >
             🐾 Our Story – Meet the Thirsty Dawgs
           </h1>
 
@@ -27,7 +42,12 @@ export default function OurStoryPage() {
             <img
               src="/gallery/thirsty-dawg-family.webp"
               alt="Thirsty Dawg family photo"
-              style={{ width: '100%', maxWidth: '400px', borderRadius: '1rem', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
+              style={{
+                width: '100%',
+                maxWidth: '400px',
+                borderRadius: '1rem',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+              }}
             />
           </div>
 
@@ -58,26 +78,35 @@ export default function OurStoryPage() {
           </p>
 
           <div style={{ marginTop: '3rem' }}>
-            <h2 style={{
-              textAlign: 'center',
-              color: '#ff7c02',
-              fontSize: '2rem',
-              marginBottom: '1.5rem',
-              textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000'
-            }}>
+            <h2
+              style={{
+                textAlign: 'center',
+                color: '#ff7c02',
+                fontSize: '2rem',
+                marginBottom: '1.5rem',
+                textShadow:
+                  '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+              }}
+            >
               🐶 Meet the Thirsty Dawgs
             </h2>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-              gap: '1rem'
-            }}>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                gap: '1rem',
+              }}
+            >
               {['chip', 'miloe', 'oreo', 'thirsty-dawgs', 'tootsie', 'Reese'].map((name) => (
                 <img
                   key={name}
                   src={`/gallery/${name}.webp`}
                   alt={`Boston Terrier ${name}`}
-                  style={{ width: '100%', borderRadius: '1rem', boxShadow: '0 4px 10px rgba(0,0,0,0.2)' }}
+                  style={{
+                    width: '100%',
+                    borderRadius: '1rem',
+                    boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
+                  }}
                 />
               ))}
             </div>
@@ -85,7 +114,7 @@ export default function OurStoryPage() {
         </div>
       </div>
 
-      {/* This is what makes the button appear */}
+      {/* Floating button */}
       <FloatingBookWrapper />
     </>
   );
