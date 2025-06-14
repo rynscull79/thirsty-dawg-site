@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
-const FloatingBookNow = dynamic(() => import('@/components/FloatingBookNow'));
+const FloatingBookNow = dynamic(() => import('@/components/FloatingBookNow'), { ssr: false });
+
 
 export const metadata = {
   title: 'Frequently Asked Questions | Thirsty Dawg Rentals',
