@@ -30,6 +30,7 @@ export default function HomePage() {
         <meta property="og:description" content="Rent soft serve ice cream and frozen drink machines for weddings, parties, and events. Serving Pensacola and the Gulf Coast with delivery and setup." />
         <meta property="og:image" content="https://www.thirstydawgrentals.com/thirsty-dawg-logo.webp" />
         <meta property="og:url" content="https://www.thirstydawgrentals.com/" />
+        <link rel="canonical" href="https://www.thirstydawgrentals.com/" />
         <meta property="og:type" content="website" />
 
       </Head>

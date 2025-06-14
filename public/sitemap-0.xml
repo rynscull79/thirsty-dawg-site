@@ -16,5 +16,11 @@
   <priority>0.8</priority>
 </url>
 
-<url><loc>https://www.thirstydawgrentals.com</loc><lastmod>2025-06-10T22:12:36.441Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url>
+  <loc>https://www.thirstydawgrentals.com</loc>
+  <lastmod>2025-06-13T00:00:00.000Z</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.8</priority>
+</url>
+
 </urlset>
