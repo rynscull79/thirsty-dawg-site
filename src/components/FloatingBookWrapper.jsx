@@ -1,9 +1,6 @@
 // 📄 src/components/FloatingBookWrapper.jsx
 'use client';
-
-import dynamic from 'next/dynamic';
-
-const FloatingBookNow = dynamic(() => import('./FloatingBookNow'), { ssr: false });
+import FloatingBookNow from './FloatingBookNow';
 
 export default function FloatingBookWrapper() {
   return <FloatingBookNow />;
