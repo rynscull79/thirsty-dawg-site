@@ -1,5 +1,8 @@
 import OurRentals from '@/components/OurRentals';
 import RentalsGallery from '@/components/RentalsGallery';
+import dynamic from 'next/dynamic';
+
+const FloatingBookNow = dynamic(() => import('@/components/FloatingBookNow'));
 
 export const metadata = {
   title: 'Frozen Drink & Soft Serve Machine Rentals | Thirsty Dawg',
@@ -110,6 +113,8 @@ export default function RentalsPage() {
 
         <RentalsGallery />
         <OurRentals />
+        <FloatingBookNow />
+
       </div>
     </>
   );
