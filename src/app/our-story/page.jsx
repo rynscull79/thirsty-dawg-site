@@ -1,7 +1,4 @@
-import dynamic from 'next/dynamic';
-
-const FloatingBookNow = dynamic(() => import('@/components/FloatingBookNow'));
-
+import FloatingBookWrapper from '@/components/FloatingBookWrapper';
 
 export const metadata = {
   title: 'Our Story | How Thirsty Dawg Rentals Got Started',
