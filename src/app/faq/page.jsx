@@ -1,6 +1,6 @@
-import dynamic from 'next/dynamic';
-const FloatingBookNow = dynamic(() => import('@/components/FloatingBookNow'), { ssr: false });
+// 📄 src/app/faq/page.jsx
 
+import FloatingBookWrapper from '@/components/FloatingBookWrapper';
 
 export const metadata = {
   title: 'Frequently Asked Questions | Thirsty Dawg Rentals',
@@ -116,10 +116,9 @@ export default function FAQPage() {
             {faq.answer}
           </p>
         </div>
-        
       ))}
-      <FloatingBookNow />
 
+      <FloatingBookWrapper />
     </div>
   );
 }
