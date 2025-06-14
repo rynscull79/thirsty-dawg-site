@@ -17,6 +17,9 @@ export const metadata = {
   },
   metadataBase: new URL('https://www.thirstydawgrentals.com'),
 };
+export const viewport = {
+  canonical: 'https://www.thirstydawgrentals.com/rentals',
+};
 
 
 export default function RentalsPage() {
