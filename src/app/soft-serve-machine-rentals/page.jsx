@@ -5,13 +5,13 @@ import dynamic from 'next/dynamic';
 const FloatingBookNow = dynamic(() => import('@/components/FloatingBookNow'));
 
 export const metadata = {
-  title: 'Soft Serve Ice Cream Machine Rentals | Thirsty Dawg',
+  title: 'Soft Serve Milkshake Machine Rentals | Thirsty Dawg',
   description:
-    'Rent soft serve ice cream machines for weddings, birthdays, school events, and more. Delivery and setup included. Pensacola and surrounding areas.',
+    'Rent soft serve machines designed for milkshakes and blended frozen treats. Perfect for weddings, parties, and events across the Pensacola area.',
   openGraph: {
-    title: 'Soft Serve Ice Cream Machine Rentals | Thirsty Dawg',
+    title: 'Soft Serve Milkshake Machine Rentals | Thirsty Dawg',
     description:
-      'Serve up real soft serve ice cream at your event with our commercial soft serve rentals. No hassle setup — we deliver and pick up!',
+      'Create creamy milkshakes and frozen blended drinks at your next event. Full delivery and setup included with our soft serve machines.',
     images: ['https://www.thirstydawgrentals.com/thirsty-dawg-logo.webp'],
     url: 'https://www.thirstydawgrentals.com/soft-serve-machine-rentals',
     type: 'website',
@@ -46,7 +46,7 @@ export default function SoftServeMachineRentalsPage() {
                 '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
             }}
           >
-            🍦 Soft Serve Ice Cream Machine Rentals
+            🥤 Soft Serve Milkshake Machine Rentals
           </h2>
 
           <p
@@ -58,7 +58,7 @@ export default function SoftServeMachineRentalsPage() {
                 '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
             }}
           >
-            Bring real soft serve to your party, wedding, or event — no scooping, no stress!
+            Serve rich, creamy milkshakes at your event with our commercial soft serve machines.
           </p>
 
           <p
@@ -70,7 +70,7 @@ export default function SoftServeMachineRentalsPage() {
                 '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
             }}
           >
-            Our commercial machines make it easy to serve vanilla, chocolate, or twist cones with just a pull of a handle.
+            Just add your mix — we’ll take care of the rest. Perfect for weddings, parties, and summer celebrations.
           </p>
 
           <p
@@ -102,34 +102,33 @@ export default function SoftServeMachineRentalsPage() {
           }}
         >
           <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-            🎉 Perfect for:
+            🎉 Great For:
           </h3>
           <ul style={{ marginLeft: '1rem', marginBottom: '2rem' }}>
-            <li>✔️ Weddings and receptions</li>
-            <li>✔️ School celebrations and teacher appreciation days</li>
-            <li>✔️ Backyard birthday parties</li>
-            <li>✔️ Corporate events and church socials</li>
+            <li>✔️ Weddings & receptions</li>
+            <li>✔️ Birthday parties and baby showers</li>
+            <li>✔️ Church socials, school celebrations, and fundraisers</li>
+            <li>✔️ Backyard BBQs and summer gatherings</li>
           </ul>
 
           <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-            🍦 What’s Included:
+            🥤 What’s Included:
           </h3>
           <ul style={{ marginLeft: '1rem', marginBottom: '2rem' }}>
-            <li>✅ One soft serve machine (single or twist-style)</li>
-            <li>✅ Ice cream mix (vanilla, chocolate, or both)</li>
-            <li>✅ Setup, operation guide, and pickup</li>
-            <li>✅ Add-ons available: cones, cups, sprinkles, and toppings</li>
+            <li>✅ One soft serve machine (milkshake-ready)</li>
+            <li>✅ Ice cream base or shake mix options</li>
+            <li>✅ Full delivery, setup, and pickup</li>
+            <li>✅ Instructions for easy, on-demand use</li>
           </ul>
 
           <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
             ❓ FAQs:
           </h3>
           <ul style={{ marginLeft: '1rem' }}>
-            <li><strong>Does the machine freeze the mix?</strong> Yes — it chills and dispenses fresh soft serve with no prep needed.</li>
-            <li><strong>How long does it take to be ready?</strong> Around 10–20 minutes after setup.</li>
-            <li><strong>Can I operate it myself?</strong> Yes — we’ll show you how. It’s as easy as pulling a lever!</li>
-            <li><strong>Do I need to clean it?</strong> Just drain the machine — we handle the full sanitation after pickup.</li>
-            <li><strong>Can I request specific flavors?</strong> Absolutely! Let us know your event theme and we’ll help match it.</li>
+            <li><strong>Is it a cone-style machine?</strong> No — our unit is used for thick, blended-style frozen treats like milkshakes or frozen coffees.</li>
+            <li><strong>What’s the prep time?</strong> 15–30 minutes after delivery depending on environment and mix temperature.</li>
+            <li><strong>Can I add toppings?</strong> Absolutely! Mix your own or top off after pouring.</li>
+            <li><strong>Do I need to clean it?</strong> Just drain it — we handle full cleaning after pickup.</li>
           </ul>
 
           <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
