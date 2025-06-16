@@ -1,77 +1,139 @@
 // 📄 src/app/daiquiri-machine-rentals/page.jsx
 
-import FloatingBookNow from '@/components/FloatingBookNow';
+import dynamic from 'next/dynamic';
+const FloatingBookNow = dynamic(() => import('@/components/FloatingBookNow'));
 
 export const metadata = {
   title: 'Daiquiri Machine Rentals | Thirsty Dawg',
   description:
-    'Daiquiri machine rentals delivered straight to your event in Pensacola and surrounding areas. Thirsty Dawg makes it easy — we provide the mix, you add the booze!',
+    'Daiquiri machine rentals in Pensacola and nearby areas. We deliver frozen drink machines and mix — you just add the booze!',
+  openGraph: {
+    title: 'Daiquiri Machine Rentals | Thirsty Dawg',
+    description:
+      'Rent daiquiri machines for parties, beach days, weddings, and events. Frozen drinks made easy — BYOB style!',
+    images: ['https://www.thirstydawgrentals.com/thirsty-dawg-logo.webp'],
+    url: 'https://www.thirstydawgrentals.com/daiquiri-machine-rentals',
+    type: 'website',
+  },
+  metadataBase: new URL('https://www.thirstydawgrentals.com'),
 };
 
-export default function DaiquiriMachineRentals() {
+export const viewport = {
+  canonical: 'https://www.thirstydawgrentals.com/daiquiri-machine-rentals',
+};
+
+export default function DaiquiriMachineRentalsPage() {
   return (
-    <main style={{ padding: '2rem 1rem', maxWidth: '900px', margin: '0 auto', fontFamily: 'var(--font-chewy)', lineHeight: 1.6 }}>
-      <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#2e2e2e' }}>
-        Daiquiri Machine Rentals
-      </h1>
-
-      <p>
-        Planning a party, corporate event, or backyard bash? Our <strong>Daiquiri machines</strong> are the perfect way to beat the heat and bring the fun. With <strong>dual-flavor frozen drink machines</strong> and a wide variety of tasty mixes, we make it easy for your guests to enjoy their favorite daiquiri flavors — from strawberry and mango to the ever-popular bushwacker.
-      </p>
-
-      <p>
-        <strong>Just add the booze.</strong> We deliver the machines, the daiquiri mix, and all instructions. You bring the alcohol — we’ll bring the chill. No bartenders required.
-      </p>
-
-      <h2 style={{ fontSize: '1.75rem', marginTop: '2rem', color: '#2e2e2e' }}>
-        Why Rent a Daiquiri Machine from Thirsty Dawg?
-      </h2>
-
-      <ul style={{ paddingLeft: '1.25rem', marginTop: '1rem' }}>
-        <li>✅ Fast setup, easy operation</li>
-        <li>✅ Mix included – simply add your favorite liquor</li>
-        <li>✅ Single or dual flavor options</li>
-        <li>✅ Free delivery and pickup in the Pensacola area</li>
-        <li>✅ Perfect for weddings, birthdays, beach days, and more</li>
-      </ul>
-
-      <h2 style={{ fontSize: '1.75rem', marginTop: '2rem', color: '#2e2e2e' }}>
-        How It Works
-      </h2>
-
-      <ol style={{ paddingLeft: '1.25rem', marginTop: '1rem' }}>
-        <li>✅ Choose your rental date and machine type</li>
-        <li>✅ Select your daiquiri flavors (we have a ton!)</li>
-        <li>✅ We deliver, set up, and show you how to use it</li>
-        <li>✅ You add the alcohol on-site — totally BYOB</li>
-      </ol>
-
-      <h2 style={{ fontSize: '1.75rem', marginTop: '2rem', color: '#2e2e2e' }}>
-        Serving Pensacola & Beyond
-      </h2>
-
-      <p>
-        We proudly serve the entire Pensacola area including Gulf Breeze, Perdido, Milton, Cantonment, Navarre, and more. Not sure if you’re in our zone? Reach out and ask!
-      </p>
-
-      <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
-        <a
-          href="/booking"
+    <>
+      <div>
+        <section
           style={{
-            display: 'inline-block',
-            padding: '0.75rem 2rem',
-            backgroundColor: '#ff3366',
+            backgroundColor: '#009fdb',
             color: 'white',
-            fontSize: '1.25rem',
-            borderRadius: '8px',
-            textDecoration: 'none',
+            padding: '3rem 2rem',
+            borderRadius: '1rem',
+            textAlign: 'center',
+            fontFamily: 'var(--font-chewy)',
           }}
         >
-          Book a Daiquiri Machine
-        </a>
-      </div>
+          <h2
+            style={{
+              fontSize: '2rem',
+              fontWeight: 'bold',
+              color: 'white',
+              textShadow:
+                '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+            }}
+          >
+            🍓 Daiquiri Machine Rentals in Pensacola
+          </h2>
 
-      <FloatingBookNow />
-    </main>
+          <p
+            style={{
+              fontSize: '1.2rem',
+              marginTop: '1rem',
+              color: 'white',
+              textShadow:
+                '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+            }}
+          >
+            Host the ultimate party with frozen daiquiri machines delivered to your door.
+            Just add alcohol — we’ll bring the mix, setup, and good times.
+          </p>
+
+          <p
+            style={{
+              fontSize: '1.2rem',
+              marginTop: '1.5rem',
+              color: 'white',
+              textShadow:
+                '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+            }}
+          >
+            Perfect for backyard bashes, weddings, beach rentals, and birthdays. Choose from stainless or plastic, single or dual flavor machines.
+          </p>
+
+          <p
+            style={{
+              fontSize: '1.2rem',
+              marginTop: '1.5rem',
+              fontWeight: 'bold',
+              color: 'white',
+              textShadow:
+                '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+            }}
+          >
+            📞 Have questions? Call or text us at{' '}
+            <a href="tel:8505723796" style={{ color: 'white', textDecoration: 'underline' }}>
+              (850) 572-3796
+            </a>
+          </p>
+        </section>
+
+        <section
+          style={{
+            padding: '2rem 1rem',
+            maxWidth: '900px',
+            margin: '0 auto',
+            fontFamily: 'var(--font-chewy)',
+            lineHeight: 1.6,
+            color: '#222',
+          }}
+        >
+          <h3 style={{ fontSize: '1.75rem', marginTop: '2rem' }}>How It Works</h3>
+          <ul style={{ paddingLeft: '1.25rem', marginTop: '1rem' }}>
+            <li>✅ Select your rental date and machine type</li>
+            <li>✅ Pick your favorite daiquiri mix flavors</li>
+            <li>✅ We deliver and set everything up for you</li>
+            <li>✅ You add the alcohol (BYOB style)</li>
+            <li>✅ Enjoy frozen drinks on demand</li>
+          </ul>
+
+          <h3 style={{ fontSize: '1.75rem', marginTop: '2rem' }}>Service Area</h3>
+          <p>
+            We deliver daiquiri machines throughout Pensacola, Gulf Breeze, Navarre, Perdido, Milton, and more. Unsure if we service your location? Just ask!
+          </p>
+
+          <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
+            <a
+              href="/booking"
+              style={{
+                display: 'inline-block',
+                padding: '0.75rem 2rem',
+                backgroundColor: '#ff3366',
+                color: 'white',
+                fontSize: '1.25rem',
+                borderRadius: '8px',
+                textDecoration: 'none',
+              }}
+            >
+              Book a Daiquiri Machine
+            </a>
+          </div>
+        </section>
+
+        <FloatingBookNow />
+      </div>
+    </>
   );
 }
