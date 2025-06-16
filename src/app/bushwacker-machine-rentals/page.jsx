@@ -7,11 +7,11 @@ const FloatingBookNow = dynamic(() => import('@/components/FloatingBookNow'));
 export const metadata = {
   title: 'Bushwacker Machine Rentals | Thirsty Dawg',
   description:
-    'Rent frozen drink machines for making creamy, chocolatey Bushwacker slushies. Thirsty Dawg delivers, sets up, and picks up — perfect for parties, weddings, and events.',
+    'Serve up classic Bushwackers with our frozen drink machine rentals. We provide the mix — you add the alcohol. Delivery, setup, and pickup included.',
   openGraph: {
     title: 'Bushwacker Machine Rentals | Thirsty Dawg',
     description:
-      'Bring the beach to your event with Bushwacker frozen drink machine rentals. Thirsty Dawg makes setup, flavor, and cleanup easy.',
+      'The iconic Pensacola drink, now easier than ever. Rent a frozen drink machine with Bushwacker mix included — just add alcohol and serve!',
     images: ['https://www.thirstydawgrentals.com/thirsty-dawg-logo.webp'],
     url: 'https://www.thirstydawgrentals.com/bushwacker-machine-rentals',
     type: 'website',
@@ -46,7 +46,7 @@ export default function BushwackerMachineRentalsPage() {
                 '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
             }}
           >
-            🥥 Bushwacker Machine Rentals
+            🍹 Bushwacker Machine Rentals
           </h2>
 
           <p
@@ -58,7 +58,7 @@ export default function BushwackerMachineRentalsPage() {
                 '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
             }}
           >
-            Add a taste of the beach to your next event! Our frozen drink machines can serve delicious Bushwackers — creamy, chocolatey frozen treats that everyone loves.
+            Host a party your guests won’t forget. Our Bushwacker machine rental comes with the legendary frozen mix — just add your favorite alcohol and you’re ready to pour.
           </p>
 
           <p
@@ -70,7 +70,7 @@ export default function BushwackerMachineRentalsPage() {
                 '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
             }}
           >
-            We deliver, set up, and pick up — all you do is plug in and enjoy. No alcohol included, but the flavor is unforgettable.
+            We deliver the machine and mix, set it up, and make sure everything is ready. All you have to do is party.
           </p>
 
           <p
@@ -103,30 +103,30 @@ export default function BushwackerMachineRentalsPage() {
           }}
         >
           <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-            🌴 What’s a Bushwacker?
+            🌴 What Is a Bushwacker?
           </h3>
           <p style={{ marginBottom: '1.5rem' }}>
-            It’s a tropical, creamy frozen drink with hints of chocolate, coffee, and coconut — a Pensacola favorite! Ours are alcohol-free by default but taste amazing as-is or dressed up by you.
+            A frozen Pensacola classic. Rich, creamy, and boozy — a crowd favorite that’s become a beach tradition. Our mix is designed for Bushwackers, and you bring the alcohol to make it your own.
           </p>
 
           <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-            🎯 Perfect For:
+            🎉 Perfect For:
           </h3>
           <ul style={{ marginLeft: '1rem', marginBottom: '2rem' }}>
-            <li>✔️ Beach-themed weddings</li>
-            <li>✔️ Backyard cookouts</li>
-            <li>✔️ Corporate events</li>
-            <li>✔️ Birthday bashes</li>
+            <li>✔️ Beach house parties</li>
+            <li>✔️ Wedding receptions</li>
+            <li>✔️ Backyard BBQs</li>
+            <li>✔️ Corporate happy hours</li>
           </ul>
 
           <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
             ✅ What’s Included:
           </h3>
           <ul style={{ marginLeft: '1rem' }}>
-            <li>1 frozen drink machine (ready to go)</li>
-            <li>Bushwacker flavor mix (enough for the whole party)</li>
-            <li>Setup, instructions, and pickup</li>
-            <li>Delivery within our standard area</li>
+            <li>1 commercial-grade frozen drink machine</li>
+            <li>Bushwacker drink mix (ready to blend)</li>
+            <li>Delivery, setup, and next-day pickup</li>
+            <li>Tips and guidance for getting it just right</li>
           </ul>
 
           <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
@@ -142,7 +142,7 @@ export default function BushwackerMachineRentalsPage() {
                 boxShadow: '0 8px 16px rgba(0,0,0,0.2)',
               }}
             >
-              📅 Reserve a Bushwacker Machine Now
+              📅 Book Your Bushwacker Machine
             </a>
           </div>
         </section>
