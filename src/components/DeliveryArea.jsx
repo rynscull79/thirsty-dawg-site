@@ -1,117 +1,68 @@
 'use client';
-import { useState } from 'react';
+
+import { useEffect, useRef, useState } from 'react';
+import { LoadScript, Autocomplete } from '@react-google-maps/api';
+
+const libraries = ['places'];
+const GOOGLE_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
 export default function DeliveryArea() {
+  const [deliveryFee, setDeliveryFee] = useState(null);
   const [address, setAddress] = useState('');
-  const [fee, setFee] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const autocompleteRef = useRef(null);
 
-  const calculateFee = async () => {
-    if (!address) return;
-    setLoading(true);
-    setError('');
-    setFee(null);
+  const handlePlaceChanged = async () => {
+    const place = autocompleteRef.current?.getPlace();
+    if (!place?.formatted_address) return;
 
-    try {
-      const res = await fetch('https://thirsty-dawg-backend-clean.up.railway.app/api/calculate-delivery-fee', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ address }),
-      });
+    setAddress(place.formatted_address);
 
-      const data = await res.json();
+    const response = await fetch(
+      `/api/calculate-delivery-fee?address=${encodeURIComponent(place.formatted_address)}`
+    );
+    const data = await response.json();
 
-      if (res.ok && data.fee !== undefined) {
-        setFee(data.fee);
-      } else {
-        throw new Error(data.error || 'Could not calculate fee');
-      }
-    } catch (err) {
-      setError('Error calculating delivery fee. Please check your address or try again later.');
-    } finally {
-      setLoading(false);
+    if (data?.fee) {
+      setDeliveryFee(data.fee);
+    } else {
+      setDeliveryFee(null);
     }
   };
 
   return (
-    <section style={{
-      backgroundColor: '#ffffff',
-      padding: '2rem',
-      borderRadius: '1rem',
-      boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
-      marginTop: '2rem'
-    }}>
-      <h3 style={{
-        textAlign: 'center',
-        fontSize: '1.8rem',
-        fontWeight: 'bold',
-        color: '#009fdb',
-        marginBottom: '1.5rem',
-        textShadow: '1px 1px 2px rgba(0,0,0,0.1)'
-      }}>
-        📍 Delivery Area & Fee Calculator
-      </h3>
+    <section style={{ padding: '2rem', backgroundColor: '#f9f9f9', borderRadius: '1rem', marginTop: '2rem' }}>
+      <h2 style={{ fontFamily: '"Chewy", cursive', fontSize: '2rem', color: '#009fdb', marginBottom: '1rem', textAlign: 'center' }}>
+        📍 Delivery Coverage & Fee Estimate
+      </h2>
 
-      <p style={{ textAlign: 'center', marginBottom: '1rem' }}>
-        We deliver across Pensacola and surrounding Gulf Coast areas!
+      <p style={{ fontSize: '1.1rem', textAlign: 'center', marginBottom: '1rem' }}>
+        We deliver across Pensacola & surrounding Gulf Coast areas. The first 25 miles are free.
       </p>
 
-      <div style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1rem',
-        maxWidth: '500px',
-        margin: '0 auto',
-        textAlign: 'center'
-      }}>
-        <input
-          type="text"
-          placeholder="Enter your address"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-          style={{
-            padding: '0.75rem 1rem',
-            borderRadius: '0.5rem',
-            border: '1px solid #ccc',
-            fontSize: '1rem'
-          }}
-        />
-        <button
-          onClick={calculateFee}
-          disabled={loading}
-          style={{
-            padding: '0.75rem',
-            fontSize: '1rem',
-            backgroundColor: '#009fdb',
-            color: '#fff',
-            border: 'none',
-            borderRadius: '0.5rem',
-            cursor: 'pointer',
-            fontWeight: 'bold'
-          }}
-        >
-          {loading ? 'Calculating...' : 'Calculate Delivery Fee'}
-        </button>
+      <LoadScript googleMapsApiKey={GOOGLE_API_KEY} libraries={libraries}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+          <Autocomplete onLoad={(ref) => (autocompleteRef.current = ref)} onPlaceChanged={handlePlaceChanged}>
+            <input
+              type="text"
+              placeholder="Enter your delivery address"
+              style={{
+                width: '100%',
+                maxWidth: '400px',
+                padding: '0.75rem',
+                fontSize: '1rem',
+                borderRadius: '0.5rem',
+                border: '1px solid #ccc',
+              }}
+            />
+          </Autocomplete>
+        </div>
+      </LoadScript>
 
-        {fee !== null && (
-          <p style={{ fontWeight: 'bold', color: '#333' }}>
-            Your estimated delivery fee is <span style={{ color: '#009fdb' }}>${fee.toFixed(2)}</span>
-          </p>
-        )}
-
-        {error && (
-          <p style={{ color: 'red', fontSize: '0.95rem' }}>{error}</p>
-        )}
-      </div>
-
-      <p style={{ textAlign: 'center', fontStyle: 'italic', marginTop: '1rem' }}>
-        Don’t see your area listed? Contact us — we may still be able to serve your event!
-        <br />
-        <span style={{ fontStyle: 'normal', fontSize: '0.95rem', color: '#555' }}>
-          Delivery is free within 25 miles of central Pensacola. Outside areas may include a delivery fee.
-        </span>
-      </p>
+      {deliveryFee !== null && (
+        <p style={{ fontSize: '1.2rem', fontWeight: 'bold', marginTop: '1rem', textAlign: 'center' }}>
+          Your estimated delivery fee: ${deliveryFee.toFixed(2)}
+        </p>
+      )}
     </section>
   );
 }
