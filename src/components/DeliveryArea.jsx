@@ -1,35 +1,40 @@
 'use client';
 
-import { useRef, useState } from 'react';
-import { LoadScript, Autocomplete } from '@react-google-maps/api';
-
-const libraries = ['places'];
-const GOOGLE_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
-
-
+import { useRef, useState, useEffect } from 'react';
 
 export default function DeliveryArea() {
   const [deliveryFee, setDeliveryFee] = useState(null);
-  const [address, setAddress] = useState('');
+  const inputRef = useRef(null);
   const autocompleteRef = useRef(null);
 
-  const handlePlaceChanged = async () => {
-    const place = autocompleteRef.current?.getPlace();
-    if (!place?.formatted_address) return;
+  useEffect(() => {
+    if (!window.google || !window.google.maps || !inputRef.current) return;
 
-    setAddress(place.formatted_address);
+    autocompleteRef.current = new window.google.maps.places.Autocomplete(inputRef.current, {
+      types: ['geocode'],
+      componentRestrictions: { country: 'us' },
+    });
 
-    const response = await fetch(
-      `/api/calculate-delivery-fee?address=${encodeURIComponent(place.formatted_address)}`
-    );
-    const data = await response.json();
+    autocompleteRef.current.addListener('place_changed', async () => {
+      const place = autocompleteRef.current.getPlace();
+      if (!place || !place.formatted_address) return;
 
-    if (data?.fee) {
-      setDeliveryFee(data.fee);
-    } else {
-      setDeliveryFee(null);
-    }
-  };
+      const formattedAddress = place.formatted_address;
+
+      try {
+        const res = await fetch(`/api/calculate-delivery-fee?address=${encodeURIComponent(formattedAddress)}`);
+        const data = await res.json();
+        if (data?.fee !== undefined) {
+          setDeliveryFee(data.fee);
+        } else {
+          setDeliveryFee(null);
+        }
+      } catch (err) {
+        console.error('Error calculating delivery fee:', err);
+        setDeliveryFee(null);
+      }
+    });
+  }, []);
 
   return (
     <section style={{ padding: '2rem', backgroundColor: '#f9f9f9', borderRadius: '1rem', marginTop: '2rem' }}>
@@ -41,28 +46,25 @@ export default function DeliveryArea() {
         We deliver across Pensacola & surrounding Gulf Coast areas. The first 25 miles are free.
       </p>
 
-      <LoadScript googleMapsApiKey={GOOGLE_API_KEY} libraries={libraries}>
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-          <Autocomplete onLoad={(ref) => (autocompleteRef.current = ref)} onPlaceChanged={handlePlaceChanged}>
-            <input
-              type="text"
-              placeholder="Enter your delivery address"
-              style={{
-                width: '100%',
-                maxWidth: '400px',
-                padding: '0.75rem',
-                fontSize: '1rem',
-                borderRadius: '0.5rem',
-                border: '1px solid #ccc',
-              }}
-            />
-          </Autocomplete>
-        </div>
-      </LoadScript>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+        <input
+          ref={inputRef}
+          type="text"
+          placeholder="Enter your delivery address"
+          style={{
+            width: '100%',
+            maxWidth: '400px',
+            padding: '0.75rem',
+            fontSize: '1rem',
+            borderRadius: '0.5rem',
+            border: '1px solid #ccc',
+          }}
+        />
+      </div>
 
       {deliveryFee !== null && (
         <p style={{ fontSize: '1.2rem', fontWeight: 'bold', marginTop: '1rem', textAlign: 'center' }}>
-          Your estimated delivery fee: ${deliveryFee.toFixed(2)}
+          Your estimated delivery fee: {deliveryFee === 0 ? 'Free' : `$${deliveryFee.toFixed(2)}`}
         </p>
       )}
     </section>
