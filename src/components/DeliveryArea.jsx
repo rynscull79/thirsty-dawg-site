@@ -56,8 +56,11 @@ export default function DeliveryArea() {
           📍 Delivery Coverage & Fee Estimate
         </h2>
         <p style={{ fontSize: '1.1rem', textAlign: 'center', marginBottom: '1rem' }}>
-          We deliver across Pensacola & surrounding Gulf Coast areas. The first 25 miles are free.
-        </p>
+  We deliver across Pensacola and surrounding areas including Gulf Breeze, Perdido, Pace, Beulah, Milton, Cantonment, Ensley, Pensacola Beach, Fairhope, Daphne, Spanish Fort, Orange Beach, and Foley.  
+  <br /><br />
+  Delivery within 25 miles of our central Gulf Coast hub is free of charge. Enter your event address below to find out if your delivery is free or if a delivery fee applies.
+</p>
+
 
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <Autocomplete
