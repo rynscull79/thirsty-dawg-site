@@ -1,14 +1,11 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { LoadScript, Autocomplete } from '@react-google-maps/api';
-import { Autocomplete } from '@react-google-maps/api';
 import { useRef, useState } from 'react';
+import { LoadScript, Autocomplete } from '@react-google-maps/api';
 
 const libraries = ['places'];
 const GOOGLE_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
-const [deliveryFee, setDeliveryFee] = useState(null);
-const autocompleteRef = useRef(null);
+
 
 
 export default function DeliveryArea() {
