@@ -15,6 +15,8 @@ const containerStyle = {
 export default function RouteOptimizerPage() {
   const [addresses, setAddresses] = useState(['', '', '']);
   const [directions, setDirections] = useState(null);
+  const [googleMapsLink, setGoogleMapsLink] = useState(null);
+
   const inputRefs = useRef([]);
   const autocompleteRefs = useRef([]);
 
@@ -43,8 +45,19 @@ export default function RouteOptimizerPage() {
         travelMode: google.maps.TravelMode.DRIVING,
       },
       (result, status) => {
-        if (status === 'OK') setDirections(result);
-        else alert('Could not fetch directions: ' + status);
+        if (status === 'OK') {
+  setDirections(result);
+
+  const originEncoded = encodeURIComponent(origin);
+  const destinationEncoded = encodeURIComponent(destination);
+  const waypointsEncoded = waypoints.map(wp => encodeURIComponent(wp.location)).join('|');
+
+  const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${originEncoded}&destination=${destinationEncoded}&waypoints=${waypointsEncoded}`;
+  setGoogleMapsLink(googleMapsUrl);
+} else {
+  alert('Could not fetch directions: ' + status);
+}
+
       }
     );
   };
@@ -101,6 +114,29 @@ export default function RouteOptimizerPage() {
           <GoogleMap mapContainerStyle={containerStyle} center={{ lat: 27.9944, lng: -81.7603 }} zoom={8}>
             {directions && <DirectionsRenderer directions={directions} />}
           </GoogleMap>
+          {googleMapsLink && (
+  <div style={{ marginTop: '1rem' }}>
+    <a
+      href={googleMapsLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        display: 'inline-block',
+        padding: '0.75rem',
+        background: '#1a73e8',
+        color: 'white',
+        borderRadius: '5px',
+        textAlign: 'center',
+        width: '100%',
+        fontSize: '1rem',
+        textDecoration: 'none'
+      }}
+    >
+      🚗 Navigate in Google Maps
+    </a>
+  </div>
+)}
+
         </div>
       </LoadScript>
     </div>
