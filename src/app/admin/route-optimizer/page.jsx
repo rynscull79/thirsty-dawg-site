@@ -53,30 +53,43 @@ export default function RouteOptimizerPage() {
     <div style={{ padding: '1rem', fontFamily: 'var(--font-chewy)' }}>
       <h1 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Route Optimizer</h1>
       <LoadScript googleMapsApiKey={GOOGLE_API_KEY} libraries={libraries}>
-        {addresses.map((address, idx) => (
-          <div key={idx} style={{ marginBottom: '0.5rem', display: 'flex', gap: '0.5rem' }}>
-            <Autocomplete
-              onLoad={(autocomplete) => (autocompleteRefs.current[idx] = autocomplete)}
-              onPlaceChanged={() => {
-                const place = autocompleteRefs.current[idx].getPlace();
-                if (place?.formatted_address) {
-                  handleAddressChange(idx, place.formatted_address);
-                }
-              }}
-            >
-              <input
-                ref={(el) => (inputRefs.current[idx] = el)}
-                type="text"
-                placeholder={`Stop ${idx + 1}`}
-                defaultValue={address}
-                style={{ flex: 1, padding: '0.5rem', fontSize: '1rem' }}
-              />
-            </Autocomplete>
-            {addresses.length > 2 && (
-              <button onClick={() => removeStop(idx)} style={{ fontSize: '1rem' }}>🗑️</button>
-            )}
-          </div>
-        ))}
+        {addresses.map((address, idx) => {
+  const label =
+    idx === 0 ? 'Start' : idx === addresses.length - 1 ? 'End' : `Stop ${idx + 1}`;
+
+  return (
+    <div key={idx} style={{ marginBottom: '0.5rem' }}>
+      <label style={{ fontWeight: 'bold', display: 'block', marginBottom: '0.25rem' }}>
+        {label}
+      </label>
+      <div style={{ display: 'flex', gap: '0.5rem' }}>
+        <Autocomplete
+          onLoad={(autocomplete) => (autocompleteRefs.current[idx] = autocomplete)}
+          onPlaceChanged={() => {
+            const place = autocompleteRefs.current[idx].getPlace();
+            if (place?.formatted_address) {
+              handleAddressChange(idx, place.formatted_address);
+            }
+          }}
+        >
+          <input
+            ref={(el) => (inputRefs.current[idx] = el)}
+            type="text"
+            placeholder="Enter address"
+            defaultValue={address}
+            style={{ flex: 1, padding: '0.5rem', fontSize: '1rem' }}
+          />
+        </Autocomplete>
+        {addresses.length > 2 && (
+          <button onClick={() => removeStop(idx)} style={{ fontSize: '1rem' }}>
+            🗑️
+          </button>
+        )}
+      </div>
+    </div>
+  );
+})}
+
         <button onClick={addStop} style={{ marginBottom: '1rem', fontSize: '1rem' }}>➕ Add Stop</button>
         <button
           onClick={calculateRoute}
