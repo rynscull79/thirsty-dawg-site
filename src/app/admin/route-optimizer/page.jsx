@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { LoadScript, GoogleMap, DirectionsRenderer } from '@react-google-maps/api';
+import { LoadScript, GoogleMap, DirectionsRenderer, Autocomplete } from '@react-google-maps/api';
 
 const GOOGLE_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 const libraries = ['places'];
@@ -16,6 +16,7 @@ export default function RouteOptimizerPage() {
   const [addresses, setAddresses] = useState(['', '', '']);
   const [directions, setDirections] = useState(null);
   const inputRefs = useRef([]);
+  const autocompleteRefs = useRef([]);
 
   const handleAddressChange = (index, value) => {
     const updated = [...addresses];
@@ -54,14 +55,23 @@ export default function RouteOptimizerPage() {
       <LoadScript googleMapsApiKey={GOOGLE_API_KEY} libraries={libraries}>
         {addresses.map((address, idx) => (
           <div key={idx} style={{ marginBottom: '0.5rem', display: 'flex', gap: '0.5rem' }}>
-            <input
-              ref={(el) => (inputRefs.current[idx] = el)}
-              type="text"
-              value={address}
-              placeholder={`Stop ${idx + 1}`}
-              onChange={(e) => handleAddressChange(idx, e.target.value)}
-              style={{ flex: 1, padding: '0.5rem', fontSize: '1rem' }}
-            />
+            <Autocomplete
+              onLoad={(autocomplete) => (autocompleteRefs.current[idx] = autocomplete)}
+              onPlaceChanged={() => {
+                const place = autocompleteRefs.current[idx].getPlace();
+                if (place?.formatted_address) {
+                  handleAddressChange(idx, place.formatted_address);
+                }
+              }}
+            >
+              <input
+                ref={(el) => (inputRefs.current[idx] = el)}
+                type="text"
+                placeholder={`Stop ${idx + 1}`}
+                defaultValue={address}
+                style={{ flex: 1, padding: '0.5rem', fontSize: '1rem' }}
+              />
+            </Autocomplete>
             {addresses.length > 2 && (
               <button onClick={() => removeStop(idx)} style={{ fontSize: '1rem' }}>🗑️</button>
             )}
