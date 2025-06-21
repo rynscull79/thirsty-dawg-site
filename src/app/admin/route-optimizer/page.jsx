@@ -61,6 +61,34 @@ export default function RouteOptimizerPage() {
       }
     );
   };
+const getCurrentLocation = () => {
+  if (!navigator.geolocation) {
+    alert('Geolocation not supported');
+    return;
+  }
+
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const { latitude, longitude } = position.coords;
+      const geocoder = new google.maps.Geocoder();
+      const latlng = { lat: latitude, lng: longitude };
+
+      geocoder.geocode({ location: latlng }, (results, status) => {
+        if (status === 'OK' && results[0]) {
+          const address = results[0].formatted_address;
+          const updated = [...addresses];
+          updated[0] = address;
+          setAddresses(updated);
+        } else {
+          alert('Failed to retrieve address from location.');
+        }
+      });
+    },
+    (error) => {
+      alert('Error fetching location: ' + error.message);
+    }
+  );
+};
 
   return (
     <div style={{ padding: '1rem', fontFamily: 'var(--font-chewy)' }}>
@@ -93,11 +121,21 @@ export default function RouteOptimizerPage() {
             style={{ flex: 1, padding: '0.5rem', fontSize: '1rem' }}
           />
         </Autocomplete>
-        {addresses.length > 2 && (
-          <button onClick={() => removeStop(idx)} style={{ fontSize: '1rem' }}>
-            🗑️
-          </button>
-        )}
+        {idx === 0 && (
+  <button
+    onClick={getCurrentLocation}
+    style={{ fontSize: '1rem' }}
+    type="button"
+  >
+    📍 Use My Location
+  </button>
+)}
+{addresses.length > 2 && (
+  <button onClick={() => removeStop(idx)} style={{ fontSize: '1rem' }}>
+    🗑️
+  </button>
+)}
+
       </div>
     </div>
   );
