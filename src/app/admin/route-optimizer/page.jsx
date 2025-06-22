@@ -50,9 +50,11 @@ export default function RouteOptimizerPage() {
 
   const originEncoded = encodeURIComponent(origin);
   const destinationEncoded = encodeURIComponent(destination);
-  const waypointsEncoded = waypoints.map(wp => encodeURIComponent(wp.location)).join('|');
+  const waypointOrder = result.routes[0].waypoint_order;
+const orderedWaypoints = waypointOrder.map(i => waypoints[i].location);
+const waypointsEncoded = orderedWaypoints.map(addr => encodeURIComponent(addr)).join('|');
+const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${originEncoded}&destination=${destinationEncoded}&waypoints=${waypointsEncoded}&travelmode=driving`;
 
-  const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${originEncoded}&destination=${destinationEncoded}&waypoints=${waypointsEncoded}`;
   setGoogleMapsLink(googleMapsUrl);
 } else {
   alert('Could not fetch directions: ' + status);
