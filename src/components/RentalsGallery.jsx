@@ -14,12 +14,17 @@ const rentalsImages = [
   },
   {
     src: '/gallery/Taylor-430.webp',
-    caption: 'Taylor 430 – High-capacity, commercial-grade unit ideal for large events and extended lease use. Smooth, consistent pours.'
+    caption: 'Taylor 430 – High-capacity, commercial-grade unit ideal for large events and extended lease use. Smooth, consistent pours.Requires 120V outlet on a dedicated 20 amp breaker. Customer must verify outlet before delivery.'
   },
   {
     src: '/gallery/Grindmaster-3311.webp',
     caption: 'Grindmaster 3311 – Stainless single-flavor machine. Great for weddings, showers, or adding a second flavor to any event.'
-  }
+  },
+  {
+  src: '/gallery/taylor-152-12.webp',
+  caption: 'Taylor 152-12 – Compact, single-flavor soft serve machine. A powerful performer for smaller gatherings, kids’ parties, or backyard events. Requires 120V outlet on a dedicated 20 amp breaker. Customer must verify outlet before delivery.'
+}
+
 ];
 
 export default function RentalsGallery() {
