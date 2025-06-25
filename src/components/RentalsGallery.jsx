@@ -14,7 +14,7 @@ const rentalsImages = [
   },
   {
     src: '/gallery/Taylor-430.webp',
-    caption: 'Taylor 430 – High-capacity, commercial-grade unit ideal for large events and extended lease use. Smooth, consistent pours.Requires 120V outlet on a dedicated 20 amp breaker. Customer must verify outlet before delivery.'
+    caption: 'Taylor 430 – High-capacity, commercial-grade unit ideal for large events and extended lease use. Smooth, consistent pours. Requires 120V outlet on a dedicated 20 amp breaker. Customer must verify outlet before delivery.'
   },
   {
     src: '/gallery/Grindmaster-3311.webp',
