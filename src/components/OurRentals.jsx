@@ -63,7 +63,9 @@ const end = new Date(range[0].endDate);
         </div>
 <div style={{ backgroundColor: '#f0f9ff', padding: '1.5rem', borderRadius: '1rem', boxShadow: '0 2px 6px rgba(0,0,0,0.1)', flex: '1 1 300px' }}>
   <h3>🍦 Soft Serve Ice Cream</h3>
-  <p>Serve up swirls of creamy soft serve! Our Taylor 430 machine is also capable of frozen drinks, making it perfect for birthdays, schools, festivals, and more. Just plug in and go!</p>
+  <p>Delicious soft serve without the fuss! Our compact Taylor 152 machine is ideal for birthday parties, backyard events, and small celebrations. 
+Just plug it in and enjoy — requires a 120V outlet on a dedicated 20 amp breaker. 
+Customer must verify outlet before delivery.</p>
 </div>
 
         <div style={{ backgroundColor: '#f0f9ff', padding: '1.5rem', borderRadius: '1rem', boxShadow: '0 2px 6px rgba(0,0,0,0.1)', flex: '1 1 300px' }}>
