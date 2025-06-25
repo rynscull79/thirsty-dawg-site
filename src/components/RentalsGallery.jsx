@@ -4,10 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 
 const rentalsImages = [
-  {
-    src: '/gallery/Bunn-Ultra-2.webp',
-    caption: 'Bunn Ultra 2 – Great for small indoor events and kids\' parties. Recommended for fewer than 20 guests. Indoor use only.'
-  },
+  
   {
     src: '/gallery/Frosty-Factory-217A.webp',
     caption: 'Frosty Factory 217A – Our most popular rental! Dual stainless design, perfect for weddings, events, and high-demand venues.'
@@ -19,6 +16,10 @@ const rentalsImages = [
   {
     src: '/gallery/Grindmaster-3311.webp',
     caption: 'Grindmaster 3311 – Stainless single-flavor machine. Great for weddings, showers, or adding a second flavor to any event.'
+  },
+{
+    src: '/gallery/Bunn-Ultra-2.webp',
+    caption: 'Bunn Ultra 2 – Great for small indoor events and kids\' parties. Recommended for fewer than 20 guests. Indoor use only.'
   },
   {
   src: '/gallery/taylor-152-12.webp',
