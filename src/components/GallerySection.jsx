@@ -7,7 +7,7 @@ const images = [
   { src: '/gallery/mardi-gras-party.webp', caption: 'Mardi Gras Mixes & Masquerades' },
   { src: '/gallery/beach-house.webp', caption: 'Poolside Sips at the Beach House' },
   { src: '/gallery/kids-party.webp', caption: 'Happy Faces, Frozen Flavors' },
-  { src: '/gallery/dual-flavor-machines.webp', caption: 'Frozen Favorites at "Flora-BEULAH"' },
+  { src: '/gallery/dual-flavor-machines.webp', caption: 'Frozen Favorites at "FLORA-BEULAH"' },
   { src: '/gallery/school-party.webp', caption: 'Teachers + Slushies = YES' },
   { src: '/gallery/elberta-sausage-festival.webp', caption: 'Fueling Fun at the Sausage Fest' },
   { src: '/gallery/charity-event.webp', caption: 'Frozen Fun for a Great Cause' },
