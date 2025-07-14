@@ -37,18 +37,29 @@ export default function IceCreamPage() {
   }}>
     Ice Cream Cart Rentals That Impress
   </h2>
-  <div style={{
-    display: 'flex',
-    flexWrap: 'wrap',
-    gap: '1rem',
-    justifyContent: 'center',
-    alignItems: 'flex-start'
-  }}>
-<div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+ <div
+  style={{
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+    gap: '1.5rem',
+    justifyItems: 'center',
+  }}
+>
   <img
     src="/gallery/frozen_novelties_cart.webp"
     alt="Frozen novelty cart with blue umbrella"
     style={{
+      width: '100%',
+      maxWidth: '300px',
+      borderRadius: '12px',
+      boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+    }}
+  />
+  <img
+    src="/gallery/kids-enjoying-frozen-treats.webp"
+    alt="Kids enjoying novelty ice cream at party"
+    style={{
+      width: '100%',
       maxWidth: '300px',
       borderRadius: '12px',
       boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
@@ -58,6 +69,7 @@ export default function IceCreamPage() {
     src="/gallery/wedding_novelty_cart.webp"
     alt="Wedding-themed novelty cart"
     style={{
+      width: '100%',
       maxWidth: '300px',
       borderRadius: '12px',
       boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
@@ -65,27 +77,6 @@ export default function IceCreamPage() {
   />
 </div>
 
-
-
-    <img
-      src="/gallery/kids-enjoying-frozen-treats.webp"
-      alt="Kids enjoying novelty ice cream at party"
-      style={{
-        maxWidth: '300px',
-        borderRadius: '12px',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-      }}
-    />
-    <img
-      src="/gallery/icecream-outside.webp"
-      alt="Customer enjoying ice cream outdoors"
-      style={{
-        maxWidth: '300px',
-        borderRadius: '12px',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-      }}
-    />
-  </div>
 </section>
 
       <h2 style={{ fontSize: '1.5rem', color: '#00b3e6', marginBottom: '1rem', textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>Why You'll Love It</h2>
