@@ -191,43 +191,58 @@ export default function HomePage() {
   </div>
 
   {/* Images side by side */}
-  <div
+ <div
+  style={{
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    gap: '2rem',
+  }}
+>
+  <img
+    src="/gallery/kid-soft-serve.webp"
+    alt="Kid enjoying soft serve ice cream"
+    width="260"
+    height="340"
     style={{
-      display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'center',
-      gap: '2rem',
+      width: '100%',
+      maxWidth: '260px',
+      borderRadius: '1rem',
+      boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+      objectFit: 'cover',
+      flexShrink: 0,
     }}
-  >
-    <img
-      src="/gallery/kid-soft-serve.webp"
-      alt="Kid enjoying soft serve ice cream"
-      width="260"
-      height="340"
-      style={{
-        width: '100%',
-        maxWidth: '260px',
-        borderRadius: '1rem',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-        objectFit: 'cover',
-        flexShrink: 0,
-      }}
-    />
-    <img
-      src="/gallery/Thirsty-Dawg-Nelson-Cart.webp"
-      alt="Stocked novelty ice cream cart"
-      width="260"
-      height="340"
-      style={{
-        width: '100%',
-        maxWidth: '260px',
-        borderRadius: '1rem',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-        objectFit: 'cover',
-        flexShrink: 0,
-      }}
-    />
-  </div>
+  />
+  <img
+    src="/gallery/frozen_novelties_cart.webp"
+    alt="Updated frozen novelty cart"
+    width="260"
+    height="340"
+    style={{
+      width: '100%',
+      maxWidth: '260px',
+      borderRadius: '1rem',
+      boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+      objectFit: 'cover',
+      flexShrink: 0,
+    }}
+  />
+  <img
+    src="/gallery/wedding_novelty_cart.webp"
+    alt="Wedding-themed novelty cart"
+    width="260"
+    height="340"
+    style={{
+      width: '100%',
+      maxWidth: '260px',
+      borderRadius: '1rem',
+      boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+      objectFit: 'cover',
+      flexShrink: 0,
+    }}
+  />
+</div>
+
 </section>
 
         <section className={styles.section}><GallerySection /></section>
