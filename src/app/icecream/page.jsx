@@ -44,15 +44,27 @@ export default function IceCreamPage() {
     justifyContent: 'center',
     alignItems: 'flex-start'
   }}>
-   <img
-  src="/gallery/Thirsty-Dawg-Nelson-Cart.webp"
-  alt="Thirsty Dawg ice cream cart with umbrella at an outdoor party"
-  style={{
-    maxWidth: '300px',
-    borderRadius: '12px',
-    boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-  }}
-/>
+<div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+  <img
+    src="/gallery/frozen_novelties_cart.webp"
+    alt="Frozen novelty cart with blue umbrella"
+    style={{
+      maxWidth: '300px',
+      borderRadius: '12px',
+      boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+    }}
+  />
+  <img
+    src="/gallery/wedding_novelty_cart.webp"
+    alt="Wedding-themed novelty cart"
+    style={{
+      maxWidth: '300px',
+      borderRadius: '12px',
+      boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+    }}
+  />
+</div>
+
 
 
     <img
