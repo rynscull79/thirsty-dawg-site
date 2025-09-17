@@ -20,7 +20,10 @@ export const metadata = {
   robots: 'index, follow',
   icons: {
     icon: '/favicon.png'
-  }
+  },
+  verification: {
+    google: 'LHt8tv1KLJb0KXV3Sb-QbR6G-wKw62NoX1auUUJKakg',
+    }
 };
 
 export const viewport = {
