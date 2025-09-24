@@ -66,7 +66,7 @@ export default function IceCreamPage() {
     }}
   />
   <img
-    src="/gallery/wedding_treats.webp"
+    src="/gallery/wedding-treats.webp"
     alt="Wedding-themed novelty cart"
     style={{
       width: '100%',
