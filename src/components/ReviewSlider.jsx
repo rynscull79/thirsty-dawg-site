@@ -51,7 +51,7 @@ export default function ReviewSlider() {
         fontWeight: 'bold',
         textShadow: '1px 1px 2px rgba(0,0,0,0.1)'
       }}>
-        ⭐ Rated 5 Stars by 35+ Happy Customers
+        ⭐ Rated 5 Stars by 45+ Happy Customers
       </h3>
 
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem' }}>
