@@ -85,15 +85,15 @@ export default function HomePage() {
   padding: '20px 0',
 }}>
   <img
-  src="/gallery/frozen-margarita.webp"
-  alt="Frozen Margarita on Machine"
-  width="320"
-  height="427"
+  src="/gallery/mardi-gras-party.webp"
+  alt="Woman in costume pouring mix into a frozen drink machine for a Mardi Gras party rental in Pensacola"
   style={{
-    maxWidth: '320px',
     width: '100%',
+    maxWidth: '320px',
+    height: '427px',         // fixed height
     borderRadius: '1rem',
-    boxShadow: '0 4px 10px rgba(0,0,0,0.15)'
+    boxShadow: '0 4px 10px rgba(0,0,0,0.15)',
+    objectFit: 'cover'       // 👈 prevents squish, crops instead
   }}
 />
 
