@@ -110,6 +110,19 @@ export default function HomePage() {
   }}
 />
 
+ <img
+  src="/gallery/ice-cream-bar.webp"
+  alt="Ice Cream Party"
+  width="320"
+  height="427"
+  style={{
+    maxWidth: '320px',
+    width: '100%',
+    borderRadius: '1rem',
+    boxShadow: '0 4px 10px rgba(0,0,0,0.15)'
+  }}
+/>
+
 </section>
 
 <section
