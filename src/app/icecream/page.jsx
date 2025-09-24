@@ -46,7 +46,7 @@ export default function IceCreamPage() {
   }}
 >
   <img
-    src="/gallery/frozen_novelties_cart.webp"
+    src="/gallery/fun-icecream-cart.webp"
     alt="Frozen novelty cart with blue umbrella"
     style={{
       width: '100%',
