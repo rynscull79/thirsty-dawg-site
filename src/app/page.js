@@ -97,16 +97,16 @@ export default function HomePage() {
   }}
 />
 
-  <img
-  src="/gallery/strawberry-daiquiri.webp"
-  alt="Strawberry Daiquiri by Pool"
-  width="320"
-  height="427"
+<img
+  src="/gallery/frozen-drinks-and-softserve.webp"
+  alt="Frozen drink and soft serve ice cream rental machines set up for a party in Pensacola, Florida"
   style={{
-    maxWidth: '320px',
     width: '100%',
+    maxWidth: '320px',
+    height: '427px',         // fixed height
     borderRadius: '1rem',
-    boxShadow: '0 4px 10px rgba(0,0,0,0.15)'
+    boxShadow: '0 4px 10px rgba(0,0,0,0.15)',
+    objectFit: 'cover'       // 👈 prevents squish, crops instead
   }}
 />
 
