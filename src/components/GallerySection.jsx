@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const images = [
-  { src: '/gallery/mardi-gras-party.webp', caption: 'Mardi Gras Mixes & Masquerades' },
   { src: '/gallery/beach-house.webp', caption: 'Poolside Sips at the Beach House' },
   { src: '/gallery/kids-party.webp', caption: 'Happy Faces, Frozen Flavors' },
   { src: '/gallery/dual-flavor-machines.webp', caption: 'Frozen Favorites at "FLORA-BEULAH"' },
@@ -14,6 +13,8 @@ const images = [
   { src: '/gallery/community-center-party.webp', caption: 'Slushies and Smiles at the Center' },
   { src: '/gallery/breast-cancer-awareness.webp', caption: 'Serving Pink Power at Awareness Events' },
   { src: '/gallery/community-fun.webp', caption: 'Neighborhood Chill Zone' },
+  { src: '/gallery/frozen-treats.webp', caption: 'Frozen treat cart and soft serve at community event.' },
+  { src: '/gallery/frozen-margarita.webp', caption: 'Bar-quality frozen drinks.' },
 ];
 
 export default function GallerySection() {
