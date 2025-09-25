@@ -413,7 +413,6 @@ onChange={(e) => setShowArchived(e.target.checked)}
     {[
       'Stainless Single Flavor - $185',
       'Stainless Dual Flavor - $240',
-      'Plastic Dual Flavor - $210',
       'Soft Serve Machine - $200'
     ].map(opt => (
       <option key={opt}>{opt}</option>

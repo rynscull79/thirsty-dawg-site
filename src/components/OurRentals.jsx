@@ -97,7 +97,7 @@ Customer must verify outlet before delivery.</p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1rem' }}>
             <div style={{ flex: '1 1 300px', backgroundColor: '#e6f4fd', padding: '1.5rem', borderRadius: '1rem', boxShadow: '0 2px 6px rgba(0,0,0,0.05)' }}>
-              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#1f2937' }}>🍹 Stainless Single Flavor and Soft Serve – $185</h3>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#1f2937' }}>🍹 Stainless Single Flavor – $185</h3>
               <ul style={{ paddingLeft: '1.2rem', color: '#333', fontSize: '0.95rem' }}>
                 <li>Weekend Rental: Friday evening through Sunday evening – <strong>$185</strong></li>
                 <li>Add Extra Days: <strong>$40</strong> per additional weekday</li>
@@ -106,12 +106,12 @@ Customer must verify outlet before delivery.</p>
             </div>
 
             <div style={{ flex: '1 1 300px', backgroundColor: '#e6f4fd', padding: '1.5rem', borderRadius: '1rem', boxShadow: '0 2px 6px rgba(0,0,0,0.05)' }}>
-              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#1f2937' }}>🥤 Plastic Dual Flavor – $210</h3>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#1f2937' }}>🥤 Soft Serve – $200</h3>
               <ul style={{ paddingLeft: '1.2rem', color: '#333', fontSize: '0.95rem' }}>
-                <li>Weekend Rental: Friday evening through Sunday evening – <strong>$210</strong></li>
+                <li>Weekend Rental: Friday evening through Sunday evening – <strong>$200</strong></li>
                 <li>Add Extra Days: <strong>$45</strong> per additional weekday</li>
               </ul>
-              <p style={{ fontStyle: 'italic', marginTop: '0.5rem' }}>🧊 Example: Friday to Wednesday = $210 + 3 extra days = $345</p>
+              <p style={{ fontStyle: 'italic', marginTop: '0.5rem' }}>🧊 Example: Friday to Wednesday = $200 + 3 extra days = $335</p>
             </div>
 
             <div style={{ flex: '1 1 300px', backgroundColor: '#e6f4fd', padding: '1.5rem', borderRadius: '1rem', boxShadow: '0 2px 6px rgba(0,0,0,0.05)' }}>
@@ -129,7 +129,6 @@ Customer must verify outlet before delivery.</p>
               <h4 style={{ textAlign: 'center', fontWeight: 'bold', color: '#009fdb', fontSize: '1.4rem' }}>💡 Want more than one machine?</h4>
               <ul style={{ fontSize: '1rem', paddingLeft: '1.5rem', marginTop: '0.75rem', color: '#1f2937', listStyleType: 'disc' }}>
                 <li><strong>Second Stainless Single Machine:</strong> $100 + $40/extra weekday</li>
-                <li><strong>Second Plastic Dual Machine:</strong> $115 + $45/extra weekday</li>
                 <li><strong>Second Stainless Dual Machine:</strong> $130 + $50/extra weekday</li>
               </ul>
             </div>
@@ -158,7 +157,7 @@ Customer must verify outlet before delivery.</p>
     style={{ width: '100%', padding: '0.5rem', borderRadius: '5px', border: '1px solid #ccc' }}
   >
     <option value="single">Stainless Single</option>
-    <option value="plastic">Plastic Dual</option>
+   
     <option value="stainless">Stainless Dual</option>
   </select>
   <label htmlFor="secondMachineType" style={{ fontWeight: 'bold' }}>Second Machine (Optional):</label>
@@ -170,7 +169,7 @@ Customer must verify outlet before delivery.</p>
 >
   <option value="">None</option>
   <option value="single">Stainless Single</option>
-  <option value="plastic">Plastic Dual</option>
+ 
   <option value="stainless">Stainless Dual</option>
 </select>
 

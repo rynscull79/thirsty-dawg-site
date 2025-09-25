@@ -347,7 +347,7 @@ style={{ width: '100%', maxWidth: '100%', minWidth: '500px' }}
       {[
         'Stainless Single Flavor - $185',
         'Stainless Dual Flavor - $240',
-        'Plastic Dual Flavor - $210'
+        
       ].map(option => (
         <option key={option}>{option}</option>
       ))}
