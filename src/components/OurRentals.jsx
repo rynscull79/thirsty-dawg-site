@@ -25,6 +25,8 @@ export default function OurRentals() {
     const prices = {
       single: { base: 185, extra: 40, second: 100 },
       stainless: { base: 240, extra: 50, second: 130 },
+            softserve: { base: 200, extra: 45, second: 100 },
+
     };
     const start = new Date(range[0].startDate);
 const end = new Date(range[0].endDate);
@@ -129,6 +131,8 @@ Customer must verify outlet before delivery.</p>
               <ul style={{ fontSize: '1rem', paddingLeft: '1.5rem', marginTop: '0.75rem', color: '#1f2937', listStyleType: 'disc' }}>
                 <li><strong>Second Stainless Single Machine:</strong> $100 + $40/extra weekday</li>
                 <li><strong>Second Stainless Dual Machine:</strong> $130 + $50/extra weekday</li>
+                <li><strong>Second Soft Serve Machine:</strong> $100 + $45/extra weekday</li>
+
               </ul>
             </div>
 
@@ -156,7 +160,8 @@ Customer must verify outlet before delivery.</p>
     style={{ width: '100%', padding: '0.5rem', borderRadius: '5px', border: '1px solid #ccc' }}
   >
     <option value="single">Stainless Single</option>
-   
+       <option value="softserve">Soft Serve</option>
+
     <option value="stainless">Stainless Dual</option>
   </select>
   <label htmlFor="secondMachineType" style={{ fontWeight: 'bold' }}>Second Machine (Optional):</label>
@@ -168,7 +173,8 @@ Customer must verify outlet before delivery.</p>
 >
   <option value="">None</option>
   <option value="single">Stainless Single</option>
- 
+   <option value="softserve">Soft Serve</option>
+
   <option value="stainless">Stainless Dual</option>
 </select>
 
