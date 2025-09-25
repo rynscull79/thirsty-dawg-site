@@ -355,7 +355,7 @@ style={{ width: '100%', maxWidth: '100%', minWidth: '500px' }}
   </div>
 )}
 {serviceType === 'soft_serve' && (
-  <input type="hidden" name="machine_type" value="Soft Serve Machine - $185" />
+  <input type="hidden" name="machine_type" value="Soft Serve Machine - $200" />
 )}
 
 
