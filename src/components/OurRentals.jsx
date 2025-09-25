@@ -24,7 +24,6 @@ export default function OurRentals() {
   const calculateTotal = () => {
     const prices = {
       single: { base: 185, extra: 40, second: 100 },
-      plastic: { base: 210, extra: 45, second: 115 },
       stainless: { base: 240, extra: 50, second: 130 },
     };
     const start = new Date(range[0].startDate);

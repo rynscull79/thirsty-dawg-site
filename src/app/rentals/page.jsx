@@ -7,7 +7,7 @@ const FloatingBookNow = dynamic(() => import('@/components/FloatingBookNow'));
 export const metadata = {
   title: 'Frozen Drink & Soft Serve Machine Rentals | Thirsty Dawg',
   description:
-    'Rent frozen drink and soft serve ice cream machines in Pensacola and nearby areas. Choose from single or dual flavor options — stainless or plastic. Thirsty Dawg handles delivery, setup, and pickup!',
+    'Rent frozen drink and soft serve ice cream machines in Pensacola and nearby areas. Choose from single or dual flavor options. Thirsty Dawg handles delivery, setup, and pickup!',
   openGraph: {
     title: 'Frozen Drink & Soft Serve Machine Rentals | Thirsty Dawg',
     description: 'Rent frozen drink and soft serve machines for events across Pensacola. Thirsty Dawg handles delivery, setup, and cleanup!',
@@ -82,7 +82,7 @@ export default function RentalsPage() {
                 '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
             }}
           >
-            Choose from stainless or plastic, single or dual flavor frozen drink machines — or cool things down with our new soft serve ice cream rentals!
+            Choose from single or dual flavor frozen drink machines — or cool things down with our new soft serve ice cream rentals!
           </p>
 
           <p

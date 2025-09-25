@@ -32,7 +32,7 @@ export default function FrozenMargaritaMachineRentalsPage() {
     telephone: "850-572-3796",
     image: "https://www.thirstydawgrentals.com/thirsty-dawg-logo.webp",
     description:
-      "Rent frozen margarita machines in Pensacola and nearby areas. Choose stainless or plastic, single or dual flavor. Delivery, setup, and cleanup included!",
+      "Rent frozen margarita machines in Pensacola and nearby areas. Choose single or dual flavor. Delivery, setup, and cleanup included!",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Pensacola",
@@ -98,7 +98,7 @@ export default function FrozenMargaritaMachineRentalsPage() {
                 '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000'
             }}
           >
-            Choose from stainless or plastic models, single or dual flavor setups. No bartender needed — just plug, pour, and enjoy icy cold margaritas all day long.
+            Choose from single or dual flavor setups. No bartender needed — just plug, pour, and enjoy icy cold margaritas all day long.
           </p>
 
           <p

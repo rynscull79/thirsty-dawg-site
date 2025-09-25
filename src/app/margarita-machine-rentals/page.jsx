@@ -104,7 +104,7 @@ export default function MargaritaMachineRentalsPage() {
             🎉 What’s Included:
           </h3>
           <ul style={{ marginLeft: '1rem', marginBottom: '2rem' }}>
-            <li>✔️ 1 frozen drink machine (stainless or plastic)</li>
+            <li>✔️ 1 frozen drink machine </li>
             <li>✔️ 1–2 flavor mixes (margarita, daiquiri, piña colada, etc.)</li>
             <li>✔️ Setup, sanitation, and pickup</li>
             <li>✔️ Instructions for adding alcohol (BYOB)</li>

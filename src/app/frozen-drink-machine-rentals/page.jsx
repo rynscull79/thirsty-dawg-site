@@ -114,7 +114,7 @@ export default function FrozenDrinkMachineRentalsPage() {
             💲 What’s Included:
           </h3>
           <ul style={{ marginLeft: '1rem', marginBottom: '2rem' }}>
-            <li>✅ Frozen drink machine (stainless or plastic)</li>
+            <li>✅ Frozen drink machine</li>
             <li>✅ 1–2 flavor mixes (cherry, blue raspberry, lemonade, etc.)</li>
             <li>✅ Delivery, setup, and pickup — no hassle!</li>
             <li>✅ Easy-to-follow instructions (no alcohol required)</li>

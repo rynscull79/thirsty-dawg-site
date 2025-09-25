@@ -70,7 +70,7 @@ export default function DaiquiriMachineRentalsPage() {
                 '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
             }}
           >
-            Perfect for backyard bashes, weddings, beach rentals, and birthdays. Choose from stainless or plastic, single or dual flavor machines.
+            Perfect for backyard bashes, weddings, beach rentals, and birthdays. Choose from single or dual flavor machines.
           </p>
 
           <p
