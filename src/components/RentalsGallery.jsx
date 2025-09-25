@@ -17,10 +17,7 @@ const rentalsImages = [
     src: '/gallery/Grindmaster-3311.webp',
     caption: 'Grindmaster 3311 – Stainless single-flavor machine. Great for weddings, showers, or adding a second flavor to any event.'
   },
-{
-    src: '/gallery/Bunn-Ultra-2.webp',
-    caption: 'Bunn Ultra 2 – Great for small indoor events and kids\' parties. Recommended for fewer than 20 guests. Indoor use only.'
-  },
+
   {
   src: '/gallery/taylor-152-12.webp',
   caption: 'Taylor 152-12 – Compact, single-flavor soft serve machine. A powerful performer for smaller gatherings, kids’ parties, or backyard events. Requires 120V outlet on a dedicated 20 amp breaker. Customer must verify outlet before delivery.'
