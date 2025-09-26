@@ -49,16 +49,25 @@
   margin: 0;
 }
 
+/* AFTER — taller on desktop/tablet */
 .imageWrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 5;   /* smaller ratio = taller */
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 10px 24px rgba(0,0,0,.12);
   background: #eaf6ff;
   isolation: isolate;
 }
+
+/* EVEN TALLER on phones (optional) */
+@media (max-width: 767px) {
+  .imageWrap {
+    aspect-ratio: 3 / 4; /* nice portrait feel on mobile */
+  }
+}
+
 
 .image {
   object-fit: cover;
