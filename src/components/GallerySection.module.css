@@ -61,12 +61,20 @@
   isolation: isolate;
 }
 
-/* EVEN TALLER on phones (optional) */
-@media (max-width: 815px) {
+@media (max-width: 767px) {
+  .group {
+    grid-template-columns: 1fr; /* still 1 per row */
+    gap: 14px;
+    justify-items: center; /* center the wider image */
+  }
+
   .imageWrap {
-    aspect-ratio: 2 / 3; /* nice portrait feel on mobile */
+    width: 120%;         /* 25% wider than container */
+    max-width: none;     /* remove natural max limit */
+    aspect-ratio: 2 / 3; /* keep the taller ratio from earlier */
   }
 }
+
 
 
 .image {
