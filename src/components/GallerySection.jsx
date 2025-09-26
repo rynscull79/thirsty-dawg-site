@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
+import styles from './GallerySection.module.css';
 
 const images = [
   { src: '/gallery/beach-house.webp', caption: 'Poolside Sips at the Beach House' },
@@ -15,100 +16,165 @@ const images = [
   { src: '/gallery/community-fun.webp', caption: 'Neighborhood Chill Zone' },
   { src: '/gallery/frozen-treats.webp', caption: 'Frozen treat cart and soft serve at community event.' },
   { src: '/gallery/frozen-margarita.webp', caption: 'Bar-quality frozen drinks.' },
+  { src: '/gallery/wedding-toast.webp', caption: 'Frozen Memories on the Big Day' },
 ];
 
 export default function GallerySection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(3);
+  const [index, setIndex] = useState(0); // group index
+  const [isHover, setIsHover] = useState(false);
+  const containerRef = useRef(null);
+  const autoplayRef = useRef(null);
+  const touchStartX = useRef(0);
+  const touchDeltaX = useRef(0);
 
+  // responsive items per page
   useEffect(() => {
-    const updateItemsPerPage = () => {
-      setItemsPerPage(window.innerWidth < 768 ? 1 : 3);
-    };
-
-    updateItemsPerPage(); // set on load
-    window.addEventListener('resize', updateItemsPerPage);
-    return () => window.removeEventListener('resize', updateItemsPerPage);
+    const update = () => setItemsPerPage(window.innerWidth < 768 ? 1 : 3);
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
   }, []);
 
-  const maxIndex = Math.ceil(images.length / itemsPerPage) - 1;
-  const goToPrevious = () => setCurrentIndex(prev => (prev === 0 ? maxIndex : prev - 1));
-  const goToNext = () => setCurrentIndex(prev => (prev === maxIndex ? 0 : prev + 1));
-  const visibleImages = images.slice(currentIndex * itemsPerPage, currentIndex * itemsPerPage + itemsPerPage);
+  const maxIndex = useMemo(
+    () => Math.max(0, Math.ceil(images.length / itemsPerPage) - 1),
+    [itemsPerPage]
+  );
+
+  const go = (dir) => {
+    setIndex((prev) => {
+      if (dir === 1) return prev === maxIndex ? 0 : prev + 1;
+      return prev === 0 ? maxIndex : prev - 1;
+    });
+  };
+
+  // autoplay only when visible and not hovered
+  useEffect(() => {
+    const node = containerRef.current;
+    if (!node) return;
+
+    let inView = true;
+    const io = new IntersectionObserver(
+      (entries) => {
+        inView = entries[0]?.isIntersecting ?? true;
+      },
+      { threshold: 0.25 }
+    );
+    io.observe(node);
+
+    const tick = () => {
+      if (inView && !isHover) go(1);
+    };
+
+    autoplayRef.current = setInterval(tick, 4200);
+    return () => {
+      clearInterval(autoplayRef.current);
+      io.disconnect();
+    };
+  }, [isHover, maxIndex, itemsPerPage]);
+
+  // touch/swipe handlers
+  const onTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchDeltaX.current = 0;
+  };
+  const onTouchMove = (e) => {
+    touchDeltaX.current = e.touches[0].clientX - touchStartX.current;
+  };
+  const onTouchEnd = () => {
+    const threshold = 50; // px
+    if (touchDeltaX.current > threshold) go(-1);
+    else if (touchDeltaX.current < -threshold) go(1);
+  };
+
+  // keyboard navigation
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'ArrowLeft') go(-1);
+      if (e.key === 'ArrowRight') go(1);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [maxIndex]);
+
+  // build slide groups
+  const groups = useMemo(() => {
+    const out = [];
+    for (let i = 0; i < images.length; i += itemsPerPage) {
+      out.push(images.slice(i, i + itemsPerPage));
+    }
+    return out;
+  }, [itemsPerPage]);
 
   return (
-    <section style={{
-      marginTop: '3rem',
-      padding: '2rem',
-      borderRadius: '1rem',
-      backgroundColor: '#f0f9ff',
-      boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
-      textAlign: 'center'
-    }}>
-      <h3 style={{
-        fontSize: '1.8rem',
-        marginBottom: '1.5rem',
-        fontWeight: 'bold',
-        color: '#009fdb',
-        textShadow: '1px 1px 1px rgba(0,0,0,0.1)'
-      }}>
-        🎉 Where the Party At?
-      </h3>
+    <section
+      className={styles.section}
+      ref={containerRef}
+      onMouseEnter={() => setIsHover(true)}
+      onMouseLeave={() => setIsHover(false)}
+    >
+      <h3 className={styles.title} aria-label="Where the Party At?">🎉 Where the Party At?</h3>
 
-      <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-        {visibleImages.map((image, index) => (
-          <div key={index} style={{ maxWidth: itemsPerPage === 1 ? '100%' : '300px', textAlign: 'center' }}>
-            <div style={{
-              width: '100%',
-              maxWidth: itemsPerPage === 1 ? '95%' : '300px',
-              margin: '0 auto'
-            }}>
-              <Image
-                src={image.src}
-                alt={image.caption}
-                width={itemsPerPage === 1 ? 360 : 300}
-                height={itemsPerPage === 1 ? 260 : 200}
-                loading={index === 0 && currentIndex === 0 ? 'eager' : 'lazy'}
-                priority={index === 0 && currentIndex === 0}
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  objectFit: 'cover',
-                  borderRadius: '8px',
-                  boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
-                }}
-              />
+      <div className={styles.viewport}
+           onTouchStart={onTouchStart}
+           onTouchMove={onTouchMove}
+           onTouchEnd={onTouchEnd}
+           aria-roledescription="carousel"
+           aria-label="Event gallery"
+           >
+        {/* sliding rail */}
+        <div
+          className={styles.rail}
+          style={{ transform: `translateX(-${index * 100}%)` }}
+        >
+          {groups.map((group, gIdx) => (
+            <div className={styles.group} key={`g-${gIdx}`}>
+              {group.map((img, iIdx) => {
+                const first = gIdx === 0 && iIdx === 0;
+                return (
+                  <figure className={styles.card} key={`${img.src}-${iIdx}`}>
+                    <div className={styles.imageWrap}>
+                      <Image
+                        src={img.src}
+                        alt={img.caption}
+                        fill
+                        sizes={itemsPerPage === 1 ? '(max-width: 768px) 92vw, 33vw' : '33vw'}
+                        priority={first}
+                        loading={first ? 'eager' : 'lazy'}
+                        className={styles.image}
+                      />
+                      <figcaption className={styles.caption} aria-live="polite">
+                        {img.caption}
+                      </figcaption>
+                    </div>
+                  </figure>
+                );
+              })}
             </div>
-            <p style={{ marginTop: '0.5rem', fontWeight: 'bold', color: '#333' }}>{image.caption}</p>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        {/* edge fades */}
+        <div className={`${styles.edge} ${styles.leftEdge}`} aria-hidden />
+        <div className={`${styles.edge} ${styles.rightEdge}`} aria-hidden />
       </div>
 
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '1rem' }}>
-        <button onClick={goToPrevious} aria-label="Previous" style={{
-          fontSize: '2rem',
-          background: '#009fdb',
-          border: 'none',
-          color: 'white',
-          padding: '0.5rem 1rem',
-          borderRadius: '50%',
-          cursor: 'pointer',
-          boxShadow: '0 2px 6px rgba(0,0,0,0.15)'
-        }}>
-          ‹
-        </button>
-        <button onClick={goToNext} aria-label="Next" style={{
-          fontSize: '2rem',
-          background: '#009fdb',
-          border: 'none',
-          color: 'white',
-          padding: '0.5rem 1rem',
-          borderRadius: '50%',
-          cursor: 'pointer',
-          boxShadow: '0 2px 6px rgba(0,0,0,0.15)'
-        }}>
-          ›
-        </button>
+      {/* controls */}
+      <div className={styles.controls}>
+        <button className={styles.navBtn} onClick={() => go(-1)} aria-label="Previous slide">‹</button>
+        <div className={styles.dots} role="tablist" aria-label="Slide indicators">
+          {groups.map((_, i) => (
+            <button
+              key={`dot-${i}`}
+              className={`${styles.dot} ${i === index ? styles.dotActive : ''}`}
+              aria-label={`Go to slide ${i + 1}`}
+              aria-selected={i === index}
+              onClick={() => setIndex(i)}
+              role="tab"
+            />
+          ))}
+        </div>
+        <button className={styles.navBtn} onClick={() => go(1)} aria-label="Next slide">›</button>
       </div>
     </section>
   );
