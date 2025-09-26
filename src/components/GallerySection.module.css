@@ -64,7 +64,7 @@
 /* EVEN TALLER on phones (optional) */
 @media (max-width: 767px) {
   .imageWrap {
-    aspect-ratio: 3 / 4; /* nice portrait feel on mobile */
+    aspect-ratio: 2 / 3; /* nice portrait feel on mobile */
   }
 }
 
