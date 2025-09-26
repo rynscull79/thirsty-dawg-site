@@ -61,20 +61,29 @@
   isolation: isolate;
 }
 
+/* Keep your desktop/tablet as-is */
+
+/* MOBILE: make the whole card wider and visible */
 @media (max-width: 767px) {
+  .viewport {
+    overflow: visible;                 /* allow slight overhang */
+  }
+
   .group {
-    grid-template-columns: 1fr; /* still 1 per row */
-    gap: 14px;
-    justify-items: center; /* center the wider image */
+    grid-template-columns: 1fr;        /* one per row */
+    justify-items: center;             /* center the wide card */
+  }
+
+  .card {
+    width: 92vw;                       /* ~+25% bigger than padded content */
+    max-width: 640px;                  /* safety cap */
   }
 
   .imageWrap {
-    width: 120%;         /* 25% wider than container */
-    max-width: none;     /* remove natural max limit */
-    aspect-ratio: 2 / 3; /* keep the taller ratio from earlier */
+    width: 100%;                       /* fill the card width */
+    aspect-ratio: 2 / 3;               /* your taller mobile ratio */
   }
 }
-
 
 
 .image {
