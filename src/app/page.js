@@ -259,7 +259,7 @@ export default function HomePage() {
 
 </section>
 
-        <section className={styles.section}><GallerySection /></section>
+        <GallerySection />
         <ReviewSlider />
         <FloatingBookNow />
 
