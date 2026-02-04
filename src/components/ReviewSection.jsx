@@ -44,7 +44,7 @@ export default function ReviewSection() {
         fontWeight: 'bold',
         textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
       }}>
-        ⭐ Rated 5 Stars by 35+ Happy Customers
+        ⭐ Rated 5 Stars by 55+ Happy Customers
       </h3>
 
       <div style={{
