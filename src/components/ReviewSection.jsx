@@ -29,7 +29,7 @@ export default function ReviewSection() {
     }
   ];
 
-  
+
   return (
     <section style={{
       backgroundColor: '#fffbe6',
@@ -47,6 +47,7 @@ export default function ReviewSection() {
       }}>
         ⭐ Rated 5 Stars by 55+ Happy Customers
       </h3>
+
 
       <div style={{
         display: 'grid',
