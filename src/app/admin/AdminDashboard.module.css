@@ -1,0 +1,239 @@
+.wrap {
+  padding: 28px 18px 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: #0f172a;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+}
+
+.sub {
+  margin: 6px 0 0;
+  color: #475569;
+  font-size: 14px;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  background: #0b1220;
+  padding: 8px;
+  border-radius: 999px;
+}
+
+.tab {
+  border: 0;
+  background: transparent;
+  color: #cbd5e1;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.active {
+  background: #ffffff;
+  color: #0b1220;
+}
+
+.error {
+  margin-top: 16px;
+  padding: 14px 14px;
+  border-radius: 12px;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #9f1239;
+  font-size: 14px;
+}
+
+.controls {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: end;
+}
+
+.label {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  color: #334155;
+  font-weight: 600;
+}
+
+.select {
+  min-width: 120px;
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  font-size: 14px;
+}
+
+.btn {
+  border: 0;
+  background: #0ea5e9;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn:hover {
+  filter: brightness(0.95);
+}
+
+.rightControls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.btnGhost {
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #0f172a;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.link {
+  color: #0ea5e9;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.card {
+  margin-top: 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 920px;
+}
+
+.table thead th {
+  text-align: left;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #475569;
+  background: #f8fafc;
+  padding: 14px 14px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.table tbody td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #eef2f7;
+  font-size: 14px;
+}
+
+.newRow {
+  background: #f0f9ff;
+}
+
+.empty {
+  text-align: center;
+  padding: 24px 14px;
+  color: #64748b;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.badgeNew {
+  background: #0ea5e9;
+  color: white;
+}
+
+.badgeInv {
+  background: #22c55e;
+  color: #052e16;
+}
+
+.smallBtn {
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.expandRow td {
+  background: #0b1220;
+  color: #e2e8f0;
+  padding: 0;
+}
+
+.detailsGrid {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.notesBox {
+  margin-top: 6px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 10px;
+  white-space: pre-wrap;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 13px;
+}
+
+.footerNote {
+  margin-top: 16px;
+  color: #64748b;
+  font-size: 13px;
+}
