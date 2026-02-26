@@ -1,17 +1,18 @@
 // 📄 src/app/soft-serve-machine-rentals/page.jsx
 
-import dynamic from 'next/dynamic';
-
-const FloatingBookNow = dynamic(() => import('@/components/FloatingBookNow'));
+import FloatingBookNow from '@/components/FloatingBookNow';
 
 export const metadata = {
-  title: 'Soft Serve Ice Cream Machine Rentals | Thirsty Dawg',
+  title: 'Soft Serve Machine Rentals in Pensacola, FL | Thirsty Dawg',
   description:
-    'Rent soft serve ice cream machines for parties, weddings, and events. Creamy ice cream delivered with setup and pickup included.',
+    'Rent a commercial soft serve ice cream machine for parties, weddings, schools, and events in Pensacola, Gulf Breeze, Navarre, Milton, Pace, and nearby areas. Delivery, setup, and pickup included.',
+  alternates: {
+    canonical: 'https://www.thirstydawgrentals.com/soft-serve-machine-rentals',
+  },
   openGraph: {
-    title: 'Soft Serve Ice Cream Machine Rentals | Thirsty Dawg',
+    title: 'Soft Serve Machine Rentals in Pensacola, FL | Thirsty Dawg',
     description:
-      'Make your next event unforgettable with real soft serve ice cream. Our machines are easy to use and come with full delivery and setup.',
+      'Commercial soft serve machine rentals delivered to your event. Easy to use, great for parties and weddings. Serving Pensacola and nearby Gulf Coast areas.',
     images: ['https://www.thirstydawgrentals.com/thirsty-dawg-logo.webp'],
     url: 'https://www.thirstydawgrentals.com/soft-serve-machine-rentals',
     type: 'website',
@@ -19,14 +20,50 @@ export const metadata = {
   metadataBase: new URL('https://www.thirstydawgrentals.com'),
 };
 
-export const viewport = {
-  canonical: 'https://www.thirstydawgrentals.com/soft-serve-machine-rentals',
-};
-
 export default function SoftServeMachineRentalsPage() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Thirsty Dawg Rentals',
+    url: 'https://www.thirstydawgrentals.com/soft-serve-machine-rentals',
+    telephone: '850-572-3796',
+    image: 'https://www.thirstydawgrentals.com/thirsty-dawg-logo.webp',
+    description:
+      'Soft serve ice cream machine rentals in Pensacola, FL and surrounding Gulf Coast areas. Delivery, setup, and pickup included.',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Pensacola',
+      addressRegion: 'FL',
+      postalCode: '32577',
+      addressCountry: 'US',
+    },
+    areaServed: [
+      'Pensacola, FL',
+      'Gulf Breeze, FL',
+      'Navarre, FL',
+      'Milton, FL',
+      'Pace, FL',
+      'Perdido Key, FL',
+      'Escambia County, FL',
+      'Santa Rosa County, FL',
+      'Baldwin County, AL',
+      'Orange Beach, AL',
+      'Foley, AL',
+      'Fairhope, AL',
+    ],
+    priceRange: '$$',
+    openingHours: 'Mo-Su 08:00-20:00',
+    sameAs: ['https://www.facebook.com/thirstydawgrentals'],
+  };
+
+  const hShadow = '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000';
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+
       <div>
+        {/* Hero */}
         <section
           style={{
             backgroundColor: '#009fdb',
@@ -37,40 +74,43 @@ export default function SoftServeMachineRentalsPage() {
             fontFamily: 'var(--font-chewy)',
           }}
         >
-          <h2
+          <h1
             style={{
-              fontSize: '2rem',
+              fontSize: '2.1rem',
               fontWeight: 'bold',
               color: 'white',
-              textShadow:
-                '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+              textShadow: hShadow,
+              margin: 0,
             }}
           >
-            🍦 Soft Serve Ice Cream Machine Rentals
-          </h2>
+            🍦 Soft Serve Machine Rentals in Pensacola, FL
+          </h1>
 
           <p
             style={{
               fontSize: '1.2rem',
               marginTop: '1rem',
               color: 'white',
-              textShadow:
-                '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+              textShadow: hShadow,
+              maxWidth: '900px',
+              marginInline: 'auto',
             }}
           >
-            Add a cool twist to your party with real soft serve ice cream! Perfect for events, weddings, schools, and more.
+            Add a cool twist to your event with real soft serve ice cream — perfect for birthday parties, weddings,
+            schools, church events, and company celebrations across Pensacola and nearby areas.
           </p>
 
           <p
             style={{
               fontSize: '1.2rem',
-              marginTop: '1.5rem',
+              marginTop: '1.25rem',
               color: 'white',
-              textShadow:
-                '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+              textShadow: hShadow,
+              maxWidth: '900px',
+              marginInline: 'auto',
             }}
           >
-            Our commercial machines deliver smooth, delicious soft serve right into bowls or cups — no scooping needed.
+            Our commercial machines dispense smooth soft serve into cups or bowls — fast, fun, and easy to serve.
           </p>
 
           <p
@@ -79,8 +119,7 @@ export default function SoftServeMachineRentalsPage() {
               marginTop: '1.5rem',
               fontWeight: 'bold',
               color: 'white',
-              textShadow:
-                '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+              textShadow: hShadow,
             }}
           >
             📞 Questions? Call or text{' '}
@@ -90,6 +129,7 @@ export default function SoftServeMachineRentalsPage() {
           </p>
         </section>
 
+        {/* Content */}
         <section
           style={{
             backgroundColor: '#fff',
@@ -99,42 +139,47 @@ export default function SoftServeMachineRentalsPage() {
             margin: '2rem auto',
             fontFamily: 'var(--font-chewy)',
             lineHeight: 1.6,
+            borderRadius: '14px',
+            boxShadow: '0 6px 18px rgba(0,0,0,0.06)',
           }}
         >
-          <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-            🎉 Great For:
-          </h3>
-          <ul style={{ marginLeft: '1rem', marginBottom: '2rem' }}>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 'bold', marginBottom: '1rem' }}>🎉 Great For</h2>
+          <ul style={{ marginLeft: '1.25rem', marginBottom: '2rem' }}>
             <li>✔️ Weddings and receptions</li>
             <li>✔️ School celebrations and appreciation events</li>
-            <li>✔️ Backyard birthday parties and church socials</li>
-            <li>✔️ Corporate events and summer fun</li>
+            <li>✔️ Backyard birthday parties and neighborhood get-togethers</li>
+            <li>✔️ Corporate events, employee appreciation, and summer fun</li>
           </ul>
 
-          <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-            🍨 What’s Included:
-          </h3>
-          <ul style={{ marginLeft: '1rem', marginBottom: '2rem' }}>
-            <li>✅ One soft serve machine (commercial-grade)</li>
-            <li>✅ Ice cream mix (vanilla, chocolate, or both)</li>
-            <li>✅ Setup, operation guide, and pickup</li>
-            <li>✅ Optional toppings: sprinkles, fudge, caramel (upon request)</li>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 'bold', marginBottom: '1rem' }}>🍨 What’s Included</h2>
+          <ul style={{ marginLeft: '1.25rem', marginBottom: '2rem' }}>
+            <li>✅ One commercial soft serve machine</li>
+            <li>✅ Soft serve mix (vanilla, chocolate, or swirl)</li>
+            <li>✅ Delivery, setup, quick how-to, and pickup</li>
+            <li>✅ Optional toppings (sprinkles, fudge, caramel) upon request</li>
           </ul>
 
-          <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-            ❓ FAQs:
-          </h3>
-          <ul style={{ marginLeft: '1rem' }}>
-            <li><strong>Is this self-serve?</strong> Yes, but best operated by an adult — just push the button to dispense.</li>
-            <li><strong>Can I use bowls or cups?</strong> Yes — we recommend serving in bowls or cups for easy portioning and cleanup.</li>
-            <li><strong>What’s the prep time?</strong> The machine is ready within 15–30 minutes after setup.</li>
-            <li><strong>Do I need to clean it?</strong> Nope — just drain it and we handle full sanitation after pickup.</li>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 'bold', marginBottom: '1rem' }}>❓ FAQs</h2>
+          <ul style={{ marginLeft: '1.25rem' }}>
+            <li>
+              <strong>Is it self-serve?</strong> Yes — guests can serve themselves, but we recommend adult supervision.
+            </li>
+            <li>
+              <strong>Do I need cups or bowls?</strong> Either works. Bowls/cups are easiest for portioning and cleanup.
+            </li>
+            <li>
+              <strong>How fast is setup?</strong> Typically ready within <strong>15–30 minutes</strong> after setup.
+            </li>
+            <li>
+              <strong>Do I need to clean it?</strong> No deep cleaning — just drain it. We handle full sanitation after pickup.
+            </li>
           </ul>
 
           <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
             <a
               href="/booking"
               style={{
+                display: 'inline-block',
                 backgroundColor: '#009fdb',
                 color: 'white',
                 padding: '1rem 2rem',
@@ -144,9 +189,13 @@ export default function SoftServeMachineRentalsPage() {
                 boxShadow: '0 8px 16px rgba(0,0,0,0.2)',
               }}
             >
-              📅 Book Your Soft Serve Machine Now
+              📅 Book Your Soft Serve Machine
             </a>
           </div>
+
+          <p style={{ textAlign: 'center', marginTop: '1.25rem', color: '#666', fontSize: '0.95rem' }}>
+            Serving Pensacola, Gulf Breeze, Navarre, Milton, Pace, and nearby Gulf Coast areas.
+          </p>
         </section>
 
         <FloatingBookNow />
