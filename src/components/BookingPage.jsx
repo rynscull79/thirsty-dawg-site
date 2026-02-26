@@ -18,6 +18,7 @@ const [serviceType, setServiceType] = useState('');
 const [calculatingFee, setCalculatingFee] = useState(false);
 const autocompleteRef = useRef(null);
 const [formData, setFormData] = useState({ street: '', city: '', state: '', zip: '' });
+const [bookingSource, setBookingSource] = useState('website');
   async function calculateDeliveryFee(address) {
     try {
       setCalculatingFee(true);
@@ -92,6 +93,7 @@ rentalEnd: new Date(raw.rental_end).toISOString(),
     rentalLength: calculateRentalLength(raw.date_needed, raw.rental_end),
   
 deliveryFee: deliveryFee !== null ? deliveryFee : 0,
+source: bookingSource || 'website',
 };
   try {
     const response = await fetch('https://booking-backend-production-b048.up.railway.app/api/bookings', {
@@ -114,6 +116,19 @@ deliveryFee: deliveryFee !== null ? deliveryFee : 0,
   }
 };
 
+useEffect(() => {
+  const params = new URLSearchParams(window.location.search);
+  const src = params.get('source');
+
+  if (src) {
+    localStorage.setItem('td_booking_source', src);
+    setBookingSource(src);
+  } else {
+    // If no source in URL, use whatever was saved before (or default to "website")
+    const stored = localStorage.getItem('td_booking_source');
+    if (stored) setBookingSource(stored);
+  }
+}, []);
 useEffect(() => {
   const fullAddress = `${formData.street || ''}, ${formData.city || ''}, ${formData.state || ''} ${formData.zip || ''}`;
   if (formData.street && formData.city && formData.state && formData.zip) {
