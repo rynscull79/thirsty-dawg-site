@@ -271,7 +271,6 @@ export default function RentalsPage() {
         </section>
 
         <OurRentals />
-        <OurRentals />
         <FloatingBookNow />
       </div>
     </>
