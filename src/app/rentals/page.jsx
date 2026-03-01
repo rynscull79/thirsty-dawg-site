@@ -143,7 +143,7 @@ export default function RentalsPage() {
         </section>
 
         <RentalsGallery />
-                <RentalsGallery />
+              
 
         {/* Why Machine Quality Matters */}
         <section
