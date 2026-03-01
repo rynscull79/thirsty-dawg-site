@@ -1,3 +1,5 @@
+// File: src/app/rentals/page.jsx
+
 import OurRentals from '@/components/OurRentals';
 import RentalsGallery from '@/components/RentalsGallery';
 import dynamic from 'next/dynamic';
@@ -55,6 +57,119 @@ export default function RentalsPage() {
     sameAs: ['https://www.facebook.com/thirstydawgrentals'],
   };
 
+  const pageWrapStyle = {
+    padding: '0 1rem 2rem',
+  };
+
+  const heroStyle = {
+    backgroundColor: '#009fdb',
+    color: 'white',
+    padding: '3rem 2rem',
+    borderRadius: '1rem',
+    textAlign: 'center',
+    fontFamily: 'var(--font-chewy)',
+  };
+
+  const heroHeadingStyle = {
+    fontSize: '2rem',
+    fontWeight: 'bold',
+    color: 'white',
+    textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+    margin: 0,
+  };
+
+  const heroParaStyle = {
+    fontSize: '1.2rem',
+    marginTop: '1rem',
+    color: 'white',
+    textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+  };
+
+  const heroParaSmallStyle = {
+    fontSize: '1.05rem',
+    marginTop: '1rem',
+    color: 'white',
+    textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+  };
+
+  const heroParaBoldStyle = {
+    fontSize: '1.2rem',
+    marginTop: '1.5rem',
+    fontWeight: 'bold',
+    color: 'white',
+    textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+  };
+
+  const sectionCardStyle = {
+    margin: '2rem auto',
+    maxWidth: '1100px',
+    padding: '2rem 1.5rem',
+    borderRadius: '1rem',
+    background: 'rgba(255,255,255,0.9)',
+    border: '3px solid rgba(0,0,0,0.12)',
+    boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
+    fontFamily: 'var(--font-chewy)',
+  };
+
+  const sectionTitleStyle = {
+    fontSize: '1.9rem',
+    margin: 0,
+    textAlign: 'center',
+    color: '#0b2230',
+    textShadow:
+      '-1px -1px 0 rgba(255,255,255,0.6), 1px -1px 0 rgba(255,255,255,0.6), -1px 1px 0 rgba(255,255,255,0.6), 1px 1px 0 rgba(255,255,255,0.6)',
+  };
+
+  const sectionIntroStyle = {
+    marginTop: '0.9rem',
+    fontSize: '1.15rem',
+    lineHeight: 1.55,
+    color: '#0b2230',
+    textAlign: 'center',
+  };
+
+  const gridStyle = {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+    gap: '1rem',
+    marginTop: '1.25rem',
+  };
+
+  const gridCardStyle = {
+    borderRadius: '0.9rem',
+    padding: '1rem 1.1rem',
+    background: 'rgba(0,159,219,0.08)',
+    border: '2px solid rgba(0,0,0,0.08)',
+  };
+
+  const gridCardTitleRowStyle = {
+    fontSize: '1.35rem',
+    marginBottom: '0.4rem',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.5rem',
+    color: '#0b2230',
+  };
+
+  const gridCardTextStyle = {
+    margin: 0,
+    fontSize: '1.05rem',
+    lineHeight: 1.45,
+    color: '#0b2230',
+  };
+
+  const bottomLineStyle = {
+    marginTop: '1.25rem',
+    padding: '1rem 1.1rem',
+    borderRadius: '0.9rem',
+    background: 'rgba(0,0,0,0.04)',
+    border: '2px dashed rgba(0,0,0,0.18)',
+    textAlign: 'center',
+    color: '#0b2230',
+    fontSize: '1.1rem',
+    lineHeight: 1.5,
+  };
+
   return (
     <>
       <script
@@ -62,76 +177,29 @@ export default function RentalsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <div>
-        <section
-          style={{
-            backgroundColor: '#009fdb',
-            color: 'white',
-            padding: '3rem 2rem',
-            borderRadius: '1rem',
-            textAlign: 'center',
-            fontFamily: 'var(--font-chewy)',
-          }}
-        >
-          <h1
-            style={{
-              fontSize: '2rem',
-              fontWeight: 'bold',
-              color: 'white',
-              textShadow:
-                '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
-              margin: 0,
-            }}
-          >
+      <div style={pageWrapStyle}>
+        {/* Hero */}
+        <section style={heroStyle}>
+          <h1 style={heroHeadingStyle}>
             🍹 Frozen Drink & Soft Serve Machine Rentals in Pensacola, FL
           </h1>
 
-          <p
-            style={{
-              fontSize: '1.2rem',
-              marginTop: '1rem',
-              color: 'white',
-              textShadow:
-                '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
-            }}
-          >
-            Choose from single or dual flavor frozen drink machines — or cool things down with our soft serve ice cream rentals!
+          <p style={heroParaStyle}>
+            Choose from single or dual flavor frozen drink machines — or cool things down with our
+            soft serve ice cream rentals!
           </p>
 
-          <p
-            style={{
-              fontSize: '1.05rem',
-              marginTop: '1rem',
-              color: 'white',
-              textShadow:
-                '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
-            }}
-          >
-            Serving Pensacola, Gulf Breeze, Navarre, Milton, Pace, Perdido Key, and nearby areas — local delivery & setup (no shipping).
+          <p style={heroParaSmallStyle}>
+            Serving Pensacola, Gulf Breeze, Navarre, Milton, Pace, Perdido Key, and nearby areas —
+            local delivery & setup (no shipping).
           </p>
 
-          <p
-            style={{
-              fontSize: '1.2rem',
-              marginTop: '1.5rem',
-              color: 'white',
-              textShadow:
-                '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
-            }}
-          >
-            Perfect for birthday parties, beach days, weddings, schools, and vacation rentals — Thirsty Dawg brings the frozen fun to you. No ice needed, no cleanup hassle.
+          <p style={{ ...heroParaStyle, marginTop: '1.5rem' }}>
+            Perfect for birthday parties, beach days, weddings, schools, and vacation rentals —
+            Thirsty Dawg brings the frozen fun to you. No ice needed, no cleanup hassle.
           </p>
 
-          <p
-            style={{
-              fontSize: '1.2rem',
-              marginTop: '1.5rem',
-              fontWeight: 'bold',
-              color: 'white',
-              textShadow:
-                '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
-            }}
-          >
+          <p style={heroParaBoldStyle}>
             📞 Have questions? Call or text us at{' '}
             <a
               href="tel:8505723796"
@@ -142,57 +210,23 @@ export default function RentalsPage() {
           </p>
         </section>
 
+        {/* Gallery */}
         <RentalsGallery />
-              
 
-        {/* Why Machine Quality Matters */}
-        <section
-          style={{
-            margin: '2rem auto',
-            maxWidth: '1100px',
-            padding: '2rem 1.5rem',
-            borderRadius: '1rem',
-            background: 'rgba(255,255,255,0.9)',
-            border: '3px solid rgba(0,0,0,0.12)',
-            boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
-            fontFamily: 'var(--font-chewy)',
-          }}
-        >
-          <h2
-            style={{
-              fontSize: '1.9rem',
-              margin: 0,
-              textAlign: 'center',
-              color: '#0b2230',
-              textShadow:
-                '-1px -1px 0 rgba(255,255,255,0.6), 1px -1px 0 rgba(255,255,255,0.6), -1px 1px 0 rgba(255,255,255,0.6), 1px 1px 0 rgba(255,255,255,0.6)',
-            }}
-          >
-            Why Machine Quality Matters
-          </h2>
+        {/* Rentals / Machine Descriptions */}
+        <OurRentals />
 
-          <p
-            style={{
-              marginTop: '0.9rem',
-              fontSize: '1.15rem',
-              lineHeight: 1.55,
-              color: '#0b2230',
-              textAlign: 'center',
-            }}
-          >
-            Not all frozen drink machines are built for outdoor events and Gulf Coast heat.
-            For a smooth, consistent freeze — and drinks that stay frozen during peak demand —
-            equipment quality makes a big difference.
+        {/* Why Machine Quality Matters (moved BELOW the rentals so it reads in the order you want) */}
+        <section style={sectionCardStyle}>
+          <h2 style={sectionTitleStyle}>Why Machine Quality Matters</h2>
+
+          <p style={sectionIntroStyle}>
+            Not all frozen drink machines are built for outdoor events and Gulf Coast heat. For a
+            smooth, consistent freeze — and drinks that stay frozen during peak demand — equipment
+            quality makes a big difference.
           </p>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-              gap: '1rem',
-              marginTop: '1.25rem',
-            }}
-          >
+          <div style={gridStyle}>
             {[
               {
                 title: 'Built for Florida Heat',
@@ -215,62 +249,23 @@ export default function RentalsPage() {
                 icon: '✨',
               },
             ].map((item) => (
-              <div
-                key={item.title}
-                style={{
-                  borderRadius: '0.9rem',
-                  padding: '1rem 1.1rem',
-                  background: 'rgba(0,159,219,0.08)',
-                  border: '2px solid rgba(0,0,0,0.08)',
-                }}
-              >
-                <div
-                  style={{
-                    fontSize: '1.35rem',
-                    marginBottom: '0.4rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    color: '#0b2230',
-                  }}
-                >
+              <div key={item.title} style={gridCardStyle}>
+                <div style={gridCardTitleRowStyle}>
                   <span aria-hidden="true">{item.icon}</span>
                   <span style={{ fontWeight: 'bold' }}>{item.title}</span>
                 </div>
 
-                <p
-                  style={{
-                    margin: 0,
-                    fontSize: '1.05rem',
-                    lineHeight: 1.45,
-                    color: '#0b2230',
-                  }}
-                >
-                  {item.text}
-                </p>
+                <p style={gridCardTextStyle}>{item.text}</p>
               </div>
             ))}
           </div>
 
-          <div
-            style={{
-              marginTop: '1.25rem',
-              padding: '1rem 1.1rem',
-              borderRadius: '0.9rem',
-              background: 'rgba(0,0,0,0.04)',
-              border: '2px dashed rgba(0,0,0,0.18)',
-              textAlign: 'center',
-              color: '#0b2230',
-              fontSize: '1.1rem',
-              lineHeight: 1.5,
-            }}
-          >
+          <div style={bottomLineStyle}>
             <strong>Bottom line:</strong> When you’re hosting an event, you want the machine to
             perform like a champ — so you can focus on your guests, not troubleshooting equipment.
           </div>
         </section>
 
-        <OurRentals />
         <FloatingBookNow />
       </div>
     </>
