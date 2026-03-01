@@ -143,6 +143,134 @@ export default function RentalsPage() {
         </section>
 
         <RentalsGallery />
+                <RentalsGallery />
+
+        {/* Why Machine Quality Matters */}
+        <section
+          style={{
+            margin: '2rem auto',
+            maxWidth: '1100px',
+            padding: '2rem 1.5rem',
+            borderRadius: '1rem',
+            background: 'rgba(255,255,255,0.9)',
+            border: '3px solid rgba(0,0,0,0.12)',
+            boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
+            fontFamily: 'var(--font-chewy)',
+          }}
+        >
+          <h2
+            style={{
+              fontSize: '1.9rem',
+              margin: 0,
+              textAlign: 'center',
+              color: '#0b2230',
+              textShadow:
+                '-1px -1px 0 rgba(255,255,255,0.6), 1px -1px 0 rgba(255,255,255,0.6), -1px 1px 0 rgba(255,255,255,0.6), 1px 1px 0 rgba(255,255,255,0.6)',
+            }}
+          >
+            Why Machine Quality Matters
+          </h2>
+
+          <p
+            style={{
+              marginTop: '0.9rem',
+              fontSize: '1.15rem',
+              lineHeight: 1.55,
+              color: '#0b2230',
+              textAlign: 'center',
+            }}
+          >
+            Not all frozen drink machines are built for outdoor events and Gulf Coast heat.
+            For a smooth, consistent freeze — and drinks that stay frozen during peak demand —
+            equipment quality makes a big difference.
+          </p>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+              gap: '1rem',
+              marginTop: '1.25rem',
+            }}
+          >
+            {[
+              {
+                title: 'Built for Florida Heat',
+                text: 'Commercial-grade performance that holds temperature better in hot, humid weather.',
+                icon: '☀️',
+              },
+              {
+                title: 'Keeps Up With Crowds',
+                text: 'Higher output means fewer “waits” and more consistent slush all event long.',
+                icon: '🥤',
+              },
+              {
+                title: 'More Reliable Results',
+                text: 'Stable freezing and mixing helps prevent watery drinks and half-frozen texture.',
+                icon: '✅',
+              },
+              {
+                title: 'Looks Professional',
+                text: 'Clean, polished presentation that fits weddings, schools, and corporate events.',
+                icon: '✨',
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                style={{
+                  borderRadius: '0.9rem',
+                  padding: '1rem 1.1rem',
+                  background: 'rgba(0,159,219,0.08)',
+                  border: '2px solid rgba(0,0,0,0.08)',
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: '1.35rem',
+                    marginBottom: '0.4rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    color: '#0b2230',
+                  }}
+                >
+                  <span aria-hidden="true">{item.icon}</span>
+                  <span style={{ fontWeight: 'bold' }}>{item.title}</span>
+                </div>
+
+                <p
+                  style={{
+                    margin: 0,
+                    fontSize: '1.05rem',
+                    lineHeight: 1.45,
+                    color: '#0b2230',
+                  }}
+                >
+                  {item.text}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div
+            style={{
+              marginTop: '1.25rem',
+              padding: '1rem 1.1rem',
+              borderRadius: '0.9rem',
+              background: 'rgba(0,0,0,0.04)',
+              border: '2px dashed rgba(0,0,0,0.18)',
+              textAlign: 'center',
+              color: '#0b2230',
+              fontSize: '1.1rem',
+              lineHeight: 1.5,
+            }}
+          >
+            <strong>Bottom line:</strong> When you’re hosting an event, you want the machine to
+            perform like a champ — so you can focus on your guests, not troubleshooting equipment.
+          </div>
+        </section>
+
+        <OurRentals />
         <OurRentals />
         <FloatingBookNow />
       </div>
