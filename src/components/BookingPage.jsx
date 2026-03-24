@@ -96,11 +96,12 @@ deliveryFee: deliveryFee !== null ? deliveryFee : 0,
 source: bookingSource || 'website',
 };
   try {
-    const response = await fetch('https://booking-backend-production-b048.up.railway.app/api/bookings', {
+    const response = await fetch('https://thirsty-dawg-accounting-backend-production.up.railway.app/api/public-booking-intake/thirsty-dawg', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify(data),
 });
+
 
 
     const result = await response.json();
