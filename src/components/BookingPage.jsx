@@ -104,13 +104,14 @@ source: bookingSource || 'website',
 
 
 
-    const result = await response.json();
-    if (result.success) {
-      console.log('✅ Booking sent successfully:', result);
-      setSubmitted(true);
-    } else {
-      alert('⚠️ Failed to send booking. Try again.');
-    }
+   const result = await response.json();
+if (response.ok && result.ok) {
+  console.log('✅ Booking sent successfully:', result);
+  setSubmitted(true);
+} else {
+  console.error('❌ Booking failed:', result);
+  alert('⚠️ Failed to send booking. Try again.');
+}
   } catch (err) {
     console.error('Error sending booking:', err);
     alert('❌ Something went wrong. Please try again.');
