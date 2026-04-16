@@ -324,6 +324,58 @@ export default function HomeClient() {
         </div>
       </section>
 
+            <section
+        style={{
+          padding: '50px 20px',
+          margin: '40px 0',
+          borderRadius: '16px',
+          backgroundColor: '#f8fbff',
+          textAlign: 'center',
+          boxShadow: '0 4px 10px rgba(0, 0, 0, 0.05)',
+        }}
+      >
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <h2
+            style={{
+              fontSize: '2rem',
+              color: '#009fdb',
+              marginBottom: '1rem',
+              fontFamily: '"Chewy", cursive',
+            }}
+          >
+            Planning a Larger Event?
+          </h2>
+
+          <p
+            style={{
+              fontSize: '1.1rem',
+              lineHeight: '1.7',
+              color: '#1f2937',
+              marginBottom: '1.5rem',
+            }}
+          >
+            If you need more than frozen drinks or ice cream, you can explore
+            additional party and event services like bartenders, DJs, catering,
+            rentals, and more across the Gulf Coast.
+          </p>
+
+          <a
+            href="https://www.gulfcoasteventhub.com"
+            style={{
+              display: 'inline-block',
+              padding: '12px 22px',
+              backgroundColor: '#1E5FAF',
+              color: '#ffffff',
+              textDecoration: 'none',
+              borderRadius: '10px',
+              fontWeight: 'bold',
+            }}
+          >
+            Explore Gulf Coast Event Hub
+          </a>
+        </div>
+      </section>
+
       <DeliveryArea />
     </div>
   );
