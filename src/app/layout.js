@@ -8,6 +8,7 @@ import HeaderNav from '@/components/HeaderNav';
 const FloatingBookNow = dynamic(() => import('@/components/FloatingBookNow'));
 import Footer from '@/components/Footer';
 import dynamic from 'next/dynamic';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 
 
@@ -180,6 +181,7 @@ export default function RootLayout({ children }) {
 <Footer />
 
       </body>
+      <GoogleAnalytics gaId="G-6R94KFTC67" />
     </html>
   );
 }
