@@ -165,23 +165,23 @@ export default function RootLayout({ children }) {
         <HeaderNav />
 
         <Image
-          src="/Pensacola-Beach.webp"
-          alt="Thirsty Dawg Header"
-          width={1920}
-          height={600}
-          sizes="100vw"
-          priority
-          className="header-image"
-          style={{
-            width: '100%',
-            height: 'auto',
-            objectFit: 'cover',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            zIndex: 0
-          }}
-        />
+  src="/Pensacola-Beach.webp"
+  alt="Thirsty Dawg Header"
+  width={1152}
+  height={378}
+  sizes="(max-width: 768px) 100vw, 1152px"
+  priority
+  className="header-image"
+  style={{
+    width: '100%',
+    height: 'auto',
+    objectFit: 'cover',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    zIndex: 0
+  }}
+/>
 
         <header
           style={{
