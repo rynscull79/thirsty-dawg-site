@@ -1,22 +1,23 @@
 'use client';
 
 // 📁 src/components/OurRentals.jsx
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 
 export default function OurRentals() {
-  const [machineType, setMachineType] = useState('single');
-  const [secondMachineType, setSecondMachineType] = useState('');
-  const [estimatedTotal, setEstimatedTotal] = useState(null);
-  const [range, setRange] = useState([
-    {
-      startDate: new Date(),
-      endDate: new Date(),
-      key: 'selection',
-    },
-  ]);
+const [machineType, setMachineType] = useState('single');
+const [secondMachineType, setSecondMachineType] = useState('');
+const [estimatedTotal, setEstimatedTotal] = useState(null);
+const [isMobile, setIsMobile] = useState(false);
+const [range, setRange] = useState([
+  {
+    startDate: new Date(),
+    endDate: new Date(),
+    key: 'selection',
+  },
+]);
 
   const calculateTotal = () => {
     const prices = {
@@ -49,6 +50,17 @@ export default function OurRentals() {
     setEstimatedTotal(`$${(total + tax).toFixed(2)} (includes 7.5% tax)`);
   };
 
+useEffect(() => {
+  const checkMobile = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+
+  checkMobile();
+  window.addEventListener('resize', checkMobile);
+
+  return () => window.removeEventListener('resize', checkMobile);
+}, []);
+
   const infoCardStyle = {
     background: 'linear-gradient(180deg, #eef9ff 0%, #dff4ff 100%)',
     padding: '1.5rem',
@@ -70,6 +82,8 @@ export default function OurRentals() {
     color: 'var(--td-black)',
     fontFamily: 'var(--body-font)',
   };
+
+  
 
   return (
     <div
@@ -341,22 +355,32 @@ export default function OurRentals() {
           </div>
         </div>
 
-        <div
-          style={{
-            marginTop: '2rem',
-            background: 'linear-gradient(180deg, #eef9ff 0%, #dff4ff 100%)',
-            padding: '1.5rem',
-            borderRadius: '18px',
-            boxShadow: '0 4px 10px rgba(0,0,0,0.06)',
-            border: '2px solid rgba(25, 181, 241, 0.18)',
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            gap: '2rem',
-            fontFamily: 'var(--body-font)',
-          }}
-        >
-          <div style={{ flex: '1 1 300px' }}>
+       <div
+  style={{
+    marginTop: '2rem',
+    background: 'linear-gradient(180deg, #eef9ff 0%, #dff4ff 100%)',
+    padding: isMobile ? '1rem' : '1.5rem',
+    borderRadius: '18px',
+    boxShadow: '0 4px 10px rgba(0,0,0,0.06)',
+    border: '2px solid rgba(25, 181, 241, 0.18)',
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    gap: isMobile ? '1rem' : '2rem',
+    fontFamily: 'var(--body-font)',
+    width: '100%',
+    maxWidth: '100%',
+    boxSizing: 'border-box',
+    overflow: 'hidden',
+  }}
+>
+          <div
+  style={{
+    flex: isMobile ? '1 1 100%' : '1 1 300px',
+    minWidth: 0,
+    width: '100%',
+  }}
+>
             <h4
               style={{
                 textAlign: 'center',
@@ -393,7 +417,13 @@ export default function OurRentals() {
             </ul>
           </div>
 
-          <div style={{ flex: '1 1 300px' }}>
+          <div
+  style={{
+    flex: isMobile ? '1 1 100%' : '1 1 300px',
+    minWidth: 0,
+    width: '100%',
+  }}
+>
             <h4
               style={{
                 textAlign: 'center',
@@ -430,13 +460,75 @@ export default function OurRentals() {
                 Select Rental Dates:
               </label>
 
-              <DateRange
-                editableDateInputs={true}
-                onChange={(item) => setRange([item.selection])}
-                moveRangeOnFirstSelection={false}
-                ranges={range}
-                minDate={new Date()}
-              />
+  {isMobile ? (
+  <>
+    <label style={{ fontWeight: '700', color: 'var(--td-black)' }}>
+      Rental Start Date:
+    </label>
+    <input
+      type="date"
+      value={range[0].startDate.toISOString().split('T')[0]}
+      onChange={(e) =>
+        setRange([
+          {
+            ...range[0],
+            startDate: new Date(e.target.value),
+          },
+        ])
+      }
+      style={{
+        width: '100%',
+        padding: '0.75rem',
+        borderRadius: '10px',
+        border: '1px solid rgba(0,0,0,0.15)',
+        fontFamily: 'var(--body-font)',
+      }}
+    />
+
+    <label style={{ fontWeight: '700', color: 'var(--td-black)' }}>
+      Rental End Date:
+    </label>
+    <input
+      type="date"
+      value={range[0].endDate.toISOString().split('T')[0]}
+      onChange={(e) =>
+        setRange([
+          {
+            ...range[0],
+            endDate: new Date(e.target.value),
+          },
+        ])
+      }
+      style={{
+        width: '100%',
+        padding: '0.75rem',
+        borderRadius: '10px',
+        border: '1px solid rgba(0,0,0,0.15)',
+        fontFamily: 'var(--body-font)',
+      }}
+    />
+  </>
+) : (
+  <div
+    style={{
+      width: '100%',
+      overflowX: 'auto',
+      borderRadius: '14px',
+      background: '#ffffff',
+    }}
+  >
+    <DateRange
+      editableDateInputs={true}
+      onChange={(item) => setRange([item.selection])}
+      moveRangeOnFirstSelection={false}
+      ranges={range}
+      minDate={new Date()}
+      months={1}
+      direction="horizontal"
+      rangeColors={['#19b5f1']}
+    />
+  </div>
+)}
 
               <label
                 htmlFor="machineType"
