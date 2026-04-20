@@ -9,45 +9,48 @@ export default function HeaderNav() {
 
   const closeMenu = () => setMenuOpen(false);
 
+  const navLinks = [
+    { href: '/', label: 'Home' },
+    { href: '/rentals', label: 'Frozen Drinks & Soft Serve' },
+    { href: '/icecream', label: 'Frozen Novelties' },
+    { href: '/our-story', label: 'Our Story' },
+    { href: '/faq', label: 'FAQ' },
+    { href: '/booking', label: 'Booking' },
+  ];
+
   return (
     <nav className="nav-wrapper">
-      {/* Desktop menu */}
       <div className="nav-desktop">
-  <Link href="/" style={{ padding: '12px 16px', display: 'inline-block' }}>Home</Link>
-  <Link href="/rentals" style={{ padding: '12px 16px', display: 'inline-block' }}>Frozen Drink/Softserve</Link>
-  <Link href="/icecream" onClick={closeMenu} style={{ padding: '12px 16px', display: 'inline-block' }}>
-  Ice Cream Cart
-</Link>
+        {navLinks.map((link) => (
+          <Link key={link.href} href={link.href} className="nav-link">
+            {link.label}
+          </Link>
+        ))}
+      </div>
 
-  <Link href="/our-story" style={{ padding: '12px 16px', display: 'inline-block' }}>Our Story</Link>
-  <Link href="/faq" style={{ padding: '12px 16px', display: 'inline-block' }}>FAQ</Link>
-  <Link href="/booking" style={{ padding: '12px 16px', display: 'inline-block' }}>Booking</Link>
-</div>
-
-
-      {/* Hamburger / Close icon */}
-      <div
+      <button
+        type="button"
         className="nav-toggle"
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Toggle navigation menu"
+        aria-expanded={menuOpen}
       >
         {menuOpen ? '✕' : '☰'}
-      </div>
+      </button>
 
-      {/* Mobile dropdown */}
       {menuOpen && (
         <div className="nav-mobile-dropdown">
-  <Link href="/" onClick={closeMenu} style={{ padding: '12px 16px', display: 'inline-block' }}>Home</Link>
-  <Link href="/rentals" onClick={closeMenu} style={{ padding: '12px 16px', display: 'inline-block' }}>Our Rentals</Link>
-  <Link href="/icecream" onClick={closeMenu} style={{ padding: '12px 16px', display: 'inline-block' }}>
-  Frozen Novelties
-</Link>
-
-  <Link href="/our-story" onClick={closeMenu} style={{ padding: '12px 16px', display: 'inline-block' }}>Our Story</Link>
-  <Link href="/faq" onClick={closeMenu} style={{ padding: '12px 16px', display: 'inline-block' }}>FAQ</Link>
-  <Link href="/booking" onClick={closeMenu} style={{ padding: '12px 16px', display: 'inline-block' }}>Booking</Link>
-</div>
-
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={closeMenu}
+              className="nav-mobile-link"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
       )}
     </nav>
   );

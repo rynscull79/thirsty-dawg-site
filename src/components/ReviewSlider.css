@@ -1,0 +1,121 @@
+.review-slider {
+  background: linear-gradient(180deg, #f6edd0 0%, #fdf8ea 100%);
+  padding: 2rem;
+  border-radius: 24px;
+  box-shadow: var(--shadow-soft);
+  margin: 0;
+}
+
+.review-slider__title {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 2rem;
+  color: var(--td-blue-deep);
+}
+
+.review-slider__row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.review-slider__arrow {
+  width: 62px;
+  height: 62px;
+  flex: 0 0 62px;
+  border: none;
+  border-radius: 999px;
+  background: var(--td-blue);
+  color: var(--td-white);
+  font-family: var(--heading-font);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.review-slider__arrow:hover {
+  transform: translateY(-2px);
+  background: var(--td-blue-deep);
+}
+
+.review-slider__card {
+  width: min(100%, 640px);
+  min-width: 0;
+  background: var(--td-white);
+  padding: 1.6rem 1.8rem;
+  border-radius: 20px;
+  border: 2px solid rgba(247, 148, 29, 0.28);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.review-slider__quote {
+  margin: 0 0 1rem;
+  color: var(--td-black);
+  font-family: var(--body-font);
+  font-size: 1.08rem;
+  line-height: 1.75;
+  font-style: italic;
+}
+
+.review-slider__name {
+  margin: 0;
+  color: var(--td-blue-deep);
+  font-family: var(--body-font);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  .review-slider {
+    padding: 1.25rem;
+  }
+
+  .review-slider__title {
+    font-size: 1.7rem;
+    line-height: 1.15;
+  }
+
+ .review-slider__row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.review-slider__controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+  .review-slider__arrow {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .review-slider__card {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .review-slider__quote {
+    font-size: 1rem;
+    line-height: 1.6;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .review-slider__name {
+    font-size: 1rem;
+  }
+}

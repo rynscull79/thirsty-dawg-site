@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import './globals.css';
-import { Chewy } from 'next/font/google';
+import { Chewy, Fredoka } from 'next/font/google';
 import HeaderNav from '@/components/HeaderNav';
 import Footer from '@/components/Footer';
 import dynamic from 'next/dynamic';
@@ -11,7 +11,16 @@ import Script from 'next/script';
 
 const FloatingBookNow = dynamic(() => import('@/components/FloatingBookNow'));
 
-const chewy = Chewy({ subsets: ['latin'], weight: '400', variable: '--font-chewy' });
+const chewy = Chewy({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-chewy'
+});
+
+const fredoka = Fredoka({
+  subsets: ['latin'],
+  variable: '--font-fredoka'
+});
 
 export const metadata = {
   title: 'Thirsty Dawg Rentals | Frozen Drink Machine Rentals in Pensacola',
@@ -33,7 +42,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={chewy.variable}>
+    <html lang="en" className={`${chewy.variable} ${fredoka.variable}`}>
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-6R94KFTC67"
@@ -143,15 +152,7 @@ export default function RootLayout({ children }) {
         }}
       />
 
-      <body
-        style={{
-          fontFamily: 'var(--font-chewy)',
-          backgroundColor: '#f7f9f8',
-          color: '#1f2937',
-          margin: 0,
-          position: 'relative'
-        }}
-      >
+     <body style={{ position: 'relative' }}>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-NXWPV7L"
@@ -199,7 +200,8 @@ export default function RootLayout({ children }) {
           style={{
             maxWidth: '1140px',
             margin: '0 auto',
-            backgroundColor: '#e6f0fa',
+            backgroundColor: 'var(--td-white)',
+boxShadow: 'var(--shadow-soft)',
             padding: '2rem',
             borderRadius: '1rem',
             zIndex: 2,

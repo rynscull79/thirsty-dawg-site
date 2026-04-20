@@ -62,70 +62,81 @@ export default function RentalsPage() {
   };
 
   const heroStyle = {
-    backgroundColor: '#009fdb',
-    color: 'white',
+    background: 'linear-gradient(180deg, var(--td-blue) 0%, var(--td-blue-deep) 100%)',
+    color: 'var(--td-white)',
     padding: '3rem 2rem',
-    borderRadius: '1rem',
+    borderRadius: '22px',
     textAlign: 'center',
-    fontFamily: 'var(--font-chewy)',
+    boxShadow: 'var(--shadow-soft)',
+    maxWidth: '1100px',
+    margin: '0 auto 2rem',
   };
 
   const heroHeadingStyle = {
-    fontSize: '2rem',
-    fontWeight: 'bold',
-    color: 'white',
-    textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+    fontSize: '2.3rem',
+    fontWeight: '700',
+    color: 'var(--td-white)',
     margin: 0,
+    fontFamily: 'var(--heading-font)',
+    lineHeight: 1.1,
   };
 
   const heroParaStyle = {
-    fontSize: '1.2rem',
+    fontSize: '1.15rem',
     marginTop: '1rem',
-    color: 'white',
-    textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+    color: 'var(--td-white)',
+    fontFamily: 'var(--body-font)',
+    lineHeight: 1.65,
+    maxWidth: '820px',
+    marginInline: 'auto',
   };
 
   const heroParaSmallStyle = {
     fontSize: '1.05rem',
     marginTop: '1rem',
-    color: 'white',
-    textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+    color: 'var(--td-white)',
+    fontFamily: 'var(--body-font)',
+    lineHeight: 1.65,
+    maxWidth: '820px',
+    marginInline: 'auto',
   };
 
   const heroParaBoldStyle = {
-    fontSize: '1.2rem',
+    fontSize: '1.15rem',
     marginTop: '1.5rem',
-    fontWeight: 'bold',
-    color: 'white',
-    textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+    fontWeight: '700',
+    color: 'var(--td-white)',
+    fontFamily: 'var(--body-font)',
+    lineHeight: 1.6,
   };
 
   const sectionCardStyle = {
     margin: '2rem auto',
     maxWidth: '1100px',
     padding: '2rem 1.5rem',
-    borderRadius: '1rem',
-    background: 'rgba(255,255,255,0.9)',
-    border: '3px solid rgba(0,0,0,0.12)',
-    boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
-    fontFamily: 'var(--font-chewy)',
+    borderRadius: '22px',
+    background: 'rgba(255,255,255,0.96)',
+    boxShadow: 'var(--shadow-soft)',
   };
 
   const sectionTitleStyle = {
-    fontSize: '1.9rem',
+    fontSize: '2rem',
     margin: 0,
     textAlign: 'center',
-    color: '#0b2230',
-    textShadow:
-      '-1px -1px 0 rgba(255,255,255,0.6), 1px -1px 0 rgba(255,255,255,0.6), -1px 1px 0 rgba(255,255,255,0.6), 1px 1px 0 rgba(255,255,255,0.6)',
+    color: 'var(--td-blue)',
+    fontFamily: 'var(--heading-font)',
+    lineHeight: 1.1,
   };
 
   const sectionIntroStyle = {
     marginTop: '0.9rem',
-    fontSize: '1.15rem',
-    lineHeight: 1.55,
-    color: '#0b2230',
+    fontSize: '1.08rem',
+    lineHeight: 1.7,
+    color: 'var(--td-black)',
     textAlign: 'center',
+    fontFamily: 'var(--body-font)',
+    maxWidth: '850px',
+    marginInline: 'auto',
   };
 
   const gridStyle = {
@@ -136,39 +147,45 @@ export default function RentalsPage() {
   };
 
   const gridCardStyle = {
-    borderRadius: '0.9rem',
+    borderRadius: '18px',
     padding: '1rem 1.1rem',
-    background: 'rgba(0,159,219,0.08)',
-    border: '2px solid rgba(0,0,0,0.08)',
+    background: 'linear-gradient(180deg, #eef9ff 0%, #dff4ff 100%)',
+    border: '2px solid rgba(25, 181, 241, 0.18)',
+    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.06)',
   };
 
   const gridCardTitleRowStyle = {
-    fontSize: '1.35rem',
-    marginBottom: '0.4rem',
+    fontSize: '1.2rem',
+    marginBottom: '0.5rem',
     display: 'flex',
     alignItems: 'center',
     gap: '0.5rem',
-    color: '#0b2230',
+    color: 'var(--td-black)',
+    fontFamily: 'var(--body-font)',
+    fontWeight: '700',
   };
 
   const gridCardTextStyle = {
     margin: 0,
-    fontSize: '1.05rem',
-    lineHeight: 1.45,
-    color: '#0b2230',
+    fontSize: '1rem',
+    lineHeight: 1.6,
+    color: 'var(--td-black)',
+    fontFamily: 'var(--body-font)',
   };
 
   const bottomLineStyle = {
     marginTop: '1.25rem',
     padding: '1rem 1.1rem',
-    borderRadius: '0.9rem',
-    background: 'rgba(0,0,0,0.04)',
-    border: '2px dashed rgba(0,0,0,0.18)',
+    borderRadius: '18px',
+    background: '#fff8ef',
+    border: '2px dashed rgba(247, 148, 29, 0.35)',
     textAlign: 'center',
-    color: '#0b2230',
-    fontSize: '1.1rem',
-    lineHeight: 1.5,
+    color: 'var(--td-black)',
+    fontSize: '1.05rem',
+    lineHeight: 1.6,
+    fontFamily: 'var(--body-font)',
   };
+
 
   return (
     <>
@@ -202,11 +219,15 @@ export default function RentalsPage() {
           <p style={heroParaBoldStyle}>
             📞 Have questions? Call or text us at{' '}
             <a
-              href="tel:8505723796"
-              style={{ color: 'white', textDecoration: 'underline' }}
-            >
-              (850) 572-3796
-            </a>
+  href="tel:8505723796"
+  style={{
+    color: 'var(--td-white)',
+    textDecoration: 'underline',
+    textUnderlineOffset: '3px',
+  }}
+>
+  (850) 572-3796
+</a>
           </p>
         </section>
 

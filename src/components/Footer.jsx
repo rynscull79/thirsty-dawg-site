@@ -1,52 +1,47 @@
 'use client';
 
 import Link from 'next/link';
+import './Footer.css';
 
 export default function Footer() {
   return (
-    <footer
-      style={{
-        backgroundColor: '#009fdb',
-        color: 'white',
-        padding: '2rem 1rem',
-        marginTop: '4rem',
-        fontFamily: 'var(--font-chewy)',
-        textAlign: 'center'
-      }}
-    >
-      <div style={{ maxWidth: '960px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '2rem' }}>
-        {/* Navigation Links */}
-        <div style={{ flex: '1 1 200px' }}>
-          <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Menu</h3>
-          <ul style={{ listStyle: 'none', padding: 0, lineHeight: '2rem' }}>
-  <li><Link href="/">Home</Link></li>
-  <li><Link href="/rentals">Frozen Drink/Softserve</Link></li>
-  <li><Link href="/icecream">Ice Cream Cart</Link></li> {/* ✅ New link */}
-  <li><Link href="/our-story">Our Story</Link></li>
-  <li><Link href="/faq">FAQ</Link></li>
-  <li><Link href="/booking">Booking</Link></li>
-  <li><Link href="/contact">Contact</Link></li>
-</ul>
-
+    <footer className="site-footer">
+      <div className="site-footer__inner">
+        <div className="site-footer__column">
+          <h3 className="site-footer__heading">Menu</h3>
+          <ul className="site-footer__list">
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/rentals">Frozen Drinks & Soft Serve</Link></li>
+            <li><Link href="/icecream">Frozen Novelties</Link></li>
+            <li><Link href="/our-story">Our Story</Link></li>
+            <li><Link href="/faq">FAQ</Link></li>
+            <li><Link href="/booking">Booking</Link></li>
+            <li><Link href="/contact">Contact</Link></li>
+          </ul>
         </div>
 
-        {/* Contact Info */}
-        <div style={{ flex: '1 1 200px' }}>
-          <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Contact</h3>
-          <p>📞 <a href="tel:8505723796" style={{ color: 'white' }}>(850) 572-3796</a></p>
-          <p>📧 <a href="mailto:info@thirstydawgrentals.com" style={{ color: 'white' }}>info@thirstydawgrentals.com</a></p>
+        <div className="site-footer__column">
+          <h3 className="site-footer__heading">Contact</h3>
+          <p className="site-footer__text">
+            📞 <a href="tel:8505723796">(850) 572-3796</a>
+          </p>
+          <p className="site-footer__text">
+            📧 <a href="mailto:info@thirstydawgrentals.com">info@thirstydawgrentals.com</a>
+          </p>
         </div>
 
-        {/* Legal Link */}
-        <div style={{ flex: '1 1 200px' }}>
-          <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Legal</h3>
-          <p>
-  <Link href="/privacy-policy">Privacy Policy</Link><br />
-  <Link href="/terms">Terms of Service</Link>
-</p>
+        <div className="site-footer__column">
+          <h3 className="site-footer__heading">Legal</h3>
+          <p className="site-footer__text">
+            <Link href="/privacy-policy">Privacy Policy</Link>
+          </p>
+          <p className="site-footer__text">
+            <Link href="/terms">Terms of Service</Link>
+          </p>
         </div>
       </div>
-      <div style={{ marginTop: '2rem', fontSize: '0.9rem' }}>
+
+      <div className="site-footer__bottom">
         © {new Date().getFullYear()} Thirsty Dawg Rentals. All rights reserved.
       </div>
     </footer>
