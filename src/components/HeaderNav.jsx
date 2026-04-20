@@ -19,7 +19,7 @@ export default function HeaderNav() {
   ];
 
   return (
-    <nav className="nav-wrapper">
+    <nav className="nav-wrapper" aria-label="Primary navigation">
       <div className="nav-desktop">
         {navLinks.map((link) => (
           <Link key={link.href} href={link.href} className="nav-link">

@@ -1,25 +1,19 @@
-// layout.js with updated realistic beach header, snowflakes, and glowing logo
-
 import Image from 'next/image';
-import Link from 'next/link';
 import './globals.css';
 import { Chewy, Fredoka } from 'next/font/google';
 import HeaderNav from '@/components/HeaderNav';
 import Footer from '@/components/Footer';
-import dynamic from 'next/dynamic';
 import Script from 'next/script';
-
-const FloatingBookNow = dynamic(() => import('@/components/FloatingBookNow'));
 
 const chewy = Chewy({
   subsets: ['latin'],
   weight: '400',
-  variable: '--font-chewy'
+  variable: '--font-chewy',
 });
 
 const fredoka = Fredoka({
   subsets: ['latin'],
-  variable: '--font-fredoka'
+  variable: '--font-fredoka',
 });
 
 export const metadata = {
@@ -28,16 +22,16 @@ export const metadata = {
     'Book a frozen margarita or slushie machine for your next party or event in Pensacola. Delivery, setup, and delicious drinks included.',
   robots: 'index, follow',
   icons: {
-    icon: '/favicon.png'
+    icon: '/favicon.png',
   },
   verification: {
     google: 'LHt8tv1KLJb0KXV3Sb-QbR6G-wKw62NoX1auUUJKakg',
-  }
+  },
 };
 
 export const viewport = {
   width: 'device-width',
-  initialScale: 1
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }) {
@@ -119,40 +113,42 @@ export default function RootLayout({ children }) {
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Thirsty Dawg Rentals",
-            "image": "https://www.thirstydawgrentals.com/gallery/TransparentBG-ThirstyDawg.png",
-            "url": "https://www.thirstydawgrentals.com",
-            "telephone": "8505723796",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Pensacola",
-              "addressRegion": "FL",
-              "postalCode": "32501",
-              "addressCountry": "US"
+            '@context': 'https://schema.org',
+            '@type': 'LocalBusiness',
+            name: 'Thirsty Dawg Rentals',
+            image:
+              'https://www.thirstydawgrentals.com/gallery/TransparentBG-ThirstyDawg.png',
+            url: 'https://www.thirstydawgrentals.com',
+            telephone: '8505723796',
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'Pensacola',
+              addressRegion: 'FL',
+              postalCode: '32501',
+              addressCountry: 'US',
             },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": 30.4213,
-              "longitude": -87.2169
+            geo: {
+              '@type': 'GeoCoordinates',
+              latitude: 30.4213,
+              longitude: -87.2169,
             },
-            "areaServed": [
-              { "@type": "Place", "name": "Pensacola" },
-              { "@type": "Place", "name": "Gulf Breeze" },
-              { "@type": "Place", "name": "Navarre" },
-              { "@type": "Place", "name": "Orange Beach" },
-              { "@type": "Place", "name": "Foley" },
-              { "@type": "Place", "name": "Fairhope" }
+            areaServed: [
+              { '@type': 'Place', name: 'Pensacola' },
+              { '@type': 'Place', name: 'Gulf Breeze' },
+              { '@type': 'Place', name: 'Navarre' },
+              { '@type': 'Place', name: 'Orange Beach' },
+              { '@type': 'Place', name: 'Foley' },
+              { '@type': 'Place', name: 'Fairhope' },
             ],
-            "priceRange": "$$",
-            "description": "Rent fully stocked novelty ice cream freezers for parties and events. Serving Pensacola, the Florida Panhandle, and South Alabama.",
-            "openingHours": "Mo-Su 08:00-20:00"
-          })
+            priceRange: '$$',
+            description:
+              'Rent fully stocked novelty ice cream freezers for parties and events. Serving Pensacola, the Florida Panhandle, and South Alabama.',
+            openingHours: 'Mo-Su 08:00-20:00',
+          }),
         }}
       />
 
-     <body style={{ position: 'relative' }}>
+      <body style={{ position: 'relative' }}>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-NXWPV7L"
@@ -162,52 +158,39 @@ export default function RootLayout({ children }) {
           ></iframe>
         </noscript>
 
-        <HeaderNav />
+<header className="top-brand-bar">
+  <div className="top-brand-bar__inner">
+    <div className="top-brand-bar__logo">
+      <Image
+        src="/thirsty-dawg-logo.webp"
+        alt="Thirsty Dawg Rentals Logo"
+        width={220}
+        height={211}
+        priority
+        className="site-logo-header__image"
+      />
+    </div>
 
-        <Image
-  src="/Pensacola-Beach.webp"
-  alt="Thirsty Dawg Header"
-  width={1152}
-  height={378}
-  sizes="(max-width: 768px) 100vw, 1152px"
-  priority
-  className="header-image"
+    <div className="top-brand-bar__nav">
+      <HeaderNav />
+    </div>
+  </div>
+</header>
+
+       <main
+  className="main"
   style={{
-    width: '100%',
-    height: 'auto',
-    objectFit: 'cover',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    zIndex: 0
+    maxWidth: '1140px',
+    margin: '0.75rem auto 0',
+    backgroundColor: 'var(--td-white)',
+    boxShadow: 'var(--shadow-soft)',
+    padding: '1.5rem',
+    borderRadius: '1rem',
+    zIndex: 2,
+    position: 'relative',
   }}
-/>
-
-        <header
-          style={{
-            width: '100%',
-            height: '440px',
-            overflow: 'visible',
-            position: 'relative',
-            paddingBottom: 0,
-            marginBottom: '-80px'
-          }}
-        >
-        </header>
-
-        <main
-          className="main"
-          style={{
-            maxWidth: '1140px',
-            margin: '0 auto',
-            backgroundColor: 'var(--td-white)',
-boxShadow: 'var(--shadow-soft)',
-            padding: '2rem',
-            borderRadius: '1rem',
-            zIndex: 2,
-            position: 'relative'
-          }}
-        >
+>
+    
           {children}
         </main>
 
