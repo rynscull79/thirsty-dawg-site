@@ -3,6 +3,7 @@
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
+import styles from './page.module.css';
 
 const FloatingBookNow = dynamic(() => import('@/components/FloatingBookNow'));
 const GallerySection = dynamic(() => import('@/components/GallerySection'), {
@@ -19,9 +20,9 @@ const DeliveryArea = dynamic(() => import('@/components/DeliveryArea'), {
 export default function HomeClient() {
   return (
     <div>
-      <section className="hero">
-        <h1 className="hero-title" style={{ textWrap: 'balance' }}>
-          🧊 Frozen Drink Machines, Soft Serve & Ice Cream Carts — Pensacola,
+      <section className={styles.hero}>
+        <h1 className="hero-title">
+          🧊 Frozen Drink Machines, Soft Serve &amp; Ice Cream Carts — Pensacola,
           FL
         </h1>
 
@@ -51,12 +52,9 @@ export default function HomeClient() {
       </section>
 
       <section className="home-photo-strip">
-        <Image
+        <img
           src="/gallery/mardi-gras-party.webp"
           alt="Woman in costume pouring mix into a frozen drink machine for a Mardi Gras party rental in Pensacola"
-          width={600}
-          height={400}
-          priority
           className="home-photo-card"
         />
 
@@ -75,13 +73,11 @@ export default function HomeClient() {
 
       <section className="promo-section">
         <div className="promo-section__intro">
-          <h2 className="promo-section__title">
-            🎉 New Frozen Treat Rentals for 2025!
-          </h2>
+          <h2 className="promo-section__title">🎉 New Frozen Treat Rentals for 2025!</h2>
 
           <p className="promo-section__lead">
-            We&apos;re now serving up Soft Serve and fully-stocked Ice Cream
-            Carts — perfect for parties, schools, weddings, and more!
+            We&apos;re now serving up Soft Serve and fully-stocked Ice Cream Carts —
+            perfect for parties, schools, weddings, and more!
           </p>
 
           <div className="promo-section__actions">
@@ -130,10 +126,8 @@ export default function HomeClient() {
 
       <FloatingBookNow />
 
-      <section className="why-section section">
-        <h3 className="why-section-title">
-          🍹 Why Choose Thirsty Dawg Rentals?
-        </h3>
+      <section className={`why-section ${styles.section}`}>
+        <h3 className="why-section-title">🍹 Why Choose Thirsty Dawg Rentals?</h3>
 
         <div className="why-grid">
           {[
