@@ -473,7 +473,7 @@ export default function BookingPage() {
                 required
               >
                 {[
-                  'Stainless Single Flavor - $185',
+                  'Stainless Single Flavor - $200',
                   'Stainless Dual Flavor - $240',
                 ].map((option) => (
                   <option key={option}>{option}</option>
@@ -486,7 +486,7 @@ export default function BookingPage() {
             <input
               type="hidden"
               name="machine_type"
-              value="Soft Serve Machine - $200"
+              value="Soft Serve Machine - $215"
             />
           )}
 

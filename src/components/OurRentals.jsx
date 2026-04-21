@@ -7,23 +7,23 @@ import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 
 export default function OurRentals() {
-const [machineType, setMachineType] = useState('single');
-const [secondMachineType, setSecondMachineType] = useState('');
-const [estimatedTotal, setEstimatedTotal] = useState(null);
-const [isMobile, setIsMobile] = useState(false);
-const [range, setRange] = useState([
-  {
-    startDate: new Date(),
-    endDate: new Date(),
-    key: 'selection',
-  },
-]);
+  const [machineType, setMachineType] = useState('single');
+  const [secondMachineType, setSecondMachineType] = useState('');
+  const [estimatedTotal, setEstimatedTotal] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [range, setRange] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: 'selection',
+    },
+  ]);
 
   const calculateTotal = () => {
     const prices = {
-      single: { base: 185, extra: 40, second: 100 },
-      stainless: { base: 240, extra: 50, second: 130 },
-      softserve: { base: 200, extra: 45, second: 100 },
+      single: { base: 200, extra: 45, second: 100 },
+      stainless: { base: 240, extra: 55, second: 130 },
+      softserve: { base: 215, extra: 50, second: 115 },
     };
 
     const start = new Date(range[0].startDate);
@@ -50,16 +50,16 @@ const [range, setRange] = useState([
     setEstimatedTotal(`$${(total + tax).toFixed(2)} (includes 7.5% tax)`);
   };
 
-useEffect(() => {
-  const checkMobile = () => {
-    setIsMobile(window.innerWidth <= 768);
-  };
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
 
-  checkMobile();
-  window.addEventListener('resize', checkMobile);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
 
-  return () => window.removeEventListener('resize', checkMobile);
-}, []);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const infoCardStyle = {
     background: 'linear-gradient(180deg, #eef9ff 0%, #dff4ff 100%)',
@@ -82,8 +82,6 @@ useEffect(() => {
     color: 'var(--td-black)',
     fontFamily: 'var(--body-font)',
   };
-
-  
 
   return (
     <div
@@ -249,45 +247,7 @@ useEffect(() => {
                 fontFamily: 'var(--heading-font)',
               }}
             >
-              🍹 Stainless Single Flavor – $185
-            </h3>
-            <ul
-              style={{
-                paddingLeft: '1.2rem',
-                color: 'var(--td-black)',
-                fontSize: '0.95rem',
-                lineHeight: 1.6,
-              }}
-            >
-              <li>
-                Weekend Rental: Friday evening through Sunday evening –{' '}
-                <strong>$185</strong>
-              </li>
-              <li>
-                Add Extra Days: <strong>$40</strong> per additional weekday
-              </li>
-            </ul>
-            <p
-              style={{
-                fontStyle: 'italic',
-                marginTop: '0.5rem',
-                color: 'var(--td-black)',
-              }}
-            >
-              🧊 Example: Friday to Wednesday = $185 + 3 extra days = $305
-            </p>
-          </div>
-
-          <div style={priceCardStyle}>
-            <h3
-              style={{
-                fontSize: '1.5rem',
-                marginBottom: '0.5rem',
-                color: 'var(--td-blue)',
-                fontFamily: 'var(--heading-font)',
-              }}
-            >
-              🥤 Soft Serve – $200
+              🍹 Stainless Single Flavor – $200
             </h3>
             <ul
               style={{
@@ -321,7 +281,45 @@ useEffect(() => {
               style={{
                 fontSize: '1.5rem',
                 marginBottom: '0.5rem',
-               color: 'var(--td-blue)',
+                color: 'var(--td-blue)',
+                fontFamily: 'var(--heading-font)',
+              }}
+            >
+              🥤 Soft Serve – $215
+            </h3>
+            <ul
+              style={{
+                paddingLeft: '1.2rem',
+                color: 'var(--td-black)',
+                fontSize: '0.95rem',
+                lineHeight: 1.6,
+              }}
+            >
+              <li>
+                Weekend Rental: Friday evening through Sunday evening –{' '}
+                <strong>$215</strong>
+              </li>
+              <li>
+                Add Extra Days: <strong>$50</strong> per additional weekday
+              </li>
+            </ul>
+            <p
+              style={{
+                fontStyle: 'italic',
+                marginTop: '0.5rem',
+                color: 'var(--td-black)',
+              }}
+            >
+              🧊 Example: Friday to Wednesday = $215 + 3 extra days = $365
+            </p>
+          </div>
+
+          <div style={priceCardStyle}>
+            <h3
+              style={{
+                fontSize: '1.5rem',
+                marginBottom: '0.5rem',
+                color: 'var(--td-blue)',
                 fontFamily: 'var(--heading-font)',
               }}
             >
@@ -340,7 +338,7 @@ useEffect(() => {
                 <strong>$240</strong>
               </li>
               <li>
-                Add Extra Days: <strong>$50</strong> per additional weekday
+                Add Extra Days: <strong>$55</strong> per additional weekday
               </li>
             </ul>
             <p
@@ -350,37 +348,37 @@ useEffect(() => {
                 color: 'var(--td-black)',
               }}
             >
-              🧊 Example: Friday to Wednesday = $240 + 3 extra days = $390
+              🧊 Example: Friday to Wednesday = $240 + 3 extra days = $405
             </p>
           </div>
         </div>
 
-       <div
-  style={{
-    marginTop: '2rem',
-    background: 'linear-gradient(180deg, #eef9ff 0%, #dff4ff 100%)',
-    padding: isMobile ? '1rem' : '1.5rem',
-    borderRadius: '18px',
-    boxShadow: '0 4px 10px rgba(0,0,0,0.06)',
-    border: '2px solid rgba(25, 181, 241, 0.18)',
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    gap: isMobile ? '1rem' : '2rem',
-    fontFamily: 'var(--body-font)',
-    width: '100%',
-    maxWidth: '100%',
-    boxSizing: 'border-box',
-    overflow: 'hidden',
-  }}
->
+        <div
+          style={{
+            marginTop: '2rem',
+            background: 'linear-gradient(180deg, #eef9ff 0%, #dff4ff 100%)',
+            padding: isMobile ? '1rem' : '1.5rem',
+            borderRadius: '18px',
+            boxShadow: '0 4px 10px rgba(0,0,0,0.06)',
+            border: '2px solid rgba(25, 181, 241, 0.18)',
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'space-between',
+            gap: isMobile ? '1rem' : '2rem',
+            fontFamily: 'var(--body-font)',
+            width: '100%',
+            maxWidth: '100%',
+            boxSizing: 'border-box',
+            overflow: 'hidden',
+          }}
+        >
           <div
-  style={{
-    flex: isMobile ? '1 1 100%' : '1 1 300px',
-    minWidth: 0,
-    width: '100%',
-  }}
->
+            style={{
+              flex: isMobile ? '1 1 100%' : '1 1 300px',
+              minWidth: 0,
+              width: '100%',
+            }}
+          >
             <h4
               style={{
                 textAlign: 'center',
@@ -404,26 +402,26 @@ useEffect(() => {
             >
               <li>
                 <strong>Second Stainless Single Machine:</strong> $100 +
-                $40/extra weekday
+                $45/extra weekday
               </li>
               <li>
                 <strong>Second Stainless Dual Machine:</strong> $130 +
-                $50/extra weekday
+                $55/extra weekday
               </li>
               <li>
-                <strong>Second Soft Serve Machine:</strong> $100 +
-                $45/extra weekday
+                <strong>Second Soft Serve Machine:</strong> $115 +
+$50/extra weekday
               </li>
             </ul>
           </div>
 
           <div
-  style={{
-    flex: isMobile ? '1 1 100%' : '1 1 300px',
-    minWidth: 0,
-    width: '100%',
-  }}
->
+            style={{
+              flex: isMobile ? '1 1 100%' : '1 1 300px',
+              minWidth: 0,
+              width: '100%',
+            }}
+          >
             <h4
               style={{
                 textAlign: 'center',
@@ -460,75 +458,75 @@ useEffect(() => {
                 Select Rental Dates:
               </label>
 
-  {isMobile ? (
-  <>
-    <label style={{ fontWeight: '700', color: 'var(--td-black)' }}>
-      Rental Start Date:
-    </label>
-    <input
-      type="date"
-      value={range[0].startDate.toISOString().split('T')[0]}
-      onChange={(e) =>
-        setRange([
-          {
-            ...range[0],
-            startDate: new Date(e.target.value),
-          },
-        ])
-      }
-      style={{
-        width: '100%',
-        padding: '0.75rem',
-        borderRadius: '10px',
-        border: '1px solid rgba(0,0,0,0.15)',
-        fontFamily: 'var(--body-font)',
-      }}
-    />
+              {isMobile ? (
+                <>
+                  <label style={{ fontWeight: '700', color: 'var(--td-black)' }}>
+                    Rental Start Date:
+                  </label>
+                  <input
+                    type="date"
+                    value={range[0].startDate.toISOString().split('T')[0]}
+                    onChange={(e) =>
+                      setRange([
+                        {
+                          ...range[0],
+                          startDate: new Date(e.target.value),
+                        },
+                      ])
+                    }
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem',
+                      borderRadius: '10px',
+                      border: '1px solid rgba(0,0,0,0.15)',
+                      fontFamily: 'var(--body-font)',
+                    }}
+                  />
 
-    <label style={{ fontWeight: '700', color: 'var(--td-black)' }}>
-      Rental End Date:
-    </label>
-    <input
-      type="date"
-      value={range[0].endDate.toISOString().split('T')[0]}
-      onChange={(e) =>
-        setRange([
-          {
-            ...range[0],
-            endDate: new Date(e.target.value),
-          },
-        ])
-      }
-      style={{
-        width: '100%',
-        padding: '0.75rem',
-        borderRadius: '10px',
-        border: '1px solid rgba(0,0,0,0.15)',
-        fontFamily: 'var(--body-font)',
-      }}
-    />
-  </>
-) : (
-  <div
-    style={{
-      width: '100%',
-      overflowX: 'auto',
-      borderRadius: '14px',
-      background: '#ffffff',
-    }}
-  >
-    <DateRange
-      editableDateInputs={true}
-      onChange={(item) => setRange([item.selection])}
-      moveRangeOnFirstSelection={false}
-      ranges={range}
-      minDate={new Date()}
-      months={1}
-      direction="horizontal"
-      rangeColors={['#19b5f1']}
-    />
-  </div>
-)}
+                  <label style={{ fontWeight: '700', color: 'var(--td-black)' }}>
+                    Rental End Date:
+                  </label>
+                  <input
+                    type="date"
+                    value={range[0].endDate.toISOString().split('T')[0]}
+                    onChange={(e) =>
+                      setRange([
+                        {
+                          ...range[0],
+                          endDate: new Date(e.target.value),
+                        },
+                      ])
+                    }
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem',
+                      borderRadius: '10px',
+                      border: '1px solid rgba(0,0,0,0.15)',
+                      fontFamily: 'var(--body-font)',
+                    }}
+                  />
+                </>
+              ) : (
+                <div
+                  style={{
+                    width: '100%',
+                    overflowX: 'auto',
+                    borderRadius: '14px',
+                    background: '#ffffff',
+                  }}
+                >
+                  <DateRange
+                    editableDateInputs={true}
+                    onChange={(item) => setRange([item.selection])}
+                    moveRangeOnFirstSelection={false}
+                    ranges={range}
+                    minDate={new Date()}
+                    months={1}
+                    direction="horizontal"
+                    rangeColors={['#19b5f1']}
+                  />
+                </div>
+              )}
 
               <label
                 htmlFor="machineType"
