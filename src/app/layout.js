@@ -38,6 +38,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${chewy.variable} ${fredoka.variable}`}>
       <head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"
+        />
+
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-6R94KFTC67"
           strategy="lazyOnload"
@@ -52,6 +57,71 @@ export default function RootLayout({ children }) {
           `}
         </Script>
 
+        <Script
+          id="cookieconsent"
+          src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"
+          strategy="afterInteractive"
+        />
+        <Script id="cookieconsent-init" strategy="afterInteractive">
+          {`
+            window.addEventListener("load", function () {
+              if (!window.cookieconsent) return;
+
+              window.cookieconsent.initialise({
+                palette: {
+                  popup: { background: "#252e39" },
+                  button: { background: "#f1d600" }
+                },
+                theme: "classic",
+                type: "opt-in",
+                content: {
+                  message: "We use cookies to track ads and improve your experience.",
+                  dismiss: "OK",
+                  allow: "Allow cookies",
+                  deny: "Decline",
+                  link: "Learn more",
+                  href: "/privacy-policy"
+                },
+                onInitialise: function (status) {
+                  if (status === 'allow') fireFacebookPixel();
+                },
+                onStatusChange: function (status) {
+                  if (status === 'allow') fireFacebookPixel();
+                }
+              });
+
+              function fireFacebookPixel() {
+                if (window.fbq) {
+                  window.fbq('track', 'PageView');
+                  return;
+                }
+
+                !(function (f, b, e, v, n, t, s) {
+                  if (f.fbq) return;
+                  n = f.fbq = function () {
+                    n.callMethod
+                      ? n.callMethod.apply(n, arguments)
+                      : n.queue.push(arguments);
+                  };
+                  if (!f._fbq) f._fbq = n;
+                  n.push = n;
+                  n.loaded = true;
+                  n.version = '2.0';
+                  n.queue = [];
+                  t = b.createElement(e);
+                  t.async = true;
+                  t.src = v;
+                  s = b.getElementsByTagName(e)[0];
+                  s.parentNode.insertBefore(t, s);
+                })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+                fbq('init', '1385023635883645');
+                fbq('track', 'PageView');
+              }
+            });
+          `}
+        </Script>
+
         <noscript
           dangerouslySetInnerHTML={{
             __html: `<img height="1" width="1" style="display:none"
@@ -59,94 +129,6 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-
-      <Script
-        id="cookieconsent"
-        src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"
-        strategy="afterInteractive"
-      />
-      <Script id="cookieconsent-init" strategy="afterInteractive">
-        {`
-          window.addEventListener("load", function () {
-            window.cookieconsent.initialise({
-              palette: {
-                popup: { background: "#252e39" },
-                button: { background: "#f1d600" }
-              },
-              theme: "classic",
-              type: "opt-in",
-              content: {
-                message: "We use cookies to track ads and improve your experience.",
-                dismiss: "OK",
-                allow: "Allow cookies",
-                deny: "Decline",
-                link: "Learn more",
-                href: "/privacy-policy"
-              },
-              onInitialise: function (status) {
-                if (status == 'allow') fireFacebookPixel();
-              },
-              onStatusChange: function (status) {
-                if (status == 'allow') fireFacebookPixel();
-              }
-            });
-
-            function fireFacebookPixel() {
-              !function(f,b,e,v,n,t,s)
-              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-              n.queue=[];t=b.createElement(e);t.async=!0;
-              t.src=v;s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)}(window, document,'script',
-              'https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init', '1385023635883645');
-              fbq('track', 'PageView');
-            }
-          });
-        `}
-      </Script>
-
-      <Script
-        id="localbusiness-jsonld"
-        type="application/ld+json"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'LocalBusiness',
-            name: 'Thirsty Dawg Rentals',
-            image:
-              'https://www.thirstydawgrentals.com/gallery/TransparentBG-ThirstyDawg.png',
-            url: 'https://www.thirstydawgrentals.com',
-            telephone: '8505723796',
-            address: {
-              '@type': 'PostalAddress',
-              addressLocality: 'Pensacola',
-              addressRegion: 'FL',
-              postalCode: '32501',
-              addressCountry: 'US',
-            },
-            geo: {
-              '@type': 'GeoCoordinates',
-              latitude: 30.4213,
-              longitude: -87.2169,
-            },
-            areaServed: [
-              { '@type': 'Place', name: 'Pensacola' },
-              { '@type': 'Place', name: 'Gulf Breeze' },
-              { '@type': 'Place', name: 'Navarre' },
-              { '@type': 'Place', name: 'Orange Beach' },
-              { '@type': 'Place', name: 'Foley' },
-              { '@type': 'Place', name: 'Fairhope' },
-            ],
-            priceRange: '$$',
-            description:
-              'Rent fully stocked novelty ice cream freezers for parties and events. Serving Pensacola, the Florida Panhandle, and South Alabama.',
-            openingHours: 'Mo-Su 08:00-20:00',
-          }),
-        }}
-      />
 
       <body style={{ position: 'relative' }}>
         <noscript>
@@ -158,44 +140,83 @@ export default function RootLayout({ children }) {
           ></iframe>
         </noscript>
 
-<header className="top-brand-bar">
-  <div className="top-brand-bar__inner">
-    <div className="top-brand-bar__logo">
-     <Image
-  src="/thirsty-dawg-logo.webp"
-  alt="Thirsty Dawg Rentals Logo"
-  width={180}
-  height={180}
-  sizes="(max-width: 768px) 120px, 180px"
-  priority
-  style={{
-    width: 'auto',
-    height: '70px',
-  }}
-/>
+        <Script
+          id="localbusiness-jsonld"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'LocalBusiness',
+              name: 'Thirsty Dawg Rentals',
+              image:
+                'https://www.thirstydawgrentals.com/gallery/TransparentBG-ThirstyDawg.png',
+              url: 'https://www.thirstydawgrentals.com',
+              telephone: '8505723796',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Pensacola',
+                addressRegion: 'FL',
+                postalCode: '32501',
+                addressCountry: 'US',
+              },
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: 30.4213,
+                longitude: -87.2169,
+              },
+              areaServed: [
+                { '@type': 'Place', name: 'Pensacola' },
+                { '@type': 'Place', name: 'Gulf Breeze' },
+                { '@type': 'Place', name: 'Navarre' },
+                { '@type': 'Place', name: 'Orange Beach' },
+                { '@type': 'Place', name: 'Foley' },
+                { '@type': 'Place', name: 'Fairhope' },
+              ],
+              priceRange: '$$',
+              description:
+                'Rent fully stocked novelty ice cream freezers for parties and events. Serving Pensacola, the Florida Panhandle, and South Alabama.',
+              openingHours: 'Mo-Su 08:00-20:00',
+            }),
+          }}
+        />
 
-    </div>
+        <header className="top-brand-bar">
+          <div className="top-brand-bar__inner">
+            <div className="top-brand-bar__logo">
+              <Image
+                src="/thirsty-dawg-logo.webp"
+                alt="Thirsty Dawg Rentals Logo"
+                width={180}
+                height={180}
+                sizes="(max-width: 768px) 120px, 180px"
+                priority
+                style={{
+                  width: 'auto',
+                  height: '70px',
+                }}
+              />
+            </div>
 
-    <div className="top-brand-bar__nav">
-      <HeaderNav />
-    </div>
-  </div>
-</header>
+            <div className="top-brand-bar__nav">
+              <HeaderNav />
+            </div>
+          </div>
+        </header>
 
-       <main
-  className="main"
-  style={{
-    maxWidth: '1140px',
-    margin: '0.75rem auto 0',
-    backgroundColor: 'var(--td-white)',
-    boxShadow: 'var(--shadow-soft)',
-    padding: '1.5rem',
-    borderRadius: '1rem',
-    zIndex: 2,
-    position: 'relative',
-  }}
->
-    
+        <main
+          className="main"
+          style={{
+            maxWidth: '1140px',
+            margin: '0.75rem auto 0',
+            backgroundColor: 'var(--td-white)',
+            boxShadow: 'var(--shadow-soft)',
+            padding: '1.5rem',
+            borderRadius: '1rem',
+            zIndex: 2,
+            position: 'relative',
+          }}
+        >
           {children}
         </main>
 
