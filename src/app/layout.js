@@ -161,14 +161,19 @@ export default function RootLayout({ children }) {
 <header className="top-brand-bar">
   <div className="top-brand-bar__inner">
     <div className="top-brand-bar__logo">
-      <Image
-        src="/thirsty-dawg-logo.webp"
-        alt="Thirsty Dawg Rentals Logo"
-        width={220}
-        height={211}
-        priority
-        className="site-logo-header__image"
-      />
+     <Image
+  src="/thirsty-dawg-logo.webp"
+  alt="Thirsty Dawg Rentals Logo"
+  width={180}
+  height={180}
+  sizes="(max-width: 768px) 120px, 180px"
+  priority
+  style={{
+    width: 'auto',
+    height: '70px',
+  }}
+/>
+
     </div>
 
     <div className="top-brand-bar__nav">
