@@ -10,19 +10,19 @@
 .hero {
   background: linear-gradient(180deg, var(--td-blue) 0%, var(--td-blue-deep) 100%);
   color: var(--td-white);
-  padding: 3rem 2rem;
-  border-radius: 22px;
+  padding: 2rem 1.5rem;
+border-radius: 18px;
   text-align: center;
   box-shadow: var(--shadow-soft);
 }
 
 .hero h2 {
-  font-size: 2.1rem;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
 }
 
 .hero p {
-  font-size: 1.15rem;
+  font-size: 1rem;
 }
 
 .grid {
@@ -49,10 +49,11 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: 1.5rem !important;
-    margin-top: 0 !important;
-    padding-inline: 1rem;
-  }
+  padding-top: 1.25rem !important;
+  padding-bottom: 1.25rem !important;
+  margin-top: 0 !important;
+  padding-inline: 0.9rem;
+}
 
   .section {
     padding: 1.25rem;
