@@ -21,9 +21,9 @@ export default function OurRentals() {
 
   const calculateTotal = () => {
     const prices = {
-      single: { base: 200, extra: 45, second: 100 },
-      stainless: { base: 240, extra: 55, second: 130 },
-      softserve: { base: 215, extra: 50, second: 115 },
+      single: { base: 215, extra: 45 },
+      stainless: { base: 250, extra: 55 },
+      softserve: { base: 235, extra: 50 },
     };
 
     const start = new Date(range[0].startDate);
@@ -43,7 +43,8 @@ export default function OurRentals() {
     let total = prices[primary].base + extraNights * prices[primary].extra;
 
     if (secondary) {
-      total += prices[secondary].second + extraNights * prices[secondary].extra;
+      const discountedSecondMachineBase = prices[secondary].base * 0.75;
+      total += discountedSecondMachineBase + extraNights * prices[secondary].extra;
     }
 
     const tax = total * 0.075;
@@ -247,45 +248,7 @@ export default function OurRentals() {
                 fontFamily: 'var(--heading-font)',
               }}
             >
-              🍹 Stainless Single Flavor – $200
-            </h3>
-            <ul
-              style={{
-                paddingLeft: '1.2rem',
-                color: 'var(--td-black)',
-                fontSize: '0.95rem',
-                lineHeight: 1.6,
-              }}
-            >
-              <li>
-                Weekend Rental: Friday evening through Sunday evening –{' '}
-                <strong>$200</strong>
-              </li>
-              <li>
-                Add Extra Days: <strong>$45</strong> per additional weekday
-              </li>
-            </ul>
-            <p
-              style={{
-                fontStyle: 'italic',
-                marginTop: '0.5rem',
-                color: 'var(--td-black)',
-              }}
-            >
-              🧊 Example: Friday to Wednesday = $200 + 3 extra days = $335
-            </p>
-          </div>
-
-          <div style={priceCardStyle}>
-            <h3
-              style={{
-                fontSize: '1.5rem',
-                marginBottom: '0.5rem',
-                color: 'var(--td-blue)',
-                fontFamily: 'var(--heading-font)',
-              }}
-            >
-              🥤 Soft Serve – $215
+              🍹 Stainless Single Flavor – $215
             </h3>
             <ul
               style={{
@@ -300,7 +263,7 @@ export default function OurRentals() {
                 <strong>$215</strong>
               </li>
               <li>
-                Add Extra Days: <strong>$50</strong> per additional weekday
+                Add Extra Days: <strong>$45</strong> per additional weekday
               </li>
             </ul>
             <p
@@ -310,7 +273,7 @@ export default function OurRentals() {
                 color: 'var(--td-black)',
               }}
             >
-              🧊 Example: Friday to Wednesday = $215 + 3 extra days = $365
+              🧊 Example: Friday to Wednesday = $215 + 3 extra days = $350
             </p>
           </div>
 
@@ -323,7 +286,7 @@ export default function OurRentals() {
                 fontFamily: 'var(--heading-font)',
               }}
             >
-              🍧 Stainless Dual Flavor – $240
+              🥤 Soft Serve – $235
             </h3>
             <ul
               style={{
@@ -335,7 +298,45 @@ export default function OurRentals() {
             >
               <li>
                 Weekend Rental: Friday evening through Sunday evening –{' '}
-                <strong>$240</strong>
+                <strong>$235</strong>
+              </li>
+              <li>
+                Add Extra Days: <strong>$50</strong> per additional weekday
+              </li>
+            </ul>
+            <p
+              style={{
+                fontStyle: 'italic',
+                marginTop: '0.5rem',
+                color: 'var(--td-black)',
+              }}
+            >
+              🧊 Example: Friday to Wednesday = $235 + 3 extra days = $385
+            </p>
+          </div>
+
+          <div style={priceCardStyle}>
+            <h3
+              style={{
+                fontSize: '1.5rem',
+                marginBottom: '0.5rem',
+                color: 'var(--td-blue)',
+                fontFamily: 'var(--heading-font)',
+              }}
+            >
+              🍧 Stainless Dual Flavor – $250
+            </h3>
+            <ul
+              style={{
+                paddingLeft: '1.2rem',
+                color: 'var(--td-black)',
+                fontSize: '0.95rem',
+                lineHeight: 1.6,
+              }}
+            >
+              <li>
+                Weekend Rental: Friday evening through Sunday evening –{' '}
+                <strong>$250</strong>
               </li>
               <li>
                 Add Extra Days: <strong>$55</strong> per additional weekday
@@ -348,10 +349,45 @@ export default function OurRentals() {
                 color: 'var(--td-black)',
               }}
             >
-              🧊 Example: Friday to Wednesday = $240 + 3 extra days = $405
+              🧊 Example: Friday to Wednesday = $250 + 3 extra days = $415
             </p>
           </div>
         </div>
+        <div
+  style={{
+    marginTop: '2rem',
+    padding: '1.5rem',
+    background: 'linear-gradient(180deg, #fff7e6 0%, #fff1cc 100%)',
+    borderRadius: '18px',
+    border: '2px solid rgba(255, 124, 2, 0.25)',
+    textAlign: 'center',
+  }}
+>
+  <h3 style={{ color: '#ff7c02', marginBottom: '0.75rem' }}>
+    🎯 Why Choose Thirsty Dawg?
+  </h3>
+
+  <p style={{ lineHeight: 1.7 }}>
+    ✔️ Commercial-grade machines (no cheap party rentals)<br />
+    ✔️ Delivered, set up, and picked up for you<br />
+    ✔️ No ice, no mess, no stress<br />
+    ✔️ Trusted for weddings, beach parties, and large events
+  </p>
+
+  <p style={{ marginTop: '0.75rem', fontWeight: 'bold' }}>
+    You show up. We handle the rest.
+  </p>
+</div>
+
+<p
+  style={{
+    marginTop: '1rem',
+    fontStyle: 'italic',
+    textAlign: 'center',
+  }}
+>
+  ⭐ “The highlight of our event — everyone kept going back for more!”
+</p>
 
         <div
           style={{
@@ -388,7 +424,7 @@ export default function OurRentals() {
                 fontFamily: 'var(--heading-font)',
               }}
             >
-              💡 Want more than one machine?
+              💡 Need more than one machine?
             </h4>
             <ul
               style={{
@@ -401,17 +437,18 @@ export default function OurRentals() {
               }}
             >
               <li>
-                <strong>Second Stainless Single Machine:</strong> $100 +
-                $45/extra weekday
+                <strong>Serving a large crowd?</strong> Adding a second machine
+                helps keep lines moving and gives your guests more options.
               </li>
               <li>
-                <strong>Second Stainless Dual Machine:</strong> $130 +
-                $55/extra weekday
+                We offer discounted pricing for multiple machine rentals.
               </li>
               <li>
-                <strong>Second Soft Serve Machine:</strong> $115 +
-$50/extra weekday
+                Contact us and we’ll help build the best setup for your event.
               </li>
+              <p style={{ textAlign: 'center', marginTop: '0.5rem' }}>
+  Most large events choose two machines — we’ll help you pick the best setup.
+</p>
             </ul>
           </div>
 
@@ -592,7 +629,7 @@ $50/extra weekday
                   boxShadow: 'var(--shadow-soft)',
                 }}
               >
-                Estimate Price
+                Get Your Estimated Total
               </button>
 
               {estimatedTotal && (
@@ -619,6 +656,16 @@ $50/extra weekday
                 Final total may vary based on delivery distance and number of
                 drink mixes needed.
               </p>
+              <p
+  style={{
+    textAlign: 'center',
+    fontSize: '0.85rem',
+    marginTop: '0.5rem',
+    color: 'rgba(17,17,17,0.7)',
+  }}
+>
+  No commitment — just get a quick estimate for your event.
+</p>
             </div>
           </div>
         </div>

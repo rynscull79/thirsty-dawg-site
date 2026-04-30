@@ -362,17 +362,16 @@ style={{ width: '100%', maxWidth: '100%', minWidth: '500px' }}
       required
     >
       {[
-        'Stainless Single Flavor - $185',
-        'Stainless Dual Flavor - $240',
-        
-      ].map(option => (
+  'Stainless Single Flavor - $215',
+  'Stainless Dual Flavor - $250',
+].map(option => (
         <option key={option}>{option}</option>
       ))}
     </select>
   </div>
 )}
 {serviceType === 'soft_serve' && (
-  <input type="hidden" name="machine_type" value="Soft Serve Machine - $200" />
+  value="Soft Serve Machine - $235"
 )}
 
 

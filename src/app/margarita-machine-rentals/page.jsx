@@ -115,9 +115,9 @@ export default function MargaritaMachineRentalsPage() {
             💲 Pricing:
           </h3>
           <p>
-            Machines start at <strong>$185</strong> for weekend rentals. Additional mixes are available for $22 each
-            (Bushwacker is $27). Extended rentals, dual flavor machines, or second machines can be added at discounted rates.
-          </p>
+  Machines start at <strong>$215</strong> for weekend rentals. Additional mixes are available for $22 each
+  (Bushwacker is $27). Extended rentals and dual flavor machines are available, and we offer discounts for multiple machine rentals.
+</p>
 
           <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginTop: '2rem', marginBottom: '1rem' }}>
             🙋 FAQs (Just for Margarita Machines):
