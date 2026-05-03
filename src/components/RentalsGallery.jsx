@@ -7,7 +7,7 @@ const rentalsImages = [
   {
     src: '/gallery/Frosty-Factory-217A.webp',
     caption:
-      'Frosty Factory 217A – Our most popular rental! Dual stainless design, perfect for weddings, events, and high-demand venues.',
+      'Frosty Factory 217A – Dual stainless design that serves two flavors at once; best for smaller to mid-size events where variety matters.',
   },
   {
     src: '/gallery/Taylor-430.webp',
@@ -17,7 +17,7 @@ const rentalsImages = [
   {
     src: '/gallery/Grindmaster-3311.webp',
     caption:
-      'Grindmaster 3311 – Stainless single-flavor machine. Great for weddings, showers, or adding a second flavor to any event.',
+      'Grindmaster 3311 – Stainless single-flavor machine. Great for weddings, showers, or pairing two machines together for higher-output two-flavor service.',
   },
   {
     src: '/gallery/taylor-152-12.webp',

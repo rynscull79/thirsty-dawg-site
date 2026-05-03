@@ -70,6 +70,7 @@ export default function FrozenDrinkMachineRentalsPage() {
             }}
           >
             Our commercial frozen drink machines keep the fun flowing with kid-friendly and crowd-pleasing flavors.
+            Choose one flavor, two flavors, or multiple machines based on your guest count and serving pace.
           </p>
 
           <p
@@ -118,6 +119,15 @@ export default function FrozenDrinkMachineRentalsPage() {
             <li>✅ 1–2 flavor mixes (cherry, blue raspberry, lemonade, etc.)</li>
             <li>✅ Delivery, setup, and pickup — no hassle!</li>
             <li>✅ Easy-to-follow instructions (no alcohol required)</li>
+          </ul>
+
+          <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
+            🍹 Single vs. Dual Flavor:
+          </h3>
+          <ul style={{ marginLeft: '1rem', marginBottom: '2rem' }}>
+            <li>✔️ Dual-flavor machines are great for smaller and mid-size events when guests want variety.</li>
+            <li>✔️ For big parties, high-volume events, or peak-demand service, two single-flavor machines provide better output and help keep lines shorter.</li>
+            <li>✔️ Not sure what you need? Tell us your guest count and event style — we’ll recommend the best setup.</li>
           </ul>
 
           <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>

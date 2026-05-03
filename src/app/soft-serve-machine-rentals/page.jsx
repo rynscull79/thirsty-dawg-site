@@ -111,6 +111,7 @@ export default function SoftServeMachineRentalsPage() {
             }}
           >
             Our commercial machines dispense smooth soft serve into cups or bowls — fast, fun, and easy to serve.
+            For larger groups or rush-style serving, we’ll help you decide whether one machine is enough or whether multiple machines make sense.
           </p>
 
           <p
@@ -169,6 +170,9 @@ export default function SoftServeMachineRentalsPage() {
             </li>
             <li>
               <strong>How fast is setup?</strong> Typically ready within <strong>15–30 minutes</strong> after setup.
+            </li>
+            <li>
+              <strong>How many guests can one machine handle?</strong> It depends on the event pace and serving window. For schools, corporate events, big parties, or other high-volume times, ask us about adding a second machine to keep service moving.
             </li>
             <li>
               <strong>Do I need to clean it?</strong> No deep cleaning — just drain it. We handle full sanitation after pickup.

@@ -134,8 +134,10 @@ export default function OurRentals() {
             🍹 Dual-Flavor Machine
           </h3>
           <p style={{ margin: 0, lineHeight: 1.65 }}>
-            Serve two flavors at once — a hit for weddings, festivals, and big
-            parties. Comes with two mixes, dual tanks, and delivery/setup.
+            Serve two flavors at once — a great fit for smaller and mid-size
+            events where variety matters. For big parties or
+            peak-demand service, we recommend two single-flavor machines for
+            better output and shorter lines.
           </p>
         </div>
 
@@ -172,7 +174,8 @@ export default function OurRentals() {
           </h3>
           <p style={{ margin: 0, lineHeight: 1.65 }}>
             All machines are high-efficiency and freeze internally — no bagged
-            ice needed. Made in the USA and built for large crowds.
+            ice needed. We’ll help match the machine setup to your guest count
+            so drinks and desserts stay moving during busy serving times.
           </p>
         </div>
 
