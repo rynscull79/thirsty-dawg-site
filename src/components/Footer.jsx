@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { serviceAreas } from '@/lib/seoData';
 import './Footer.css';
 
 export default function Footer() {
@@ -17,6 +18,19 @@ export default function Footer() {
             <li><Link href="/faq">FAQ</Link></li>
             <li><Link href="/booking">Booking</Link></li>
             <li><Link href="/contact">Contact</Link></li>
+            <li><Link href="/service-areas">Service Areas</Link></li>
+          </ul>
+        </div>
+
+        <div className="site-footer__column">
+          <h3 className="site-footer__heading">Service Areas</h3>
+          <ul className="site-footer__list">
+            {serviceAreas.slice(0, 6).map((area) => (
+              <li key={area.slug}>
+                <Link href={`/service-areas/${area.slug}`}>{area.city}, {area.state}</Link>
+              </li>
+            ))}
+            <li><Link href="/service-areas">View all areas</Link></li>
           </ul>
         </div>
 

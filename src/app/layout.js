@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import './globals.css';
+import './seo.css';
 import { Chewy, Fredoka } from 'next/font/google';
 import HeaderNav from '@/components/HeaderNav';
 import Footer from '@/components/Footer';
@@ -17,9 +18,13 @@ const fredoka = Fredoka({
 });
 
 export const metadata = {
-  title: 'Thirsty Dawg Rentals | Frozen Drink Machine Rentals in Pensacola',
+  metadataBase: new URL('https://www.thirstydawgrentals.com'),
+  title: {
+    default: 'Thirsty Dawg Rentals | Frozen Drink Machine Rentals in Pensacola',
+    template: '%s',
+  },
   description:
-    'Book a frozen margarita or slushie machine for your next party or event in Pensacola. Delivery, setup, and delicious drinks included.',
+    'Rent frozen drink machines, margarita machines, soft serve machines, and stocked ice cream carts for parties, weddings, schools, and events around Pensacola and the Gulf Coast.',
   robots: 'index, follow',
   icons: {
     icon: '/favicon.png',

@@ -1,6 +1,11 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /admin/*
+Disallow: /header-test
+Disallow: /not-found
 
 # Host
 Host: https://www.thirstydawgrentals.com

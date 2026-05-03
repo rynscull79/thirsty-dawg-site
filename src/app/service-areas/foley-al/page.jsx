@@ -1,0 +1,10 @@
+import ServiceAreaPage, { serviceAreaMetadata } from '@/components/ServiceAreaPage';
+import { getAreaBySlug } from '@/lib/seoData';
+
+const area = getAreaBySlug('foley-al');
+
+export const metadata = serviceAreaMetadata(area);
+
+export default function Page() {
+  return <ServiceAreaPage area={area} />;
+}

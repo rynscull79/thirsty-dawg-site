@@ -150,6 +150,31 @@ export default function HomeClient() {
         </div>
       </section>
 
+      <section className="seo-section">
+        <h2>Popular local rental searches</h2>
+        <p>
+          Looking for frozen drink, soft serve, or ice cream cart rentals near you? We serve Pensacola and nearby Gulf Coast communities with delivery, setup, and pickup included.
+        </p>
+        <div className="seo-card-grid">
+          <Link href="/service-areas/pensacola-fl" className="seo-card seo-card-link">
+            <strong>Pensacola, FL</strong>
+            <span>Frozen drink machines, soft serve, and ice cream cart rentals for local parties and events.</span>
+          </Link>
+          <Link href="/service-areas/gulf-breeze-fl" className="seo-card seo-card-link">
+            <strong>Gulf Breeze, FL</strong>
+            <span>Delivered frozen treat rentals for waterfront parties, schools, and wedding weekends.</span>
+          </Link>
+          <Link href="/service-areas/navarre-fl" className="seo-card seo-card-link">
+            <strong>Navarre, FL</strong>
+            <span>Slushie machines, soft serve rentals, and stocked novelty carts for Navarre events.</span>
+          </Link>
+          <Link href="/service-areas" className="seo-card seo-card-link">
+            <strong>All service areas</strong>
+            <span>See the full list of Florida Panhandle and select South Alabama communities we serve.</span>
+          </Link>
+        </div>
+      </section>
+
       <section className="eventhub-section">
         <div className="eventhub-section__inner">
           <h2 className="eventhub-section__title">Planning a Larger Event?</h2>

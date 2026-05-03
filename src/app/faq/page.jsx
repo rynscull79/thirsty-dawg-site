@@ -1,16 +1,91 @@
 // 📄 src/app/faq/page.jsx
 
 import FloatingBookWrapper from '@/components/FloatingBookWrapper';
+import { absoluteUrl } from '@/lib/seoData';
+
+const faqs = [
+  {
+    question: 'How many drinks does one mix make?',
+    answer:
+      'Each mix makes about 3.5 gallons of product, or about 50 nine-ounce drinks. A good rule of thumb is one mix per 20–25 people.',
+  },
+  {
+    question: 'Does Thirsty Dawg provide the alcohol?',
+    answer:
+      'No. Thirsty Dawg Rentals does not supply alcohol. Our mixes are concentrates with no liquor or alcohol; customers provide any alcohol they want to add.',
+  },
+  {
+    question: 'How much are additional mixes?',
+    answer:
+      'Additional mixes are typically $22, with Bushwacker mix typically $27.',
+  },
+  {
+    question: 'Do I need ice?',
+    answer:
+      'No. The machine freezes the mix automatically, so you do not need bags of ice or a blender.',
+  },
+  {
+    question: 'Can I use my own mix?',
+    answer:
+      'No. Please use Thirsty Dawg-approved mix only. Other mixes may damage the commercial machines.',
+  },
+  {
+    question: 'Do your machines make non-alcoholic drinks or slushies?',
+    answer:
+      'Yes. Any mix can be served with or without alcohol, which makes the machines popular for kids parties, schools, and family-friendly events.',
+  },
+  {
+    question: 'How long does it take the mix to freeze?',
+    answer:
+      'Freeze time varies by machine and environment, but plan for about 45 minutes to an hour and a half in a cool setting. We recommend a dedicated outlet and starting several hours ahead of serving time.',
+  },
+  {
+    question: 'Do I need to clean the machine after use?',
+    answer:
+      'No. We handle cleaning and sanitation after pickup. We only ask that you drain the mix from the bowls; unused mix can be refrigerated or frozen.',
+  },
+  {
+    question: 'Can I move the frozen drink machine to another location?',
+    answer:
+      'No. The machine must stay at the contracted drop-off address. Moving it to another location may result in a transportation fee.',
+  },
+  {
+    question: 'How far in advance do I need to reserve my machine?',
+    answer:
+      'We recommend booking at least 4 weeks ahead when possible, and 6 weeks ahead for peak dates or busy event seasons.',
+  },
+  {
+    question: 'Can I pick up the machine myself?',
+    answer:
+      'No. For safety and liability reasons, all machines are delivered, set up, and picked up by Thirsty Dawg Rentals.',
+  },
+];
 
 export const metadata = {
   title: 'Frequently Asked Questions | Thirsty Dawg Rentals',
   description:
-    'Get answers to common questions about our frozen drink machines, mix options, delivery, setup, alcohol, and more.',
+    'Get answers to common questions about frozen drink machines, margarita rentals, soft serve machines, ice cream carts, delivery, setup, alcohol, power needs, and cleanup.',
+  alternates: { canonical: absoluteUrl('/faq') },
 };
 
 export default function FAQPage() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <div style={{ padding: '2rem', maxWidth: '900px', margin: '0 auto' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+
       <h1
         style={{
           textAlign: 'center',
@@ -26,63 +101,7 @@ export default function FAQPage() {
         ❓ Frequently Asked Questions
       </h1>
 
-      {[
-        {
-          question: 'How many drinks does one mix make?',
-          answer:
-            'Each mix makes about 3.5 gallons of product (50 – 9oz. drinks). A good rule of thumb is to purchase one mix per 20–25 people.',
-        },
-        {
-          question: 'Does Thirsty Dawg provide the alcohol?',
-          answer:
-            'No, we do not supply any alcohol. Our mixes are concentrates that contain no liquor or alcohol. It is your responsibility to provide all alcohol as needed.',
-        },
-        {
-          question: 'How much are additional mixes?',
-          answer:
-            'Additional mixes are $22.00 with the exception of Bushwacker which is $27.00.',
-        },
-        {
-          question: 'Do I need ice?',
-          answer:
-            'No, ice is not needed as the machine freezes the mix. All you need is water, Thirsty Dawg mix, and alcohol (if you choose).',
-        },
-        {
-          question: 'Can I use my own mix?',
-          answer:
-            'No, our mix is made exclusively for our commercial machines. Other mixes may cause damage to the machine.',
-        },
-        {
-          question: 'Do your machines make non-alcoholic drinks or slushies?',
-          answer:
-            'Yes! You can serve any of our mixes with or without alcohol. The frozen slushies are always a big hit at children’s parties. If you have a special mix request, just let us know. We have been known to customize flavors!',
-        },
-        {
-          question: 'How long does it take the mix to freeze?',
-          answer:
-            'We have multiple different type machines which freeze at different rates. Plan on it taking 45 minutes to an hour and a half to freeze in a cool environment. You will never have a lag in freeze time, as you can continually add mix as you go with these machines. We do recommend a dedicated outlet, and to start your machine several hours ahead of time to make sure your machine works at optimum performance.',
-        },
-        {
-          question: 'Do I need to clean the machine after use?',
-          answer:
-            'We take care of all cleaning and sanitation after your event. All we ask is that you drain the mix out of the bowls... you can freeze or refrigerate anything you don’t use during your event.',
-        },
-        {
-          question: 'Can I move the frozen drink machine to another location?',
-          answer:
-            'The machine must remain at the address the machine is dropped off at. If the machine is moved to another location other than on the contract, there is a $500 transportation fee.',
-        },
-        {
-          question: 'How far in advance do I need to reserve my machine?',
-          answer:
-            'We recommend at least 4 weeks to ensure availability. During graduation, Halloween, New Years, etc... we recommend 6 weeks.',
-        },
-        {
-          question: 'Can I pick up the machine myself?',
-          answer:
-            'For safety and liability reasons, all machines must be delivered and picked up by Thirsty Dawg staff. Due to their size and weight, we do not allow customer pickups. Delivery and setup are always handled by our team.',
-        },
-      ].map((faq, index) => (
+      {faqs.map((faq, index) => (
         <div
           key={index}
           style={{
