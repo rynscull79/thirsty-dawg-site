@@ -8,6 +8,9 @@ export const metadata = {
   title: 'Bushwacker Machine Rentals | Thirsty Dawg',
   description:
     'Serve up classic Bushwackers with our frozen drink machine rentals. We provide the mix — you add the alcohol. Delivery, setup, and pickup included.',
+  alternates: {
+    canonical: 'https://www.thirstydawgrentals.com/bushwacker-machine-rentals',
+  },
   openGraph: {
     title: 'Bushwacker Machine Rentals | Thirsty Dawg',
     description:
@@ -37,7 +40,7 @@ export default function BushwackerMachineRentalsPage() {
             fontFamily: 'var(--font-chewy)',
           }}
         >
-          <h2
+          <h1
             style={{
               fontSize: '2rem',
               fontWeight: 'bold',
@@ -47,7 +50,7 @@ export default function BushwackerMachineRentalsPage() {
             }}
           >
             🍹 Bushwacker Machine Rentals
-          </h2>
+          </h1>
 
           <p
             style={{

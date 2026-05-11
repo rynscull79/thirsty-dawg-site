@@ -162,7 +162,7 @@ export default function RootLayout({ children }) {
                 '@type': 'PostalAddress',
                 addressLocality: 'Pensacola',
                 addressRegion: 'FL',
-                postalCode: '32501',
+                postalCode: '32577',
                 addressCountry: 'US',
               },
               geo: {
@@ -180,7 +180,7 @@ export default function RootLayout({ children }) {
               ],
               priceRange: '$$',
               description:
-                'Rent fully stocked novelty ice cream freezers for parties and events. Serving Pensacola, the Florida Panhandle, and South Alabama.',
+                'Frozen drink machine, soft serve machine, and ice cream cart rentals for parties, weddings, schools, beach houses, and events across Pensacola and the Gulf Coast.',
               openingHours: 'Mo-Su 08:00-20:00',
             }),
           }}

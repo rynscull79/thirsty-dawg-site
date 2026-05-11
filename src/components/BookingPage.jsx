@@ -71,26 +71,37 @@ export default function BookingPage() {
     return `${1 + extraDays} Day Rental`;
   }
 
+  function parseAddressFallback(address = '') {
+    const parts = address
+      .split(',')
+      .map((part) => part.trim())
+      .filter(Boolean);
+    const stateZipMatch = address.match(/\b([A-Z]{2})\s+(\d{5})(?:-\d{4})?\b/);
+
+    return {
+      city: parts.length >= 2 ? parts[parts.length - 2] : '',
+      state: stateZipMatch?.[1] || '',
+      zip: stateZipMatch?.[2] || '',
+    };
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
     const raw = Object.fromEntries(new FormData(form).entries());
-
-    if (!raw.state || !raw.city) {
-      alert(
-        '❌ We couldn’t read your full address. Please select the suggestion from the address dropdown again.'
-      );
-      return;
-    }
+    const addressFallback = parseAddressFallback(raw.street || formData.street);
+    const city = raw.city || formData.city || addressFallback.city || 'Unknown';
+    const state = raw.state || formData.state || addressFallback.state || 'FL';
+    const zip = raw.zip || formData.zip || addressFallback.zip || '';
 
     const data = {
       name: raw.name,
       email: raw.email,
       phone: raw.phone,
       street: raw.street,
-      city: raw.city || 'Unknown',
-      state: raw.state,
-      zip: raw.zip,
+      city,
+      state,
+      zip,
       dateNeeded: new Date(raw.date_needed).toISOString(),
       guestCount: parseInt(raw.guest_count),
       rentalStart: new Date(raw.date_needed).toISOString(),

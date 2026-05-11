@@ -7,6 +7,9 @@ export const metadata = {
   title: 'Daiquiri Machine Rentals | Thirsty Dawg',
   description:
     'Daiquiri machine rentals in Pensacola and nearby areas. We deliver frozen drink machines and mix — you just add the booze!',
+  alternates: {
+    canonical: 'https://www.thirstydawgrentals.com/daiquiri-machine-rentals',
+  },
   openGraph: {
     title: 'Daiquiri Machine Rentals | Thirsty Dawg',
     description:
@@ -36,7 +39,7 @@ export default function DaiquiriMachineRentalsPage() {
             fontFamily: 'var(--font-chewy)',
           }}
         >
-          <h2
+          <h1
             style={{
               fontSize: '2rem',
               fontWeight: 'bold',
@@ -46,7 +49,7 @@ export default function DaiquiriMachineRentalsPage() {
             }}
           >
             🍓 Daiquiri Machine Rentals in Pensacola
-          </h2>
+          </h1>
 
           <p
             style={{

@@ -35,6 +35,19 @@ export default function Footer() {
         </div>
 
         <div className="site-footer__column">
+          <h3 className="site-footer__heading">Popular Rentals</h3>
+          <ul className="site-footer__list">
+            <li><Link href="/margarita-machine-rentals">Margarita Machine Rentals</Link></li>
+            <li><Link href="/frozen-drink-machine-rentals">Frozen Drink Machine Rentals</Link></li>
+            <li><Link href="/slushie-machine-rentals">Slushie Machine Rentals</Link></li>
+            <li><Link href="/soft-serve-machine-rentals">Soft Serve Machine Rentals</Link></li>
+            <li><Link href="/icecream">Ice Cream Cart Rentals</Link></li>
+            <li><Link href="/weddings">Wedding Rentals</Link></li>
+            <li><Link href="/bushwacker-machine-rentals">Bushwacker Machine Rentals</Link></li>
+          </ul>
+        </div>
+
+        <div className="site-footer__column">
           <h3 className="site-footer__heading">Contact</h3>
           <p className="site-footer__text">
             📞 <a href="tel:8505723796">(850) 572-3796</a>
