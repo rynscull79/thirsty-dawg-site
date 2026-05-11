@@ -8,9 +8,6 @@ export const metadata = {
   title: 'Slushie Machine Rentals | Thirsty Dawg',
   description:
     'Rent slushie machines for kids parties, schools, and summer events. Delivered frozen drink machines with your choice of flavors — we handle setup and pickup!',
-  alternates: {
-    canonical: 'https://www.thirstydawgrentals.com/slushie-machine-rentals',
-  },
   openGraph: {
     title: 'Slushie Machine Rentals | Thirsty Dawg',
     description: 'Book a slushie machine rental in Pensacola or surrounding areas. No ice needed. Easy setup and cleanup included.',
@@ -39,7 +36,7 @@ export default function SlushieMachineRentalsPage() {
             fontFamily: 'var(--font-chewy)',
           }}
         >
-          <h1
+          <h2
             style={{
               fontSize: '2rem',
               fontWeight: 'bold',
@@ -49,7 +46,7 @@ export default function SlushieMachineRentalsPage() {
             }}
           >
             🧊 Slushie Machine Rentals
-          </h1>
+          </h2>
 
           <p
             style={{

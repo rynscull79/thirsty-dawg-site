@@ -8,9 +8,6 @@ export const metadata = {
   title: 'Wedding Rentals | Frozen Drink, Ice Cream & Soft Serve | Thirsty Dawg',
   description:
     'Make your wedding unforgettable with frozen drink machines, soft serve rentals, and fully stocked novelty ice cream carts. Delivery, setup, and cleanup included!',
-  alternates: {
-    canonical: 'https://www.thirstydawgrentals.com/weddings',
-  },
   openGraph: {
     title: 'Wedding Rentals | Frozen Drink, Ice Cream & Soft Serve | Thirsty Dawg',
     description:
@@ -40,7 +37,7 @@ export default function WeddingsPage() {
             fontFamily: 'var(--font-chewy)',
           }}
         >
-          <h1
+          <h2
             style={{
               fontSize: '2rem',
               fontWeight: 'bold',
@@ -50,7 +47,7 @@ export default function WeddingsPage() {
             }}
           >
             💍 Wedding Rentals — Frozen Fun for Your Big Day
-          </h1>
+          </h2>
 
           <p
             style={{

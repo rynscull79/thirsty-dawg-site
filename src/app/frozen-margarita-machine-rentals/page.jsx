@@ -8,9 +8,6 @@ export const metadata = {
   title: 'Frozen Margarita Machine Rentals | Thirsty Dawg',
   description:
     'Rent frozen margarita machines for parties, weddings, and events in Pensacola and the Gulf Coast. Choose from single or dual flavor machines — stainless or plastic. Thirsty Dawg handles delivery, setup, and cleanup!',
-  alternates: {
-    canonical: 'https://www.thirstydawgrentals.com/frozen-margarita-machine-rentals',
-  },
   openGraph: {
     title: 'Frozen Margarita Machine Rentals | Thirsty Dawg',
     description:
@@ -68,7 +65,7 @@ export default function FrozenMargaritaMachineRentalsPage() {
             fontFamily: 'var(--font-chewy)'
           }}
         >
-          <h1
+          <h2
             style={{
               fontSize: '2rem',
               fontWeight: 'bold',
@@ -78,7 +75,7 @@ export default function FrozenMargaritaMachineRentalsPage() {
             }}
           >
             🍹 Frozen Margarita Machine Rentals in Pensacola
-          </h1>
+          </h2>
 
           <p
             style={{

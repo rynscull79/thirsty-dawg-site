@@ -8,9 +8,6 @@ export const metadata = {
   title: 'Margarita Machine Rentals | Thirsty Dawg',
   description:
     'Rent frozen margarita machines for weddings, parties, and corporate events. Thirsty Dawg delivers, sets up, and provides everything you need for the ultimate frozen drink experience.',
-  alternates: {
-    canonical: 'https://www.thirstydawgrentals.com/margarita-machine-rentals',
-  },
   openGraph: {
     title: 'Margarita Machine Rentals | Thirsty Dawg',
     description: 'Book frozen margarita machine rentals for parties and events in the Pensacola area. Full service setup and delivery!',
@@ -39,7 +36,7 @@ export default function MargaritaMachineRentalsPage() {
             fontFamily: 'var(--font-chewy)',
           }}
         >
-          <h1
+          <h2
             style={{
               fontSize: '2rem',
               fontWeight: 'bold',
@@ -49,7 +46,7 @@ export default function MargaritaMachineRentalsPage() {
             }}
           >
             🍸 Margarita Machine Rentals
-          </h1>
+          </h2>
 
           <p
             style={{
