@@ -4,8 +4,26 @@ export const metadata = {
   title: 'Book a Frozen Drink Machine | Thirsty Dawg Rentals',
   description:
     'Fill out our booking form to reserve a frozen drink machine for your party, wedding, or event. We deliver across Pensacola and the Gulf Coast.',
+  alternates: {
+    canonical: 'https://www.thirstydawgrentals.com/booking',
+  },
 };
 
 export default function BookingRoute() {
-  return <BookingClientWrapper />;
+  return (
+    <>
+      <section style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+        <h1 style={{ color: 'var(--td-blue)', fontFamily: 'var(--heading-font)', fontSize: '2.2rem', lineHeight: 1.1 }}>
+          Book a Frozen Drink, Soft Serve, or Ice Cream Cart Rental
+        </h1>
+        <p style={{ maxWidth: '760px', margin: '0.75rem auto 0', fontFamily: 'var(--body-font)', lineHeight: 1.6 }}>
+          Reserve your Thirsty Dawg rental for parties, weddings, schools, beach houses, and events across Pensacola and the Gulf Coast. Delivery, setup, and pickup are handled for you.
+        </p>
+        <p style={{ maxWidth: '760px', margin: '0.7rem auto 0', fontFamily: 'var(--body-font)', fontSize: '0.76rem', lineHeight: 1.35, color: '#4b5563' }}>
+          Text consent: by submitting your phone number, you agree to receive rental-related texts from Thirsty Dawg Rentals. Msg frequency varies. Msg & data rates may apply. Reply HELP for help or STOP to opt out. Consent is not required to rent. See our <a href="/terms">Terms</a> and <a href="/privacy-policy">Privacy Policy</a>.
+        </p>
+      </section>
+      <BookingClientWrapper />
+    </>
+  );
 }

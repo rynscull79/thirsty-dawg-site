@@ -48,22 +48,27 @@ export default function PrivacyPolicyPage() {
         We do not sell or rent your personal information to third parties. We may share your information with service providers strictly as needed to deliver our services (e.g., booking system, payment processor).
       </p>
 
-      <h2 style={{ fontSize: '1.5rem', color: '#ff7c02', marginTop: '2rem' }}>4. Cookies</h2>
+      <h2 style={{ fontSize: '1.5rem', color: '#ff7c02', marginTop: '2rem' }}>4. SMS/Mobile Phone Privacy</h2>
+      <p style={{ marginBottom: '1rem' }}>
+        If you provide your mobile phone number, we use it only to communicate with you about your rental inquiry, booking, delivery/setup/pickup coordination, and customer-requested follow-up. We do not sell, rent, share, or disclose mobile phone numbers or SMS opt-in consent data with third parties or affiliates for their marketing or promotional purposes. Message frequency varies. Message and data rates may apply. You may opt out at any time by replying STOP, or reply HELP for help.
+      </p>
+
+      <h2 style={{ fontSize: '1.5rem', color: '#ff7c02', marginTop: '2rem' }}>5. Cookies</h2>
       <p style={{ marginBottom: '1rem' }}>
         Our website may use cookies to enhance your browsing experience. You can choose to disable cookies through your browser settings.
       </p>
 
-      <h2 style={{ fontSize: '1.5rem', color: '#ff7c02', marginTop: '2rem' }}>5. Data Security</h2>
+      <h2 style={{ fontSize: '1.5rem', color: '#ff7c02', marginTop: '2rem' }}>6. Data Security</h2>
       <p style={{ marginBottom: '1rem' }}>
         We take appropriate security measures to protect your personal information from unauthorized access, disclosure, or alteration.
       </p>
 
-      <h2 style={{ fontSize: '1.5rem', color: '#ff7c02', marginTop: '2rem' }}>6. Your Rights</h2>
+      <h2 style={{ fontSize: '1.5rem', color: '#ff7c02', marginTop: '2rem' }}>7. Your Rights</h2>
       <p style={{ marginBottom: '1rem' }}>
         You may request access to your data, ask for corrections, or request that we delete your information by contacting us at info@thirstydawgrentals.com.
       </p>
 
-      <h2 style={{ fontSize: '1.5rem', color: '#ff7c02', marginTop: '2rem' }}>7. Changes to This Policy</h2>
+      <h2 style={{ fontSize: '1.5rem', color: '#ff7c02', marginTop: '2rem' }}>8. Changes to This Policy</h2>
       <p style={{ marginBottom: '1rem' }}>
         We may update this Privacy Policy from time to time. The latest version will always be posted here with a revised effective date.
       </p>

@@ -69,9 +69,15 @@ export default function ContactPage() {
             (850) 572-3796
           </a>
         </p>
+        <p style={{ textAlign: 'center', fontSize: '0.95rem', lineHeight: 1.55, maxWidth: '720px', margin: '1rem auto 0' }}>
+          If you text Thirsty Dawg Rentals at (850) 572-3796, you consent to receive reply text messages about your rental inquiry, booking, delivery/setup/pickup coordination, and customer-requested follow-up. Message frequency varies. Message and data rates may apply. Reply HELP for help or STOP to opt out. See our{' '}
+          <Link href="/terms" style={{ color: '#009fdb', textDecoration: 'underline' }}>Terms</Link>{' '}
+          and{' '}
+          <Link href="/privacy-policy" style={{ color: '#009fdb', textDecoration: 'underline' }}>Privacy Policy</Link>.
+        </p>
 
         <h2
-          style={{
+          style={{ 
             color: '#ff7c02',
             fontSize: '1.5rem',
             marginTop: '2rem',
