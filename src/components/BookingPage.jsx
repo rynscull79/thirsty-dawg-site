@@ -281,6 +281,35 @@ export default function BookingPage() {
             fontFamily: 'var(--body-font)',
           }}
         >
+          <div
+            style={{
+              textAlign: 'center',
+              marginBottom: '1.4rem',
+            }}
+          >
+            <img
+              src="/thirsty-dawg-logo.webp"
+              alt="Thirsty Dawg Rentals logo"
+              style={{
+                display: 'block',
+                width: '160px',
+                maxWidth: '55%',
+                height: 'auto',
+                margin: '0 auto 0.9rem',
+              }}
+            />
+            <div
+              style={{
+                fontFamily: 'var(--body-font)',
+                fontWeight: 800,
+                color: 'var(--td-black)',
+                letterSpacing: '0.01em',
+              }}
+            >
+              Thirsty Dawg Rentals
+            </div>
+          </div>
+
           <h2
             style={{
               color: 'var(--td-blue)',
