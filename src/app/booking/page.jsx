@@ -20,7 +20,7 @@ export default function BookingRoute() {
           Reserve your Thirsty Dawg rental for parties, weddings, schools, beach houses, and events across Pensacola and the Gulf Coast. Delivery, setup, and pickup are handled for you.
         </p>
         <p style={{ maxWidth: '760px', margin: '0.7rem auto 0', fontFamily: 'var(--body-font)', fontSize: '0.76rem', lineHeight: 1.35, color: '#4b5563' }}>
-          Text consent: by submitting your phone number, you agree to receive rental-related texts from Thirsty Dawg Rentals. Msg frequency varies. Msg & data rates may apply. Reply HELP for help or STOP to opt out. Consent is not required to rent. See our <a href="/terms">Terms</a> and <a href="/privacy-policy">Privacy Policy</a>.
+          SMS updates are optional. If you check the SMS consent box on this form, Thirsty Dawg Rentals may text you about your rental inquiry, booking, delivery/setup/pickup coordination, and customer-requested follow-up. Message frequency varies. Message and data rates may apply. Reply HELP for help or STOP to opt out. You can submit this booking request without consenting to SMS. See our <a href="/terms">Terms</a> and <a href="/privacy-policy">Privacy Policy</a>.
         </p>
       </section>
       <BookingClientWrapper />

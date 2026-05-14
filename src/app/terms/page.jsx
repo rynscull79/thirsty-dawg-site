@@ -54,7 +54,7 @@ export default function TermsOfServicePage() {
 
         <h2 style={{ fontSize: '1.5rem', color: '#ff7c02', marginTop: '2rem' }}>7. SMS/Text Messaging Terms</h2>
         <p style={{ marginBottom: '1rem' }}>
-          By providing your mobile phone number through our website, booking/contact flow, or by texting/calling our published business number, you agree to receive text messages from Thirsty Dawg Rentals about your rental inquiry, booking confirmations, event details, delivery/setup/pickup coordination, and customer-requested follow-up. Message frequency varies. Message and data rates may apply. Reply HELP for help or STOP to opt out. Consent to receive text messages is not required to rent from Thirsty Dawg Rentals. For help, contact info@thirstydawgrentals.com or call (850) 572-3796.
+          If you opt in to SMS by checking an SMS consent box, texting/calling our published business number, or otherwise requesting text follow-up, you agree to receive text messages from Thirsty Dawg Rentals about your rental inquiry, booking confirmations, event details, delivery/setup/pickup coordination, and customer-requested follow-up. Message frequency varies. Message and data rates may apply. Reply HELP for help or STOP to opt out. SMS consent is not required to rent from Thirsty Dawg Rentals. For help, contact info@thirstydawgrentals.com or call (850) 572-3796.
         </p>
 
         <h2 style={{ fontSize: '1.5rem', color: '#ff7c02', marginTop: '2rem' }}>8. Governing Law</h2>

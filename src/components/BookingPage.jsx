@@ -112,6 +112,11 @@ export default function BookingPage() {
       secondFlavor: raw.second_flavor || '',
       comments: raw.comments || '',
       iceCreamPackage: raw.ice_cream_package || '',
+      smsConsent: raw.sms_consent === 'yes',
+      smsConsentText:
+        'Optional SMS updates: I agree to receive text messages from Thirsty Dawg Rentals about my rental inquiry, booking, delivery/setup/pickup coordination, and customer-requested follow-up. Message frequency varies. Message and data rates may apply. Reply HELP for help or STOP to opt out. Checking this box is not required to submit this form or rent from Thirsty Dawg Rentals.',
+      smsConsentSource: 'website_booking_form',
+      smsConsentAt: raw.sms_consent === 'yes' ? new Date().toISOString() : '',
       rentalLength: calculateRentalLength(raw.date_needed, raw.rental_end),
       deliveryFee: deliveryFee !== null ? deliveryFee : 0,
       source: bookingSource || 'website',
@@ -290,10 +295,10 @@ export default function BookingPage() {
           </h2>
 
           {[
-            ['Name', 'name', 'text'],
-            ['Email', 'email', 'email'],
-            ['Phone', 'phone', 'text'],
-          ].map(([label, name, type]) => (
+            ['Name', 'name', 'text', true],
+            ['Email', 'email', 'email', true],
+            ['Phone (optional)', 'phone', 'tel', false],
+          ].map(([label, name, type, isRequired]) => (
             <div key={name} style={{ marginBottom: '1.5rem' }}>
               <label style={labelStyle} htmlFor={name}>
                 {label}
@@ -302,7 +307,7 @@ export default function BookingPage() {
                 style={inputStyle}
                 name={name}
                 type={type}
-                required
+                required={isRequired}
                 value={formData[name] || ''}
                 onChange={(e) =>
                   setFormData((prev) => ({ ...prev, [name]: e.target.value }))
@@ -310,8 +315,21 @@ export default function BookingPage() {
                 onBlur={(e) =>
                   setFormData((prev) => ({ ...prev, [name]: e.target.value }))
                 }
-                autoComplete="off"
+                autoComplete={name === 'phone' ? 'tel' : 'off'}
               />
+              {name === 'phone' && (
+                <p
+                  style={{
+                    margin: '0.35rem 0 0',
+                    fontSize: '0.82rem',
+                    lineHeight: 1.4,
+                    color: '#4b5563',
+                    fontFamily: 'var(--body-font)',
+                  }}
+                >
+                  Phone number is optional. You can submit this booking request without providing a phone number or consenting to SMS.
+                </p>
+              )}
             </div>
           ))}
 
@@ -615,6 +633,41 @@ export default function BookingPage() {
               rows="4"
               style={inputStyle}
             />
+          </div>
+
+          <div
+            style={{
+              marginBottom: '2rem',
+              padding: '1rem',
+              borderRadius: '16px',
+              border: '1px solid rgba(0,0,0,0.12)',
+              background: '#f8fbff',
+              fontFamily: 'var(--body-font)',
+              color: 'var(--td-black)',
+            }}
+          >
+            <label
+              htmlFor="sms_consent"
+              style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '0.75rem',
+                fontSize: '0.92rem',
+                lineHeight: 1.5,
+                cursor: 'pointer',
+              }}
+            >
+              <input
+                id="sms_consent"
+                name="sms_consent"
+                type="checkbox"
+                value="yes"
+                style={{ marginTop: '0.25rem', flex: '0 0 auto' }}
+              />
+              <span>
+                <strong>Optional SMS updates:</strong> I agree to receive text messages from Thirsty Dawg Rentals about my rental inquiry, booking, delivery/setup/pickup coordination, and customer-requested follow-up. Message frequency varies. Message and data rates may apply. Reply HELP for help or STOP to opt out. Checking this box is not required to submit this form or rent from Thirsty Dawg Rentals.
+              </span>
+            </label>
           </div>
 
           <button
