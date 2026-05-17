@@ -50,7 +50,7 @@ export default function PrivacyPolicyPage() {
 
       <h2 style={{ fontSize: '1.5rem', color: '#ff7c02', marginTop: '2rem' }}>4. SMS/Mobile Phone Privacy</h2>
       <p style={{ marginBottom: '1rem' }}>
-        If you provide your mobile phone number, we use it only to communicate with you about your rental inquiry, booking, delivery/setup/pickup coordination, and customer-requested follow-up. We do not sell, rent, share, or disclose mobile phone numbers or SMS opt-in consent data with third parties or affiliates for their marketing or promotional purposes. Message frequency varies. Message and data rates may apply. You may opt out at any time by replying STOP, or reply HELP for help.
+        If you provide your mobile phone number, we use it only to communicate with you about your rental inquiry, booking, delivery/setup/pickup coordination, and customer-requested follow-up. SMS consent is optional and is not required to submit a booking request or rent from Thirsty Dawg Rentals. We do not sell, rent, share, or disclose mobile phone numbers or SMS opt-in consent data with third parties or affiliates for their marketing or promotional purposes. Message frequency varies. Message and data rates may apply. You may opt out at any time by replying STOP, or reply HELP for help.
       </p>
 
       <h2 style={{ fontSize: '1.5rem', color: '#ff7c02', marginTop: '2rem' }}>5. Cookies</h2>
