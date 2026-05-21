@@ -23,6 +23,42 @@ export default function BookingRoute() {
           SMS updates are optional. If you check the SMS consent box on this form, Thirsty Dawg Rentals may text you about your rental inquiry, booking, delivery/setup/pickup coordination, and customer-requested follow-up. Message frequency varies. Message and data rates may apply. Reply HELP for help or STOP to opt out. You can submit this booking request without consenting to SMS. See our <a href="/terms">Terms</a> and <a href="/privacy-policy">Privacy Policy</a>.
         </p>
       </section>
+      <section
+        aria-label="SMS opt-in disclosure"
+        style={{
+          maxWidth: '860px',
+          margin: '0 auto 1.5rem',
+          padding: '1rem',
+          borderRadius: '16px',
+          border: '1px solid rgba(0,0,0,0.12)',
+          background: '#f8fbff',
+          fontFamily: 'var(--body-font)',
+          color: 'var(--td-black)',
+        }}
+      >
+        <label
+          htmlFor="sms_consent_static"
+          style={{
+            display: 'flex',
+            alignItems: 'flex-start',
+            gap: '0.75rem',
+            fontSize: '0.92rem',
+            lineHeight: 1.5,
+          }}
+        >
+          <input
+            id="sms_consent_static"
+            name="sms_consent_static"
+            type="checkbox"
+            value="yes"
+            aria-describedby="sms_consent_static_details"
+            style={{ marginTop: '0.25rem', flex: '0 0 auto' }}
+          />
+          <span id="sms_consent_static_details">
+            <strong>Optional SMS updates:</strong> I agree to receive text messages from Thirsty Dawg Rentals about my rental inquiry, booking, delivery/setup/pickup coordination, and customer-requested follow-up. Message frequency varies. Message and data rates may apply. Reply HELP for help or STOP to opt out. Checking this box is not required to submit this form or rent from Thirsty Dawg Rentals. See our <a href="/terms">Terms</a> and <a href="/privacy-policy">Privacy Policy</a>.
+          </span>
+        </label>
+      </section>
       <BookingClientWrapper />
     </>
   );
