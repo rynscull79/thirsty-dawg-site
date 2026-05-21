@@ -24,6 +24,7 @@ export default function BookingRoute() {
         </p>
       </section>
       <section
+        id="serverSmsDisclosure"
         aria-label="SMS opt-in disclosure"
         style={{
           maxWidth: '860px',
