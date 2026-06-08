@@ -12,6 +12,7 @@ export default function HeaderNav() {
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/rentals', label: 'Frozen Drinks & Soft Serve' },
+    { href: '/long-term-leasing', label: 'Long-Term Leasing' },
     { href: '/icecream', label: 'Frozen Novelties' },
     { href: '/our-story', label: 'Our Story' },
     { href: '/faq', label: 'FAQ' },

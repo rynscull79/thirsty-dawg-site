@@ -117,6 +117,29 @@ export default function HomeClient() {
       </section>
 
       <section className="content-section">
+        <div style={{
+          maxWidth: '1050px',
+          margin: '0 auto',
+          padding: '2rem 1.5rem',
+          borderRadius: '22px',
+          background: '#fff8ef',
+          border: '2px dashed rgba(247, 148, 29, 0.35)',
+          boxShadow: 'var(--shadow-soft)',
+          textAlign: 'center',
+        }}>
+          <h2 style={{ color: 'var(--td-blue)', fontSize: '2.2rem', marginBottom: '0.75rem' }}>
+            Long-Term Frozen Drink Machine Leasing
+          </h2>
+          <p style={{ maxWidth: '780px', margin: '0 auto 1.25rem', lineHeight: 1.65, fontSize: '1.08rem' }}>
+            Want frozen drinks available at your business, venue, or rental property year-round? Thirsty Dawg Rentals offers 6-month and annual frozen drink machine leases with delivery, setup, training, maintenance, and local support included.
+          </p>
+          <Link href="/long-term-leasing" className="btn-primary">
+            Learn About Long-Term Leasing
+          </Link>
+        </div>
+      </section>
+
+      <section className="content-section">
         <GallerySection />
       </section>
 
