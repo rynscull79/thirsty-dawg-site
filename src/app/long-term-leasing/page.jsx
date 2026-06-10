@@ -3,14 +3,14 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Long-Term Frozen Drink Machine Leasing | Pensacola & Gulf Coast',
   description:
-    'Lease a commercial frozen drink machine for your business, venue, bar, restaurant, beach rental, or event space. Thirsty Dawg Rentals offers 6-month and annual lease options with delivery, setup, training, maintenance, and local support.',
+    'Lease a commercial frozen drink machine for your business, venue, bar, restaurant, beach rental, or event space. Thirsty Dawg Rentals supports recurring lease customers with delivery, setup, training, maintenance, and local support.',
   alternates: {
     canonical: 'https://www.thirstydawgrentals.com/long-term-leasing',
   },
   openGraph: {
     title: 'Long-Term Frozen Drink Machine Leasing | Thirsty Dawg Rentals',
     description:
-      'Add frozen drinks to your business without buying a machine upfront. 6-month and annual lease options available across Pensacola and the Gulf Coast.',
+      'Add frozen drinks to your business without buying a machine upfront. Experienced long-term lease support available across Pensacola and the Gulf Coast.',
     images: ['https://www.thirstydawgrentals.com/thirsty-dawg-logo.webp'],
     url: 'https://www.thirstydawgrentals.com/long-term-leasing',
     type: 'website',
@@ -232,12 +232,31 @@ export default function LongTermLeasingPage() {
           We deliver, set up, train your team, and handle machine maintenance so you can focus on serving your guests.
         </p>
         <p style={styles.heroText}>
+          Thirsty Dawg already supports recurring commercial lease customers across multiple businesses, so you are working with a local team that understands long-term machine placement, setup, and support.
+        </p>
+        <p style={styles.heroText}>
           Not sure which machine fits your location? We’ll help you choose the right setup for your space, expected volume, and drink menu. Already know exactly what you want? We can lease that to you too.
         </p>
         <div style={styles.actions}>
           <Link href="/contact?topic=long-term-leasing" style={styles.primary}>Request Lease Pricing</Link>
           <a href="tel:8505723796" style={styles.secondary}>Call or Text (850) 572-3796</a>
         </div>
+      </section>
+
+      <section style={styles.sectionAlt}>
+        <h2 style={styles.h2}>Experienced Lease Support for Local Businesses</h2>
+        <p style={styles.text}>
+          Long-term leasing is not a brand-new idea for us. Thirsty Dawg Rentals already has multiple machines placed with recurring commercial lease customers across multiple businesses.
+        </p>
+        <div style={styles.grid}>
+          <div style={styles.card}>Commercial lease customers already in place</div>
+          <div style={styles.card}>Multiple machines currently supporting local businesses</div>
+          <div style={styles.card}>Local delivery, setup, training, maintenance, and support</div>
+          <div style={styles.card}>Guidance on machine choice, volume needs, flavors, and setup</div>
+        </div>
+        <p style={styles.text}>
+          Whether you are adding frozen drinks to a bar, venue, office, rental property, or guest-facing business, we can help you choose a setup that fits your space and how your team will use the machine day to day.
+        </p>
       </section>
 
       <section style={styles.section}>
