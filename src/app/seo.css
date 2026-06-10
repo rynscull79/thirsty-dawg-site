@@ -55,6 +55,7 @@
   margin-bottom: 1rem;
   color: var(--td-blue-deep);
   font-size: clamp(1.7rem, 3vw, 2.4rem);
+  text-align: center;
 }
 
 .seo-section p {

@@ -2,13 +2,13 @@ import Link from 'next/link';
 import { absoluteUrl, businessName, coreServices, phoneDisplay, phoneHref, serviceAreas } from '@/lib/seoData';
 
 export const metadata = {
-  title: 'Service Areas | Frozen Drink & Ice Cream Rentals Near Pensacola, FL',
+  title: 'Service Areas | Frozen Drink, Frozen Yogurt & Ice Cream Rentals Near Pensacola, FL',
   description:
-    'See where Thirsty Dawg Rentals delivers frozen drink machines, margarita machines, soft serve machines, and stocked ice cream carts across Pensacola and the Gulf Coast.',
+    'See where Thirsty Dawg Rentals delivers frozen drink machines, margarita machines, soft serve machines, frozen yogurt machines, and stocked ice cream carts across Pensacola and the Gulf Coast.',
   alternates: { canonical: absoluteUrl('/service-areas') },
   openGraph: {
     title: 'Thirsty Dawg Rentals Service Areas',
-    description: 'Frozen drink, soft serve, and ice cream cart rentals for Pensacola and nearby Gulf Coast communities.',
+    description: 'Frozen drink, soft serve, frozen yogurt, and ice cream cart rentals for Pensacola and nearby Gulf Coast communities.',
     url: absoluteUrl('/service-areas'),
     images: [`${absoluteUrl('/thirsty-dawg-logo.webp')}`],
     type: 'website',
@@ -34,7 +34,7 @@ export default function ServiceAreasPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <section className="seo-hero">
         <p className="seo-eyebrow">Delivery, setup & pickup included</p>
-        <h1>Frozen Drink, Soft Serve & Ice Cream Cart Rentals Across the Gulf Coast</h1>
+        <h1>Frozen Drink, Soft Serve, Frozen Yogurt & Ice Cream Cart Rentals Across the Gulf Coast</h1>
         <p>
           {businessName} serves Pensacola and nearby Florida Panhandle communities with commercial-grade frozen treat rentals for parties, weddings, schools, offices, vacation rentals, and larger events.
         </p>

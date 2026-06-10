@@ -24,7 +24,7 @@ export const metadata = {
     template: '%s',
   },
   description:
-    'Rent frozen drink machines, margarita machines, soft serve machines, and stocked ice cream carts for parties, weddings, schools, and events around Pensacola and the Gulf Coast.',
+    'Rent frozen drink machines, margarita machines, soft serve machines, frozen yogurt machines, and stocked ice cream carts for parties, weddings, schools, and events around Pensacola and the Gulf Coast.',
   robots: 'index, follow',
   icons: {
     icon: '/favicon.png',
@@ -180,7 +180,7 @@ export default function RootLayout({ children }) {
               ],
               priceRange: '$$',
               description:
-                'Rent fully stocked novelty ice cream freezers for parties and events. Serving Pensacola, the Florida Panhandle, and South Alabama.',
+                'Rent frozen drink machines, soft serve machines, frozen yogurt machines, and stocked novelty ice cream carts for parties and events. Serving Pensacola, the Florida Panhandle, and South Alabama.',
               openingHours: 'Mo-Su 08:00-20:00',
             }),
           }}

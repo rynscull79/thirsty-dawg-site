@@ -1,19 +1,16 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
-import { LoadScript, Autocomplete } from '@react-google-maps/api';
-
-const GOOGLE_LIBRARIES = ['places'];
+import React, { useEffect, useState } from 'react';
+// Address autocomplete is intentionally not required for the form to render.
+// A normal address field is more reliable than blocking the whole booking flow.
 
 export default function BookingPage() {
   const [submitted, setSubmitted] = useState(false);
   const [machineType, setMachineType] = useState('');
   const [secondFlavor, setSecondFlavor] = useState('');
-  const [serviceRequested, setServiceRequested] = useState('');
   const [deliveryFee, setDeliveryFee] = useState(null);
   const [serviceType, setServiceType] = useState('');
   const [calculatingFee, setCalculatingFee] = useState(false);
-  const autocompleteRef = useRef(null);
   const [formData, setFormData] = useState({
     street: '',
     city: '',
@@ -107,6 +104,7 @@ export default function BookingPage() {
       rentalStart: new Date(raw.date_needed).toISOString(),
       rentalEnd: new Date(raw.rental_end).toISOString(),
       machineType: raw.machine_type,
+      serviceType: raw.service_type,
       flavor: raw.flavor,
       flavorAdditions: raw.flavor_additions || '',
       secondFlavor: raw.second_flavor || '',
@@ -260,10 +258,6 @@ export default function BookingPage() {
   }
 
   return (
-    <LoadScript
-      googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
-      libraries={GOOGLE_LIBRARIES}
-    >
       <div
         style={{
           background: '#f8fbff',
@@ -325,7 +319,7 @@ export default function BookingPage() {
               lineHeight: 1.1,
             }}
           >
-            Book a Frozen Drink or Soft Serve Machine!
+            Book a Frozen Drink, Soft Serve, or Frozen Yogurt Machine!
           </h2>
 
           {[
@@ -371,55 +365,6 @@ export default function BookingPage() {
             <label style={labelStyle} htmlFor="street">
               Event Location
             </label>
-            <Autocomplete
-              onLoad={(autocomplete) => (autocompleteRef.current = autocomplete)}
-              onPlaceChanged={() => {
-                if (!autocompleteRef.current) return;
-
-                const place = autocompleteRef.current.getPlace();
-                console.log('📦 Full Place Object:', place);
-
-                if (!place || !place.address_components) {
-                  console.error(
-                    '❌ Google Maps: Place or address_components missing'
-                  );
-                  return;
-                }
-
-                const addressComponents = place.address_components;
-
-                const getPart = (type) =>
-                  addressComponents.find((c) => c.types.includes(type))
-                    ?.long_name || '';
-
-                const street = place.formatted_address || '';
-                let city =
-                  getPart('locality') ||
-                  getPart('sublocality') ||
-                  getPart('administrative_area_level_2');
-
-                if (!city) {
-                  console.warn('⚠️ City not found, falling back to unknown');
-                  city = 'Unknown';
-                }
-
-                const state =
-                  getPart('administrative_area_level_1') || 'FL';
-                const zip = getPart('postal_code') || '';
-
-                if (!city) {
-                  console.warn('⚠️ City not found in address_components');
-                }
-
-                setFormData((prev) => ({
-                  ...prev,
-                  street,
-                  city,
-                  state,
-                  zip,
-                }));
-              }}
-            >
               <input
                 style={{ ...inputStyle, minWidth: '0' }}
                 name="street"
@@ -432,7 +377,6 @@ export default function BookingPage() {
                 }
                 autoComplete="off"
               />
-            </Autocomplete>
           </div>
 
           <input type="hidden" name="city" value={formData.city || ''} />
@@ -490,6 +434,7 @@ export default function BookingPage() {
               <option value="">-- Select a Service --</option>
               <option value="frozen_drink">Frozen Drink Machine</option>
               <option value="soft_serve">Soft Serve Machine</option>
+              <option value="frozen_yogurt">Frozen Yogurt Machine</option>
               <option value="ice_cream_cart">Ice Cream Cart</option>
             </select>
 
@@ -553,8 +498,17 @@ export default function BookingPage() {
             />
           )}
 
+          {serviceType === 'frozen_yogurt' && (
+            <input
+              type="hidden"
+              name="machine_type"
+              value="Frozen Yogurt Machine - $235"
+            />
+          )}
+
           {(serviceType === 'frozen_drink' ||
-            serviceType === 'soft_serve') && (
+            serviceType === 'soft_serve' ||
+            serviceType === 'frozen_yogurt') && (
             <div style={{ marginBottom: '1.5rem' }}>
               <label style={labelStyle} htmlFor="flavor">
                 Flavor
@@ -584,12 +538,21 @@ export default function BookingPage() {
                       'Strawberry Margarita',
                       'Watermelon',
                     ]
-                  : [
+                  : serviceType === 'soft_serve'
+                  ? [
                       'Soft Serve Vanilla',
                       'Soft Serve Chocolate',
                       'Soft Serve Birthday Cake (Additional Charge)',
                       'Soft Serve Cotton Candy (Additional Charge)',
                       'Soft Serve Salted Caramel (Additional Charge)',
+                    ]
+                  : [
+                      'Frozen Yogurt Pina Colada',
+                      'Frozen Yogurt Pineapple Whip',
+                      'Frozen Yogurt Mango Whip',
+                      'Frozen Yogurt Cookies & Cream',
+                      'Frozen Yogurt Vanilla',
+                      'Frozen Yogurt Birthday Cake',
                     ]
                 ).map((option) => (
                   <option key={option}>{option}</option>
@@ -754,6 +717,5 @@ export default function BookingPage() {
           ) : null}
         </form>
       </div>
-    </LoadScript>
   );
 }

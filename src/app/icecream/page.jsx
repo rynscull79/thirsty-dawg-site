@@ -408,28 +408,6 @@ export default function IceCreamPage() {
           </details>
         ))}
 
-        <section style={{ margin: '2rem 0 0', display: 'flex', gap: '2rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <img
-            src="/gallery/boston-terrier-at-freezer.webp"
-            alt="Boston terrier standing on a stool peeking into an ice cream cart full of frozen treats"
-            style={{
-              maxWidth: '300px',
-              borderRadius: '12px',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-              objectFit: 'cover',
-            }}
-          />
-          <img
-            src="/gallery/icecream-outside.webp"
-            alt="Woman smiling while eating an ice cream sandwich"
-            style={{
-              maxWidth: '300px',
-              borderRadius: '12px',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-              objectFit: 'cover',
-            }}
-          />
-        </section>
       </section>
 
       {/* CTA */}

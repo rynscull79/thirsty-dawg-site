@@ -1,17 +1,17 @@
 import HomeClient from './HomeClient';
 
 export const metadata = {
-  title: 'Frozen Drink & Soft Serve Machine Rentals in Pensacola, FL | Thirsty Dawg Rentals',
+  title: 'Frozen Drink, Soft Serve & Frozen Yogurt Rentals in Pensacola, FL | Thirsty Dawg Rentals',
   description:
-    'Rent frozen drink, slushie, and soft serve ice cream machines plus fully-stocked ice cream carts for parties, weddings, schools, and events in Pensacola, Gulf Breeze, Navarre, Milton, Pace, and nearby areas. Delivery, setup, and pickup included.',
+    'Rent frozen drink, slushie, soft serve, and frozen yogurt machines plus fully-stocked ice cream carts for parties, weddings, schools, and events in Pensacola, Gulf Breeze, Navarre, Milton, Pace, and nearby areas. Delivery, setup, and pickup included.',
   alternates: {
     canonical: 'https://www.thirstydawgrentals.com/',
   },
   openGraph: {
-    title: 'Frozen Drink & Soft Serve Rentals in Pensacola, FL | Thirsty Dawg Rentals',
+    title: 'Frozen Drink, Soft Serve & Frozen Yogurt Rentals in Pensacola, FL | Thirsty Dawg Rentals',
     description:
-      'Rent soft serve ice cream and frozen drink machines for weddings, parties, and events. Serving Pensacola and the Gulf Coast with delivery and setup.',
-    images: ['https://www.thirstydawgrentals.com/thirsty-dawg-logo.webp'],
+      'Rent soft serve, frozen yogurt, and frozen drink machines for weddings, parties, and events. Serving Pensacola and the Gulf Coast with delivery and setup.',
+    images: ['https://www.thirstydawgrentals.com/gallery/frozen-yogurt-2026.jpg'],
     url: 'https://www.thirstydawgrentals.com/',
     type: 'website',
   },
@@ -27,7 +27,7 @@ export default function Page() {
     telephone: '850-572-3796',
     image: 'https://www.thirstydawgrentals.com/thirsty-dawg-logo.webp',
     description:
-      'Rent frozen drink machines and soft serve ice cream machines for events, parties, and weddings in Pensacola, FL and nearby Gulf Coast areas. Delivery, setup, and pickup included.',
+      'Rent frozen drink machines, soft serve ice cream machines, frozen yogurt machines, and ice cream carts for events, parties, and weddings in Pensacola, FL and nearby Gulf Coast areas. Delivery, setup, and pickup included.',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Pensacola',

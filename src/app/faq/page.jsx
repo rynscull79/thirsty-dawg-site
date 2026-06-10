@@ -35,6 +35,21 @@ const faqs = [
       'Yes. Any mix can be served with or without alcohol, which makes the machines popular for kids parties, schools, and family-friendly events.',
   },
   {
+    question: 'Do you offer frozen yogurt machine rentals?',
+    answer:
+      'Yes. Frozen yogurt is available as a 2026 offering through our soft serve machine rental lineup for parties, schools, weddings, office treats, pool parties, and Gulf Coast events.',
+  },
+  {
+    question: 'What frozen yogurt flavors are available?',
+    answer:
+      'Current frozen yogurt flavor options include Pina Colada, Pineapple Whip, Mango Whip, Cookies & Cream, Vanilla, and Birthday Cake. Flavor availability can vary by date, so ask when booking.',
+  },
+  {
+    question: 'Is frozen yogurt good for schools, offices, and weddings?',
+    answer:
+      'Yes. Frozen yogurt works well for school events, teacher appreciation, office treats, weddings, birthdays, and summer parties because it is self-serve, fun, and family-friendly.',
+  },
+  {
     question: 'How long does it take the mix to freeze?',
     answer:
       'Freeze time varies by machine and environment, but plan for about 45 minutes to an hour and a half in a cool setting. We recommend a dedicated outlet and starting several hours ahead of serving time.',
@@ -64,7 +79,7 @@ const faqs = [
 export const metadata = {
   title: 'Frequently Asked Questions | Thirsty Dawg Rentals',
   description:
-    'Get answers to common questions about frozen drink machines, margarita rentals, soft serve machines, ice cream carts, delivery, setup, alcohol, power needs, and cleanup.',
+    'Get answers to common questions about frozen drink machines, margarita rentals, soft serve machines, frozen yogurt rentals, ice cream carts, delivery, setup, alcohol, power needs, and cleanup.',
   alternates: { canonical: absoluteUrl('/faq') },
 };
 

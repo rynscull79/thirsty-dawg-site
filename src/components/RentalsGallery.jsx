@@ -20,6 +20,11 @@ const rentalsImages = [
       'Grindmaster 3311 – Stainless single-flavor machine. Great for weddings, showers, or pairing two machines together for higher-output two-flavor service.',
   },
   {
+    src: '/gallery/Frosty-Factory-127A.webp',
+    caption:
+      'Frosty Factory 127A - High-output single-flavor machine with an extra-large freezing barrel. Great for busier parties and events that need faster serving and more frozen drinks per hour.',
+  },
+  {
     src: '/gallery/taylor-152-12.webp',
     caption:
       'Taylor 152-12 – Compact, single-flavor soft serve machine. A powerful performer for smaller gatherings, kids’ parties, or backyard events. Requires 120V outlet on a dedicated 20 amp breaker. Customer must verify outlet before delivery.',
@@ -72,10 +77,12 @@ export default function RentalsGallery() {
               src={img.src}
               alt={img.caption}
               width={300}
-              height={200}
+              height={400}
               style={{
                 width: '100%',
-                height: 'auto',
+                aspectRatio: '3 / 4',
+                height: '400px',
+                objectFit: 'cover',
                 borderRadius: '18px',
                 border: '3px solid rgba(255, 255, 255, 0.9)',
                 boxShadow: 'var(--shadow-soft)',

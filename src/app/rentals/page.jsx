@@ -7,17 +7,17 @@ import dynamic from 'next/dynamic';
 const FloatingBookNow = dynamic(() => import('@/components/FloatingBookNow'));
 
 export const metadata = {
-  title: 'Frozen Drink & Soft Serve Machine Rentals in Pensacola, FL | Thirsty Dawg',
+  title: 'Frozen Drink, Soft Serve & Frozen Yogurt Rentals in Pensacola, FL | Thirsty Dawg',
   description:
-    'Rent frozen drink and soft serve ice cream machines in Pensacola, Gulf Breeze, Navarre, Milton, Pace, and nearby areas. Delivery, setup, and pickup included.',
+    'Rent frozen drink, soft serve ice cream, and frozen yogurt machines in Pensacola, Gulf Breeze, Navarre, Milton, Pace, and nearby areas. Delivery, setup, and pickup included.',
   alternates: {
     canonical: 'https://www.thirstydawgrentals.com/rentals',
   },
   openGraph: {
-    title: 'Frozen Drink & Soft Serve Machine Rentals in Pensacola, FL | Thirsty Dawg',
+    title: 'Frozen Drink, Soft Serve & Frozen Yogurt Rentals in Pensacola, FL | Thirsty Dawg',
     description:
-      'Rent frozen drink and soft serve machines for events across Pensacola and nearby areas. Thirsty Dawg handles delivery, setup, and pickup!',
-    images: ['https://www.thirstydawgrentals.com/thirsty-dawg-logo.webp'],
+      'Rent frozen drink, soft serve, and frozen yogurt machines for events across Pensacola and nearby areas. Thirsty Dawg handles delivery, setup, and pickup!',
+    images: ['https://www.thirstydawgrentals.com/gallery/frozen-yogurt-2026.jpg'],
     url: 'https://www.thirstydawgrentals.com/rentals',
     type: 'website',
   },
@@ -33,7 +33,7 @@ export default function RentalsPage() {
     telephone: '850-572-3796',
     image: 'https://www.thirstydawgrentals.com/thirsty-dawg-logo.webp',
     description:
-      'Frozen drink machine and soft serve ice cream machine rentals in Pensacola, FL and surrounding Gulf Coast areas. Delivery, setup, and pickup included.',
+      'Frozen drink machine, soft serve ice cream machine, and frozen yogurt machine rentals in Pensacola, FL and surrounding Gulf Coast areas. Delivery, setup, and pickup included.',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Pensacola',
@@ -198,12 +198,12 @@ export default function RentalsPage() {
         {/* Hero */}
         <section style={heroStyle}>
           <h1 style={heroHeadingStyle}>
-            🍹 Frozen Drink & Soft Serve Machine Rentals in Pensacola, FL
+            Frozen Drink, Soft Serve & Frozen Yogurt Rentals in Pensacola, FL
           </h1>
 
           <p style={heroParaStyle}>
-            Choose from single or dual flavor frozen drink machines — or cool things down with our
-            soft serve ice cream rentals!
+            Choose from single or dual flavor frozen drink machines, soft serve ice cream rentals,
+            and new frozen yogurt flavor options.
           </p>
 
           <p style={heroParaSmallStyle}>
@@ -236,6 +236,20 @@ export default function RentalsPage() {
 
         {/* Rentals / Machine Descriptions */}
         <OurRentals />
+
+        <section style={sectionCardStyle}>
+          <h2 style={sectionTitleStyle}>New for 2026: Frozen Yogurt Rentals</h2>
+          <p style={sectionIntroStyle}>
+            Frozen yogurt is now available with our soft serve rental lineup. It is a strong fit
+            for birthdays, schools, office treats, weddings, pool parties, and summer events across
+            Pensacola and the Gulf Coast.
+          </p>
+          <div style={{ textAlign: 'center', marginTop: '1.25rem' }}>
+            <a href="/frozen-yogurt-machine-rentals" className="btn-primary">
+              View Frozen Yogurt Rentals
+            </a>
+          </div>
+        </section>
 
         {/* Why Machine Quality Matters (moved BELOW the rentals so it reads in the order you want) */}
         <section style={sectionCardStyle}>

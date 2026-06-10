@@ -3,17 +3,17 @@
 import FloatingBookNow from '@/components/FloatingBookNow';
 
 export const metadata = {
-  title: 'Soft Serve Machine Rentals in Pensacola, FL | Thirsty Dawg',
+  title: 'Soft Serve & Frozen Yogurt Machine Rentals in Pensacola, FL | Thirsty Dawg',
   description:
-    'Rent a commercial soft serve ice cream machine for parties, weddings, schools, and events in Pensacola, Gulf Breeze, Navarre, Milton, Pace, and nearby areas. Delivery, setup, and pickup included.',
+    'Rent a commercial soft serve or frozen yogurt machine for parties, weddings, schools, and events in Pensacola, Gulf Breeze, Navarre, Milton, Pace, and nearby areas. Delivery, setup, and pickup included.',
   alternates: {
     canonical: 'https://www.thirstydawgrentals.com/soft-serve-machine-rentals',
   },
   openGraph: {
-    title: 'Soft Serve Machine Rentals in Pensacola, FL | Thirsty Dawg',
+    title: 'Soft Serve & Frozen Yogurt Machine Rentals in Pensacola, FL | Thirsty Dawg',
     description:
-      'Commercial soft serve machine rentals delivered to your event. Easy to use, great for parties and weddings. Serving Pensacola and nearby Gulf Coast areas.',
-    images: ['https://www.thirstydawgrentals.com/thirsty-dawg-logo.webp'],
+      'Commercial soft serve and frozen yogurt machine rentals delivered to your event. Easy to use, great for parties and weddings. Serving Pensacola and nearby Gulf Coast areas.',
+    images: ['https://www.thirstydawgrentals.com/gallery/frozen-yogurt-2026.jpg'],
     url: 'https://www.thirstydawgrentals.com/soft-serve-machine-rentals',
     type: 'website',
   },
@@ -29,7 +29,7 @@ export default function SoftServeMachineRentalsPage() {
     telephone: '850-572-3796',
     image: 'https://www.thirstydawgrentals.com/thirsty-dawg-logo.webp',
     description:
-      'Soft serve ice cream machine rentals in Pensacola, FL and surrounding Gulf Coast areas. Delivery, setup, and pickup included.',
+      'Soft serve ice cream and frozen yogurt machine rentals in Pensacola, FL and surrounding Gulf Coast areas. Delivery, setup, and pickup included.',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Pensacola',
@@ -83,7 +83,7 @@ export default function SoftServeMachineRentalsPage() {
               margin: 0,
             }}
           >
-            🍦 Soft Serve Machine Rentals in Pensacola, FL
+            Soft Serve & Frozen Yogurt Machine Rentals in Pensacola, FL
           </h1>
 
           <p
@@ -96,8 +96,8 @@ export default function SoftServeMachineRentalsPage() {
               marginInline: 'auto',
             }}
           >
-            Add a cool twist to your event with real soft serve ice cream — perfect for birthday parties, weddings,
-            schools, church events, and company celebrations across Pensacola and nearby areas.
+            Add a cool twist to your event with real soft serve ice cream or frozen yogurt, perfect for birthday parties,
+            weddings, schools, church events, and company celebrations across Pensacola and nearby areas.
           </p>
 
           <p
@@ -155,10 +155,21 @@ export default function SoftServeMachineRentalsPage() {
           <h2 style={{ fontSize: '1.6rem', fontWeight: 'bold', marginBottom: '1rem' }}>🍨 What’s Included</h2>
           <ul style={{ marginLeft: '1.25rem', marginBottom: '2rem' }}>
             <li>✅ One commercial soft serve machine</li>
-            <li>✅ Soft serve mix (vanilla, chocolate, or swirl)</li>
+            <li>✅ Soft serve or frozen yogurt mix options</li>
             <li>✅ Delivery, setup, quick how-to, and pickup</li>
             <li>✅ Optional toppings (sprinkles, fudge, caramel) upon request</li>
           </ul>
+
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 'bold', marginBottom: '1rem' }}>New for 2026: Frozen Yogurt</h2>
+          <p style={{ marginBottom: '1rem' }}>
+            By popular demand, frozen yogurt flavors are now available along with vanilla and chocolate soft serve.
+            Current options include Pina Colada, Pineapple Whip, Mango Whip, Cookies & Cream, Vanilla, and Birthday Cake.
+          </p>
+          <p style={{ marginBottom: '2rem' }}>
+            <a href="/frozen-yogurt-machine-rentals" style={{ color: '#009fdb', fontWeight: 'bold', textDecoration: 'underline' }}>
+              View frozen yogurt rentals
+            </a>
+          </p>
 
           <h2 style={{ fontSize: '1.6rem', fontWeight: 'bold', marginBottom: '1rem' }}>❓ FAQs</h2>
           <ul style={{ marginLeft: '1.25rem' }}>
@@ -193,7 +204,7 @@ export default function SoftServeMachineRentalsPage() {
                 boxShadow: '0 8px 16px rgba(0,0,0,0.2)',
               }}
             >
-              📅 Book Your Soft Serve Machine
+              Book Your Soft Serve or Frozen Yogurt Machine
             </a>
           </div>
 

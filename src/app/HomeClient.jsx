@@ -1,7 +1,6 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.css';
 
@@ -27,9 +26,10 @@ export default function HomeClient() {
         </h1>
 
         <p className="hero-subtext">
-          Rent commercial-grade frozen drink machines, soft serve machines, and
-          fully-stocked novelty ice cream carts for parties, weddings, schools,
-          and events across Pensacola and surrounding areas.
+          Rent commercial-grade frozen drink machines, soft serve machines,
+          frozen yogurt machines, and fully-stocked novelty ice cream carts for
+          parties, weddings, schools, and events across Pensacola and surrounding
+          areas.
         </p>
 
         <p className="hero-subtext-small">
@@ -69,46 +69,46 @@ export default function HomeClient() {
           alt="Ice cream party setup with frozen novelties"
           className="home-photo-card"
         />
+
+        <img
+          src="/gallery/wedding-treats.webp"
+          alt="Wedding-themed novelty ice cream cart rental setup"
+          className="home-photo-card"
+        />
       </section>
 
       <section className="promo-section">
         <div className="promo-section__intro">
-          <h2 className="promo-section__title">🎉 New Frozen Treat Rentals for 2025!</h2>
+          <p className="promo-section__eyebrow">New for 2026</p>
+          <h2 className="promo-section__title">Frozen Yogurt Is Now Available!</h2>
 
           <p className="promo-section__lead">
-            We&apos;re now serving up Soft Serve and fully-stocked Ice Cream Carts —
-            perfect for parties, schools, weddings, and more!
+            By popular demand, frozen yogurt is joining our soft serve lineup
+            along with the vanilla and chocolate everyone already loves.
           </p>
 
           <div className="promo-section__actions">
-            <Link href="/booking" className="btn-primary">
-              🍦 Book Soft Serve
+            <Link href="/frozen-yogurt-machine-rentals" className="btn-primary">
+              Book Frozen Yogurt
             </Link>
 
-            <Link href="/icecream" className="btn-secondary">
-              🍧 View Ice Cream Packages
+            <Link href="/soft-serve-machine-rentals" className="btn-secondary">
+              View Soft Serve Rentals
             </Link>
           </div>
         </div>
 
-        <div className="promo-section__images">
+        <div className="promo-section__feature">
+          <img
+            src="/gallery/frozen-yogurt-2026.jpg"
+            alt="Frozen yogurt flavor options now available from Thirsty Dawg Rentals"
+            width="520"
+            height="390"
+            className="promo-section__feature-image"
+          />
           <img
             src="/gallery/kid-soft-serve.webp"
             alt="Kid enjoying soft serve ice cream"
-            width="260"
-            height="340"
-            className="promo-section__image"
-          />
-          <img
-            src="/gallery/frozen_novelties_cart.webp"
-            alt="Fully-stocked frozen novelty cart"
-            width="260"
-            height="340"
-            className="promo-section__image"
-          />
-          <img
-            src="/gallery/wedding_novelty_cart.webp"
-            alt="Wedding-themed novelty cart"
             width="260"
             height="340"
             className="promo-section__image"
@@ -157,6 +157,7 @@ export default function HomeClient() {
             '❄️ No Ice Needed – Our machines freeze the mix automatically',
             '🥇 Commercial-Grade Equipment – Bar-quality drink and dessert machines',
             '🍦 Soft Serve Machines – Delicious vanilla and chocolate in minutes',
+            'Frozen Yogurt Rentals - New 2026 flavors for parties, schools, and office treats',
             '🍧 Stocked Ice Cream Carts – Delivered with frozen novelties ready to serve',
             '🙌 Full-Service Delivery – We deliver, set up, and pick up for you',
             '🧃 Natural Fruit Juices – Made with real fruit flavorings',
@@ -174,14 +175,14 @@ export default function HomeClient() {
       </section>
 
       <section className="seo-section">
-        <h2>Popular local rental searches</h2>
+        <h2>Serving Pensacola and the Gulf Coast</h2>
         <p>
-          Looking for frozen drink, soft serve, or ice cream cart rentals near you? We serve Pensacola and nearby Gulf Coast communities with delivery, setup, and pickup included.
+          Looking for frozen drink, soft serve, frozen yogurt, or ice cream cart rentals near you? We serve Pensacola and nearby Gulf Coast communities with delivery, setup, and pickup included.
         </p>
         <div className="seo-card-grid">
           <Link href="/service-areas/pensacola-fl" className="seo-card seo-card-link">
             <strong>Pensacola, FL</strong>
-            <span>Frozen drink machines, soft serve, and ice cream cart rentals for local parties and events.</span>
+            <span>Frozen drink machines, soft serve, frozen yogurt, and ice cream cart rentals for local parties and events.</span>
           </Link>
           <Link href="/service-areas/gulf-breeze-fl" className="seo-card seo-card-link">
             <strong>Gulf Breeze, FL</strong>
@@ -189,7 +190,7 @@ export default function HomeClient() {
           </Link>
           <Link href="/service-areas/navarre-fl" className="seo-card seo-card-link">
             <strong>Navarre, FL</strong>
-            <span>Slushie machines, soft serve rentals, and stocked novelty carts for Navarre events.</span>
+            <span>Slushie machines, soft serve, frozen yogurt, and stocked novelty carts for Navarre events.</span>
           </Link>
           <Link href="/service-areas" className="seo-card seo-card-link">
             <strong>All service areas</strong>

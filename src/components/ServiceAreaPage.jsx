@@ -51,7 +51,7 @@ export default function ServiceAreaPage({ area }) {
         name: `Do you deliver rental machines to ${area.city}, ${area.state}?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `Yes. Thirsty Dawg Rentals serves ${area.city}, ${area.state} for qualifying frozen drink machine, soft serve machine, and ice cream cart rentals. Availability can vary by date, event size, and delivery route.`,
+          text: `Yes. Thirsty Dawg Rentals serves ${area.city}, ${area.state} for qualifying frozen drink machine, soft serve machine, frozen yogurt machine, and ice cream cart rentals. Availability can vary by date, event size, and delivery route.`,
         },
       },
       {
@@ -104,6 +104,10 @@ export default function ServiceAreaPage({ area }) {
           <Link href="/soft-serve-machine-rentals" className="seo-card seo-card-link">
             <strong>Soft serve machines</strong>
             <span>Vanilla and chocolate soft serve machine rentals for weddings, birthdays, schools, and corporate events.</span>
+          </Link>
+          <Link href="/frozen-yogurt-machine-rentals" className="seo-card seo-card-link">
+            <strong>Frozen yogurt machines</strong>
+            <span>New frozen yogurt flavor options for parties, schools, office treats, weddings, and summer events.</span>
           </Link>
           <Link href="/icecream" className="seo-card seo-card-link">
             <strong>Stocked ice cream carts</strong>

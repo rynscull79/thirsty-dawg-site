@@ -8,6 +8,9 @@ export const metadata = {
   title: 'Frozen Drink Machine Rentals | Thirsty Dawg',
   description:
     'Rent commercial frozen drink machines for parties, school events, and family gatherings. Delivery and setup included across Pensacola and surrounding areas.',
+  alternates: {
+    canonical: 'https://www.thirstydawgrentals.com/frozen-drink-machine-rentals',
+  },
   openGraph: {
     title: 'Frozen Drink Machine Rentals | Thirsty Dawg',
     description: 'Book frozen drink machines for events, schools, and parties. No ice needed. Delivered and set up in Pensacola and nearby areas.',
@@ -16,10 +19,6 @@ export const metadata = {
     type: 'website'
   },
   metadataBase: new URL('https://www.thirstydawgrentals.com'),
-};
-
-export const viewport = {
-  canonical: 'https://www.thirstydawgrentals.com/frozen-drink-machine-rentals',
 };
 
 export default function FrozenDrinkMachineRentalsPage() {

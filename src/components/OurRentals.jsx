@@ -150,11 +150,11 @@ export default function OurRentals() {
               fontSize: '1.6rem',
             }}
           >
-            🍦 Soft Serve Ice Cream
+            Soft Serve & Frozen Yogurt
           </h3>
           <p style={{ margin: 0, lineHeight: 1.65 }}>
-            Delicious soft serve without the fuss. Our compact Taylor 152
-            machine is ideal for birthday parties, backyard events, and small
+            Delicious soft serve and frozen yogurt without the fuss. Our compact Taylor 152
+            machine is ideal for birthday parties, backyard events, school treats, and small
             celebrations. Just plug it in and enjoy — requires a 120V outlet on
             a dedicated 20 amp breaker. Customer must verify outlet before
             delivery.
@@ -289,7 +289,7 @@ export default function OurRentals() {
                 fontFamily: 'var(--heading-font)',
               }}
             >
-              🥤 Soft Serve – $235
+              Soft Serve / Frozen Yogurt – $235
             </h3>
             <ul
               style={{
@@ -588,7 +588,7 @@ export default function OurRentals() {
                 }}
               >
                 <option value="single">Stainless Single</option>
-                <option value="softserve">Soft Serve</option>
+                <option value="softserve">Soft Serve / Frozen Yogurt</option>
                 <option value="stainless">Stainless Dual</option>
               </select>
 
@@ -613,7 +613,7 @@ export default function OurRentals() {
               >
                 <option value="">None</option>
                 <option value="single">Stainless Single</option>
-                <option value="softserve">Soft Serve</option>
+                <option value="softserve">Soft Serve / Frozen Yogurt</option>
                 <option value="stainless">Stainless Dual</option>
               </select>
 
