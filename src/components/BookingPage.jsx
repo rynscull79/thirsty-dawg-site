@@ -1,8 +1,16 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-// Address autocomplete is intentionally not required for the form to render.
-// A normal address field is more reliable than blocking the whole booking flow.
+import dynamic from 'next/dynamic';
+import React, { useEffect, useRef, useState } from 'react';
+import { Autocomplete } from '@react-google-maps/api';
+
+const LoadScript = dynamic(
+  () => import('@react-google-maps/api').then((mod) => mod.LoadScript),
+  { ssr: false }
+);
+
+const GOOGLE_LIBRARIES = ['places'];
+const GOOGLE_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
 export default function BookingPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -11,6 +19,7 @@ export default function BookingPage() {
   const [deliveryFee, setDeliveryFee] = useState(null);
   const [serviceType, setServiceType] = useState('');
   const [calculatingFee, setCalculatingFee] = useState(false);
+  const autocompleteRef = useRef(null);
   const [formData, setFormData] = useState({
     street: '',
     city: '',
@@ -80,6 +89,51 @@ export default function BookingPage() {
       state: stateZipMatch?.[1] || '',
       zip: stateZipMatch?.[2] || '',
     };
+  }
+
+  function getAddressPart(addressComponents = [], type) {
+    return (
+      addressComponents.find((component) => component.types.includes(type))
+        ?.long_name || ''
+    );
+  }
+
+  function handlePlaceChanged() {
+    if (!autocompleteRef.current) return;
+
+    const place = autocompleteRef.current.getPlace();
+    if (!place || !place.address_components) return;
+
+    const street = place.formatted_address || '';
+    const city =
+      getAddressPart(place.address_components, 'locality') ||
+      getAddressPart(place.address_components, 'sublocality') ||
+      getAddressPart(place.address_components, 'administrative_area_level_2') ||
+      'Unknown';
+    const state =
+      getAddressPart(place.address_components, 'administrative_area_level_1') ||
+      'FL';
+    const zip = getAddressPart(place.address_components, 'postal_code') || '';
+
+    setFormData((prev) => ({
+      ...prev,
+      street,
+      city,
+      state,
+      zip,
+    }));
+  }
+
+  function handleAddressBlur() {
+    const parsed = parseAddressFallback(formData.street);
+    if (!parsed.city && !parsed.state && !parsed.zip) return;
+
+    setFormData((prev) => ({
+      ...prev,
+      city: prev.city || parsed.city,
+      state: prev.state || parsed.state || 'FL',
+      zip: prev.zip || parsed.zip,
+    }));
   }
 
   const handleSubmit = async (e) => {
@@ -206,6 +260,35 @@ export default function BookingPage() {
     fontFamily: 'var(--body-font)',
     fontWeight: '700',
   };
+
+  const deliveryFeeMessage = calculatingFee ? (
+    <p
+      style={{
+        textAlign: 'center',
+        margin: '0.75rem 0 0',
+        fontSize: '1rem',
+        color: 'var(--td-black)',
+        fontFamily: 'var(--body-font)',
+      }}
+    >
+      Calculating delivery fee...
+    </p>
+  ) : typeof deliveryFee === 'number' ? (
+    <p
+      style={{
+        textAlign: 'center',
+        margin: '0.75rem 0 0',
+        fontSize: '1rem',
+        fontWeight: '700',
+        color: 'var(--td-blue)',
+        fontFamily: 'var(--body-font)',
+      }}
+    >
+      {deliveryFee === 0
+        ? 'Free delivery'
+        : `Estimated Delivery Fee: $${deliveryFee.toFixed(2)}`}
+    </p>
+  ) : null;
 
   if (submitted) {
     return (
@@ -365,6 +448,16 @@ export default function BookingPage() {
             <label style={labelStyle} htmlFor="street">
               Event Location
             </label>
+            <LoadScript
+              googleMapsApiKey={GOOGLE_API_KEY}
+              libraries={GOOGLE_LIBRARIES}
+            >
+              <Autocomplete
+                onLoad={(autocomplete) => {
+                  autocompleteRef.current = autocomplete;
+                }}
+                onPlaceChanged={handlePlaceChanged}
+              >
               <input
                 style={{ ...inputStyle, minWidth: '0' }}
                 name="street"
@@ -372,11 +465,22 @@ export default function BookingPage() {
                 placeholder="Enter delivery address"
                 required
                 value={formData.street || ''}
-                onChange={(e) =>
-                  setFormData((prev) => ({ ...prev, street: e.target.value }))
-                }
+                onChange={(e) => {
+                  setDeliveryFee(null);
+                  setFormData((prev) => ({
+                    ...prev,
+                    street: e.target.value,
+                    city: '',
+                    state: '',
+                    zip: '',
+                  }));
+                }}
+                onBlur={handleAddressBlur}
                 autoComplete="off"
               />
+              </Autocomplete>
+            </LoadScript>
+            {deliveryFeeMessage}
           </div>
 
           <input type="hidden" name="city" value={formData.city || ''} />
@@ -687,34 +791,6 @@ export default function BookingPage() {
             ✉️ Submit Booking
           </button>
 
-          {calculatingFee ? (
-            <p
-              style={{
-                textAlign: 'center',
-                marginTop: '1rem',
-                fontSize: '1rem',
-                color: 'var(--td-black)',
-                fontFamily: 'var(--body-font)',
-              }}
-            >
-              Calculating delivery fee...
-            </p>
-          ) : typeof deliveryFee === 'number' ? (
-            <p
-              style={{
-                textAlign: 'center',
-                marginTop: '1rem',
-                fontSize: '1rem',
-                fontWeight: '700',
-                color: deliveryFee === 0 ? 'var(--td-blue)' : 'var(--td-blue)',
-                fontFamily: 'var(--body-font)',
-              }}
-            >
-              {deliveryFee === 0
-                ? 'Free delivery'
-                : `Estimated Delivery Fee: $${deliveryFee.toFixed(2)}`}
-            </p>
-          ) : null}
         </form>
       </div>
   );
