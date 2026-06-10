@@ -232,9 +232,6 @@ export default function LongTermLeasingPage() {
           We deliver, set up, train your team, and handle machine maintenance so you can focus on serving your guests.
         </p>
         <p style={styles.heroText}>
-          Thirsty Dawg already supports recurring commercial lease customers across multiple businesses, so you are working with a local team that understands long-term machine placement, setup, and support.
-        </p>
-        <p style={styles.heroText}>
           Not sure which machine fits your location? We’ll help you choose the right setup for your space, expected volume, and drink menu. Already know exactly what you want? We can lease that to you too.
         </p>
         <div style={styles.actions}>
@@ -244,13 +241,13 @@ export default function LongTermLeasingPage() {
       </section>
 
       <section style={styles.sectionAlt}>
-        <h2 style={styles.h2}>Experienced Lease Support for Local Businesses</h2>
+        <h2 style={styles.h2}>Built for Ongoing Business Use</h2>
         <p style={styles.text}>
-          Long-term leasing is not a brand-new idea for us. Thirsty Dawg Rentals already has multiple machines placed with recurring commercial lease customers across multiple businesses.
+          Our long-term lease program is designed for businesses that want frozen drinks available beyond a single event. We help with machine selection, delivery, setup, team training, maintenance, and local support.
         </p>
         <div style={styles.grid}>
-          <div style={styles.card}>Commercial lease customers already in place</div>
-          <div style={styles.card}>Multiple machines currently supporting local businesses</div>
+          <div style={styles.card}>Good for seasonal or year-round drink programs</div>
+          <div style={styles.card}>Machine options based on your space and expected volume</div>
           <div style={styles.card}>Local delivery, setup, training, maintenance, and support</div>
           <div style={styles.card}>Guidance on machine choice, volume needs, flavors, and setup</div>
         </div>
