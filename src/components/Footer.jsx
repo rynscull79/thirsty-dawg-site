@@ -14,6 +14,7 @@ export default function Footer() {
             <li><Link href="/">Home</Link></li>
             <li><Link href="/rentals">Frozen Drinks & Soft Serve</Link></li>
             <li><Link href="/frozen-yogurt-machine-rentals">Frozen Yogurt Rentals</Link></li>
+            <li><Link href="/resources">Resources</Link></li>
             <li><Link href="/icecream">Frozen Novelties</Link></li>
             <li><Link href="/our-story">Our Story</Link></li>
             <li><Link href="/faq">FAQ</Link></li>

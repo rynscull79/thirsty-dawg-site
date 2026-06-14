@@ -13,6 +13,7 @@ export default function HeaderNav() {
     { href: '/', label: 'Home' },
     { href: '/rentals', label: 'Frozen Drinks & Soft Serve' },
     { href: '/long-term-leasing', label: 'Long-Term Leasing' },
+    { href: '/resources', label: 'Resources' },
     { href: '/icecream', label: 'Frozen Novelties' },
     { href: '/our-story', label: 'Our Story' },
     { href: '/faq', label: 'FAQ' },
