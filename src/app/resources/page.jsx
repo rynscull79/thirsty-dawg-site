@@ -117,6 +117,22 @@ export default function ResourcesPage() {
 
       <section style={styles.grid} aria-label="Resource articles">
         <article style={styles.card}>
+          <span style={styles.cardKicker}>Outdoor Events</span>
+          <h2 style={styles.h2}>Do Frozen Drink Machines Work Outdoors in Florida Heat?</h2>
+          <p style={styles.text}>
+            Learn how frozen drink machines perform at outdoor Gulf Coast events, including shade,
+            dedicated 20 amp power, guest count, and why stainless steel machines are a better fit
+            for Florida heat.
+          </p>
+          <Link
+            href="/resources/do-frozen-drink-machines-work-outdoors-in-florida-heat"
+            style={styles.button}
+          >
+            Read the guide
+          </Link>
+        </article>
+
+        <article style={styles.card}>
           <span style={styles.cardKicker}>Frozen Drink Machines</span>
           <h2 style={styles.h2}>Plastic Bowl vs Stainless Steel Frozen Drink Machines</h2>
           <p style={styles.text}>
