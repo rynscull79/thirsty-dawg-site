@@ -342,6 +342,13 @@ export default function PlasticBowlVsStainlessSteelPage() {
           keeping product frozen outside in Gulf Coast weather. Direct sunlight, humidity, and hot air
           around the machine can all slow freezing and soften the drink.
         </p>
+        <p style={styles.p}>
+          When Thirsty Dawg Rentals first started, we offered plastic dual-flavor machines for rentals.
+          We quickly learned they were not the right fit for Gulf Coast summer events. In the heat, they
+          could struggle to freeze properly, and we even saw machine electronics malfunction in outdoor
+          conditions. That experience is one of the reasons we moved away from plastic bowl machines for
+          short-term event rentals and use commercial stainless steel machines instead.
+        </p>
 
         <h2 style={styles.h2}>Commercial Stainless Steel Frozen Drink Machines</h2>
         <p style={styles.p}>
