@@ -117,6 +117,21 @@ export default function ResourcesPage() {
 
       <section style={styles.grid} aria-label="Resource articles">
         <article style={styles.card}>
+          <span style={styles.cardKicker}>Party Planning</span>
+          <h2 style={styles.h2}>Frozen Drink Machine Rental vs DIY Frozen Drinks</h2>
+          <p style={styles.text}>
+            Compare DIY frozen drinks, home frozen drink machines, and party-size frozen drink machine
+            rentals for Gulf Coast parties, weddings, beach houses, and events.
+          </p>
+          <Link
+            href="/resources/frozen-drink-machine-rental-vs-diy-frozen-drinks"
+            style={styles.button}
+          >
+            Read the guide
+          </Link>
+        </article>
+
+        <article style={styles.card}>
           <span style={styles.cardKicker}>Outdoor Events</span>
           <h2 style={styles.h2}>Do Frozen Drink Machines Work Outdoors in Florida Heat?</h2>
           <p style={styles.text}>
