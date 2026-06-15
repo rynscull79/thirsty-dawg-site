@@ -163,7 +163,7 @@ const handleDateChange = (e) => {
     return (
       <div id="successMessage" className="max-w-xl mx-auto p-6 border-4 border-green-600 bg-green-100 rounded-2xl text-center text-green-900 font-chewy text-xl mt-10">
         <h2 className="text-3xl mb-4">🎉 Thank you for your request!</h2>
-        <p>We’ve received your booking and will call you soon to confirm the details.</p>
+        <p>We’ve received your booking and will follow up soon to confirm the details.</p>
         <p className="mt-4">Have questions? Call us at <strong>(850) 572-3796</strong>.</p>
       </div>
     );
@@ -206,7 +206,7 @@ const handleDateChange = (e) => {
 {[
   ['Name', 'name', 'text'],
   ['Email', 'email', 'email'],
-  ['Phone', 'phone', 'text'],
+  ['Phone number (recommended for faster confirmation)', 'phone', 'tel'],
 ].map(([label, name, type]) => (
   <div key={name} className="mb-6">
     <label className="block mb-1 text-lg" htmlFor={name}>{label}</label>
@@ -214,12 +214,17 @@ const handleDateChange = (e) => {
       className="w-full p-3 rounded-xl text-base border border-gray-300 shadow-inner"
       name={name}
       type={type}
-      required
+      required={name !== 'phone'}
       value={formData[name] || ''}
       onChange={(e) => setFormData((prev) => ({ ...prev, [name]: e.target.value }))}
       onBlur={(e) => setFormData((prev) => ({ ...prev, [name]: e.target.value }))}
-      autoComplete="off"
+      autoComplete={name === 'phone' ? 'tel' : 'off'}
     />
+    {name === 'phone' && (
+      <p className="mt-2 text-sm text-gray-600">
+        Phone number is optional, but strongly recommended so we can quickly confirm your rental details. We only use your phone number for rental-related communication. We do not sell your phone number to anyone or share it with other businesses for marketing. You can submit this form without providing a phone number or consenting to SMS.
+      </p>
+    )}
   </div>
 ))}
 

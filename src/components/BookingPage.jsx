@@ -324,7 +324,7 @@ export default function BookingPage() {
             margin: 0,
           }}
         >
-          We’ve received your booking and will call you soon to confirm the
+          We’ve received your booking and will follow up soon to confirm the
           details.
         </p>
         <p
@@ -408,7 +408,7 @@ export default function BookingPage() {
           {[
             ['Name', 'name', 'text', true],
             ['Email', 'email', 'email', true],
-            ['Phone (optional)', 'phone', 'tel', false],
+            ['Phone number (recommended for faster confirmation)', 'phone', 'tel', false],
           ].map(([label, name, type, isRequired]) => (
             <div key={name} style={{ marginBottom: '1.5rem' }}>
               <label style={labelStyle} htmlFor={name}>
@@ -438,7 +438,7 @@ export default function BookingPage() {
                     fontFamily: 'var(--body-font)',
                   }}
                 >
-                  Phone number is optional. You can submit this booking request without providing a phone number or consenting to SMS.
+                  Phone number is optional, but strongly recommended so we can quickly confirm your rental details. We only use your phone number for rental-related communication. We do not sell your phone number to anyone or share it with other businesses for marketing. You can submit this form without providing a phone number or consenting to SMS.
                 </p>
               )}
             </div>
