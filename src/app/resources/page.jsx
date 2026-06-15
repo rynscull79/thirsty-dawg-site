@@ -117,6 +117,22 @@ export default function ResourcesPage() {
 
       <section style={styles.grid} aria-label="Resource articles">
         <article style={styles.card}>
+          <span style={styles.cardKicker}>Rental Value</span>
+          <h2 style={styles.h2}>What Are You Really Paying for With a Frozen Drink Machine Rental?</h2>
+          <p style={styles.text}>
+            Learn why a professional frozen drink machine rental should include clean equipment,
+            setup, support, maintenance, and premium machines from companies that stand behind their
+            products.
+          </p>
+          <Link
+            href="/resources/what-are-you-really-paying-for-with-a-frozen-drink-machine-rental"
+            style={styles.button}
+          >
+            Read the guide
+          </Link>
+        </article>
+
+        <article style={styles.card}>
           <span style={styles.cardKicker}>Party Planning</span>
           <h2 style={styles.h2}>Frozen Drink Machine Rental vs DIY Frozen Drinks</h2>
           <p style={styles.text}>
