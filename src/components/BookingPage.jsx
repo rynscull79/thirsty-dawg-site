@@ -200,11 +200,6 @@ export default function BookingPage() {
   };
 
   useEffect(() => {
-    const serverSmsDisclosure = document.getElementById('serverSmsDisclosure');
-    if (serverSmsDisclosure) {
-      serverSmsDisclosure.hidden = true;
-    }
-
     const params = new URLSearchParams(window.location.search);
     const src = params.get('source');
 
