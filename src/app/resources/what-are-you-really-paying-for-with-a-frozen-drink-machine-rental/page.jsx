@@ -216,6 +216,13 @@ export default function FrozenDrinkRentalValuePage() {
           the weekend?
         </p>
         <p style={styles.p}>
+          Think of it like renting a luxury vehicle and a basic economy car for the same price. Both
+          may have four wheels and get you down the road, but most customers would expect the option
+          built for comfort, performance, and reliability if the price is the same. Frozen drink
+          machine rentals work the same way. If two companies charge similar rental prices, the
+          quality of the equipment and the service behind it matter.
+        </p>
+        <p style={styles.p}>
           When a rental company invests in premium equipment from established manufacturers, the
           customer benefits from more than the machine itself. They benefit from better support,
           better serviceability, and equipment chosen for repeated event use.
