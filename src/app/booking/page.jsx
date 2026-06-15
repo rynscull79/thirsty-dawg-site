@@ -13,7 +13,7 @@ export default function BookingRoute() {
   return (
     <>
       <section style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-        <h1 style={{ color: 'var(--td-blue)', fontFamily: 'var(--heading-font)', fontSize: '2.2rem', lineHeight: 1.1 }}>
+        <h1 style={{ color: 'var(--td-blue)', fontFamily: 'var(--heading-font)', fontSize: 'clamp(1.85rem, 7vw, 2.2rem)', lineHeight: 1.1 }}>
           Book a Frozen Drink, Soft Serve, or Ice Cream Cart Rental
         </h1>
         <p style={{ maxWidth: '760px', margin: '0.75rem auto 0', fontFamily: 'var(--body-font)', lineHeight: 1.6 }}>

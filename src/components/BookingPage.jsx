@@ -395,14 +395,14 @@ export default function BookingPage() {
           <h2
             style={{
               color: 'var(--td-blue)',
-              fontSize: '2.2rem',
+              fontSize: 'clamp(1.75rem, 7vw, 2.2rem)',
               textAlign: 'center',
               marginBottom: '2rem',
               fontFamily: 'var(--heading-font)',
               lineHeight: 1.1,
             }}
           >
-            Book a Frozen Drink, Soft Serve, or Frozen Yogurt Machine!
+            Rental Details
           </h2>
 
           {[
