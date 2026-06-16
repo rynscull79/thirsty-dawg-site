@@ -1,20 +1,9 @@
-'use client';
-
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import styles from './page.module.css';
-
-const FloatingBookNow = dynamic(() => import('@/components/FloatingBookNow'));
-const GallerySection = dynamic(() => import('@/components/GallerySection'), {
-  ssr: false,
-});
-const ReviewSlider = dynamic(() => import('@/components/ReviewSlider'), {
-  ssr: false,
-});
-const DeliveryArea = dynamic(() => import('@/components/DeliveryArea'), {
-  ssr: false,
-  loading: () => <div>Loading delivery area...</div>,
-});
+import FloatingBookNow from '@/components/FloatingBookNow';
+import GallerySection from '@/components/GallerySection';
+import ReviewSlider from '@/components/ReviewSlider';
+import DeliveryArea from '@/components/DeliveryArea';
 
 export default function HomeClient() {
   return (
@@ -56,24 +45,32 @@ export default function HomeClient() {
           src="/gallery/mardi-gras-party.webp"
           alt="Woman in costume pouring mix into a frozen drink machine for a Mardi Gras party rental in Pensacola"
           className="home-photo-card"
+          loading="lazy"
+          decoding="async"
         />
 
         <img
           src="/gallery/frozen-drinks-and-softserve.webp"
           alt="Frozen drink and soft serve ice cream rental machines set up for a party in Pensacola, Florida"
           className="home-photo-card"
+          loading="lazy"
+          decoding="async"
         />
 
         <img
           src="/gallery/ice-cream-bar.webp"
           alt="Ice cream party setup with frozen novelties"
           className="home-photo-card"
+          loading="lazy"
+          decoding="async"
         />
 
         <img
           src="/gallery/wedding-treats.webp"
           alt="Wedding-themed novelty ice cream cart rental setup"
           className="home-photo-card"
+          loading="lazy"
+          decoding="async"
         />
       </section>
 
@@ -100,11 +97,13 @@ export default function HomeClient() {
 
         <div className="promo-section__feature">
           <img
-            src="/gallery/frozen-yogurt-2026.jpg"
+            src="/gallery/frozen-yogurt-2026.webp"
             alt="Frozen yogurt flavor options now available from Thirsty Dawg Rentals"
             width="520"
             height="390"
             className="promo-section__feature-image"
+            loading="lazy"
+            decoding="async"
           />
           <img
             src="/gallery/kid-soft-serve.webp"
@@ -112,6 +111,8 @@ export default function HomeClient() {
             width="260"
             height="340"
             className="promo-section__image"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </section>
@@ -127,7 +128,7 @@ export default function HomeClient() {
           boxShadow: 'var(--shadow-soft)',
           textAlign: 'center',
         }}>
-          <h2 style={{ color: 'var(--td-blue)', fontSize: '2.2rem', marginBottom: '0.75rem' }}>
+          <h2 style={{ color: 'var(--td-blue-deep)', fontSize: '2.2rem', marginBottom: '0.75rem' }}>
             Long-Term Frozen Drink Machine Leasing
           </h2>
           <p style={{ maxWidth: '780px', margin: '0 auto 1.25rem', lineHeight: 1.65, fontSize: '1.08rem' }}>

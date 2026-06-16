@@ -21,8 +21,8 @@
 :root {
   --td-black: #111111;
   --td-white: #ffffff;
-  --td-blue: #19b5f1;
-  --td-blue-deep: #0a84c6;
+  --td-blue: #0076b8;
+  --td-blue-deep: #005a8c;
   --td-orange: #f7941d;
   --td-yellow: #ffc928;
   --td-sand: #f6e2b3;
@@ -506,7 +506,7 @@ select {
 .eventhub-section__title {
   margin-bottom: 1rem;
   font-size: 2rem;
-  color: var(--td-blue);
+  color: var(--td-blue-deep);
 }
 
 .eventhub-section__text {

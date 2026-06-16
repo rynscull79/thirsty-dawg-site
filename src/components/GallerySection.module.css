@@ -108,16 +108,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 6px;
+    gap: 2px;
     flex-wrap: nowrap;
     overflow: hidden;
-    max-width: 160px;
+    max-width: 220px;
   }
 
   .dot {
-    width: 10px;
-    height: 10px;
-    flex: 0 0 10px;
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
   }
 }
 
@@ -202,16 +202,30 @@
 .dots {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 2px;
 }
 .dot {
-  width: 10px;
-  height: 10px;
+  position: relative;
+  width: 24px;
+  height: 24px;
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.25);
+  background: transparent;
   border: none;
+  cursor: pointer;
+}
+
+.dot::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.28);
 }
 
 .dotActive {
+  background: transparent;
+}
+
+.dotActive::before {
   background: var(--td-blue);
 }

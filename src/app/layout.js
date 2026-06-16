@@ -65,9 +65,9 @@ export default function RootLayout({ children }) {
         <Script
           id="cookieconsent"
           src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="cookieconsent-init" strategy="afterInteractive">
+        <Script id="cookieconsent-init" strategy="lazyOnload">
           {`
             window.addEventListener("load", function () {
               if (!window.cookieconsent) return;
@@ -83,7 +83,7 @@ export default function RootLayout({ children }) {
                   message: "We use cookies to track ads and improve your experience.",
                   dismiss: "OK",
                   allow: "Allow cookies",
-                  deny: "Decline",
+                  deny: "Decline cookies",
                   link: "Learn more",
                   href: "/privacy-policy"
                 },
@@ -190,7 +190,7 @@ export default function RootLayout({ children }) {
           <div className="top-brand-bar__inner">
             <div className="top-brand-bar__logo">
               <Image
-                src="/thirsty-dawg-logo.webp"
+                src="/thirsty-dawg-logo-210.webp"
                 alt="Thirsty Dawg Rentals Logo"
                 width={180}
                 height={180}

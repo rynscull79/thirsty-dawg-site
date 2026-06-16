@@ -18,7 +18,7 @@ function FloatingBookNow() {
           right: '24px',
           zIndex: 9999,
           backgroundColor: '#ff8000',
-          color: 'white',
+          color: '#111111',
           fontWeight: 'bold',
           padding: '12px 24px',
           borderRadius: '999px',
@@ -30,7 +30,7 @@ function FloatingBookNow() {
           transition: 'background-color 0.2s ease',
           animation: 'buttonPulse 2.5s infinite ease-in-out'
         }}
-        onMouseOver={(e) => e.target.style.backgroundColor = '#cc6600'}
+        onMouseOver={(e) => e.target.style.backgroundColor = '#ffc928'}
         onMouseOut={(e) => e.target.style.backgroundColor = '#ff8000'}
         aria-label="Book Now"
       >
