@@ -117,6 +117,21 @@ export default function ResourcesPage() {
 
       <section style={styles.grid} aria-label="Resource articles">
         <article style={styles.card}>
+          <span style={styles.cardKicker}>Machine Count</span>
+          <h2 style={styles.h2}>How Many Frozen Drink Machines Do You Need for a Party?</h2>
+          <p style={styles.text}>
+            Learn how guest count, drink options, free drinks, multiple flavors, and event size affect
+            whether one machine is enough or a custom recommendation makes more sense.
+          </p>
+          <Link
+            href="/resources/how-many-frozen-drink-machines-do-you-need"
+            style={styles.button}
+          >
+            Read the guide
+          </Link>
+        </article>
+
+        <article style={styles.card}>
           <span style={styles.cardKicker}>Rental Value</span>
           <h2 style={styles.h2}>What Are You Really Paying for With a Frozen Drink Machine Rental?</h2>
           <p style={styles.text}>
