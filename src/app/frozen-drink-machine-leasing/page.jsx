@@ -359,7 +359,7 @@ export default function FrozenDrinkMachineLeasingPage() {
           </figure>
         </div>
         <p style={styles.text}>
-          Optional mix programs and lease customer incentives may be available. Ask about current mix options when requesting lease pricing.
+          Optional mix programs and monthly mix purchase credits may be available. Higher monthly mix volume may reduce the effective lease payment.
         </p>
       </section>
 

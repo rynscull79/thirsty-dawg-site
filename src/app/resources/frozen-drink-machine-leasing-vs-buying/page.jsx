@@ -166,17 +166,24 @@ export default function FrozenDrinkMachineLeasingVsBuyingPage() {
       <section className="seo-section">
         <h2>Mix Purchasing Can Change the Math</h2>
         <p>
-          If your business needs frozen drink mix, Thirsty Dawg Rentals can also help with discounted mix
-          purchasing. For some businesses, those mix savings can meaningfully reduce the effective monthly
-          cost of leasing a machine. In higher-volume locations, the savings on mix may offset a large
-          portion of the lease payment, and in some cases could reduce or even eliminate the practical
-          cost of the lease altogether.
+          If your business needs frozen drink mix, Thirsty Dawg Rentals may be able to structure the
+          lease around monthly mix purchases. Instead of only looking at the machine payment by itself,
+          qualifying mix purchase volume can earn credits toward the monthly lease. The more mix your
+          business uses and purchases through Thirsty Dawg, the lower the effective lease payment can
+          become.
+        </p>
+
+        <p>
+          For higher-volume locations, those mix purchase credits could significantly reduce the lease
+          cost. At certain monthly mix purchase levels, the credit may offset most or even all of the
+          machine lease payment. That can make leasing especially attractive for businesses that expect to
+          sell frozen drinks consistently and need both equipment and mix supply.
         </p>
 
         <p>
           That is why it helps to look at the full program instead of only the machine payment. The better
-          comparison is lease cost, mix cost, expected drink sales, profit per drink, and the value of
-          having local equipment support behind the program.
+          comparison is lease cost, monthly mix volume, expected drink sales, profit per drink, and the
+          value of having local equipment support behind the program.
         </p>
       </section>
 
