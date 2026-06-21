@@ -3,7 +3,7 @@ import { absoluteUrl } from '@/lib/seoData';
 
 const title = 'Frozen Drink Machine Leasing vs Buying';
 const description =
-  'Compare leasing vs buying a commercial frozen drink machine for bars, restaurants, venues, resorts, rental properties, and Gulf Coast businesses.';
+  'Compare leasing vs buying a commercial frozen drink machine, including upfront cost, repair risk, downtime, sales impact, and long-term ownership.';
 const path = '/resources/frozen-drink-machine-leasing-vs-buying';
 
 export const metadata = {
@@ -48,120 +48,127 @@ export default function FrozenDrinkMachineLeasingVsBuyingPage() {
         <p className="seo-eyebrow">Business Leasing Guide</p>
         <h1>{title}</h1>
         <p>
-          Buying a commercial frozen drink machine can make sense for some businesses, but it is not the
-          only path. Leasing can help a business add frozen drinks with less upfront cost, local support,
-          and more flexibility while learning what guests actually buy.
+          For a bar, restaurant, venue, resort, pool, or rental property, a frozen drink machine is not
+          just another piece of equipment. It is a revenue tool. The right machine can add a profitable
+          drink program. The wrong purchase can tie up cash, create repair headaches, and sit unused when
+          demand is lower than expected.
         </p>
       </section>
 
       <section className="seo-section">
         <p>
-          For bars, restaurants, resorts, venues, beach rentals, pool areas, and entertainment businesses,
-          the real question is not just whether a machine can make frozen drinks. The better question is
-          whether the machine will create enough profit, fit the space, handle the expected volume, and
-          stay reliable when customers want drinks.
+          That is why the real decision is not simply "lease or buy." The better question is how much
+          risk your business wants to take on before you know exactly how frozen drinks will perform.
+          Buying gives you ownership. Leasing gives you a way to put the machine to work with less cash
+          committed upfront and more support behind the equipment.
         </p>
 
         <p>
-          A lease gives a business a way to test that opportunity without taking on the full purchase
-          cost, setup questions, and maintenance responsibility alone.
+          Both options can be right. The best choice depends on volume, seasonality, available cash,
+          staff experience, service access, and how much downtime your business can tolerate.
         </p>
       </section>
 
       <section className="seo-section">
-        <h2>Why Businesses Lease Frozen Drink Machines</h2>
+        <h2>What Leasing Really Solves</h2>
+        <p>
+          Leasing is not just about avoiding a purchase. It is about reducing the number of things a
+          business has to figure out alone. A commercial frozen drink machine has to be matched to the
+          location, delivered, installed correctly, cleaned properly, maintained, and supported when
+          something goes wrong.
+        </p>
+
+        <p>
+          A lease can make the decision easier because the monthly payment is easier to compare against
+          drink sales. If the machine helps sell frozen margaritas, daiquiris, slushies, bushwackers, or
+          non-alcoholic frozen drinks, the business can measure the program against a predictable monthly
+          cost instead of a large equipment purchase.
+        </p>
+      </section>
+
+      <section className="seo-section">
+        <h2>When Leasing Is Usually the Better Starting Point</h2>
+        <p>
+          Leasing is often the smarter starting point when the business wants frozen drinks but does not
+          yet know the exact demand, machine size, flavor mix, staffing routine, or seasonality. This is
+          especially true for beach bars, resort pools, event venues, restaurants testing a new menu item,
+          and vacation rental or hospitality businesses that see traffic rise and fall throughout the year.
+        </p>
+
         <ul className="seo-list">
-          <li>Lower upfront cost compared with buying a commercial machine.</li>
-          <li>Predictable monthly payment that can be compared against drink sales.</li>
-          <li>Delivery, setup, training, and local support from Thirsty Dawg Rentals.</li>
-          <li>Maintenance support instead of figuring out repairs alone.</li>
-          <li>A practical way to test frozen drinks before committing to ownership.</li>
-          <li>Lease terms that can fit seasonal demand or longer-term drink programs.</li>
+          <li>You want to preserve cash instead of spending thousands upfront.</li>
+          <li>You want to test frozen drink demand before owning equipment.</li>
+          <li>You need help choosing the right machine size for your volume.</li>
+          <li>You want delivery, setup, basic training, maintenance, and local support included.</li>
+          <li>You care about reducing repair and downtime risk during busy months.</li>
         </ul>
       </section>
 
       <section className="seo-section">
-        <h2>When Leasing Usually Makes Sense</h2>
+        <h2>The Repair and Downtime Problem</h2>
         <p>
-          Leasing is often a strong fit when a business wants to add frozen drinks but is not ready to
-          buy equipment outright. It can also make sense when the business is still testing drink demand,
-          does not know which machine size is best, or wants support with setup and maintenance.
+          The purchase price is only one part of owning commercial equipment. Service calls, parts,
+          diagnostics, and labor can add up quickly. Depending on the issue, a single service call or
+          repair ticket can sometimes run over $1,000 before the machine is back in service.
         </p>
 
         <p>
-          For many businesses, the monthly lease payment can be covered by a relatively small number of
-          drink sales. That makes the decision easier to evaluate: if frozen drinks sell, the machine can
-          become a new profit center. If the business is still learning demand, leasing reduces the risk
-          of buying the wrong machine too early.
-        </p>
-      </section>
-
-      <section className="seo-section">
-        <h2>When Buying May Make Sense</h2>
-        <p>
-          Buying can make sense for a business that already knows frozen drinks are a permanent part of
-          the menu, has the cash available, understands the equipment needed, and is comfortable handling
-          maintenance, cleaning routines, parts, and repairs.
-        </p>
-
-        <p>
-          Ownership may also make sense for high-volume locations that plan to run frozen drinks every
-          day for years. The tradeoff is that the business takes on the upfront cost and the responsibility
-          for keeping the machine working.
+          Downtime can be even more expensive than the repair bill. Qualified repair technicians are
+          limited, especially during the busy summer season, and they may be booked more than a week out.
+          If your frozen drink machine is down during a high-traffic weekend, you are not just waiting on
+          a technician. You are losing drink sales, add-on purchases, and the profit those drinks were
+          supposed to generate.
         </p>
       </section>
 
       <section className="seo-section">
-        <h2>The Hidden Costs of Owning</h2>
+        <h2>When Buying Can Be the Right Move</h2>
         <p>
-          The purchase price is only one part of owning a frozen drink machine. Businesses also need to
-          think about delivery, setup, staff training, cleaning routines, parts, service calls, downtime,
-          and what happens if the machine is not the right fit for the space or volume.
+          Buying can still be the right decision for the right business. If frozen drinks are already a
+          proven, permanent part of your operation and you know exactly which machine you need, ownership
+          may pencil out over time. High-volume locations with trained staff, reliable service access, and
+          a plan for repairs may prefer to own the asset outright.
         </p>
 
         <p>
-          Commercial equipment repairs can get expensive quickly. Depending on the issue, a single
-          service call or repair ticket can sometimes run over $1,000 before the machine is back in
-          service. That is one reason leasing can be attractive for businesses that want frozen drinks
-          without taking on every equipment problem alone.
-        </p>
-
-        <p>
-          Downtime can be just as costly as the repair itself. Qualified repair technicians are limited,
-          especially during the busy summer season, and they may be booked more than a week out. If the
-          machine is down during that window, the business is not just waiting on a repair. It may also
-          be losing frozen drink sales, add-on purchases, and the profit those drinks were expected to
-          generate.
-        </p>
-
-        <p>
-          A lease does not remove the need for good daily care, but it can reduce the burden of figuring
-          everything out alone. For a new frozen drink program, that support can matter as much as the
-          machine itself.
+          The tradeoff is responsibility. Once you buy the machine, you own the equipment decision, the
+          maintenance routine, the service calls, the repair delays, the parts sourcing, and the risk that
+          the machine is not the right fit for your actual volume.
         </p>
       </section>
 
       <section className="seo-section">
-        <h2>A Simple Way to Think About It</h2>
+        <h2>How to Compare the Two Options</h2>
         <p>
-          If your business is confident frozen drinks will be a permanent, high-volume menu item, buying
-          may be worth comparing. If you want to add frozen drinks with less upfront risk, learn customer
-          demand, and have local support behind the equipment, leasing may be the better starting point.
+          Do not compare leasing and buying only by looking at the sticker price of the machine. Compare
+          the full operating picture: upfront cash, expected drink volume, profit per drink, staff
+          training, cleaning discipline, repair exposure, downtime risk, and how quickly you need support
+          if the machine has a problem.
         </p>
 
+        <ul className="seo-list">
+          <li><strong>Lease</strong> when you want lower upfront risk, predictable payments, and support.</li>
+          <li><strong>Buy</strong> when demand is proven, cash is available, and you are ready to manage the equipment.</li>
+          <li><strong>Wait</strong> if you do not have the space, outlet, staff routine, or sales plan in place yet.</li>
+        </ul>
+      </section>
+
+      <section className="seo-section">
+        <h2>Thirsty Dawg Leasing Options</h2>
         <p>
-          Thirsty Dawg Rentals offers frozen drink machine lease options for Gulf Coast businesses,
-          including 6-month leases on select in-stock equipment and 12-month or 24-month new equipment
-          lease options.
+          Thirsty Dawg Rentals offers frozen drink machine lease options for Gulf Coast businesses that
+          want to add frozen drinks without buying a machine upfront. Six-month seasonal leases may be
+          available on select in-stock equipment. New equipment placements are available with 12-month
+          and 24-month lease options.
         </p>
       </section>
 
       <section className="seo-section">
-        <h2>Want Help Comparing Options?</h2>
+        <h2>Want Help Running the Numbers?</h2>
         <p>
-          If you are considering frozen drink machine leasing or ownership, Thirsty Dawg Rentals can help
-          you think through machine type, volume, setup needs, lease term, and whether a frozen drink
-          program makes sense for your business.
+          If you are comparing a lease against buying a machine, Thirsty Dawg Rentals can help you think
+          through machine type, expected volume, setup needs, term length, and whether a frozen drink
+          program makes financial sense for your business.
         </p>
         <Link className="seo-text-link" href="/frozen-drink-machine-leasing">
           View frozen drink machine lease options
