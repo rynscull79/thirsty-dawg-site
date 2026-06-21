@@ -154,6 +154,23 @@ export default function FrozenDrinkMachineLeasingVsBuyingPage() {
       </section>
 
       <section className="seo-section">
+        <h2>Potential Tax Treatment for the Business</h2>
+        <p>
+          Leasing may also be simpler from a tax-planning standpoint for the business using the machine.
+          In many cases, lease payments for equipment used in a trade or business may be treated as an
+          ordinary business expense. That can be easier to plan around than a large equipment purchase
+          that may involve depreciation, Section 179, bonus depreciation, and timing decisions.
+        </p>
+
+        <p>
+          Tax treatment depends on the business, the lease structure, and how the agreement is written, so
+          every customer should confirm details with their accountant or tax professional. The practical
+          point is that leasing can give a business a predictable monthly equipment cost to discuss with
+          its tax advisor, instead of requiring a full equipment purchase upfront.
+        </p>
+      </section>
+
+      <section className="seo-section">
         <h2>Thirsty Dawg Leasing Options</h2>
         <p>
           Thirsty Dawg Rentals offers frozen drink machine lease options for Gulf Coast businesses that
