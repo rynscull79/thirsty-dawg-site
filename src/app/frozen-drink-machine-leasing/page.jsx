@@ -151,6 +151,12 @@ const styles = {
     lineHeight: 1.55,
     fontWeight: 650,
   },
+  textLink: {
+    color: 'var(--td-blue-deep)',
+    fontWeight: 900,
+    textDecoration: 'underline',
+    textUnderlineOffset: '3px',
+  },
   split: {
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
@@ -289,6 +295,25 @@ export default function FrozenDrinkMachineLeasingPage() {
         <div style={styles.grid}>
           {included.map((item) => <div key={item} style={styles.card}>✅ {item}</div>)}
         </div>
+      </section>
+
+      <section style={styles.section}>
+        <h2 style={styles.h2}>Why Lease a Frozen Drink Machine?</h2>
+        <p style={styles.text}>
+          Leasing gives businesses a practical way to add frozen drinks without tying up thousands of dollars in equipment upfront. It can also make more sense when you want local setup, training, maintenance, and help choosing the right machine before committing to ownership.
+        </p>
+        <div style={styles.grid}>
+          <div style={styles.card}>Start serving frozen drinks without buying a commercial machine outright.</div>
+          <div style={styles.card}>Test demand before deciding whether ownership makes sense.</div>
+          <div style={styles.card}>Get local delivery, setup, training, maintenance, and support included.</div>
+          <div style={styles.card}>Choose a lease term that matches seasonal demand or long-term business plans.</div>
+        </div>
+        <p style={styles.text}>
+          Comparing leasing with buying? Read our guide to{' '}
+          <Link href="/resources/frozen-drink-machine-leasing-vs-buying" style={styles.textLink}>
+            frozen drink machine leasing vs buying
+          </Link>.
+        </p>
       </section>
 
       <section style={styles.section}>

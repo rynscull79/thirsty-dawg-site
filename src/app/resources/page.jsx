@@ -117,6 +117,21 @@ export default function ResourcesPage() {
 
       <section style={styles.grid} aria-label="Resource articles">
         <article style={styles.card}>
+          <span style={styles.cardKicker}>Business Leasing</span>
+          <h2 style={styles.h2}>Frozen Drink Machine Leasing vs Buying</h2>
+          <p style={styles.text}>
+            Compare leasing and owning a frozen drink machine for bars, restaurants, venues, resorts,
+            and Gulf Coast businesses that want to add frozen drinks without guessing wrong on equipment.
+          </p>
+          <Link
+            href="/resources/frozen-drink-machine-leasing-vs-buying"
+            style={styles.button}
+          >
+            Read the guide
+          </Link>
+        </article>
+
+        <article style={styles.card}>
           <span style={styles.cardKicker}>Machine Count</span>
           <h2 style={styles.h2}>How Many Frozen Drink Machines Do You Need for a Party?</h2>
           <p style={styles.text}>
