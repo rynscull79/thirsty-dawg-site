@@ -120,6 +120,13 @@ export default function FrozenDrinkMachineLeasingVsBuyingPage() {
         </p>
 
         <p>
+          Commercial equipment repairs can get expensive quickly. Depending on the issue, a single
+          service call or repair ticket can sometimes run over $1,000 before the machine is back in
+          service. That is one reason leasing can be attractive for businesses that want frozen drinks
+          without taking on every equipment problem alone.
+        </p>
+
+        <p>
           A lease does not remove the need for good daily care, but it can reduce the burden of figuring
           everything out alone. For a new frozen drink program, that support can matter as much as the
           machine itself.
