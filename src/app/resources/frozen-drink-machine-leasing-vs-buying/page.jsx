@@ -127,6 +127,14 @@ export default function FrozenDrinkMachineLeasingVsBuyingPage() {
         </p>
 
         <p>
+          Downtime can be just as costly as the repair itself. Qualified repair technicians are limited,
+          especially during the busy summer season, and they may be booked more than a week out. If the
+          machine is down during that window, the business is not just waiting on a repair. It may also
+          be losing frozen drink sales, add-on purchases, and the profit those drinks were expected to
+          generate.
+        </p>
+
+        <p>
           A lease does not remove the need for good daily care, but it can reduce the burden of figuring
           everything out alone. For a new frozen drink program, that support can matter as much as the
           machine itself.

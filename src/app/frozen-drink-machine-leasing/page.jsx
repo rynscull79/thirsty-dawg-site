@@ -300,7 +300,7 @@ export default function FrozenDrinkMachineLeasingPage() {
       <section style={styles.section}>
         <h2 style={styles.h2}>Why Lease a Frozen Drink Machine?</h2>
         <p style={styles.text}>
-          Leasing gives businesses a practical way to add frozen drinks without tying up thousands of dollars in equipment upfront. It can also make more sense when you want local setup, training, maintenance, and help choosing the right machine before committing to ownership. A single service call or repair ticket on commercial equipment can sometimes run over $1,000, so having local support built into the program can be a major advantage.
+          Leasing gives businesses a practical way to add frozen drinks without tying up thousands of dollars in equipment upfront. It can also make more sense when you want local setup, training, maintenance, and help choosing the right machine before committing to ownership. A single service call or repair ticket on commercial equipment can sometimes run over $1,000, and repair technicians may be booked more than a week out during busy summer months. That downtime can mean missed drink sales, lost profit, and unhappy customers, so having local support built into the program can be a major advantage.
         </p>
         <div style={styles.grid}>
           <div style={styles.card}>Start serving frozen drinks without buying a commercial machine outright.</div>
