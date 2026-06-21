@@ -2,7 +2,7 @@
 module.exports = {
   siteUrl: 'https://www.thirstydawgrentals.com',
   generateRobotsTxt: true,
-  exclude: ['/admin', '/admin/*', '/header-test', '/not-found'],
+  exclude: ['/admin', '/admin/*', '/header-test', '/not-found', '/long-term-leasing'],
   robotsTxtOptions: {
     policies: [
       {

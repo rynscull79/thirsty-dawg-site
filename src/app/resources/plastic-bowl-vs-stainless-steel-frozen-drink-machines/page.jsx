@@ -313,7 +313,7 @@ export default function PlasticBowlVsStainlessSteelPage() {
 
         <p style={styles.p}>
           That is why Thirsty Dawg may consider commercial-grade plastic bowl machines for select
-          <Link href="/long-term-leasing" style={styles.link}> long-term lease customers</Link>.
+          <Link href="/frozen-drink-machine-leasing" style={styles.link}> machine lease customers</Link>.
           In a small restaurant, bar, or business, the machine is usually not being rushed by a large
           crowd all at once. Customers are buying drinks individually, which gives the machine more
           time to recover.
@@ -403,7 +403,7 @@ export default function PlasticBowlVsStainlessSteelPage() {
 
         <p style={styles.p}>
           At Thirsty Dawg Rentals, we carry both types of machines, but we use them for different purposes.
-          Plastic bowl machines may be considered for select long-term lease customers. Stainless steel
+          Plastic bowl machines may be considered for select machine lease customers. Stainless steel
           commercial machines are what we use for event rentals because they offer faster freezing,
           insulated freezing barrels, smoother texture, stronger recovery, and more reliable performance
           in Gulf Coast conditions.
@@ -425,7 +425,7 @@ export default function PlasticBowlVsStainlessSteelPage() {
           Related pages:
           {' '}<Link href="/rentals" style={styles.link}>Frozen Drinks & Soft Serve</Link>,
           {' '}<Link href="/service-areas" style={styles.link}>service areas</Link>,
-          {' '}<Link href="/long-term-leasing" style={styles.link}>long-term leasing</Link>.
+          {' '}<Link href="/frozen-drink-machine-leasing" style={styles.link}>machine leasing</Link>.
         </p>
       </article>
     </main>

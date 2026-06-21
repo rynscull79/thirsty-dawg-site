@@ -64,7 +64,7 @@ export default function OurStoryPage() {
           </p>
 
           <p style={{ fontSize: '1.2rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-            Today, we proudly serve the Gulf Coast with a fleet of 12 commercial-grade frozen drink machines—available for parties, weddings, corporate events, and even long-term rentals for bars, beach houses, and busy hosts. With dual-flavor and single-flavor options, delicious drink mixes, and top-tier service, Thirsty Dawg makes it easy to keep your party cool and your guests refreshed.
+            Today, we proudly serve the Gulf Coast with a fleet of 12 commercial-grade frozen drink machines—available for parties, weddings, corporate events, and machine leases for bars, beach houses, and busy hosts. With dual-flavor and single-flavor options, delicious drink mixes, and top-tier service, Thirsty Dawg makes it easy to keep your party cool and your guests refreshed.
           </p>
 
           <p style={{ fontSize: '1.2rem', lineHeight: '1.8', marginBottom: '2rem' }}>

@@ -111,7 +111,7 @@ export default function ResourcesPage() {
         <h1 style={styles.h1}>Frozen Drink Machine Guides for Events and Businesses</h1>
         <p style={styles.heroText}>
           Practical answers from Thirsty Dawg Rentals for customers comparing frozen drink machines,
-          planning Gulf Coast events, or looking at long-term machine options for a business.
+          planning Gulf Coast events, or looking at machine leasing options for a business.
         </p>
       </section>
 

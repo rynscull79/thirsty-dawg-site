@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/long-term-leasing",
+      "destination": "/frozen-drink-machine-leasing",
+      "permanent": true
+    }
+  ],
   "build": {
     "env": {
       "NPM_CONFIG_LEGACY_PEER_DEPS": "true"
